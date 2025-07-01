@@ -1,424 +1,237 @@
-// Lightweight Particles System
-class LegalParticlesSystem {
-  constructor() {
-    this.canvas = document.getElementById('particles-canvas');
-    if (!this.canvas) return;
-    
-    this.ctx = this.canvas.getContext('2d');
-    this.particles = [];
-    this.animationId = null;
-    
-    this.init();
-    this.animate();
-  }
+// Digital Business Card Functionality
+
+// VCard generation and download
+function downloadVCard() {
+  const vCardData = `BEGIN:VCARD
+VERSION:3.0
+FN:Jacinto Pereira
+N:Pereira;Jacinto;;;
+ORG:Advocacia
+TITLE:Advogado
+TEL;TYPE=WORK,VOICE:+5599981269207
+TEL;TYPE=WORK,VOICE:+5599984413000
+URL;TYPE=WORK:https://instagram.com/jacintopereira.adv
+ADR;TYPE=WORK:;;Pedreiras;Maranhão;;Brasil
+NOTE:OAB/MA 12.498 - Experiência, confiança e excelência jurídica
+END:VCARD`;
+
+  const blob = new Blob([vCardData], { type: 'text/vcard' });
+  const url = window.URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'jacinto-pereira-advogado.vcf';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  window.URL.revokeObjectURL(url);
   
-  init() {
-    this.resizeCanvas();
-    this.createParticles();
-    
-    window.addEventListener('resize', () => {
-      this.resizeCanvas();
-      this.createParticles();
-    });
-  }
+  // Show success feedback
+  showNotification('Contato salvo com sucesso!', 'success');
+}
+
+// Share functionality
+function shareCard(platform) {
+  const cardUrl = window.location.href;
+  const shareText = 'Jacinto Pereira - Advogado OAB/MA 12.498\nExperiência, confiança e excelência jurídica\nContato: +55 99 8126-9207';
   
-  resizeCanvas() {
-    this.canvas.width = window.innerWidth;
-    this.canvas.height = window.innerHeight;
-  }
-  
-  createParticles() {
-    this.particles = [];
-    const numParticles = Math.floor((this.canvas.width * this.canvas.height) / 20000);
-    
-    for (let i = 0; i < numParticles; i++) {
-      this.particles.push({
-        x: Math.random() * this.canvas.width,
-        y: Math.random() * this.canvas.height,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        size: Math.random() * 2 + 1,
-        opacity: Math.random() * 0.5 + 0.1
-      });
-    }
-  }
-  
-  updateParticles() {
-    this.particles.forEach(particle => {
-      particle.x += particle.vx;
-      particle.y += particle.vy;
+  switch(platform) {
+    case 'whatsapp':
+      const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareText + '\n' + cardUrl)}`;
+      window.open(whatsappUrl, '_blank');
+      break;
       
-      if (particle.x < 0 || particle.x > this.canvas.width) {
-        particle.vx *= -1;
-      }
-      if (particle.y < 0 || particle.y > this.canvas.height) {
-        particle.vy *= -1;
-      }
+    case 'copy':
+      copyToClipboard(cardUrl);
+      break;
       
-      particle.x = Math.max(0, Math.min(this.canvas.width, particle.x));
-      particle.y = Math.max(0, Math.min(this.canvas.height, particle.y));
-    });
-  }
-  
-  drawParticles() {
-    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    
-    this.particles.forEach(particle => {
-      this.ctx.save();
-      this.ctx.globalAlpha = particle.opacity;
-      this.ctx.fillStyle = '#d4af37';
-      this.ctx.beginPath();
-      this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-      this.ctx.fill();
-      this.ctx.restore();
-    });
-  }
-  
-  animate() {
-    this.updateParticles();
-    this.drawParticles();
-    this.animationId = requestAnimationFrame(() => this.animate());
-  }
-  
-  destroy() {
-    if (this.animationId) {
-      cancelAnimationFrame(this.animationId);
-    }
+    case 'email':
+      const emailSubject = 'Cartão de Visita Digital - Jacinto Pereira';
+      const emailBody = `${shareText}\n\nAcesse o cartão digital: ${cardUrl}`;
+      const emailUrl = `mailto:?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+      window.location.href = emailUrl;
+      break;
   }
 }
 
-// Initialize particles system
-document.addEventListener('DOMContentLoaded', () => {
-  new LegalParticlesSystem();
-});
-
-// Intersection Observer for scroll animations
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('animate');
-    }
-  });
-}, observerOptions);
-
-// Initialize scroll animations
-document.addEventListener('DOMContentLoaded', () => {
-  // Animate area cards
-  const areaCards = document.querySelectorAll('.area-card');
-  areaCards.forEach((card, index) => {
-    card.style.animationDelay = `${index * 0.1}s`;
-    observer.observe(card);
-  });
-
-  // Animate contact items
-  const contactItems = document.querySelectorAll('.contact-item');
-  contactItems.forEach((item, index) => {
-    item.style.animationDelay = `${index * 0.1}s`;
-    observer.observe(item);
-  });
-
-  // Animate credential items
-  const credentialItems = document.querySelectorAll('.credential-item');
-  credentialItems.forEach((item, index) => {
-    item.style.animationDelay = `${index * 0.1}s`;
-    observer.observe(item);
-  });
-
-  // Counter animation for stats
-  const statNumbers = document.querySelectorAll('.stat-number');
-  const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const target = entry.target;
-        const finalValue = parseInt(target.getAttribute('data-count'));
-        animateCounter(target, finalValue);
-        statsObserver.unobserve(target);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  statNumbers.forEach(stat => {
-    statsObserver.observe(stat);
-  });
-});
-
-// Counter animation function
-function animateCounter(element, target) {
-  let current = 0;
-  const increment = target / 50;
-  const timer = setInterval(() => {
-    current += increment;
-    if (current >= target) {
-      current = target;
-      clearInterval(timer);
-    }
-    element.textContent = Math.floor(current);
-  }, 30);
+// Copy to clipboard functionality
+async function copyToClipboard(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    showNotification('Link copiado para a área de transferência!', 'success');
+  } catch (err) {
+    // Fallback for older browsers
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    showNotification('Link copiado para a área de transferência!', 'success');
+  }
 }
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      const headerHeight = document.querySelector('.header').offsetHeight;
-      const targetPosition = target.offsetTop - headerHeight;
-      
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      });
-    }
-  });
-});
-
-// Header scroll effect
-let lastScrollY = window.scrollY;
-const header = document.querySelector('.header');
-
-window.addEventListener('scroll', () => {
-  const currentScrollY = window.scrollY;
+// Notification system
+function showNotification(message, type = 'info') {
+  // Remove existing notifications
+  const existingNotifications = document.querySelectorAll('.notification');
+  existingNotifications.forEach(notification => notification.remove());
   
-  if (currentScrollY > 100) {
-    header.style.background = 'rgba(255, 255, 255, 0.98)';
-    header.style.backdropFilter = 'blur(20px)';
-    header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-  } else {
-    header.style.background = 'rgba(255, 255, 255, 0.95)';
-    header.style.backdropFilter = 'blur(20px)';
-    header.style.boxShadow = 'none';
-  }
+  const notification = document.createElement('div');
+  notification.className = `notification ${type}`;
+  notification.innerHTML = `
+    <div class="notification-content">
+      <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-info-circle'}"></i>
+      <span>${message}</span>
+    </div>
+  `;
   
-  // Hide/show header on scroll
-  if (currentScrollY > lastScrollY && currentScrollY > 200) {
-    header.style.transform = 'translateY(-100%)';
-  } else {
-    header.style.transform = 'translateY(0)';
-  }
+  // Add notification styles
+  notification.style.cssText = `
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background: ${type === 'success' ? '#10B981' : '#3B82F6'};
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    animation: slideInRight 0.3s ease-out;
+    max-width: 300px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  `;
   
-  lastScrollY = currentScrollY;
-});
-
-// Mobile menu functionality
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const nav = document.querySelector('.nav');
-
-if (mobileMenuBtn && nav) {
-  mobileMenuBtn.addEventListener('click', () => {
-    const isActive = nav.classList.contains('active');
-    
-    if (!isActive) {
-      nav.classList.add('active');
-      nav.style.display = 'block';
-      setTimeout(() => {
-        nav.style.opacity = '1';
-        nav.style.transform = 'translateY(0)';
-      }, 10);
-    } else {
-      nav.style.opacity = '0';
-      nav.style.transform = 'translateY(-20px)';
-      setTimeout(() => {
-        nav.classList.remove('active');
-        nav.style.display = 'none';
-      }, 300);
-    }
-    
-    mobileMenuBtn.classList.toggle('active');
-  });
-}
-
-// Contact form handling
-const contactForm = document.getElementById('contactForm');
-
-if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(this);
-    const data = Object.fromEntries(formData);
-    
-    // Simple validation
-    if (!data.name || !data.email || !data.phone || !data.subject || !data.message) {
-      alert('Por favor, preencha todos os campos obrigatórios.');
-      return;
-    }
-    
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(data.email)) {
-      alert('Por favor, insira um e-mail válido.');
-      return;
-    }
-    
-    // Show success message
-    const submitBtn = this.querySelector('.submit-btn');
-    const originalText = submitBtn.innerHTML;
-    
-    submitBtn.innerHTML = '<i class="fas fa-check"></i> <span>Mensagem Enviada!</span>';
-    submitBtn.style.background = '#4ade80';
-    
-    // Reset form
+  const content = notification.querySelector('.notification-content');
+  content.style.cssText = `
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  `;
+  
+  document.body.appendChild(notification);
+  
+  // Auto remove after 3 seconds
+  setTimeout(() => {
+    notification.style.animation = 'slideOutRight 0.3s ease-in forwards';
     setTimeout(() => {
-      this.reset();
-      submitBtn.innerHTML = originalText;
-      submitBtn.style.background = '';
-    }, 3000);
-    
-    // Here you would typically send the data to your server
-    console.log('Form data:', data);
-  });
-}
-
-// Phone number formatting
-const phoneInput = document.getElementById('phone');
-if (phoneInput) {
-  phoneInput.addEventListener('input', function(e) {
-    let value = e.target.value.replace(/\D/g, '');
-    
-    if (value.length <= 11) {
-      if (value.length <= 2) {
-        value = value.replace(/(\d{0,2})/, '($1');
-      } else if (value.length <= 7) {
-        value = value.replace(/(\d{2})(\d{0,5})/, '($1) $2');
-      } else {
-        value = value.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+      if (notification.parentNode) {
+        notification.remove();
       }
-    }
-    
-    e.target.value = value;
-  });
+    }, 300);
+  }, 3000);
 }
 
-// Keyboard navigation support
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    // Close mobile menu if open
-    if (nav && nav.classList.contains('active')) {
-      nav.classList.remove('active');
-      mobileMenuBtn?.classList.remove('active');
+// Add notification animations
+const notificationStyles = `
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
     }
   }
-});
-
-// Performance optimization: Throttle scroll events
-function throttle(func, wait) {
-  let timeout;
-  return function executedFunction(...args) {
-    const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-}
-
-// Preload critical images
-const criticalImages = [
-  'https://images.pexels.com/photos/5668882/pexels-photo-5668882.jpeg?auto=compress&cs=tinysrgb&w=600',
-  'https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=600'
-];
-
-criticalImages.forEach(src => {
-  const img = new Image();
-  img.src = src;
-});
-
-// Add loading states
-window.addEventListener('load', () => {
-  document.body.classList.add('loaded');
-});
-
-// Error handling for images
-document.querySelectorAll('img').forEach(img => {
-  img.addEventListener('error', function() {
-    this.style.display = 'none';
-    console.warn('Failed to load image:', this.src);
-  });
-});
-
-// Add mobile menu styles dynamically
-const mobileMenuStyles = `
-  @media (max-width: 768px) {
-    .nav {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(20px);
-      border-top: 1px solid rgba(212, 175, 55, 0.2);
+  
+  @keyframes slideOutRight {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(100%);
       opacity: 0;
-      transform: translateY(-20px);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      display: none;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    }
-    
-    .nav.active {
-      display: block;
-    }
-    
-    .nav-list {
-      flex-direction: column;
-      padding: 2rem;
-      gap: 1rem;
-    }
-    
-    .nav-link {
-      padding: 1rem 0;
-      border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-      font-size: 1.1rem;
-    }
-    
-    .mobile-menu-btn.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-    
-    .mobile-menu-btn.active span:nth-child(2) {
-      opacity: 0;
-    }
-    
-    .mobile-menu-btn.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -6px);
     }
   }
 `;
 
-// Inject mobile menu styles
 const styleSheet = document.createElement('style');
-styleSheet.textContent = mobileMenuStyles;
+styleSheet.textContent = notificationStyles;
 document.head.appendChild(styleSheet);
 
-// Add subtle hover effects to form elements
+// Contact interaction tracking
+function trackContactInteraction(type, value) {
+  // Analytics tracking could be implemented here
+  console.log(`Contact interaction: ${type} - ${value}`);
+}
+
+// Add click tracking to contact items
 document.addEventListener('DOMContentLoaded', () => {
-  const formElements = document.querySelectorAll('.form-group input, .form-group select, .form-group textarea');
+  const contactItems = document.querySelectorAll('.contact-item');
   
-  formElements.forEach(element => {
-    element.addEventListener('focus', () => {
-      element.parentElement.style.transform = 'translateY(-2px)';
+  contactItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      const type = item.classList.contains('whatsapp') ? 'whatsapp' : 
+                   item.classList.contains('phone') ? 'phone' : 
+                   item.classList.contains('instagram') ? 'instagram' : 'other';
+      const value = item.querySelector('.contact-value').textContent;
+      
+      trackContactInteraction(type, value);
+      
+      // Add visual feedback
+      item.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        item.style.transform = '';
+      }, 150);
+    });
+  });
+  
+  // Add hover effects to action buttons
+  const actionButtons = document.querySelectorAll('.action-btn');
+  actionButtons.forEach(button => {
+    button.addEventListener('mouseenter', () => {
+      button.style.transform = 'translateY(-2px) scale(1.02)';
     });
     
-    element.addEventListener('blur', () => {
-      element.parentElement.style.transform = 'translateY(0)';
+    button.addEventListener('mouseleave', () => {
+      button.style.transform = '';
     });
   });
 });
 
-// Smooth reveal animation for hero elements
-const heroElements = document.querySelectorAll('.hero-text, .hero-image');
-heroElements.forEach((element, index) => {
-  element.style.animationDelay = `${index * 0.2}s`;
+// Keyboard navigation support
+document.addEventListener('keydown', (e) => {
+  // ESC key to close any open modals or notifications
+  if (e.key === 'Escape') {
+    const notifications = document.querySelectorAll('.notification');
+    notifications.forEach(notification => notification.remove());
+  }
+  
+  // Enter key on focused elements
+  if (e.key === 'Enter' && document.activeElement) {
+    const focusedElement = document.activeElement;
+    
+    if (focusedElement.classList.contains('contact-item')) {
+      focusedElement.click();
+    }
+    
+    if (focusedElement.classList.contains('action-btn')) {
+      focusedElement.click();
+    }
+    
+    if (focusedElement.classList.contains('save-btn')) {
+      downloadVCard();
+    }
+    
+    if (focusedElement.classList.contains('share-btn')) {
+      const shareType = focusedElement.getAttribute('data-share') || 'copy';
+      shareCard(shareType);
+    }
+  }
 });
 
-// Performance monitoring (lightweight)
+// Add data attributes for share buttons
+document.addEventListener('DOMContentLoaded', () => {
+  const shareButtons = document.querySelectorAll('.share-btn');
+  shareButtons.forEach((button, index) => {
+    const shareTypes = ['whatsapp', 'copy', 'email'];
+    button.setAttribute('data-share', shareTypes[index]);
+  });
+});
+
+// Performance monitoring
 let performanceMetrics = {
   loadTime: 0,
   domReady: 0
@@ -431,13 +244,13 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('load', () => {
   performanceMetrics.loadTime = performance.now();
   
-  // Log performance if needed (remove in production)
+  // Log performance for optimization
   if (performanceMetrics.loadTime < 1000) {
-    console.log('✅ Site loaded in under 1 second:', Math.round(performanceMetrics.loadTime), 'ms');
+    console.log('✅ Card loaded in under 1 second:', Math.round(performanceMetrics.loadTime), 'ms');
   }
 });
 
-// Lazy loading for images (if needed)
+// Lazy loading for any future images
 if ('IntersectionObserver' in window) {
   const imageObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -454,5 +267,87 @@ if ('IntersectionObserver' in window) {
 
   document.querySelectorAll('img[data-src]').forEach(img => {
     imageObserver.observe(img);
+  });
+}
+
+// Add subtle animations on load
+document.addEventListener('DOMContentLoaded', () => {
+  const contactItems = document.querySelectorAll('.contact-item');
+  
+  contactItems.forEach((item, index) => {
+    item.style.opacity = '0';
+    item.style.transform = 'translateY(20px)';
+    
+    setTimeout(() => {
+      item.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+      item.style.opacity = '1';
+      item.style.transform = 'translateY(0)';
+    }, 100 + (index * 50));
+  });
+});
+
+// Add touch feedback for mobile devices
+if ('ontouchstart' in window) {
+  document.addEventListener('touchstart', (e) => {
+    const target = e.target.closest('.contact-item, .action-btn, .save-btn, .share-btn');
+    if (target) {
+      target.style.transform = 'scale(0.95)';
+    }
+  });
+  
+  document.addEventListener('touchend', (e) => {
+    const target = e.target.closest('.contact-item, .action-btn, .save-btn, .share-btn');
+    if (target) {
+      setTimeout(() => {
+        target.style.transform = '';
+      }, 150);
+    }
+  });
+}
+
+// Error handling for external links
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a[href^="http"], a[href^="tel:"], a[href^="mailto:"]');
+  if (link) {
+    // Add loading state for external links
+    const originalText = link.innerHTML;
+    if (link.href.includes('wa.me') || link.href.includes('instagram.com')) {
+      link.style.opacity = '0.7';
+      setTimeout(() => {
+        link.style.opacity = '';
+      }, 1000);
+    }
+  }
+});
+
+// Add meta tags for better sharing
+function addMetaTags() {
+  const metaTags = [
+    { property: 'og:title', content: 'Jacinto Pereira - Advogado' },
+    { property: 'og:description', content: 'OAB/MA 12.498 - Experiência, confiança e excelência jurídica. Contato: +55 99 8126-9207' },
+    { property: 'og:type', content: 'profile' },
+    { property: 'og:url', content: window.location.href },
+    { name: 'twitter:card', content: 'summary' },
+    { name: 'twitter:title', content: 'Jacinto Pereira - Advogado' },
+    { name: 'twitter:description', content: 'OAB/MA 12.498 - Experiência, confiança e excelência jurídica' }
+  ];
+  
+  metaTags.forEach(tag => {
+    const meta = document.createElement('meta');
+    if (tag.property) meta.setAttribute('property', tag.property);
+    if (tag.name) meta.setAttribute('name', tag.name);
+    meta.setAttribute('content', tag.content);
+    document.head.appendChild(meta);
+  });
+}
+
+// Initialize meta tags
+addMetaTags();
+
+// Service Worker registration for offline functionality (optional)
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    // Service worker could be implemented for offline access
+    console.log('Service Worker support detected');
   });
 }
