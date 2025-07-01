@@ -3,186 +3,417 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jacinto Pereira - Advogado | Cartão Digital</title>
-  <meta name="description" content="Jacinto Pereira - Advogado OAB/MA 12.498. Contato profissional e informações de atendimento em Pedreiras, Maranhão.">
+  <title>VisionX - Desenvolvimento de Soluções Digitais</title>
+  <meta name="description" content="VisionX - Especialistas em desenvolvimento de sites, aplicativos, sistemas web e automações digitais. Transformamos ideias em soluções digitais funcionais.">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.0/css/all.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Background Elements -->
-  <div class="background-pattern"></div>
+  <!-- Universe Background -->
+  <div class="universe-background">
+    <canvas id="universe-canvas"></canvas>
+  </div>
 
-  <!-- Business Card Container -->
-  <div class="card-container">
-    <div class="business-card">
-      
-      <!-- Card Header -->
-      <div class="card-header">
-        <div class="logo-section">
-          <div class="logo-icon">
-            <i class="fas fa-balance-scale"></i>
-          </div>
-          <div class="brand-text">
-            <h1 class="lawyer-name">Jacinto Pereira</h1>
-            <p class="profession">Advogado</p>
-          </div>
-        </div>
-        <div class="oab-badge">
-          <span class="oab-text">OAB/MA</span>
-          <span class="oab-number">12.498</span>
-        </div>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <div class="logo-container">
+        <img src="assets/visionx-logo.png" alt="Logo VisionX" class="logo" />
       </div>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="#servicos" class="nav-link">Serviços</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-menu-btn" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
 
-      <!-- Card Content -->
-      <div class="card-content">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-background">
+      <canvas id="particles-canvas"></canvas>
+      <div class="neural-network">
+        <div class="neural-node"></div>
+        <div class="neural-node"></div>
+        <div class="neural-node"></div>
+        <div class="neural-node"></div>
+        <div class="neural-node"></div>
+        <div class="neural-node"></div>
+        <div class="neural-connection"></div>
+        <div class="neural-connection"></div>
+        <div class="neural-connection"></div>
+        <div class="neural-connection"></div>
+      </div>
+      <div class="floating-elements">
+        <div class="floating-element geometric-shape triangle"></div>
+        <div class="floating-element geometric-shape circle"></div>
+        <div class="floating-element geometric-shape hexagon"></div>
+        <div class="floating-element geometric-shape square"></div>
+        <div class="floating-element code-fragment">{ }</div>
+        <div class="floating-element code-fragment">< /></div>
+        <div class="floating-element code-fragment">[ ]</div>
+        <div class="floating-element binary-stream">01010101</div>
+        <div class="floating-element binary-stream">11001100</div>
+        <div class="floating-element binary-stream">10101010</div>
+      </div>
+      <div class="energy-waves">
+        <div class="wave wave-1"></div>
+        <div class="wave wave-2"></div>
+        <div class="wave wave-3"></div>
+      </div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="title-line">Desenvolvimento de</span>
+        <span class="title-line highlight">Soluções Digitais</span>
+      </h1>
+      <p class="hero-description">
+        Criação de sites de apresentação comercial, sites de rifas, lojas virtuais (e-commerce), 
+        marketplaces, aplicativos, jogos educativos e sistemas de gestão personalizados.
+      </p>
+      <a href="#contato" class="cta-button">
+        <span>Solicite um orçamento</span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <section id="servicos" class="servicos">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Nossos Serviços</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="services-grid">
         
-        <!-- Contact Information -->
-        <div class="contact-section">
-          <h2 class="section-title">Contato Profissional</h2>
-          
-          <div class="contact-grid">
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="card-icon">
+            <i class="fas fa-globe"></i>
+          </div>
+          <h3>Criação de Sites</h3>
+          <p>Desenvolvimento de sites modernos, rápidos e responsivos para apresentar sua empresa ao mundo.</p>
+          <div class="card-hover-effect"></div>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="card-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h3>Landing Pages</h3>
+          <p>Pages de alta conversão para campanhas, eventos ou produtos com foco em performance.</p>
+          <div class="card-hover-effect"></div>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="card-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>Criação de Aplicativos</h3>
+          <p>Apps personalizados para Android e iOS, com design intuitivo e funcionalidades sob medida.</p>
+          <div class="card-hover-effect"></div>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="card-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <h3>Sistemas Web</h3>
+          <p>Plataformas e sistemas internos para controle, vendas, gestão e automação de processos.</p>
+          <div class="card-hover-effect"></div>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+          <div class="card-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <h3>Automações Digitais</h3>
+          <p>Integrações e robôs que economizam tempo e aumentam a produtividade da sua empresa.</p>
+          <div class="card-hover-effect"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="portfolio-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Nosso Portfolio</h2>
+        <div class="section-line"></div>
+        <p class="section-subtitle">Conheça o projeto que desenvolvemos com excelência</p>
+      </div>
+      
+      <!-- Finagro Project -->
+      <div class="finagro-project" data-aos="fade-up" data-aos-delay="100">
+        <div class="project-header">
+          <div class="project-badge">Projeto Destaque</div>
+          <div class="project-title-with-logo">
+            <img src="assets/FInagro LOGO 3.png" alt="Finagro Logo" class="project-logo" />
+            <div class="project-title-text">
+              <h3>Finagro.app</h3>
+              <p class="project-subtitle">Mobile application for rural managers and producers</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-content">
+          <div class="project-description">
+            <p>Aplicativo móvel completo desenvolvido para gestores e produtores rurais, oferecendo ferramentas essenciais para o gerenciamento eficiente de propriedades agrícolas.</p>
             
-            <!-- Phone 1 -->
-            <a href="tel:+5599981269207" class="contact-item phone">
-              <div class="contact-icon">
-                <i class="fas fa-phone"></i>
-              </div>
-              <div class="contact-info">
-                <span class="contact-label">Telefone</span>
-                <span class="contact-value">+55 99 8126-9207</span>
-              </div>
-            </a>
-
-            <!-- WhatsApp 1 -->
-            <a href="https://wa.me/5599981269207" class="contact-item whatsapp" target="_blank">
-              <div class="contact-icon">
-                <i class="fab fa-whatsapp"></i>
-              </div>
-              <div class="contact-info">
-                <span class="contact-label">WhatsApp</span>
-                <span class="contact-value">+55 99 8126-9207</span>
-              </div>
-            </a>
-
-            <!-- Phone 2 -->
-            <a href="tel:+5599984413000" class="contact-item phone">
-              <div class="contact-icon">
-                <i class="fas fa-phone-alt"></i>
-              </div>
-              <div class="contact-info">
-                <span class="contact-label">Telefone 2</span>
-                <span class="contact-value">+55 99 8441-3000</span>
-              </div>
-            </a>
-
-            <!-- WhatsApp 2 -->
-            <a href="https://wa.me/5599984413000" class="contact-item whatsapp" target="_blank">
-              <div class="contact-icon">
-                <i class="fab fa-whatsapp"></i>
-              </div>
-              <div class="contact-info">
-                <span class="contact-label">WhatsApp</span>
-                <span class="contact-value">+55 99 8441-3000</span>
-              </div>
-            </a>
-
-            <!-- Instagram -->
-            <a href="https://instagram.com/jacintopereira.adv" class="contact-item instagram" target="_blank">
-              <div class="contact-icon">
-                <i class="fab fa-instagram"></i>
-              </div>
-              <div class="contact-info">
-                <span class="contact-label">Instagram</span>
-                <span class="contact-value">@jacintopereira.adv</span>
-              </div>
-            </a>
-
-            <!-- Location -->
-            <div class="contact-item location">
-              <div class="contact-icon">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
-              <div class="contact-info">
-                <span class="contact-label">Localização</span>
-                <span class="contact-value">Pedreiras, Maranhão</span>
+            <div class="features-list">
+              <h4>Principais Funcionalidades:</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Gestão de propriedades rurais</li>
+                <li><i class="fas fa-check"></i> Controle de produção e estoque</li>
+                <li><i class="fas fa-check"></i> Monitoramento financeiro</li>
+                <li><i class="fas fa-check"></i> Relatórios detalhados</li>
+                <li><i class="fas fa-check"></i> Interface intuitiva e responsiva</li>
+              </ul>
+            </div>
+            
+            <div class="tech-stack">
+              <h4>Tecnologias Utilizadas:</h4>
+              <div class="tech-tags">
+                <span class="tech-tag">React Native</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">Firebase</span>
+                <span class="tech-tag">REST API</span>
               </div>
             </div>
+          </div>
+          
+          <div class="project-visual">
+            <div class="app-carousel">
+              <div class="carousel-container">
+                <button class="carousel-btn prev-btn" aria-label="Imagem anterior">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="carousel-slides">
+                  <div class="carousel-slide active">
+                    <div class="mobile-mockup">
+                      <div class="mobile-frame">
+                        <div class="mobile-screen">
+                          <img src="./assets/home.png" alt="Finagro App Interface" />
+                        </div>
+                        <div class="mobile-button"></div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="carousel-slide">
+                    <div class="mobile-mockup">
+                      <div class="mobile-frame">
+                        <div class="mobile-screen">
+                          <img src="./assets/mapa.png" alt="Mapa Screenshot" />
+                        </div>
+                        <div class="mobile-button"></div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="carousel-slide">
+                    <div class="mobile-mockup">
+                      <div class="mobile-frame">
+                        <div class="mobile-screen">
+                          <img src="./assets/func.png" alt="Analytics Screenshot" />
+                        </div>
+                        <div class="mobile-button"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <button class="carousel-btn next-btn" aria-label="Próxima imagem">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+              
+              <div class="carousel-indicators">
+                <button class="indicator active" data-slide="0" aria-label="Slide 1"></button>
+                <button class="indicator" data-slide="1" aria-label="Slide 2"></button>
+                <button class="indicator" data-slide="2" aria-label="Slide 3"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-actions">
+          <a href="https://www.finagro.app" class="btn-primary" target="_blank">
+            <i class="fas fa-external-link-alt"></i>
+            <span>Visitar Site</span>
+          </a>
+          <a href="#" class="btn-secondary">
+            <i class="fab fa-google-play"></i>
+            <span>Google Play</span>
+          </a>
+          <a href="#" class="btn-outline">
+            <i class="fab fa-apple"></i>
+            <span>App Store</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Carrossel de Parceiros -->
+  <section class="partners-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Empresas que confiam na VisionX</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="partners-carousel">
+        <div class="carousel-track">
+          <div class="partner-slide">
+            <img src="assets/FInagro LOGO 3.png" alt="Parceiro Finagro" />
+          </div>
+          <div class="partner-slide">
+            <img src="assets/logo-ifma.png" alt="Parceiro IFMA" />
+          </div>
+          <div class="partner-slide">
+            <img src="assets/logo-licc.png" alt="Parceiro LICC" />
+          </div>
+        </div>
+        <div class="carousel-indicators">
+          <button class="indicator active" data-slide="0"></button>
+          <button class="indicator" data-slide="1"></button>
+          <button class="indicator" data-slide="2"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section id="sobre" class="about-section">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text" data-aos="fade-right">
+          <div class="section-header">
+            <h2 class="section-title">Sobre a VisionX</h2>
+            <div class="section-line"></div>
+          </div>
+          <p>Na VisionX, somos especialistas em transformar ideias em soluções digitais funcionais e impactantes. Atendemos clientes em todo o Brasil com inovação, agilidade e excelência técnica.</p>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-number" data-count="50">0</div>
+              <div class="stat-label">Projetos Entregues</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="100">0</div>
+              <div class="stat-label">% Satisfação</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual" data-aos="fade-left">
+          <div class="tech-grid">
+            <div class="tech-item">
+              <i class="fab fa-react"></i>
+            </div>
+            <div class="tech-item">
+              <i class="fab fa-node-js"></i>
+            </div>
+            <div class="tech-item">
+              <i class="fab fa-python"></i>
+            </div>
+            <div class="tech-item">
+              <i class="fab fa-js-square"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="contact-section">
+    <div class="container">
+      <div class="section-header">
+        <!-- Call to Action -->
+        <div class="contact-cta">
+          <div class="cta-content">
+            <h3>Pronto para começar seu projeto?</h3>
+            <p>Entre em contato conosco através do WhatsApp ou email para receber um orçamento personalizado e gratuito.</p>
+            <div class="cta-buttons">
+              <a href="https://wa.me/5599984680391" class="whatsapp-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                <span>Falar no WhatsApp</span>
+              </a>
+              <a href="mailto:visionxma@gmail.com" class="email-btn">
+                <i class="fas fa-envelope"></i>
+                <span>Enviar Email</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <!-- Coluna: Informações da empresa -->
+        <div class="footer-column">
+          <div class="footer-logo">
+            <img src="assets/visionx-logo.png" alt="Logo VisionX" />
+          </div>
+          <div class="company-info">
+            <p><strong>CNPJ:</strong> 61.427.918/0001-06</p>
+            <p><strong>Endereço:</strong><br>
+              Rodovia MA-381 KM 0, SN<br>
+              Bairro Diogo, Pedreiras - MA
+            </p>
+            <p><strong>Email:</strong> visionxma@gmail.com</p>
           </div>
         </div>
 
-        <!-- Quick Actions -->
-        <div class="actions-section">
-          <h3 class="actions-title">Ações Rápidas</h3>
-          <div class="action-buttons">
-            <a href="https://wa.me/5599981269207?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20jurídica." class="action-btn primary" target="_blank">
-              <i class="fab fa-whatsapp"></i>
-              <span>Consulta WhatsApp</span>
+        <!-- Coluna: Redes Sociais -->
+        <div class="footer-column">
+          <h4>Siga nossas redes sociais</h4>
+          <div class="social-links">
+            <a href="https://instagram.com/visionx.dev" target="_blank" class="social-link">
+              <i class="fab fa-instagram"></i>
+              <span>Instagram</span>
             </a>
-            <a href="tel:+5599981269207" class="action-btn secondary">
-              <i class="fas fa-phone"></i>
-              <span>Ligar Agora</span>
-            </a>
           </div>
         </div>
 
-        <!-- Professional Info -->
-        <div class="professional-info">
-          <div class="info-item">
-            <i class="fas fa-graduation-cap"></i>
-            <span>Formação em Direito</span>
-          </div>
-          <div class="info-item">
-            <i class="fas fa-certificate"></i>
-            <span>OAB/MA Ativo</span>
-          </div>
-          <div class="info-item">
-            <i class="fas fa-map-pin"></i>
-            <span>Atendimento em Pedreiras/MA</span>
+        <!-- Coluna: Parcerias -->
+        <div class="footer-column">
+          <h4>Parcerias</h4>
+          <div class="partner-logos">
+            <img src="assets/logo-ifma.png" alt="Logo IFMA" />
+            <img src="assets/logo-licc.png" alt="Logo LICC" />
           </div>
         </div>
-
       </div>
 
-      <!-- Card Footer -->
-      <div class="card-footer">
-        <div class="footer-text">
-          <p class="motto">Experiência, confiança e excelência jurídica</p>
-          <p class="copyright">© 2024 Jacinto Pereira - Advogado</p>
-        </div>
+      <div class="footer-bottom">
+        <p>© Copyright <strong>VisionX</strong>. Todos os direitos reservados</p>
+        <p>Designed by <a href="#">VisionX</a></p>
       </div>
-
     </div>
-
-    <!-- Save Contact Button -->
-    <div class="save-contact">
-      <button class="save-btn" onclick="downloadVCard()">
-        <i class="fas fa-download"></i>
-        <span>Salvar Contato</span>
-      </button>
-    </div>
-
-  </div>
-
-  <!-- Share Options -->
-  <div class="share-section">
-    <h4 class="share-title">Compartilhar Cartão</h4>
-    <div class="share-buttons">
-      <button class="share-btn" onclick="shareCard('whatsapp')">
-        <i class="fab fa-whatsapp"></i>
-      </button>
-      <button class="share-btn" onclick="shareCard('copy')">
-        <i class="fas fa-link"></i>
-      </button>
-      <button class="share-btn" onclick="shareCard('email')">
-        <i class="fas fa-envelope"></i>
-      </button>
-    </div>
-  </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
