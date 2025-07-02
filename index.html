@@ -3,30 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dr. Jacinto Pereira Costa - Advogado | OAB/MA 12.498</title>
-  <meta name="description" content="Dr. Jacinto Pereira Costa - Advogado especialista em Direito Previdenciário, Criminal, Trabalhista e Civil. Experiência, confiança e excelência jurídica em Pedreiras, MA.">
+  <title>VisionX - Desenvolvimento de Soluções Digitais</title>
+  <meta name="description" content="VisionX - Especialistas em desenvolvimento de sites, aplicativos, sistemas web e automações digitais. Transformamos ideias em soluções digitais funcionais.">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.0/css/all.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <!-- Universe Background -->
+  <div class="universe-background">
+    <canvas id="universe-canvas"></canvas>
+  </div>
 
   <!-- Header -->
   <header class="header">
     <div class="header-content">
       <div class="logo-container">
-        <div class="lawyer-logo">
-          <i class="fas fa-balance-scale"></i>
-          <span>Dr. Jacinto Pereira Costa</span>
-        </div>
+        <img src="assets/visionx-logo.png" alt="Logo VisionX" class="logo" />
       </div>
       <nav class="nav">
         <ul class="nav-list">
+          <li><a href="#servicos" class="nav-link">Serviços</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
           <li><a href="#sobre" class="nav-link">Sobre</a></li>
-          <li><a href="#areas" class="nav-link">Áreas de Atuação</a></li>
-          <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
           <li><a href="#contato" class="nav-link">Contato</a></li>
         </ul>
       </nav>
@@ -41,36 +43,260 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero-background">
-      <div class="elegant-pattern"></div>
+      <canvas id="particles-canvas"></canvas>
+      <div class="neural-network">
+        <div class="neural-node"></div>
+        <div class="neural-node"></div>
+        <div class="neural-node"></div>
+        <div class="neural-node"></div>
+        <div class="neural-node"></div>
+        <div class="neural-node"></div>
+        <div class="neural-connection"></div>
+        <div class="neural-connection"></div>
+        <div class="neural-connection"></div>
+        <div class="neural-connection"></div>
+      </div>
       <div class="floating-elements">
-        <div class="floating-element legal-icon"><i class="fas fa-gavel"></i></div>
-        <div class="floating-element legal-icon"><i class="fas fa-scroll"></i></div>
-        <div class="floating-element legal-icon"><i class="fas fa-shield-alt"></i></div>
-        <div class="floating-element legal-icon"><i class="fas fa-handshake"></i></div>
+        <div class="floating-element geometric-shape triangle"></div>
+        <div class="floating-element geometric-shape circle"></div>
+        <div class="floating-element geometric-shape hexagon"></div>
+        <div class="floating-element geometric-shape square"></div>
+        <div class="floating-element code-fragment">{ }</div>
+        <div class="floating-element code-fragment">&lt; /&gt;</div>
+        <div class="floating-element code-fragment">[ ]</div>
+        <div class="floating-element binary-stream">01010101</div>
+        <div class="floating-element binary-stream">11001100</div>
+        <div class="floating-element binary-stream">10101010</div>
+      </div>
+      <div class="energy-waves">
+        <div class="wave wave-1"></div>
+        <div class="wave wave-2"></div>
+        <div class="wave wave-3"></div>
       </div>
     </div>
     <div class="hero-content">
-      <div class="hero-image">
-        <img src="https://images.pexels.com/photos/5668882/pexels-photo-5668882.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop" alt="Dr. Jacinto Pereira Costa - Advogado" />
-        <div class="image-overlay"></div>
+      <h1 class="hero-title">
+        <span class="title-line">Desenvolvimento de</span>
+        <span class="title-line highlight">Soluções Digitais</span>
+      </h1>
+      <p class="hero-description">
+        Criação de sites de apresentação comercial, sites de rifas, lojas virtuais (e-commerce), 
+        marketplaces, aplicativos, jogos educativos e sistemas de gestão personalizados.
+      </p>
+      <a href="#contato" class="cta-button">
+        <span>Solicite um orçamento</span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <section id="servicos" class="servicos">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Nossos Serviços</h2>
+        <div class="section-line"></div>
       </div>
-      <div class="hero-text">
-        <h1 class="hero-title">
-          <span class="title-line">Dr. Jacinto Pereira Costa</span>
-          <span class="title-subtitle">OAB/MA 12.498</span>
-        </h1>
-        <p class="hero-description">
-          Experiência, confiança e excelência jurídica para defender seus direitos com dedicação e competência.
-        </p>
-        <div class="hero-buttons">
-          <a href="#contato" class="cta-button primary">
-            <i class="fas fa-calendar-check"></i>
-            <span>Agendar Consulta</span>
+      <div class="services-grid">
+        
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="card-icon">
+            <i class="fas fa-globe"></i>
+          </div>
+          <h3>Criação de Sites</h3>
+          <p>Desenvolvimento de sites modernos, rápidos e responsivos para apresentar sua empresa ao mundo.</p>
+          <div class="card-hover-effect"></div>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="card-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h3>Landing Pages</h3>
+          <p>Pages de alta conversão para campanhas, eventos ou produtos com foco em performance.</p>
+          <div class="card-hover-effect"></div>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="card-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>Criação de Aplicativos</h3>
+          <p>Apps personalizados para Android e iOS, com design intuitivo e funcionalidades sob medida.</p>
+          <div class="card-hover-effect"></div>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="card-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <h3>Sistemas Web</h3>
+          <p>Plataformas e sistemas internos para controle, vendas, gestão e automação de processos.</p>
+          <div class="card-hover-effect"></div>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+          <div class="card-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <h3>Automações Digitais</h3>
+          <p>Integrações e robôs que economizam tempo e aumentam a produtividade da sua empresa.</p>
+          <div class="card-hover-effect"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="portfolio-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Nosso Portfolio</h2>
+        <div class="section-line"></div>
+        <p class="section-subtitle">Conheça o projeto que desenvolvemos com excelência</p>
+      </div>
+      
+      <!-- Finagro Project -->
+      <div class="finagro-project" data-aos="fade-up" data-aos-delay="100">
+        <div class="project-header">
+          <div class="project-badge">Projeto Destaque</div>
+          <div class="project-title-with-logo">
+            <img src="assets/FInagro LOGO 3.png" alt="Finagro Logo" class="project-logo" />
+            <div class="project-title-text">
+              <h3>Finagro.app</h3>
+              <p class="project-subtitle">Mobile application for rural managers and producers</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-content">
+          <div class="project-description">
+            <p>Aplicativo móvel completo desenvolvido para gestores e produtores rurais, oferecendo ferramentas essenciais para o gerenciamento eficiente de propriedades agrícolas.</p>
+            
+            <div class="features-list">
+              <h4>Principais Funcionalidades:</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Gestão de propriedades rurais</li>
+                <li><i class="fas fa-check"></i> Controle de produção e estoque</li>
+                <li><i class="fas fa-check"></i> Monitoramento financeiro</li>
+                <li><i class="fas fa-check"></i> Relatórios detalhados</li>
+                <li><i class="fas fa-check"></i> Interface intuitiva e responsiva</li>
+              </ul>
+            </div>
+            
+            <div class="tech-stack">
+              <h4>Tecnologias Utilizadas:</h4>
+              <div class="tech-tags">
+                <span class="tech-tag">React Native</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">Firebase</span>
+                <span class="tech-tag">REST API</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="project-visual">
+            <div class="app-carousel">
+              <div class="carousel-container">
+                <button class="carousel-btn prev-btn" aria-label="Imagem anterior">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="carousel-slides">
+                  <div class="carousel-slide active">
+                    <div class="mobile-mockup">
+                      <div class="mobile-frame">
+                        <div class="mobile-screen">
+                          <img src="./assets/home.png" alt="Finagro App Interface" />
+                        </div>
+                        <div class="mobile-button"></div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="carousel-slide">
+                    <div class="mobile-mockup">
+                      <div class="mobile-frame">
+                        <div class="mobile-screen">
+                          <img src="./assets/mapa.png" alt="Mapa Screenshot" />
+                        </div>
+                        <div class="mobile-button"></div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="carousel-slide">
+                    <div class="mobile-mockup">
+                      <div class="mobile-frame">
+                        <div class="mobile-screen">
+                          <img src="./assets/func.png" alt="Analytics Screenshot" />
+                        </div>
+                        <div class="mobile-button"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <button class="carousel-btn next-btn" aria-label="Próxima imagem">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+              
+              <div class="carousel-indicators">
+                <button class="indicator active" data-slide="0" aria-label="Slide 1"></button>
+                <button class="indicator" data-slide="1" aria-label="Slide 2"></button>
+                <button class="indicator" data-slide="2" aria-label="Slide 3"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-actions">
+          <a href="https://www.finagro.app" class="btn-primary" target="_blank">
+            <i class="fas fa-external-link-alt"></i>
+            <span>Visitar Site</span>
           </a>
-          <a href="https://wa.me/5599981269207" class="cta-button secondary" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-            <span>WhatsApp</span>
+          <a href="#" class="btn-secondary">
+            <i class="fab fa-google-play"></i>
+            <span>Google Play</span>
           </a>
+          <a href="#" class="btn-outline">
+            <i class="fab fa-apple"></i>
+            <span>App Store</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carrossel de Parceiros -->
+  <section class="partners-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Empresas que confiam na VisionX</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="partners-carousel">
+        <div class="carousel-track">
+          <div class="partner-slide">
+            <img src="assets/FInagro LOGO 3.png" alt="Parceiro Finagro" />
+          </div>
+          <div class="partner-slide">
+            <img src="assets/logo-ifma.png" alt="Parceiro IFMA" />
+          </div>
+          <div class="partner-slide">
+            <img src="assets/logo-licc.png" alt="Parceiro LICC" />
+          </div>
+        </div>
+        <div class="carousel-indicators">
+          <button class="indicator active" data-slide="0"></button>
+          <button class="indicator" data-slide="1"></button>
+          <button class="indicator" data-slide="2"></button>
         </div>
       </div>
     </div>
@@ -80,139 +306,37 @@
   <section id="sobre" class="about-section">
     <div class="container">
       <div class="about-content">
-        <div class="about-text">
+        <div class="about-text" data-aos="fade-right">
           <div class="section-header">
-            <h2 class="section-title">Sobre o Advogado</h2>
+            <h2 class="section-title">Sobre a VisionX</h2>
             <div class="section-line"></div>
           </div>
-          <p class="about-description">
-            Com anos de experiência na advocacia, Dr. Jacinto Pereira Costa dedica-se integralmente à defesa dos direitos de seus clientes. Formado em Direito e inscrito na OAB/MA sob o número 12.498, atua com excelência em diversas áreas jurídicas.
-          </p>
-          <p class="about-description">
-            Sua trajetória profissional é marcada pelo compromisso com a justiça, ética e transparência, sempre buscando as melhores soluções jurídicas para cada caso específico.
-          </p>
-          <div class="credentials">
-            <div class="credential-item">
-              <i class="fas fa-graduation-cap"></i>
-              <div>
-                <h4>Formação Jurídica</h4>
-                <p>Bacharel em Direito</p>
-              </div>
+          <p>Na VisionX, somos especialistas em transformar ideias em soluções digitais funcionais e impactantes. Atendemos clientes em todo o Brasil com inovação, agilidade e excelência técnica.</p>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-number" data-count="50">0</div>
+              <div class="stat-label">Projetos Entregues</div>
             </div>
-            <div class="credential-item">
-              <i class="fas fa-certificate"></i>
-              <div>
-                <h4>OAB/MA</h4>
-                <p>Registro nº 12.498</p>
-              </div>
-            </div>
-            <div class="credential-item">
-              <i class="fas fa-award"></i>
-              <div>
-                <h4>Experiência</h4>
-                <p>Anos de prática jurídica</p>
-              </div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="100">0</div>
+              <div class="stat-label">% Satisfação</div>
             </div>
           </div>
         </div>
-        <div class="about-visual">
-          <div class="about-image">
-            <img src="https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=500&h=700&fit=crop" alt="Escritório de Advocacia" />
-            <div class="image-frame"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Áreas de Atuação -->
-  <section id="areas" class="practice-areas">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Áreas de Atuação</h2>
-        <div class="section-line"></div>
-        <p class="section-subtitle">Especialização em diversas áreas do direito para atender suas necessidades</p>
-      </div>
-      <div class="areas-grid">
-        
-        <div class="area-card">
-          <div class="card-icon">
-            <i class="fas fa-user-shield"></i>
-          </div>
-          <h3>Direito Previdenciário</h3>
-          <p>Aposentadorias, pensões, auxílios e benefícios previdenciários. Defesa de seus direitos junto ao INSS.</p>
-        </div>
-
-        <div class="area-card">
-          <div class="card-icon">
-            <i class="fas fa-gavel"></i>
-          </div>
-          <h3>Direito Criminal</h3>
-          <p>Defesa criminal em todas as instâncias. Acompanhamento processual e proteção de direitos fundamentais.</p>
-        </div>
-
-        <div class="area-card">
-          <div class="card-icon">
-            <i class="fas fa-briefcase"></i>
-          </div>
-          <h3>Direito Trabalhista</h3>
-          <p>Direitos trabalhistas, rescisões, horas extras, FGTS e questões relacionadas ao trabalho.</p>
-        </div>
-
-        <div class="area-card">
-          <div class="card-icon">
-            <i class="fas fa-home"></i>
-          </div>
-          <h3>Direito Civil</h3>
-          <p>Contratos, responsabilidade civil, direito de família, sucessões e questões patrimoniais.</p>
-        </div>
-
-        <div class="area-card">
-          <div class="card-icon">
-            <i class="fas fa-shopping-cart"></i>
-          </div>
-          <h3>Direito do Consumidor</h3>
-          <p>Proteção dos direitos do consumidor, vícios de produtos, serviços defeituosos e relações de consumo.</p>
-        </div>
-
-        <div class="area-card">
-          <div class="card-icon">
-            <i class="fas fa-trademark"></i>
-          </div>
-          <h3>Registro de Patentes e Marcas</h3>
-          <p>Proteção da propriedade intelectual, registro de marcas e patentes junto aos órgãos competentes.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Depoimentos -->
-  <section id="depoimentos" class="testimonials-section">
-    <div class="container">
-      <div class="testimonial-content">
-        <div class="testimonial-quote">
-          <i class="fas fa-quote-left"></i>
-          <blockquote>
-            "Comprometido com a justiça e com o seu direito. A advocacia é mais que uma profissão, é uma missão de defender aqueles que precisam de proteção jurídica."
-          </blockquote>
-          <cite>Dr. Jacinto Pereira Costa</cite>
-        </div>
-        <div class="values-grid">
-          <div class="value-item">
-            <i class="fas fa-handshake"></i>
-            <h4>Confiança</h4>
-            <p>Relacionamento transparente e ético com todos os clientes</p>
-          </div>
-          <div class="value-item">
-            <i class="fas fa-star"></i>
-            <h4>Excelência</h4>
-            <p>Busca constante pela melhor solução jurídica</p>
-          </div>
-          <div class="value-item">
-            <i class="fas fa-clock"></i>
-            <h4>Dedicação</h4>
-            <p>Acompanhamento personalizado em cada processo</p>
+        <div class="about-visual" data-aos="fade-left">
+          <div class="tech-grid">
+            <div class="tech-item">
+              <i class="fab fa-react"></i>
+            </div>
+            <div class="tech-item">
+              <i class="fab fa-node-js"></i>
+            </div>
+            <div class="tech-item">
+              <i class="fab fa-python"></i>
+            </div>
+            <div class="tech-item">
+              <i class="fab fa-js-square"></i>
+            </div>
           </div>
         </div>
       </div>
@@ -223,95 +347,22 @@
   <section id="contato" class="contact-section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Entre em Contato</h2>
-        <div class="section-line"></div>
-        <p class="section-subtitle">Agende sua consulta e esclareça suas dúvidas jurídicas</p>
-      </div>
-      
-      <div class="contact-content">
-        <div class="contact-info">
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-phone"></i>
-            </div>
-            <div class="contact-details">
-              <h4>Telefones</h4>
-              <a href="tel:+5599981269207">(99) 98126-9207</a>
-              <a href="tel:+5599984413000">(99) 98441-3000</a>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fab fa-whatsapp"></i>
-            </div>
-            <div class="contact-details">
-              <h4>WhatsApp</h4>
-              <a href="https://wa.me/5599981269207" target="_blank">(99) 98126-9207</a>
-              <a href="https://wa.me/5599984413000" target="_blank">(99) 98441-3000</a>
+        <!-- Call to Action -->
+        <div class="contact-cta">
+          <div class="cta-content">
+            <h3>Pronto para começar seu projeto?</h3>
+            <p>Entre em contato conosco através do WhatsApp ou email para receber um orçamento personalizado e gratuito.</p>
+            <div class="cta-buttons">
+              <a href="https://wa.me/5599984680391" class="whatsapp-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                <span>Falar no WhatsApp</span>
+              </a>
+              <a href="mailto:visionxma@gmail.com" class="email-btn">
+                <i class="fas fa-envelope"></i>
+                <span>Enviar Email</span>
+              </a>
             </div>
           </div>
-
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fab fa-instagram"></i>
-            </div>
-            <div class="contact-details">
-              <h4>Instagram</h4>
-              <a href="https://instagram.com/jacintopereira.adv" target="_blank">@jacintopereira.adv</a>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <div class="contact-details">
-              <h4>Localização</h4>
-              <p>Pedreiras, Maranhão</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact-form">
-          <form class="consultation-form">
-            <h3>Solicite uma Consulta</h3>
-            <div class="form-group">
-              <input type="text" id="name" name="name" placeholder="Seu nome completo" required>
-            </div>
-            <div class="form-group">
-              <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
-            </div>
-            <div class="form-group">
-              <input type="tel" id="phone" name="phone" placeholder="Seu telefone" required>
-            </div>
-            <div class="form-group">
-              <select id="area" name="area" required>
-                <option value="">Selecione a área jurídica</option>
-                <option value="previdenciario">Direito Previdenciário</option>
-                <option value="criminal">Direito Criminal</option>
-                <option value="trabalhista">Direito Trabalhista</option>
-                <option value="civil">Direito Civil</option>
-                <option value="consumidor">Direito do Consumidor</option>
-                <option value="patentes">Patentes e Marcas</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <textarea id="message" name="message" placeholder="Descreva brevemente seu caso" rows="4" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">
-              <i class="fas fa-paper-plane"></i>
-              <span>Enviar Solicitação</span>
-            </button>
-          </form>
-        </div>
-      </div>
-
-      <div class="map-section">
-        <div class="map-placeholder">
-          <i class="fas fa-map-marked-alt"></i>
-          <h4>Pedreiras, Maranhão</h4>
-          <p>Atendimento presencial e online</p>
         </div>
       </div>
     </div>
@@ -321,51 +372,48 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
+        <!-- Coluna: Informações da empresa -->
         <div class="footer-column">
           <div class="footer-logo">
-            <i class="fas fa-balance-scale"></i>
-            <span>Dr. Jacinto Pereira Costa</span>
+            <img src="assets/visionx-logo.png" alt="Logo VisionX" />
           </div>
-          <div class="lawyer-info">
-            <p><strong>OAB/MA:</strong> 12.498</p>
-            <p><strong>Localização:</strong> Pedreiras, Maranhão</p>
-            <p><strong>Especialidades:</strong> Direito Previdenciário, Criminal, Trabalhista e Civil</p>
-          </div>
-        </div>
-
-        <div class="footer-column">
-          <h4>Contato</h4>
-          <div class="footer-contacts">
-            <p><i class="fas fa-phone"></i> (99) 98126-9207</p>
-            <p><i class="fas fa-phone"></i> (99) 98441-3000</p>
-            <p><i class="fab fa-instagram"></i> @jacintopereira.adv</p>
+          <div class="company-info">
+            <p><strong>CNPJ:</strong> 61.427.918/0001-06</p>
+            <p><strong>Endereço:</strong><br>
+              Rodovia MA-381 KM 0, SN<br>
+              Bairro Diogo, Pedreiras - MA
+            </p>
+            <p><strong>Email:</strong> visionxma@gmail.com</p>
           </div>
         </div>
 
+        <!-- Coluna: Redes Sociais -->
         <div class="footer-column">
-          <h4>Áreas de Atuação</h4>
-          <ul class="footer-areas">
-            <li>Direito Previdenciário</li>
-            <li>Direito Criminal</li>
-            <li>Direito Trabalhista</li>
-            <li>Direito Civil</li>
-            <li>Direito do Consumidor</li>
-            <li>Patentes e Marcas</li>
-          </ul>
+          <h4>Siga nossas redes sociais</h4>
+          <div class="social-links">
+            <a href="https://instagram.com/visionx.dev" target="_blank" class="social-link">
+              <i class="fab fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Coluna: Parcerias -->
+        <div class="footer-column">
+          <h4>Parcerias</h4>
+          <div class="partner-logos">
+            <img src="assets/logo-ifma.png" alt="Logo IFMA" />
+            <img src="assets/logo-licc.png" alt="Logo LICC" />
+          </div>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>© 2024 <strong>Dr. Jacinto Pereira Costa</strong> - OAB/MA 12.498. Todos os direitos reservados.</p>
-        <p>Desenvolvido com excelência jurídica e dedicação aos clientes.</p>
+        <p>© Copyright <strong>VisionX</strong>. Todos os direitos reservados</p>
+        <p>Designed by <a href="#">VisionX</a></p>
       </div>
     </div>
   </footer>
-
-  <!-- WhatsApp Fixed Button -->
-  <a href="https://wa.me/5599981269207" class="whatsapp-fixed" target="_blank" aria-label="Contato via WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
 
   <script src="script.js"></script>
 </body>
