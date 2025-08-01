@@ -313,57 +313,7 @@ class OptimizedAppCarousel {
 }
 
 // Optimized Partners Carousel
-class OptimizedPartnersCarousel {
-  constructor() {
-    this.track = document.querySelector('.carousel-track');
-    this.indicators = document.querySelectorAll('.partners-carousel .indicator');
-    this.currentSlide = 0;
-    this.totalSlides = 3;
-    this.autoPlayInterval = null;
-    
-    this.init();
-  }
-
-  init() {
-    if (!this.track) return;
-    
-    this.setupIndicators();
-    this.startAutoPlay();
-  }
-
-  setupIndicators() {
-    this.indicators.forEach((indicator, index) => {
-      indicator.addEventListener('click', () => {
-        this.goToSlide(index);
-      });
-    });
-  }
-
-  goToSlide(index) {
-    this.currentSlide = index;
-    this.updateCarousel();
-  }
-
-  updateCarousel() {
-    const translateX = -this.currentSlide * (100 / this.totalSlides);
-    this.track.style.transform = `translateX(${translateX}%)`;
-    
-    this.indicators.forEach((indicator, index) => {
-      indicator.classList.toggle('active', index === this.currentSlide);
-    });
-  }
-
-  nextSlide() {
-    this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
-    this.updateCarousel();
-  }
-
-  startAutoPlay() {
-    this.autoPlayInterval = setInterval(() => {
-      this.nextSlide();
-    }, 5000);
-  }
-}
+// Partners section now uses static grid layout - no carousel needed
 
 // Optimized Intersection Observer
 const optimizedObserver = new IntersectionObserver((entries) => {
@@ -426,7 +376,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Initialize carousels
   new OptimizedAppCarousel();
-  new OptimizedPartnersCarousel();
   
   // Setup scroll animations
   const animatedElements = document.querySelectorAll('.service-card, .finagro-project, .about-text, .about-visual');
@@ -470,6 +419,27 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileMenuBtn.classList.toggle('active');
   });
 });
+
+// Enhanced responsive utilities
+function handleResize() {
+  const width = window.innerWidth;
+  const body = document.body;
+  
+  // Add responsive classes for enhanced styling
+  body.classList.remove('mobile', 'tablet', 'desktop');
+  
+  if (width <= 768) {
+    body.classList.add('mobile');
+  } else if (width <= 1024) {
+    body.classList.add('tablet');
+  } else {
+    body.classList.add('desktop');
+  }
+}
+
+// Initialize responsive classes
+handleResize();
+window.addEventListener('resize', handleResize);
 
 // Preload critical images
 const criticalImages = [
