@@ -11,7 +11,6 @@ class VisionXWebsite {
 
   init() {
     this.setupEventListeners();
-    this.initializeComponents();
     this.handleLoading();
   }
 
