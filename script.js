@@ -221,7 +221,7 @@ class VisionXWebsite {
     }
   }
 
-  async handleFormSubmit(e) {
+async handleFormSubmit(e) {
     e.preventDefault();
     
     const form = e.target;
@@ -237,24 +237,36 @@ class VisionXWebsite {
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<span>Enviando...</span><i class="fas fa-spinner fa-spin"></i>';
     
-    try {
-      // Simulate form submission (replace with actual endpoint)
-      await this.submitForm(formData);
-      
-      // Success
-      this.showFormSuccess();
-      form.reset();
-      
-    } catch (error) {
-      // Error
-      this.showFormError('Erro ao enviar mensagem. Tente novamente.');
-      
-    } finally {
-      // Reset button
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = '<span>Enviar Mensagem</span><i class="fas fa-paper-plane"></i>';
-    }
-  }
+    // Captura os dados do formulário
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const phone = formData.get('phone');
+    const projectType = formData.get('project-type');
+    const budget = formData.get('budget');
+    const message = formData.get('message');
+
+    // Cria a mensagem personalizada
+    const whatsappMessage = `Olá, meu nome é *${name}*.\nMeu e-mail é *${email}*.\nMeu telefone é *${phone}*.\nEstou interessado em um projeto do tipo: *${projectType}*.\nMeu orçamento estimado é: *${budget}*.\nMensagem: *${message}*`;
+
+    // Codifica a mensagem para URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+
+    // Cria o link do WhatsApp
+    const whatsappLink = `https://wa.me/5599984680391?text=${encodedMessage}`;
+
+    // Redireciona para o WhatsApp
+    window.open(whatsappLink, '_blank');
+
+    // Reset do formulário
+    form.reset();
+    
+    // Sucesso
+    this.showFormSuccess();
+    
+    // Reset button
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = '<span>Enviar Mensagem</span><i class="fas fa-paper-plane"></i>';
+}
 
   async submitForm(formData) {
     // Convert FormData to object
