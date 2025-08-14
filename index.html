@@ -60,8 +60,33 @@
   <!-- Loading Screen -->
   <div id="loading-screen" class="loading-screen">
     <div class="loading-content">
-      <div class="loading-spinner"></div>
-      <p>Carregando...</p>
+      <div class="loading-animation">
+        <div class="code-terminal">
+          <div class="terminal-header">
+            <div class="terminal-dot dot-red"></div>
+            <div class="terminal-dot dot-yellow"></div>
+            <div class="terminal-dot dot-green"></div>
+            <div class="terminal-title">VisionX Terminal</div>
+          </div>
+          <div class="code-lines" id="code-lines">
+            <!-- Linhas de código serão inseridas dinamicamente -->
+          </div>
+        </div>
+      </div>
+      
+      <div class="loading-progress">
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+        <div class="loading-message">Preparando uma nova experiência para você</div>
+        <div class="loading-submessage">Carregando recursos e otimizando performance...</div>
+      </div>
+    </div>
+    
+    <!-- Partículas de código flutuantes -->
+    <div class="code-particles" id="code-particles">
+      <!-- Partículas serão inseridas dinamicamente -->
+    </div>
     </div>
   </div>
 
