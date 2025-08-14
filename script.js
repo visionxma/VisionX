@@ -94,6 +94,79 @@ class VisionXWebsite {
     });
   }
 
+  createFloatingParticles() {
+    const particlesContainer = document.getElementById('code-particles');
+    if (!particlesContainer) return;
+
+    const particles = [
+      '{ }', '< >', '[ ]', '( )', '=>', '&&', '||', '++', '--', '===',
+      'var', 'let', 'const', 'function', 'class', 'import', 'export',
+      '0', '1', 'true', 'false', 'null', 'undefined', 'async', 'await'
+    ];
+
+    // Create 15 floating particles
+    for (let i = 0; i < 15; i++) {
+      setTimeout(() => {
+        const particle = document.createElement('div');
+        particle.className = 'code-particle';
+        particle.textContent = particles[Math.floor(Math.random() * particles.length)];
+        
+        // Random horizontal position
+        particle.style.left = Math.random() * 100 + '%';
+        
+        // Random animation delay
+        particle.style.animationDelay = Math.random() * 2 + 's';
+        
+        // Random color (blue or green)
+        particle.style.color = Math.random() > 0.5 ? '#00d4ff' : '#00ff88';
+        
+        particlesContainer.appendChild(particle);
+        
+        // Remove particle after animation completes
+        setTimeout(() => {
+          if (particle.parentNode) {
+            particle.remove();
+          }
+        }, 8000);
+      }, i * 200);
+    }
+  }
+
+  startLoadingMessages() {
+    const messageElement = document.querySelector('.loading-message');
+    const subMessageElement = document.querySelector('.loading-submessage');
+    
+    if (!messageElement || !subMessageElement) return;
+
+    const messages = [
+      {
+        main: 'Preparando uma nova experiência para você',
+        sub: 'Inicializando componentes...'
+      },
+      {
+        main: 'Carregando recursos avançados',
+        sub: 'Otimizando performance...'
+      },
+      {
+        main: 'Finalizando configurações',
+        sub: 'Quase pronto!'
+      }
+    ];
+
+    let currentIndex = 0;
+    
+    const updateMessage = () => {
+      if (currentIndex < messages.length) {
+        messageElement.textContent = messages[currentIndex].main;
+        subMessageElement.textContent = messages[currentIndex].sub;
+        currentIndex++;
+        setTimeout(updateMessage, 1000);
+      }
+    };
+    
+    updateMessage();
+  }
+
   hideLoadingScreen() {
     const loadingScreen = document.getElementById('loading-screen');
     if (loadingScreen) {

@@ -104,7 +104,7 @@ body {
   margin-bottom: 0.5rem;
   opacity: 0;
   transform: translateX(-20px);
-  animation: typeIn 0.8s ease-out forwards;
+  animation: typeIn 0.4s ease-out forwards;
 }
 
 .line-number {
@@ -170,7 +170,7 @@ body {
   background: linear-gradient(90deg, #00d4ff, #0099cc);
   border-radius: 2px;
   width: 0%;
-  animation: loadProgress 3s ease-in-out infinite;
+  animation: loadProgress 1.5s ease-in-out infinite;
 }
 
 @keyframes loadProgress {
@@ -214,7 +214,7 @@ body {
   font-family: 'Courier New', monospace;
   font-size: 0.8rem;
   color: rgba(0, 212, 255, 0.3);
-  animation: floatUp 4s linear infinite;
+  animation: floatUp 2s linear infinite;
 }
 
 .code-particle:nth-child(odd) {
@@ -233,7 +233,7 @@ body {
     opacity: 1;
   }
   100% {
-    transform: translateY(-100px) rotate(360deg);
+    transform: translateY(-100px) rotate(180deg);
     opacity: 0;
   }
 }
