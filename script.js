@@ -54,15 +54,35 @@ class VisionXWebsite {
   handleLoading() {
     const loadingScreen = document.getElementById('loading-screen');
     if (loadingScreen) {
+      this.initLoadingAnimation();
       // Minimum loading time for better UX
       setTimeout(() => {
         if (this.isLoaded) {
           this.hideLoadingScreen();
         }
-      }, 1000);
+      }, 3000);
     }
   }
 
+  initLoadingAnimation() {
+    this.createCodeLines();
+    this.createFloatingParticles();
+    this.startLoadingMessages();
+  }
+
+  createCodeLines() {
+    const codeLines = document.getElementById('code-lines');
+    if (!codeLines) return;
+
+    const codes = [
+      { type: 'comment', text: '// Inicializando VisionX...' },
+      { type: 'keyword', text: 'import React from "react";' },
+      { type: 'keyword', text: 'const VisionX = () => {' },
+      { type: 'string', text: '  return "Experiência incrível";' },
+      { type: 'keyword', text: '};' },
+      { type: 'comment', text: '// Carregando recursos...' },
+      { type: 'keyword', text: 'export default VisionX;' }
+    ];
   hideLoadingScreen() {
     const loadingScreen = document.getElementById('loading-screen');
     if (loadingScreen) {
