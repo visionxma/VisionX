@@ -83,6 +83,17 @@ class VisionXWebsite {
       { type: 'comment', text: '// Carregando recursos...' },
       { type: 'keyword', text: 'export default VisionX;' }
     ];
+
+    codes.forEach((code, index) => {
+      setTimeout(() => {
+        const line = document.createElement('div');
+        line.className = `code-line ${code.type}`;
+        line.textContent = code.text;
+        codeLines.appendChild(line);
+      }, index * 300);
+    });
+  }
+
   hideLoadingScreen() {
     const loadingScreen = document.getElementById('loading-screen');
     if (loadingScreen) {
