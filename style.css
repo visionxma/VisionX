@@ -984,6 +984,22 @@ body {
   filter: brightness(1.1);
 }
 
+.project-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #00d4ff, #0099cc);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.project-icon i {
+  color: #000000;
+  font-size: 1.5rem;
+}
+
 .project-title h3 {
   font-size: 1.5rem;
   font-weight: 700;

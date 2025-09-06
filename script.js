@@ -218,6 +218,11 @@ class VisionXWebsite {
         const targetElement = document.querySelector(targetId);
         
         if (targetElement) {
+          // Show portfolio section if it's hidden
+          if (targetId === '#portfolio') {
+            this.showPortfolioSection();
+          }
+          
           const headerHeight = document.querySelector('.header').offsetHeight;
           const targetPosition = targetElement.offsetTop - headerHeight;
           
@@ -231,6 +236,51 @@ class VisionXWebsite {
         }
       });
     });
+    
+    // Handle "Ver Projetos" buttons specifically
+    this.initPortfolioNavigation();
+  }
+
+  initPortfolioNavigation() {
+    // Find all buttons/links that should show portfolio
+    const portfolioTriggers = document.querySelectorAll('a[href="#portfolio"], .cta-button.secondary');
+    
+    portfolioTriggers.forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        // Check if it's a "Ver Projetos" button
+        if (trigger.textContent.includes('Ver Projetos') || trigger.getAttribute('href') === '#portfolio') {
+          e.preventDefault();
+          this.showPortfolioSection();
+          
+          // Scroll to portfolio section
+          const portfolioSection = document.getElementById('portfolio');
+          if (portfolioSection) {
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            const targetPosition = portfolioSection.offsetTop - headerHeight;
+            
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+    });
+  }
+
+  showPortfolioSection() {
+    const portfolioSection = document.getElementById('portfolio');
+    if (portfolioSection) {
+      portfolioSection.style.display = 'block';
+      
+      // Trigger animations for portfolio cards
+      const portfolioCards = portfolioSection.querySelectorAll('.project-card');
+      portfolioCards.forEach((card, index) => {
+        setTimeout(() => {
+          card.classList.add('aos-animate');
+        }, index * 100);
+      });
+    }
   }
 
   updateActiveNavLink(targetId) {
