@@ -38,10 +38,10 @@ class VisionXWebsite {
   onDOMReady() {
     this.initMobileMenu();
     this.initSmoothScrolling();
-    this.initPortfolioVisibility();
     this.initFAQ();
     this.initContactForm();
     this.initAnimations();
+    this.initPortfolioVisibility();
   }
 
   onWindowLoad() {
@@ -243,35 +243,15 @@ class VisionXWebsite {
   }
 
   initPortfolioNavigation() {
-    // Find all buttons/links that should show portfolio
-    const portfolioTriggers = document.querySelectorAll('a[href="#portfolio"], .cta-button.secondary, .nav-link[href="#portfolio"]');
+    // Encontrar todos os botões que devem mostrar o portfólio
+    const portfolioTriggers = document.querySelectorAll(
+      'a[href="#portfolio"], .cta-button.secondary, .nav-link[href="#portfolio"]'
+    );
     
     portfolioTriggers.forEach(trigger => {
       trigger.addEventListener('click', (e) => {
-        // Check if it's a portfolio trigger
-        if (trigger.textContent.includes('Ver Projetos') || 
-            trigger.textContent.includes('Portfólio') || 
-            trigger.getAttribute('href') === '#portfolio') {
-          e.preventDefault();
-          this.showPortfolioSection();
-          
-          // Wait for the section to be visible, then scroll
-          setTimeout(() => {
-            const portfolioSection = document.getElementById('portfolio');
-            if (portfolioSection) {
-              const headerHeight = document.querySelector('.header').offsetHeight;
-              const targetPosition = portfolioSection.offsetTop - headerHeight;
-              
-              window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-              });
-              
-              // Update active nav link
-              this.updateActiveNavLink('#portfolio');
-            }
-          }, 100);
-        }
+        e.preventDefault();
+        this.showPortfolioSection();
       });
     });
   }
@@ -279,24 +259,39 @@ class VisionXWebsite {
   showPortfolioSection() {
     const portfolioSection = document.getElementById('portfolio');
     if (portfolioSection) {
-      // Show the section
+      // Mostrar a seção
       portfolioSection.style.display = 'block';
+      portfolioSection.style.visibility = 'visible';
       
-      // Force reflow
+      // Forçar reflow
       portfolioSection.offsetHeight;
       
-      // Add show class for animation
+      // Adicionar classe para animação
       setTimeout(() => {
         portfolioSection.classList.add('show');
       }, 10);
       
-      // Trigger animations for portfolio cards
+      // Animar os cards do portfólio
       const portfolioCards = portfolioSection.querySelectorAll('.project-card');
       portfolioCards.forEach((card, index) => {
         setTimeout(() => {
           card.classList.add('aos-animate');
         }, index * 100 + 200);
       });
+      
+      // Scroll para a seção após mostrar
+      setTimeout(() => {
+        const headerHeight = document.querySelector('.header').offsetHeight;
+        const targetPosition = portfolioSection.offsetTop - headerHeight;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+        
+        // Atualizar link ativo no menu
+        this.updateActiveNavLink('#portfolio');
+      }, 100);
     }
   }
 
@@ -306,43 +301,30 @@ class VisionXWebsite {
       portfolioSection.classList.remove('show');
       setTimeout(() => {
         portfolioSection.style.display = 'none';
+        portfolioSection.style.visibility = 'hidden';
       }, 500);
     }
   }
 
   // Update the existing showPortfolioSection method
   initPortfolioVisibility() {
-    // Hide portfolio section initially
+    // Garantir que a seção de portfólio fique oculta inicialmente
     const portfolioSection = document.getElementById('portfolio');
     if (portfolioSection) {
       portfolioSection.style.display = 'none';
+      portfolioSection.style.visibility = 'hidden';
+      portfolioSection.classList.remove('show');
     }
     
-    // Add click handlers for portfolio triggers
-    const portfolioTriggers = document.querySelectorAll('a[href="#portfolio"], .cta-button.secondary');
+    // Adicionar handlers para todos os botões que devem mostrar o portfólio
+    const portfolioTriggers = document.querySelectorAll(
+      'a[href="#portfolio"], .cta-button.secondary, .nav-link[href="#portfolio"]'
+    );
     
     portfolioTriggers.forEach(trigger => {
       trigger.addEventListener('click', (e) => {
-        if (trigger.textContent.includes('Ver Projetos') || 
-            trigger.textContent.includes('Portfólio') || 
-            trigger.getAttribute('href') === '#portfolio') {
-          e.preventDefault();
-          this.showPortfolioSection();
-            
-          // Scroll after showing
-          setTimeout(() => {
-            const portfolioSection = document.getElementById('portfolio');
-            if (portfolioSection) {
-              const headerHeight = document.querySelector('.header').offsetHeight;
-              const targetPosition = portfolioSection.offsetTop - headerHeight;
-              
-              window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-              });
-            }
-          }, 100);
-        }
+        e.preventDefault();
+        this.showPortfolioSection();
       });
     });
   }

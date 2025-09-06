@@ -906,16 +906,18 @@ body {
 /* Portfolio Section */
 .portfolio-section {
   background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
-  display: none;
+  display: none !important;
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.5s ease;
+  visibility: hidden;
 }
 
 .portfolio-section.show {
-  display: block;
+  display: block !important;
   opacity: 1;
   transform: translateY(0);
+  visibility: visible;
 }
 
 .portfolio-grid {
