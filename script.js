@@ -38,6 +38,7 @@ class VisionXWebsite {
   onDOMReady() {
     this.initMobileMenu();
     this.initSmoothScrolling();
+    this.initPortfolioVisibility();
     this.initFAQ();
     this.initContactForm();
     this.initAnimations();
@@ -243,26 +244,33 @@ class VisionXWebsite {
 
   initPortfolioNavigation() {
     // Find all buttons/links that should show portfolio
-    const portfolioTriggers = document.querySelectorAll('a[href="#portfolio"], .cta-button.secondary');
+    const portfolioTriggers = document.querySelectorAll('a[href="#portfolio"], .cta-button.secondary, .nav-link[href="#portfolio"]');
     
     portfolioTriggers.forEach(trigger => {
       trigger.addEventListener('click', (e) => {
-        // Check if it's a "Ver Projetos" button
-        if (trigger.textContent.includes('Ver Projetos') || trigger.getAttribute('href') === '#portfolio') {
+        // Check if it's a portfolio trigger
+        if (trigger.textContent.includes('Ver Projetos') || 
+            trigger.textContent.includes('Portfólio') || 
+            trigger.getAttribute('href') === '#portfolio') {
           e.preventDefault();
           this.showPortfolioSection();
           
-          // Scroll to portfolio section
-          const portfolioSection = document.getElementById('portfolio');
-          if (portfolioSection) {
-            const headerHeight = document.querySelector('.header').offsetHeight;
-            const targetPosition = portfolioSection.offsetTop - headerHeight;
-            
-            window.scrollTo({
-              top: targetPosition,
-              behavior: 'smooth'
-            });
-          }
+          // Wait for the section to be visible, then scroll
+          setTimeout(() => {
+            const portfolioSection = document.getElementById('portfolio');
+            if (portfolioSection) {
+              const headerHeight = document.querySelector('.header').offsetHeight;
+              const targetPosition = portfolioSection.offsetTop - headerHeight;
+              
+              window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+              });
+              
+              // Update active nav link
+              this.updateActiveNavLink('#portfolio');
+            }
+          }, 100);
         }
       });
     });
@@ -271,16 +279,72 @@ class VisionXWebsite {
   showPortfolioSection() {
     const portfolioSection = document.getElementById('portfolio');
     if (portfolioSection) {
+      // Show the section
       portfolioSection.style.display = 'block';
+      
+      // Force reflow
+      portfolioSection.offsetHeight;
+      
+      // Add show class for animation
+      setTimeout(() => {
+        portfolioSection.classList.add('show');
+      }, 10);
       
       // Trigger animations for portfolio cards
       const portfolioCards = portfolioSection.querySelectorAll('.project-card');
       portfolioCards.forEach((card, index) => {
         setTimeout(() => {
           card.classList.add('aos-animate');
-        }, index * 100);
+        }, index * 100 + 200);
       });
     }
+  }
+
+  hidePortfolioSection() {
+    const portfolioSection = document.getElementById('portfolio');
+    if (portfolioSection) {
+      portfolioSection.classList.remove('show');
+      setTimeout(() => {
+        portfolioSection.style.display = 'none';
+      }, 500);
+    }
+  }
+
+  // Update the existing showPortfolioSection method
+  initPortfolioVisibility() {
+    // Hide portfolio section initially
+    const portfolioSection = document.getElementById('portfolio');
+    if (portfolioSection) {
+      portfolioSection.style.display = 'none';
+    }
+    
+    // Add click handlers for portfolio triggers
+    const portfolioTriggers = document.querySelectorAll('a[href="#portfolio"], .cta-button.secondary');
+    
+    portfolioTriggers.forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        if (trigger.textContent.includes('Ver Projetos') || 
+            trigger.textContent.includes('Portfólio') || 
+            trigger.getAttribute('href') === '#portfolio') {
+          e.preventDefault();
+          this.showPortfolioSection();
+            
+          // Scroll after showing
+          setTimeout(() => {
+            const portfolioSection = document.getElementById('portfolio');
+            if (portfolioSection) {
+              const headerHeight = document.querySelector('.header').offsetHeight;
+              const targetPosition = portfolioSection.offsetTop - headerHeight;
+              
+              window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+              });
+            }
+          }, 100);
+        }
+      });
+    });
   }
 
   updateActiveNavLink(targetId) {
