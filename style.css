@@ -910,8 +910,9 @@ body {
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
   gap: 2rem;
+  margin-top: 2rem;
 }
 
 .project-card {
@@ -922,6 +923,9 @@ body {
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .project-card:hover {
@@ -934,6 +938,7 @@ body {
   position: relative;
   height: 250px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .project-image img {
@@ -955,6 +960,9 @@ body {
 
 .project-info {
   padding: 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-badge {
@@ -1020,6 +1028,7 @@ body {
   font-size: 1rem;
   line-height: 1.7;
   margin-bottom: 1.5rem;
+  flex: 1;
 }
 
 .project-tech {
@@ -1051,6 +1060,7 @@ body {
 .project-actions {
   display: flex;
   justify-content: flex-start;
+  margin-top: auto;
 }
 
 .btn-primary {
@@ -1713,7 +1723,8 @@ body {
   }
   
   .portfolio-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
   }
   
   .footer-content {
@@ -1832,6 +1843,7 @@ body {
   
   .portfolio-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
   .project-image {
@@ -1840,6 +1852,12 @@ body {
   
   .project-info {
     padding: 1.5rem;
+  }
+
+  .project-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
   }
 }
 
@@ -1867,7 +1885,6 @@ body {
   
   .project-card {
     margin: 0 auto;
-    max-width: 350px;
   }
   
   .project-image {
@@ -1881,6 +1898,10 @@ body {
   .project-header {
     flex-direction: column;
     text-align: center;
+    gap: 1rem;
+  }
+
+  .portfolio-grid {
     gap: 1rem;
   }
 }
