@@ -1099,63 +1099,99 @@ body {
 .partners-section {
   background: rgba(255, 255, 255, 0.02);
   padding: 4rem 0;
+  overflow: hidden;
 }
 
-.partners-grid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
-  flex-wrap: nowrap;
+.partners-carousel-container {
   max-width: 800px;
   margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  padding: 2rem 0;
 }
 
-.partner-item {
+.partners-carousel-track {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  animation: partnersScroll 30s linear infinite;
+  width: calc(200% + 4rem);
+}
+
+.partner-slide {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   padding: 1rem;
   transition: transform 0.3s ease;
+  min-width: 200px;
 }
 
-.partner-item:hover {
+.partner-slide:hover {
   transform: scale(1.05);
 }
 
-.partner-item img {
+.partner-slide img {
   max-height: 80px;
   max-width: 200px;
   object-fit: contain;
   filter: brightness(1);
   transition: all 0.3s ease;
+  opacity: 0.8;
 }
 
-/* Responsividade */
+.partner-slide:hover img {
+  opacity: 1;
+  filter: brightness(1.1);
+}
+
+@keyframes partnersScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on hover */
+.partners-carousel-container:hover .partners-carousel-track {
+  animation-play-state: paused;
+}
+
+/* Responsividade para Partners */
 @media (max-width: 768px) {
-  .partners-grid {
-    gap: 1rem;
+  .partners-carousel-track {
+    gap: 2rem;
+    animation-duration: 25s;
   }
   
-  .partner-item {
+  .partner-slide {
     padding: 0.75rem;
+    min-width: 150px;
   }
   
-  .partner-item img {
+  .partner-slide img {
     max-height: 60px;
     max-width: 120px;
   }
 }
 
 @media (max-width: 480px) {
-  .partners-grid {
-    flex-direction: column;
-    gap: 1rem;
+  .partners-carousel-track {
+    gap: 1.5rem;
+    animation-duration: 20s;
   }
   
-  .partner-item {
-    width: 100%;
-    max-width: 200px;
+  .partner-slide {
+    min-width: 120px;
+    padding: 0.5rem;
+  }
+  
+  .partner-slide img {
+    max-height: 50px;
+    max-width: 100px;
   }
 }
 /* Testimonials Section */

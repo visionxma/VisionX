@@ -48,6 +48,7 @@ class VisionXWebsite {
     this.hideLoadingScreen();
     this.initBackgroundEffects();
     this.initCounters();
+    this.initPartnersCarousel();
     this.isLoaded = true;
   }
 
@@ -752,10 +753,50 @@ async handleFormSubmit(e) {
       // Pause animations when tab is not visible
       if (this.universe) this.universe.pause();
       if (this.particles) this.particles.pause();
+      this.pausePartnersCarousel();
     } else {
       // Resume animations when tab becomes visible
       if (this.universe) this.universe.resume();
       if (this.particles) this.particles.resume();
+      this.resumePartnersCarousel();
+    }
+  }
+
+  // Partners Carousel
+  initPartnersCarousel() {
+    const track = document.getElementById('partners-track');
+    if (!track) return;
+
+    // Clone slides for infinite scroll effect
+    const slides = track.querySelectorAll('.partner-slide');
+    if (slides.length > 0) {
+      // The slides are already duplicated in HTML for infinite effect
+      
+      // Add hover pause functionality
+      const container = document.querySelector('.partners-carousel-container');
+      if (container) {
+        container.addEventListener('mouseenter', () => {
+          track.style.animationPlayState = 'paused';
+        });
+        
+        container.addEventListener('mouseleave', () => {
+          track.style.animationPlayState = 'running';
+        });
+      }
+    }
+  }
+
+  pausePartnersCarousel() {
+    const track = document.getElementById('partners-track');
+    if (track) {
+      track.style.animationPlayState = 'paused';
+    }
+  }
+
+  resumePartnersCarousel() {
+    const track = document.getElementById('partners-track');
+    if (track) {
+      track.style.animationPlayState = 'running';
     }
   }
 }
