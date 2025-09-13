@@ -1108,6 +1108,8 @@ body {
   overflow: hidden;
   position: relative;
   padding: 2rem 0;
+  /* Garantir visibilidade em mobile */
+  min-height: 120px;
 }
 
 .partners-carousel-track {
@@ -1116,6 +1118,8 @@ body {
   gap: 4rem;
   animation: partnersScroll 30s linear infinite;
   width: calc(200% + 4rem);
+  /* Melhorar alinhamento em mobile */
+  min-height: 80px;
 }
 
 .partner-slide {
@@ -1126,6 +1130,8 @@ body {
   padding: 1rem;
   transition: transform 0.3s ease;
   min-width: 200px;
+  /* Garantir altura mínima para mobile */
+  min-height: 80px;
 }
 
 .partner-slide:hover {
@@ -1139,6 +1145,10 @@ body {
   filter: brightness(1);
   transition: all 0.3s ease;
   opacity: 0.8;
+  /* Garantir que a imagem seja sempre visível */
+  width: auto;
+  height: auto;
+  display: block;
 }
 
 .partner-slide:hover img {
@@ -1160,38 +1170,177 @@ body {
   animation-play-state: paused;
 }
 
-/* Responsividade para Partners */
-@media (max-width: 768px) {
+/* Responsividade aprimorada para Partners */
+@media (max-width: 1024px) {
+  .partners-section {
+    padding: 3rem 0;
+  }
+  
+  .partners-carousel-container {
+    padding: 1.5rem 0;
+    min-height: 100px;
+  }
+  
   .partners-carousel-track {
-    gap: 2rem;
+    gap: 3rem;
     animation-duration: 25s;
+    min-height: 70px;
   }
   
   .partner-slide {
     padding: 0.75rem;
-    min-width: 150px;
+    min-width: 180px;
+    min-height: 70px;
   }
   
   .partner-slide img {
-    max-height: 60px;
+    max-height: 70px;
+    max-width: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .partners-section {
+    padding: 2.5rem 0;
+  }
+  
+  .partners-carousel-container {
+    padding: 1rem 0;
+    min-height: 90px;
+    /* Garantir que o container seja visível */
+    background: rgba(255, 255, 255, 0.01);
+    border-radius: 10px;
+  }
+  
+  .partners-carousel-track {
+    gap: 2.5rem;
+    animation-duration: 20s;
+    min-height: 60px;
+    /* Ajustar largura para mobile */
+    width: calc(300% + 6rem);
+  }
+  
+  .partner-slide {
+    padding: 0.5rem;
+    min-width: 140px;
+    min-height: 60px;
+    /* Melhorar centralização */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .partner-slide img {
+    max-height: 55px;
     max-width: 120px;
+    /* Garantir visibilidade em mobile */
+    min-height: 30px;
+    min-width: 60px;
+    object-fit: contain;
+    object-position: center;
   }
 }
 
 @media (max-width: 480px) {
+  .partners-section {
+    padding: 2rem 0;
+  }
+  
+  .section-header {
+    margin-bottom: 2rem;
+  }
+  
+  .partners-carousel-container {
+    padding: 0.75rem 0;
+    min-height: 80px;
+    /* Adicionar borda sutil para debug visual */
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    margin: 0 1rem;
+  }
+  
   .partners-carousel-track {
-    gap: 1.5rem;
-    animation-duration: 20s;
+    gap: 2rem;
+    animation-duration: 18s;
+    min-height: 50px;
+    /* Ajustar para telas muito pequenas */
+    width: calc(400% + 8rem);
   }
   
   .partner-slide {
-    min-width: 120px;
-    padding: 0.5rem;
+    min-width: 110px;
+    padding: 0.25rem;
+    min-height: 50px;
+    /* Forçar centralização */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
   
   .partner-slide img {
-    max-height: 50px;
-    max-width: 100px;
+    max-height: 45px;
+    max-width: 90px;
+    /* Garantir tamanho mínimo visível */
+    min-height: 25px;
+    min-width: 50px;
+    /* Melhorar contraste em mobile */
+    filter: brightness(1.1) contrast(1.1);
+    opacity: 0.9;
+  }
+  
+  .partner-slide:hover img {
+    opacity: 1;
+    filter: brightness(1.2) contrast(1.2);
+  }
+}
+
+/* Media query adicional para telas muito pequenas */
+@media (max-width: 360px) {
+  .partners-carousel-container {
+    margin: 0 0.5rem;
+    min-height: 70px;
+  }
+  
+  .partners-carousel-track {
+    gap: 1.5rem;
+    animation-duration: 15s;
+    min-height: 45px;
+  }
+  
+  .partner-slide {
+    min-width: 100px;
+    min-height: 45px;
+  }
+  
+  .partner-slide img {
+    max-height: 40px;
+    max-width: 80px;
+    min-height: 20px;
+    min-width: 40px;
+  }
+}
+
+/* Melhorias para acessibilidade e performance */
+@media (prefers-reduced-motion: reduce) {
+  .partners-carousel-track {
+    animation: none;
+  }
+  
+  .partners-carousel-container {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .partner-slide {
+    scroll-snap-align: center;
+  }
+}
+
+/* Otimização para dispositivos com tela de alta densidade */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .partner-slide img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
   }
 }
 /* Testimonials Section */
