@@ -357,76 +357,350 @@
       <p class="section-subtitle">Projetos que transformaram negócios</p>
     </div>
 
-    <div class="portfolio-grid">
-      <!-- Projeto Finagro -->
-      <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="project-image">
-          <img src="assets/home.png" alt="Finagro - Aplicativo de Gestão Rural" />
-          <div class="project-overlay">
-            <div class="project-badge">Projeto Destaque</div>
-          </div>
-        </div>
-        <div class="project-info">
-          <div class="project-header">
-            <img src="assets/FInagro LOGO 3.png" alt="Finagro Logo" class="project-logo" />
-            <div class="project-title">
-              <h3>Finagro Gestão Rural</h3>
-              <p class="project-category">Aplicativo Mobile</p>
-            </div>
-          </div>
-          <p class="project-description">
-            Aplicativo completo para gestores e produtores rurais, oferecendo ferramentas essenciais para o gerenciamento eficiente de propriedades agrícolas.
-          </p>
-          <div class="project-tech">
-            <span class="tech-tag">React Native</span>
-            <span class="tech-tag">Node.js</span>
-            <span class="tech-tag">Firebase</span>
-          </div>
-          <div class="project-actions">
-            <a href="https://www.finagro.app" class="btn-primary" target="_blank" rel="noopener">
-              <i class="fas fa-external-link-alt"></i>
-              <span>Ver Projeto</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Projeto Controle de Frotas -->
-      <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="project-image">
-          <img src="assets/frotas.png" alt="Controle de Frotas - Sistema de Gestão" />
-          <div class="project-overlay">
-            <div class="project-badge">Sistema Web</div>
-          </div>
-        </div>
-        <div class="project-info">
-          <div class="project-header">
-            <div class="project-icon">
-              <i class="fas fa-truck"></i>
-            </div>
-            <div class="project-title">
-              <h3>Controle de Frotas</h3>
-              <p class="project-category">Sistema Web</p>
-            </div>
-          </div>
-          <p class="project-description">
-            Sistema completo para gestão de frotas de veículos e máquinas, incluindo controle de manutenção, combustível, rotas e relatórios detalhados para otimização operacional.
-          </p>
-          <div class="project-tech">
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">Node.js</span>
-            <span class="tech-tag">Firebase</span>
-          </div>
-          <div class="project-actions">
-            <a href="#contato" class="btn-primary">
-              <i class="fas fa-envelope"></i>
-              <span>Solicitar Demo</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
+    <!-- Portfolio Tabs -->
+    <div class="portfolio-tabs" data-aos="fade-up">
+      <button class="portfolio-tab active" data-category="sites">
+        <i class="fas fa-globe"></i>
+        <span>Sites</span>
+      </button>
+      <button class="portfolio-tab" data-category="aplicativos">
+        <i class="fas fa-mobile-alt"></i>
+        <span>Aplicativos</span>
+      </button>
     </div>
+
+    <!-- Sites Portfolio -->
+    <div class="portfolio-category active" id="sites-portfolio">
+      <div class="portfolio-grid">
+
+        <!-- Site Sempre Gestão -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-image">
+            <!-- Substitua pelo link da imagem do site -->
+            <img src="assets/portfolio/sempregestao-preview.png" alt="Sempre Gestão - Sistema de Gestão Empresarial" />
+            <div class="project-overlay">
+              <div class="project-badge">Site Institucional</div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <div class="project-title">
+                <h3>Sempre Gestão</h3>
+                <p class="project-category">Site Institucional</p>
+              </div>
+            </div>
+            <p class="project-description">
+              Site institucional moderno para empresa de gestão de projetos e negócios empresariais, com design responsivo e otimizado para conversão.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://sempregestao.srv.br" class="btn-primary" target="_blank" rel="noopener">
+                <i class="fas fa-external-link-alt"></i>
+                <span>Visitar Site</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Site Finagro -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-image">
+            <!-- Substitua pelo link da imagem do site -->
+            <img src="assets/portfolio/finagro-site-preview.png" alt="Finagro - Site Oficial" />
+            <div class="project-overlay">
+              <div class="project-badge">Site Institucional</div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-header">
+              <img src="assets/FInagro LOGO 3.png" alt="Finagro Logo" class="project-logo" />
+              <div class="project-title">
+                <h3>Finagro</h3>
+                <p class="project-category">Site Institucional</p>
+              </div>
+            </div>
+            <p class="project-description">
+              Site oficial da plataforma Finagro, apresentando soluções de gestão rural com interface moderna e informações detalhadas sobre os serviços.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Next.js</span>
+              <span class="tech-tag">Tailwind CSS</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://finagro.app" class="btn-primary" target="_blank" rel="noopener">
+                <i class="fas fa-external-link-alt"></i>
+                <span>Visitar Site</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Site Lacerda e Lacerda -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-image">
+            <!-- Substitua pelo link da imagem do site -->
+            <img src="assets/portfolio/lacerda-preview.png" alt="Lacerda e Lacerda - Advocacia" />
+            <div class="project-overlay">
+              <div class="project-badge">Site Profissional</div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-header">
+              <img src="assets/LOGO LACERDA E LACERDA.png" alt="Lacerda e Lacerda Logo" class="project-logo" />
+              <div class="project-title">
+                <h3>Lacerda e Lacerda</h3>
+                <p class="project-category">Site Advocacia</p>
+              </div>
+            </div>
+            <p class="project-description">
+              Site institucional para escritório de advocacia, com design elegante, áreas de atuação detalhadas e formulário de contato integrado.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">WordPress</span>
+              <span class="tech-tag">PHP</span>
+              <span class="tech-tag">Custom Theme</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://lacerdaelacerda.visionxma.com" class="btn-primary" target="_blank" rel="noopener">
+                <i class="fas fa-external-link-alt"></i>
+                <span>Visitar Site</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Site Naldo Bebidas -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="project-image">
+            <!-- Substitua pelo link da imagem do site -->
+            <img src="assets/portfolio/naldobebidas-preview.png" alt="Naldo Bebidas - E-commerce" />
+            <div class="project-overlay">
+              <div class="project-badge">E-commerce</div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="project-title">
+                <h3>Naldo Bebidas</h3>
+                <p class="project-category">E-commerce</p>
+              </div>
+            </div>
+            <p class="project-description">
+              Plataforma de e-commerce para distribuidora de bebidas, com catálogo completo, sistema de pedidos online e integração com pagamento.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">MongoDB</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://naldobebidas.visionxma.com" class="btn-primary" target="_blank" rel="noopener">
+                <i class="fas fa-external-link-alt"></i>
+                <span>Visitar Site</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Aplicativos Portfolio -->
+    <div class="portfolio-category" id="aplicativos-portfolio">
+      <div class="portfolio-grid">
+
+        <!-- App Finagro -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-image">
+            <!-- Substitua pelo link da imagem do app -->
+            <img src="assets/portfolio/finagro-app-preview.png" alt="Finagro - App de Gestão Rural" />
+            <div class="project-overlay">
+              <div class="project-badge">Destaque</div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-header">
+              <img src="assets/FInagro LOGO 3.png" alt="Finagro Logo" class="project-logo" />
+              <div class="project-title">
+                <h3>Finagro</h3>
+                <p class="project-category">Aplicativo Mobile</p>
+              </div>
+            </div>
+            <p class="project-description">
+              Aplicativo completo para gestão rural, oferecendo controle de safras, finanças, equipamentos e funcionários. Disponível para Android e iOS.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">React Native</span>
+              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag">Redux</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://finagro.app" class="btn-primary" target="_blank" rel="noopener">
+                <i class="fas fa-external-link-alt"></i>
+                <span>Saiba Mais</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- App Controle de Frotas -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-image">
+            <!-- Substitua pelo link da imagem do app -->
+            <img src="assets/portfolio/frotas-app-preview.png" alt="Controle de Frotas" />
+            <div class="project-overlay">
+              <div class="project-badge">App Nativo</div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fas fa-truck"></i>
+              </div>
+              <div class="project-title">
+                <h3>Controle de Frotas</h3>
+                <p class="project-category">Aplicativo Mobile</p>
+              </div>
+            </div>
+            <p class="project-description">
+              Sistema móvel para gestão completa de frotas, rastreamento em tempo real, controle de manutenção, abastecimento e relatórios detalhados.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">React Native</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">PostgreSQL</span>
+            </div>
+            <div class="project-actions">
+              <a href="#contato" class="btn-primary">
+                <i class="fas fa-envelope"></i>
+                <span>Solicitar Demo</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- App Controle App -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-image">
+            <!-- Substitua pelo link da imagem do app -->
+            <img src="assets/portfolio/controle-app-preview.png" alt="Controle App - Gestão de Estoque" />
+            <div class="project-overlay">
+              <div class="project-badge">Sistema Completo</div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fas fa-boxes"></i>
+              </div>
+              <div class="project-title">
+                <h3>Controle App</h3>
+                <p class="project-category">Sistema de Controle</p>
+              </div>
+            </div>
+            <p class="project-description">
+              Sistema completo para controle de produtos, gestão de estoque e vendas. Inclui leitura de código de barras, relatórios e dashboard analítico.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">React Native</span>
+              <span class="tech-tag">Express</span>
+              <span class="tech-tag">MySQL</span>
+            </div>
+            <div class="project-actions">
+              <a href="#contato" class="btn-primary">
+                <i class="fas fa-envelope"></i>
+                <span>Solicitar Demo</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- App Fideliza -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="project-image">
+            <!-- Substitua pelo link da imagem do app -->
+            <img src="assets/portfolio/fideliza-app-preview.png" alt="Fideliza - CRM de Mensalidades" />
+            <div class="project-overlay">
+              <div class="project-badge">CRM</div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="project-title">
+                <h3>Fideliza</h3>
+                <p class="project-category">CRM de Mensalidades</p>
+              </div>
+            </div>
+            <p class="project-description">
+              CRM especializado para gestão de mensalidades e programas de fidelidade, com notificações automáticas, controle de pagamentos e relatórios.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">React Native</span>
+              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag">Push Notifications</span>
+            </div>
+            <div class="project-actions">
+              <a href="#contato" class="btn-primary">
+                <i class="fas fa-envelope"></i>
+                <span>Solicitar Demo</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- App Gestão Interna -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+          <div class="project-image">
+            <!-- Substitua pelo link da imagem do app -->
+            <img src="assets/portfolio/gestao-interna-preview.png" alt="Gestão Interna - CRM para Agências" />
+            <div class="project-overlay">
+              <div class="project-badge">CRM Empresarial</div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <div class="project-title">
+                <h3>Gestão Interna</h3>
+                <p class="project-category">CRM para Agências</p>
+              </div>
+            </div>
+            <p class="project-description">
+              CRM robusto para agências, gerenciando clientes, projetos, equipes e finanças. Sistema completo com dashboard, relatórios e integração com ferramentas.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">React Native</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">MongoDB</span>
+            </div>
+            <div class="project-actions">
+              <a href="#contato" class="btn-primary">
+                <i class="fas fa-envelope"></i>
+                <span>Solicitar Demo</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </section>
 

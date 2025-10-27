@@ -245,15 +245,39 @@ class VisionXWebsite {
   }
 
   initPortfolioNavigation() {
-    // Encontrar todos os botões que devem mostrar o portfólio
     const portfolioTriggers = document.querySelectorAll(
       'a[href="#portfolio"], .cta-button.secondary, .nav-link[href="#portfolio"]'
     );
-    
+
     portfolioTriggers.forEach(trigger => {
       trigger.addEventListener('click', (e) => {
         e.preventDefault();
         this.showPortfolioSection();
+      });
+    });
+
+    this.initPortfolioTabs();
+  }
+
+  initPortfolioTabs() {
+    const tabs = document.querySelectorAll('.portfolio-tab');
+    const categories = document.querySelectorAll('.portfolio-category');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const targetCategory = tab.getAttribute('data-category');
+
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        categories.forEach(category => {
+          category.classList.remove('active');
+          if (category.id === `${targetCategory}-portfolio`) {
+            setTimeout(() => {
+              category.classList.add('active');
+            }, 100);
+          }
+        });
       });
     });
   }
