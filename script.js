@@ -42,6 +42,7 @@ class VisionXWebsite {
     this.initContactForm();
     this.initAnimations();
     this.initPortfolioVisibility();
+    this.initPolicyModals();
   }
 
   onWindowLoad() {
@@ -798,6 +799,70 @@ async handleFormSubmit(e) {
     if (track) {
       track.style.animationPlayState = 'running';
     }
+  }
+
+  initPolicyModals() {
+    const privacyPolicyLink = document.getElementById('privacy-policy-link');
+    const dataDeletionLink = document.getElementById('data-deletion-link');
+    const privacyModal = document.getElementById('privacy-policy-modal');
+    const dataDeletionModal = document.getElementById('data-deletion-modal');
+
+    if (privacyPolicyLink && privacyModal) {
+      privacyPolicyLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.openModal(privacyModal);
+      });
+    }
+
+    if (dataDeletionLink && dataDeletionModal) {
+      dataDeletionLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.openModal(dataDeletionModal);
+      });
+    }
+
+    const closeButtons = document.querySelectorAll('.policy-close-btn');
+    closeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const modal = btn.closest('.policy-modal');
+        this.closeModal(modal);
+      });
+    });
+
+    const modals = document.querySelectorAll('.policy-modal');
+    modals.forEach(modal => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          this.closeModal(modal);
+        }
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        modals.forEach(modal => {
+          if (modal.style.display === 'flex') {
+            this.closeModal(modal);
+          }
+        });
+      }
+    });
+  }
+
+  openModal(modal) {
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => {
+      modal.classList.add('show');
+    }, 10);
+  }
+
+  closeModal(modal) {
+    modal.classList.remove('show');
+    setTimeout(() => {
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }, 300);
   }
 }
 
