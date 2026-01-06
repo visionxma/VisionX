@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Política de Privacidade - SeLigaAí | VisionX</title>
+  <meta name="description" content="Política de Privacidade do aplicativo SeLigaAí - Como tratamos seus dados com segurança e transparência.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/flavicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/flavicon.png">
+  
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    .privacy-page {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      min-height: 100vh;
+      padding-top: 80px;
+    }
+
+    .privacy-hero {
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 153, 204, 0.05) 100%);
+      padding: 4rem 0;
+      text-align: center;
+      border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+    }
+
+    .privacy-icon {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #00d4ff, #0099cc);
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      box-shadow: 0 20px 60px rgba(0, 212, 255, 0.3);
+    }
+
+    .privacy-icon i {
+      font-size: 3rem;
+      color: #000000;
+    }
+
+    .privacy-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
+
+    .last-updated {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 1rem;
+      font-style: italic;
+    }
+
+    .privacy-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .privacy-section {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 3rem;
+      margin-bottom: 2rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .privacy-section h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #00d4ff;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .privacy-section h2 i {
+      font-size: 1.5rem;
+    }
+
+    .privacy-section h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .privacy-section p {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .privacy-section ul {
+      list-style: none;
+      margin: 1.5rem 0;
+      padding-left: 1rem;
+    }
+
+    .privacy-section ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .privacy-section ul li i {
+      color: #00ff88;
+      margin-top: 0.25rem;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .privacy-section ul li.no-icon {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .privacy-section ul li.no-icon::before {
+      content: '•';
+      color: #00d4ff;
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+
+    .privacy-section strong {
+      color: #00d4ff;
+      font-weight: 600;
+    }
+
+    .highlight-box {
+      background: rgba(0, 212, 255, 0.1);
+      border: 2px solid rgba(0, 212, 255, 0.3);
+      border-radius: 15px;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+
+    .highlight-box h3 {
+      color: #00d4ff;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .highlight-box ul {
+      padding-left: 0;
+    }
+
+    .warning-box {
+      background: rgba(255, 68, 68, 0.1);
+      border: 2px solid rgba(255, 68, 68, 0.3);
+      border-radius: 15px;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+
+    .warning-box p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.05rem;
+      margin: 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .warning-box i {
+      color: #ff4444;
+      font-size: 1.5rem;
+      margin-top: 0.25rem;
+      flex-shrink: 0;
+    }
+
+    .contact-box {
+      background: rgba(0, 212, 255, 0.05);
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      border-radius: 15px;
+      padding: 2rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .contact-box h3 {
+      color: #ffffff;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-box p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-box a {
+      color: #00d4ff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    .contact-box a:hover {
+      color: #ffffff;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: linear-gradient(135deg, #00d4ff, #0099cc);
+      color: #000000;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+      margin-top: 2rem;
+    }
+
+    .btn-back:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px rgba(0, 212, 255, 0.5);
+    }
+
+    .summary-box {
+      background: linear-gradient(135deg, rgba(0, 255, 136, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+      border: 2px solid rgba(0, 255, 136, 0.3);
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin: 3rem 0;
+    }
+
+    .summary-box h2 {
+      color: #00ff88;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .summary-item {
+      text-align: center;
+    }
+
+    .summary-item i {
+      font-size: 2.5rem;
+      color: #00ff88;
+      margin-bottom: 1rem;
+    }
+
+    .summary-item h4 {
+      font-size: 1.2rem;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+    }
+
+    .summary-item p {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .privacy-content {
+        padding: 3rem 1rem;
+      }
+
+      .privacy-section {
+        padding: 2rem 1.5rem;
+      }
+
+      .privacy-section h2 {
+        font-size: 1.5rem;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .summary-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .highlight-box,
+      .warning-box,
+      .contact-box {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Universe Background -->
+  <div class="universe-background">
+    <canvas id="universe-canvas"></canvas>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo-container">
+          <a href="index.html">
+            <img src="assets/visionx-logo.png" alt="VisionX" class="logo" />
+          </a>
+        </div>
+        <nav class="nav" id="nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Voltar ao Site</a></li>
+            <li><a href="seligaai.html" class="nav-link">Sobre o App</a></li>
+            <li><a href="#contato" class="nav-link">Contato</a></li>
+          </ul>
+        </nav>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Privacy Page -->
+  <div class="privacy-page">
+    <!-- Hero Section -->
+    <section class="privacy-hero">
+      <div class="container">
+        <div class="privacy-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h1 class="privacy-title">Política de Privacidade</h1>
+        <p class="last-updated">Última atualização: 06 de janeiro de 2026</p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <div class="privacy-content">
+      
+      <!-- Introdução -->
+      <div class="privacy-section">
+        <h2><i class="fas fa-file-alt"></i> 1. Introdução</h2>
+        <p>
+          A <strong>VisionX</strong> ("nós", "nosso" ou "empresa") desenvolve e opera o aplicativo <strong>SE LIGA AÍ</strong> ("App", "Aplicativo" ou "Serviço"). Esta Política de Privacidade descreve de forma clara e transparente como as informações são tratadas ao utilizar o aplicativo.
+        </p>
+        <p>
+          O SE LIGA AÍ tem como objetivo <strong>auxiliar na segurança pessoal</strong>, alertando usuários sobre <strong>áreas com maior incidência de riscos</strong> nas cidades de <strong>Pedreiras</strong> e <strong>Trizidela do Vale – MA</strong>, com base em dados públicos e análises locais.
+        </p>
+        <p>
+          Ao utilizar o aplicativo, você concorda com os termos desta Política de Privacidade.
+        </p>
+      </div>
+
+      <!-- Informações Coletadas -->
+      <div class="privacy-section">
+        <h2><i class="fas fa-database"></i> 2. Informações que Coletamos</h2>
+        
+        <h3>2.1 Dados de Localização</h3>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> <strong>Localização atual:</strong> O aplicativo pode acessar sua localização geográfica (latitude e longitude)</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Quando ocorre:</strong> Durante o uso do aplicativo e, quando autorizado, em segundo plano</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Finalidade:</strong> Identificar proximidade com áreas de risco e emitir alertas de segurança</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Precisão:</strong> Utilização de localização precisa (GPS)</li>
+        </ul>
+        <div class="warning-box">
+          <p>
+            <i class="fas fa-info-circle"></i>
+            <strong>Importante:</strong> A localização em segundo plano é utilizada apenas quando necessária para o funcionamento dos alertas, não sendo armazenado histórico de deslocamento.
+          </p>
+        </div>
+
+        <h3>2.2 Histórico de Alertas</h3>
+        <ul>
+          <li class="no-icon">Data e hora dos alertas recebidos</li>
+          <li class="no-icon">Tipo de alerta (ex.: área de risco, atenção, zona sensível)</li>
+          <li class="no-icon">Região aproximada onde o alerta foi disparado</li>
+        </ul>
+        <p><strong>Armazenamento:</strong> Exclusivamente local, no dispositivo do usuário</p>
+
+        <h3>2.3 Identificador do Aplicativo</h3>
+        <ul>
+          <li class="no-icon">Identificador local gerado automaticamente no primeiro uso</li>
+          <li class="no-icon">Utilizado apenas para funcionamento interno do app</li>
+          <li class="no-icon">Não permite identificação pessoal do usuário</li>
+        </ul>
+
+        <h3>2.4 Dados Técnicos</h3>
+        <ul>
+          <li class="no-icon">Modelo do dispositivo</li>
+          <li class="no-icon">Sistema operacional e versão do aplicativo</li>
+          <li class="no-icon">Status de permissões concedidas</li>
+        </ul>
+        <p>Esses dados são utilizados apenas para garantir o funcionamento adequado do aplicativo.</p>
+      </div>
+
+      <!-- Como Utilizamos -->
+      <div class="privacy-section">
+        <h2><i class="fas fa-cogs"></i> 3. Como Utilizamos as Informações</h2>
+        <p>As informações coletadas são utilizadas exclusivamente para:</p>
+        <ul>
+          <li><i class="fas fa-bell"></i> Emitir alertas de segurança com base na localização atual</li>
+          <li><i class="fas fa-map"></i> Exibir áreas de risco no mapa</li>
+          <li><i class="fas fa-history"></i> Manter o histórico pessoal de alertas</li>
+          <li><i class="fas fa-wrench"></i> Correção de falhas e melhorias técnicas</li>
+        </ul>
+
+        <div class="highlight-box">
+          <h3>O que NÃO fazemos</h3>
+          <ul>
+            <li><i class="fas fa-times-circle"></i> Não vendemos dados pessoais</li>
+            <li><i class="fas fa-times-circle"></i> Não utilizamos dados para publicidade</li>
+            <li><i class="fas fa-times-circle"></i> Não criamos perfis de comportamento</li>
+            <li><i class="fas fa-times-circle"></i> Não rastreamos rotinas ou trajetos do usuário</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Base Legal -->
+      <div class="privacy-section">
+        <h2><i class="fas fa-balance-scale"></i> 4. Base Legal para o Tratamento de Dados</h2>
+        <p>O tratamento de dados é realizado conforme a <strong>Lei Geral de Proteção de Dados (LGPD)</strong>, com base em:</p>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> <strong>Consentimento do usuário</strong>, concedido ao aceitar as permissões do aplicativo</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Interesse legítimo</strong>, relacionado à segurança pessoal</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Cumprimento de obrigação legal</strong>, quando aplicável</li>
+        </ul>
+      </div>
+
+      <!-- Compartilhamento -->
+      <div class="privacy-section">
+        <h2><i class="fas fa-share-alt"></i> 5. Compartilhamento de Informações</h2>
+        
+        <h3>5.1 Dados de Usuário</h3>
+        <p>O SE LIGA AÍ <strong>não compartilha</strong> dados pessoais ou de localização com terceiros.</p>
+
+        <h3>5.2 Exceções Legais</h3>
+        <p>A divulgação de informações poderá ocorrer apenas quando:</p>
+        <ul>
+          <li class="no-icon">Exigida por lei ou ordem judicial</li>
+          <li class="no-icon">Necessária para cumprir obrigações legais</li>
+        </ul>
+        <p>Sempre respeitando os limites técnicos do aplicativo.</p>
+      </div>
+
+      <!-- Armazenamento e Segurança -->
+      <div class="privacy-section">
+        <h2><i class="fas fa-lock"></i> 6. Armazenamento e Segurança</h2>
+        
+        <h3>6.1 Armazenamento</h3>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> Todos os dados são armazenados <strong>localmente no dispositivo</strong></li>
+          <li><i class="fas fa-check-circle"></i> O aplicativo <strong>não utiliza servidores externos</strong> para dados pessoais</li>
+        </ul>
+
+        <h3>6.2 Segurança</h3>
+        <ul>
+          <li><i class="fas fa-shield-alt"></i> Uso dos mecanismos de segurança do sistema Android</li>
+          <li><i class="fas fa-lock"></i> Isolamento de dados (sandbox)</li>
+          <li><i class="fas fa-user-lock"></i> Controle de acesso por permissões do sistema</li>
+        </ul>
+
+        <h3>6.3 Retenção</h3>
+        <ul>
+          <li class="no-icon">Histórico de alertas permanece até ser excluído pelo usuário</li>
+          <li class="no-icon">Não há armazenamento de histórico de localização</li>
+        </ul>
+      </div>
+
+      <!-- Direitos do Usuário -->
+      <div class="privacy-section">
+        <h2><i class="fas fa-user-check"></i> 7. Direitos do Usuário</h2>
+        <p>Você pode, a qualquer momento:</p>
+        <ul>
+          <li><i class="fas fa-eye"></i> Visualizar o histórico de alertas</li>
+          <li><i class="fas fa-trash-alt"></i> Excluir alertas individualmente ou em lote</li>
+          <li><i class="fas fa-volume-mute"></i> Silenciar notificações temporária ou permanentemente</li>
+          <li><i class="fas fa-map-marker-alt"></i> Revogar permissões de localização nas configurações do Android</li>
+        </ul>
+        <p>Ao desinstalar o aplicativo, <strong>todos os dados locais são removidos automaticamente</strong>.</p>
+      </div>
+
+      <!-- Privacidade de Crianças -->
+      <div class="privacy-section">
+        <h2><i class="fas fa-child"></i> 8. Privacidade de Crianças</h2>
+        <p>
+          O SE LIGA AÍ não é destinado a menores de 13 anos e não coleta intencionalmente dados de crianças.
+        </p>
+      </div>
+
+      <!-- Notificações -->
+      <div class="privacy-section">
+        <h2><i class="fas fa-bell"></i> 9. Notificações</h2>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> Emitidas automaticamente ao detectar proximidade com áreas de risco</li>
+          <li><i class="fas fa-check-circle"></i> Processamento realizado localmente no dispositivo</li>
+          <li><i class="fas fa-check-circle"></i> Não há envio de dados para servidores externos</li>
+        </ul>
+      </div>
+
+      <!-- Tecnologias de Rastreamento -->
+      <div class="privacy-section">
+        <h2><i class="fas fa-chart-line"></i> 10. Tecnologias de Rastreamento</h2>
+        <p>O aplicativo <strong>não utiliza</strong>:</p>
+        <ul>
+          <li><i class="fas fa-times-circle"></i> Cookies</li>
+          <li><i class="fas fa-times-circle"></i> SDKs de anúncios</li>
+          <li><i class="fas fa-times-circle"></i> Ferramentas de analytics de terceiros</li>
+          <li><i class="fas fa-times-circle"></i> Identificadores de publicidade</li>
+        </ul>
+      </div>
+
+      <!-- Transferência Internacional -->
+      <div class="privacy-section">
+        <h2><i class="fas fa-globe"></i> 11. Transferência Internacional de Dados</h2>
+        <p>
+          Não há transferência internacional de dados, pois todas as informações permanecem armazenadas localmente.
+        </p>
+      </div>
+
+      <!-- Atualizações -->
+      <div class="privacy-section">
+        <h2><i class="fas fa-sync-alt"></i> 12. Atualizações desta Política</h2>
+        <p>Esta Política pode ser atualizada periodicamente. Mudanças relevantes serão comunicadas por:</p>
+        <ul>
+          <li><i class="fas fa-mobile-alt"></i> Notificação no aplicativo</li>
+          <li><i class="fas fa-calendar-alt"></i> Atualização da data deste documento</li>
+        </ul>
+      </div>
+
+      <!-- Base de Dados -->
+      <div class="privacy-section">
+        <h2><i class="fas fa-database"></i> 13. Base de Dados de Áreas de Risco</h2>
+        <p>Os pontos exibidos no aplicativo são definidos a partir de:</p>
+        <ul>
+          <li class="no-icon">Informações públicas e dados abertos de segurança</li>
+          <li class="no-icon">Análises estatísticas locais</li>
+          <li class="no-icon">Relatos e registros públicos disponíveis</li>
+        </ul>
+        <div class="warning-box">
+          <p>
+            <i class="fas fa-exclamation-triangle"></i>
+            O SE LIGA AÍ <strong>não é um aplicativo oficial nem afiliado a órgãos governamentais ou policiais</strong>. Os alertas têm caráter <strong>informativo e preventivo</strong>, não substituindo cuidados pessoais.
+          </p>
+        </div>
+      </div>
+
+      <!-- Contato -->
+      <div class="privacy-section" id="contato">
+        <h2><i class="fas fa-envelope"></i> 14. Contato</h2>
+        <div class="contact-box">
+          <h3>Entre em Contato</h3>
+          <p>Para dúvidas sobre esta Política de Privacidade, entre em contato:</p>
+          <p><strong>VisionX</strong></p>
+          <p>
+            <i class="fas fa-envelope"></i> Email: 
+            <a href="mailto:visionxma@gmail.com">visionxma@gmail.com</a>
+          </p>
+          <p><i class="fas fa-mobile-alt"></i> Suporte: Disponível no aplicativo</p>
+          <p><i class="fas fa-map-marker-alt"></i> Brasil</p>
+        </div>
+      </div>
+
+      <!-- Lei Aplicável -->
+      <div class="privacy-section">
+        <h2><i class="fas fa-gavel"></i> 15. Lei Aplicável</h2>
+        <p>Esta Política é regida pelas leis brasileiras, especialmente:</p>
+        <ul>
+          <li><i class="fas fa-book"></i> Lei Geral de Proteção de Dados (Lei nº 13.709/2018)</li>
+          <li><i class="fas fa-book"></i> Marco Civil da Internet (Lei nº 12.965/2014)</li>
+        </ul>
+        <p>Foro da Comarca de <strong>Pedreiras – MA</strong>.</p>
+      </div>
+
+      <!-- Resumo Simplificado -->
+      <div class="summary-box">
+        <h2>Resumo Simplificado</h2>
+        <div class="summary-grid">
+          <div class="summary-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <h4>Coletamos</h4>
+            <p>Localização atual (apenas para alertas) e histórico de alertas (local)</p>
+          </div>
+          <div class="summary-item">
+            <i class="fas fa-times-circle"></i>
+            <h4>Não Fazemos</h4>
+            <p>Venda de dados, publicidade ou rastreamento comercial</p>
+          </div>
+          <div class="summary-item">
+            <i class="fas fa-user-shield"></i>
+            <h4>Você Controla</h4>
+            <p>Notificações, histórico e permissões</p>
+          </div>
+          <div class="summary-item">
+            <i class="fas fa-shield-alt"></i>
+            <h4>Objetivo</h4>
+            <p>Ajudar você a se manter atento e mais seguro</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botão Voltar -->
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="seligaai.html" class="btn-back">
+          <i class="fas fa-arrow-left"></i>
+          <span>Voltar ao App SE LIGA AÍ</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content" style="grid-template-columns: 1fr; text-align: center;">
+        <div class="footer-column">
+          <div class="footer-logo">
+            <img src="assets/visionx-logo.png" alt="VisionX Logo" />
+          </div>
+          <p class="footer-description">
+            VisionX – Tecnologia a favor da segurança
+          </p>
+          <div class="footer-social" style="justify-content: center;">
+            <a href="https://instagram.com/visionx.dev" target="_blank" rel="noopener" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/visionx-desenvolvedora-de-software-9b23b1373/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/visionxma" target="_blank" rel="noopener" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p>&copy; 2024 VisionX. Todos os direitos reservados.</p>
+          <p>CNPJ: 61.427.918/0001-06</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SeLigaAí - Sua Segurança em Primeiro Lugar | VisionX</title>
+  <meta name="description" content="SeLigaAí - Aplicativo de alertas de áreas de risco em tempo real para Pedreiras e região. Desenvolvido pela VisionX.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/flavicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/flavicon.png">
+  
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    .app-page {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      min-height: 100vh;
+      padding-top: 80px;
+    }
+
+    .app-hero {
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 153, 204, 0.05) 100%);
+      padding: 4rem 0;
+      text-align: center;
+      border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+    }
+
+    .app-icon-large {
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg, #ff4444, #cc0000);
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      box-shadow: 0 20px 60px rgba(255, 68, 68, 0.3);
+    }
+
+    .app-icon-large i {
+      font-size: 4rem;
+      color: #ffffff;
+    }
+
+    .app-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
+
+    .app-subtitle {
+      font-size: 1.5rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 2rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .app-badges {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .app-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .app-badge i {
+      color: #ff4444;
+    }
+
+    .app-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .content-section {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 3rem;
+      margin-bottom: 2rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .content-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ff4444;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .content-section h2 i {
+      font-size: 1.8rem;
+    }
+
+    .content-section h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .content-section p {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .content-section ul {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+
+    .content-section ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .content-section ul li i {
+      color: #00ff88;
+      margin-top: 0.25rem;
+      font-size: 1.2rem;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .feature-box {
+      background: rgba(0, 212, 255, 0.05);
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      border-radius: 15px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-5px);
+      background: rgba(0, 212, 255, 0.1);
+      border-color: rgba(0, 212, 255, 0.4);
+    }
+
+    .feature-box i {
+      font-size: 2.5rem;
+      color: #ff4444;
+      margin-bottom: 1rem;
+    }
+
+    .feature-box h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+    }
+
+    .feature-box p {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin: 0;
+    }
+
+    .warning-box {
+      background: rgba(255, 68, 68, 0.1);
+      border: 2px solid rgba(255, 68, 68, 0.3);
+      border-radius: 15px;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+
+    .warning-box p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.05rem;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .warning-box i {
+      color: #ff4444;
+      font-size: 1.8rem;
+    }
+
+    .cta-section-app {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: linear-gradient(135deg, rgba(255, 68, 68, 0.1) 0%, rgba(204, 0, 0, 0.05) 100%);
+      border-radius: 20px;
+      margin: 3rem 0;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .btn-app-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: linear-gradient(135deg, #ff4444, #cc0000);
+      color: #ffffff;
+      padding: 1.25rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(255, 68, 68, 0.3);
+    }
+
+    .btn-app-download:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px rgba(255, 68, 68, 0.5);
+    }
+
+    .btn-app-download i {
+      font-size: 1.5rem;
+    }
+
+    .btn-secondary-app {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: transparent;
+      color: #ffffff;
+      padding: 1.25rem 2.5rem;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary-app:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #ff4444;
+      transform: translateY(-3px);
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .stat-box {
+      text-align: center;
+      padding: 1.5rem;
+      background: rgba(0, 212, 255, 0.05);
+      border-radius: 15px;
+      border: 1px solid rgba(0, 212, 255, 0.2);
+    }
+
+    .stat-box .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #ff4444;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-box .stat-label {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 768px) {
+      .app-content {
+        padding: 3rem 1rem;
+      }
+
+      .content-section {
+        padding: 2rem 1.5rem;
+      }
+
+      .content-section h2 {
+        font-size: 1.5rem;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn-app-download,
+      .btn-secondary-app {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+
+      .stats-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Universe Background -->
+  <div class="universe-background">
+    <canvas id="universe-canvas"></canvas>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo-container">
+          <a href="index.html">
+            <img src="assets/visionx-logo.png" alt="VisionX" class="logo" />
+          </a>
+        </div>
+        <nav class="nav" id="nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Voltar ao Site</a></li>
+            <li><a href="#sobre-app" class="nav-link">Sobre o App</a></li>
+            <li><a href="#recursos" class="nav-link">Recursos</a></li>
+            <li><a href="seligaai-privacy.html" class="nav-link">Privacidade</a></li>
+          </ul>
+        </nav>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- App Page -->
+  <div class="app-page">
+    <!-- Hero Section -->
+    <section class="app-hero">
+      <div class="container">
+        <div class="app-icon-large">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h1 class="app-title">SE LIGA AÍ</h1>
+        <p class="app-subtitle">🚨 Sua Segurança em Primeiro Lugar</p>
+        <div class="app-badges">
+          <span class="app-badge">
+            <i class="fas fa-map-marked-alt"></i>
+            Pedreiras - MA
+          </span>
+          <span class="app-badge">
+            <i class="fas fa-map-marked-alt"></i>
+            Trizidela do Vale - MA
+          </span>
+          <span class="app-badge">
+            <i class="fas fa-bell"></i>
+            Alertas em Tempo Real
+          </span>
+          <span class="app-badge">
+            <i class="fas fa-mobile-alt"></i>
+            Gratuito
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <div class="app-content">
+      <!-- Introdução -->
+      <div class="content-section" id="sobre-app">
+        <h2><i class="fas fa-info-circle"></i> Sobre o SE LIGA AÍ</h2>
+        <p>
+          Desenvolvido pela <strong>VisionX</strong> em parceria com as autoridades policiais de Pedreiras e Trizidela do Vale (MA), o <strong>SE LIGA AÍ</strong> é o aplicativo que te protege alertando sobre áreas de risco em tempo real!
+        </p>
+
+        <div class="stats-row">
+          <div class="stat-box">
+            <span class="stat-number">2</span>
+            <span class="stat-label">Cidades Cobertas</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Proteção Contínua</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Gratuito</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Como Funciona -->
+      <div class="content-section">
+        <h2><i class="fas fa-cogs"></i> Como Funciona?</h2>
+        <p>Simples e eficiente:</p>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> <strong>1. Instale o app</strong> e conceda permissão de localização</li>
+          <li><i class="fas fa-check-circle"></i> <strong>2. Deixe rodando em segundo plano</strong> - ele cuida de você automaticamente</li>
+          <li><i class="fas fa-check-circle"></i> <strong>3. Receba alertas instantâneos</strong> quando se aproximar de áreas perigosas</li>
+          <li><i class="fas fa-check-circle"></i> <strong>4. Visualize no mapa</strong> todas as zonas de risco da sua cidade</li>
+        </ul>
+        <p><strong>SEM COMPLICAÇÃO!</strong> O app trabalha silenciosamente protegendo você 24 horas por dia.</p>
+      </div>
+
+      <!-- Recursos Principais -->
+      <div class="content-section" id="recursos">
+        <h2><i class="fas fa-star"></i> Recursos Principais</h2>
+        
+        <div class="feature-grid">
+          <div class="feature-box">
+            <i class="fas fa-map"></i>
+            <h4>Mapa Interativo</h4>
+            <p>Visualize todas as áreas de risco em tempo real com interface limpa e fácil de usar</p>
+          </div>
+          
+          <div class="feature-box">
+            <i class="fas fa-bell"></i>
+            <h4>Alertas Inteligentes</h4>
+            <p>Notificação automática ao entrar em área de risco, com som e vibração</p>
+          </div>
+          
+          <div class="feature-box">
+            <i class="fas fa-history"></i>
+            <h4>Histórico Completo</h4>
+            <p>Veja todos os alertas que você já recebeu organizados por cidade</p>
+          </div>
+          
+          <div class="feature-box">
+            <i class="fas fa-sliders-h"></i>
+            <h4>Controle Total</h4>
+            <p>Silencie temporariamente ou desative quando necessário</p>
+          </div>
+        </div>
+
+        <h3>🗺️ Mapa Interativo</h3>
+        <ul>
+          <li><i class="fas fa-check"></i> Visualize todas as áreas de risco em tempo real</li>
+          <li><i class="fas fa-check"></i> Sua localização atualizada no mapa</li>
+          <li><i class="fas fa-check"></i> Círculos vermelhos indicam zonas perigosas</li>
+          <li><i class="fas fa-check"></i> Interface limpa e fácil de usar</li>
+        </ul>
+
+        <h3>🔔 Alertas Inteligentes</h3>
+        <ul>
+          <li><i class="fas fa-check"></i> Notificação automática ao entrar em área de risco</li>
+          <li><i class="fas fa-check"></i> Som e vibração para chamar sua atenção</li>
+          <li><i class="fas fa-check"></i> Funciona mesmo com o app fechado</li>
+          <li><i class="fas fa-check"></i> Alertas baseados em dados oficiais da polícia</li>
+        </ul>
+
+        <h3>📋 Histórico Completo</h3>
+        <ul>
+          <li><i class="fas fa-check"></i> Veja todos os alertas que você já recebeu</li>
+          <li><i class="fas fa-check"></i> Data, hora e localização de cada notificação</li>
+          <li><i class="fas fa-check"></i> Organize seu histórico por cidade</li>
+          <li><i class="fas fa-check"></i> Delete notificações antigas quando quiser</li>
+        </ul>
+
+        <h3>⚙️ Controle Total</h3>
+        <ul>
+          <li><i class="fas fa-check"></i> Silencie temporariamente (15min, 1h, 8h ou 1 dia)</li>
+          <li><i class="fas fa-check"></i> Desative permanentemente se necessário</li>
+          <li><i class="fas fa-check"></i> Reative a qualquer momento</li>
+          <li><i class="fas fa-check"></i> Você decide quando quer ser alertado</li>
+        </ul>
+      </div>
+
+      <!-- Por que usar -->
+      <div class="content-section">
+        <h2><i class="fas fa-thumbs-up"></i> Por Que Usar o SE LIGA AÍ?</h2>
+        <ul>
+          <li><i class="fas fa-shield-alt"></i> <strong>DADOS REAIS:</strong> Informações fornecidas pela Polícia Militar e Civil</li>
+          <li><i class="fas fa-gift"></i> <strong>GRATUITO:</strong> 100% grátis, sem anúncios nem compras no app</li>
+          <li><i class="fas fa-lock"></i> <strong>PRIVACIDADE:</strong> Seus dados ficam apenas no seu celular</li>
+          <li><i class="fas fa-battery-three-quarters"></i> <strong>BATERIA OTIMIZADA:</strong> Consumo mínimo de bateria</li>
+          <li><i class="fas fa-wifi"></i> <strong>SEM INTERNET:</strong> Funciona offline após baixar os pontos</li>
+          <li><i class="fas fa-feather"></i> <strong>LEVE:</strong> Apenas alguns MB de espaço</li>
+        </ul>
+      </div>
+
+      <!-- Tipos de Alertas -->
+      <div class="content-section">
+        <h2><i class="fas fa-exclamation-triangle"></i> Tipos de Alertas</h2>
+        <p>O app te avisa sobre:</p>
+        <ul>
+          <li><i class="fas fa-running"></i> Áreas de assalto frequente</li>
+          <li><i class="fas fa-exclamation-circle"></i> Zonas de alto risco</li>
+          <li><i class="fas fa-car"></i> Locais de furto de veículos</li>
+          <li><i class="fas fa-water"></i> Áreas sujeitas a alagamento</li>
+          <li><i class="fas fa-times-circle"></i> Pontos críticos de violência</li>
+        </ul>
+      </div>
+
+      <!-- Segurança e Privacidade -->
+      <div class="content-section">
+        <h2><i class="fas fa-user-shield"></i> Segurança e Privacidade</h2>
+        <p>Levamos sua privacidade a sério:</p>
+        <ul>
+          <li><i class="fas fa-times"></i> <strong>NÃO compartilhamos</strong> sua localização com terceiros</li>
+          <li><i class="fas fa-times"></i> <strong>NÃO vendemos</strong> seus dados</li>
+          <li><i class="fas fa-times"></i> <strong>NÃO rastreamos</strong> seu histórico de deslocamentos</li>
+          <li><i class="fas fa-times"></i> <strong>NÃO exibimos</strong> anúncios</li>
+        </ul>
+        <ul>
+          <li><i class="fas fa-check"></i> <strong>Dados armazenados localmente</strong> no seu dispositivo</li>
+          <li><i class="fas fa-check"></i> <strong>Código otimizado</strong> e seguro</li>
+          <li><i class="fas fa-check"></i> <strong>Conformidade com LGPD</strong></li>
+          <li><i class="fas fa-check"></i> <strong>Transparência total</strong> sobre uso de dados</li>
+        </ul>
+      </div>
+
+      <!-- Aviso Importante -->
+      <div class="warning-box">
+        <p>
+          <i class="fas fa-info-circle"></i>
+          <strong>IMPORTANTE:</strong> O SE LIGA AÍ é uma ferramenta auxiliar de segurança. Ele NÃO substitui precauções pessoais normais, avisos das autoridades locais ou seu bom senso e atenção. <strong>EM CASO DE EMERGÊNCIA, LIGUE 190!</strong>
+        </p>
+      </div>
+
+      <!-- Dicas de Uso -->
+      <div class="content-section">
+        <h2><i class="fas fa-lightbulb"></i> Dicas de Uso</h2>
+        <ul>
+          <li><i class="fas fa-battery-half"></i> <strong>Economize bateria:</strong> O app já é otimizado, mas você pode usar o modo de economia de bateria do Android</li>
+          <li><i class="fas fa-volume-mute"></i> <strong>Reuniões importantes?</strong> Use o silenciamento temporário para não ser interrompido</li>
+          <li><i class="fas fa-route"></i> <strong>Planeje sua rota:</strong> Antes de sair, abra o mapa e veja quais áreas evitar</li>
+          <li><i class="fas fa-map-marker-alt"></i> <strong>Mantenha a localização ativa:</strong> Para máxima proteção, deixe a localização "Permitir sempre"</li>
+        </ul>
+      </div>
+
+      <!-- Tecnologias -->
+      <div class="content-section">
+        <h2><i class="fas fa-code"></i> Tecnologias Utilizadas</h2>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <i class="fab fa-react"></i>
+            <h4>React Native</h4>
+            <p>Framework multiplataforma para desenvolvimento mobile</p>
+          </div>
+          
+          <div class="feature-box">
+            <i class="fas fa-rocket"></i>
+            <h4>Expo</h4>
+            <p>Plataforma para desenvolvimento ágil e eficiente</p>
+          </div>
+          
+          <div class="feature-box">
+            <i class="fas fa-fire"></i>
+            <h4>Firebase</h4>
+            <p>Backend robusto e confiável do Google</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Final -->
+      <div class="cta-section-app">
+        <h2 style="color: #ffffff; margin-bottom: 1rem;">Baixe Agora e Fique Mais Seguro!</h2>
+        <p style="color: rgba(255, 255, 255, 0.8); font-size: 1.1rem; margin-bottom: 2rem;">
+          SE LIGA AÍ - Tecnologia a serviço da sua segurança
+        </p>
+        <div class="cta-buttons">
+          <a href="#" class="btn-app-download">
+            <i class="fab fa-google-play"></i>
+            <span>Baixar na Play Store</span>
+          </a>
+          <a href="seligaai-privacy.html" class="btn-secondary-app">
+            <i class="fas fa-shield-alt"></i>
+            <span>Política de Privacidade</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Suporte -->
+      <div class="content-section">
+        <h2><i class="fas fa-headset"></i> Suporte e Contato</h2>
+        <p>Teve algum problema? Tem sugestões?</p>
+        <ul>
+          <li><i class="fas fa-envelope"></i> <strong>Email:</strong> visionxma@gmail.com</li>
+          <li><i class="fas fa-comment"></i> Use o recurso "Reportar problema" no app</li>
+        </ul>
+      </div>
+
+      <!-- Desenvolvido por -->
+      <div class="content-section">
+        <h2><i class="fas fa-building"></i> Sobre a VisionX</h2>
+        <p>
+          Somos uma empresa de tecnologia dedicada a criar soluções que melhoram a vida das pessoas. O SE LIGA AÍ nasceu da necessidade real de aumentar a segurança nas cidades do interior do Maranhão.
+        </p>
+        <p><strong>Nossa missão:</strong> Usar tecnologia para tornar as cidades mais seguras e conectadas.</p>
+        <div style="text-align: center; margin-top: 2rem;">
+          <a href="index.html" class="btn-secondary-app">
+            <i class="fas fa-arrow-left"></i>
+            <span>Voltar ao Site VisionX</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content" style="grid-template-columns: 1fr; text-align: center;">
+        <div class="footer-column">
+          <div class="footer-logo">
+            <img src="assets/visionx-logo.png" alt="VisionX Logo" />
+          </div>
+          <p class="footer-description">
+            Transformamos ideias em soluções digitais inovadoras.
+          </p>
+          <div class="footer-social" style="justify-content: center;">
+            <a href="https://instagram.com/visionx.dev" target="_blank" rel="noopener" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/visionx-desenvolvedora-de-software-9b23b1373/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/visionxma" target="_blank" rel="noopener" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p>&copy; 2024 VisionX. Todos os direitos reservados.</p>
+          <p>CNPJ: 61.427.918/0001-06</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
