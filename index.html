@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VisionX - Desenvolvimento de Soluções Digitais | Sites, Sistemas e Apps</title>
-  <meta name="description" content="VisionX - Especialistas em desenvolvimento de sites, aplicativos, sistemas web e automações digitais. Transformamos ideias em soluções digitais funcionais com excelência técnica.">
-  <meta name="keywords" content="desenvolvimento web, criação de sites, aplicativos móveis, sistemas web, automação digital, VisionX">
+  <meta name="description"
+    content="VisionX - Especialistas em desenvolvimento de sites, aplicativos, sistemas web e automações digitais. Transformamos ideias em soluções digitais funcionais com excelência técnica.">
+  <meta name="keywords"
+    content="desenvolvimento web, criação de sites, aplicativos móveis, sistemas web, automação digital, VisionX">
   <meta name="author" content="VisionX">
-  
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/flavicon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/flavicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/flavicon.png">
   <link rel="shortcut icon" href="assets/flavicon.png">
   <link rel="icon" href="assets/flavicon.png">
-    
+
   <!-- Preload critical resources -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    as="style">
   <link rel="preload" href="style.css" as="style">
   <link rel="preload" href="script.js" as="script">
-  
+
   <!-- Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  
+
   <!-- Styles -->
   <link rel="stylesheet" href="style.css">
-  
+
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
@@ -53,25 +58,85 @@
 
   <!-- Meta Pixel Code -->
   <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1251335076510525');
-    fbq('track', 'PageView');
+    (function () {
+      var SUPABASE_URL = 'https://tcwpfgfddxajlewhmwjr.supabase.co';
+      var SUPABASE_KEY = 'sb_publishable_POXhkhXnii9Jv3o5XNZk2Q_9a0nsxAD';
+
+      fetch(SUPABASE_URL + '/rest/v1/pixels?active=eq.true&select=platform,pixel_id', {
+        headers: {
+          'apikey': SUPABASE_KEY,
+          'Authorization': 'Bearer ' + SUPABASE_KEY
+        }
+      })
+        .then(function (r) { return r.json(); })
+        .then(function (pixels) {
+          pixels.forEach(function (p) {
+            switch (p.platform) {
+              case 'facebook':
+                !function (f, b, e, v, n, t, s) {
+                  if (f.fbq) return; n = f.fbq = function () {
+                    n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                  }; if (!f._fbq) f._fbq = n;
+                  n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
+                  t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
+                }
+                  (window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+                fbq('init', p.pixel_id); fbq('track', 'PageView');
+                break;
+              case 'google_analytics':
+                var gs = document.createElement('script'); gs.async = true;
+                gs.src = 'https://www.googletagmanager.com/gtag/js?id=' + p.pixel_id;
+                document.head.appendChild(gs);
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                gtag('js', new Date()); gtag('config', p.pixel_id);
+                break;
+              case 'google_tag_manager':
+                (function (w, d, s, l, i) {
+                  w[l] = w[l] || []; w[l].push({
+                    'gtm.start':
+                      new Date().getTime(), event: 'gtm.js'
+                  }); var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true;
+                  j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                  f.parentNode.insertBefore(j, f);
+                })(window, document, 'script', 'dataLayer', p.pixel_id);
+                break;
+              case 'tiktok':
+                !function (w, d, t) {
+                  w.TiktokAnalyticsObject = t; var ttq = w[t] = w[t] || [];
+                  ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie"];
+                  ttq.setAndDefer = function (t, e) { t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } };
+                  for (var i = 0; i < ttq.methods.length; i++)ttq.setAndDefer(ttq, ttq.methods[i]);
+                  ttq.instance = function (t) { for (var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++)ttq.setAndDefer(e, ttq.methods[n]); return e };
+                  ttq.load = function (e, n) {
+                    var i = "https://analytics.tiktok.com/i18n/pixel/events.js";
+                    ttq._i = ttq._i || {}; ttq._i[e] = []; ttq._i[e]._u = i; ttq._t = ttq._t || {}; ttq._t[e + "_" + n] = 1;
+                    var o = document.createElement("script"); o.type = "text/javascript"; o.async = !0; o.src = i + "?sdkid=" + e + "&lib=" + t;
+                    var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(o, a)
+                  };
+                  ttq.load(p.pixel_id); ttq.page();
+                }(window, document, 'ttq');
+                break;
+              case 'custom':
+                var cs = document.createElement('script'); cs.async = true;
+                cs.src = p.pixel_id; document.head.appendChild(cs);
+                break;
+            }
+          });
+        });
+    })();
   </script>
   <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1251335076510525&ev=PageView&noscript=1"
-  /></noscript>
+      src="https://www.facebook.com/tr?id=1251335076510525&ev=PageView&noscript=1" /></noscript>
   <!-- End Meta Pixel Code -->
-  
+
   <!-- Meta Access Token (Para Conversions API) -->
-  <meta name="facebook-api-token" content="EAARyFSa6ZBz0BQ2Ls3vfJw9OaMbqpBuPRGxKVSsruNVRRCLy47eTupLi7s7aIGiK1U8nMLGybHCqQozf8BvuPMZCgiKgSa46dfalnANepY7Q0ieLG6Pqt2pZBDtL1DMCljNq5th8vmz3ZC2lrOCK2rBHNG1OnNLFyE6Akj29n7egiLiXMZCXe5e23JfaPRX3R2zl1fiwMss05m8S862yX" />
+  <meta name="facebook-api-token"
+    content="EAARyFSa6ZBz0BQ2Ls3vfJw9OaMbqpBuPRGxKVSsruNVRRCLy47eTupLi7s7aIGiK1U8nMLGybHCqQozf8BvuPMZCgiKgSa46dfalnANepY7Q0ieLG6Pqt2pZBDtL1DMCljNq5th8vmz3ZC2lrOCK2rBHNG1OnNLFyE6Akj29n7egiLiXMZCXe5e23JfaPRX3R2zl1fiwMss05m8S862yX" />
 </head>
+
 <body>
   <!-- Loading Screen -->
   <div id="loading-screen" class="loading-screen">
@@ -89,7 +154,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="loading-progress">
         <div class="progress-bar">
           <div class="progress-fill"></div>
@@ -98,12 +163,12 @@
         <div class="loading-submessage">Carregando recursos e otimizando performance...</div>
       </div>
     </div>
-    
+
     <!-- Partículas de código flutuantes -->
     <div class="code-particles" id="code-particles">
       <!-- Partículas serão inseridas dinamicamente -->
     </div>
-    </div>
+  </div>
   </div>
 
   <!-- Universe Background -->
@@ -115,11 +180,11 @@
   <header class="header" id="header">
     <div class="container">
       <div class="header-content">
-<div class="logo-container">
-  <a href="index.html"> <!-- Altere "index.html" para o caminho da sua página inicial, se necessário -->
-    <img src="assets/visionx-logo.png" alt="VisionX - Desenvolvimento de Soluções Digitais" class="logo" />
-  </a>
-</div>
+        <div class="logo-container">
+          <a href="index.html"> <!-- Altere "index.html" para o caminho da sua página inicial, se necessário -->
+            <img src="assets/visionx-logo.png" alt="VisionX - Desenvolvimento de Soluções Digitais" class="logo" />
+          </a>
+        </div>
         <nav class="nav" id="nav">
           <ul class="nav-list">
             <li><a href="#sobre" class="nav-link">Sobre</a></li>
@@ -167,7 +232,8 @@
           <span class="title-line">Transformamos ideias em soluções digitais!</span>
         </h1>
         <p class="hero-description">
-          Desenvolvemos sites modernos, aplicativos inovadores e sistemas personalizados que impulsionam o crescimento do seu negócio.
+          Desenvolvemos sites modernos, aplicativos inovadores e sistemas personalizados que impulsionam o crescimento
+          do seu negócio.
         </p>
         <div class="hero-actions">
           <a href="#contato" class="cta-button primary">
@@ -179,12 +245,12 @@
             <i class="fas fa-eye"></i>
           </a>
         </div>
-        </div>
       </div>
     </div>
-<div class="scroll-indicator" aria-label="Scroll para baixo" role="img" tabindex="0">
-  <div class="scroll-arrow"></div>
-</div>
+    </div>
+    <div class="scroll-indicator" aria-label="Scroll para baixo" role="img" tabindex="0">
+      <div class="scroll-arrow"></div>
+    </div>
   </section>
 
   <!-- About Section -->
@@ -199,10 +265,13 @@
         <div class="about-text" data-aos="fade-right">
           <h3>Quem Somos</h3>
           <p>
-            A VisionX é uma empresa especializada em desenvolvimento de soluções digitais, fundada com o propósito de transformar ideias em realidade através da tecnologia. Nossa equipe combina criatividade, expertise técnica e visão estratégica para entregar projetos que superam expectativas.
+            A VisionX é uma empresa especializada em desenvolvimento de soluções digitais, fundada com o propósito de
+            transformar ideias em realidade através da tecnologia. Nossa equipe combina criatividade, expertise técnica
+            e visão estratégica para entregar projetos que superam expectativas.
           </p>
           <p>
-            Atendemos clientes em todo o Brasil, desde startups até grandes empresas, sempre com foco na inovação, qualidade e resultados mensuráveis.
+            Atendemos clientes em todo o Brasil, desde startups até grandes empresas, sempre com foco na inovação,
+            qualidade e resultados mensuráveis.
           </p>
           <div class="about-features">
             <div class="feature-item">
@@ -247,11 +316,11 @@
               <span>JavaScript</span>
             </div>
             <div class="tech-item">
-<i class="fab fa-css3-alt"></i>
+              <i class="fab fa-css3-alt"></i>
               <span>CSS</span>
             </div>
             <div class="tech-item">
-<i class="fab fa-html5"></i>
+              <i class="fab fa-html5"></i>
               <span>HTML</span>
             </div>
           </div>
@@ -260,107 +329,112 @@
     </div>
   </section>
 
-<section id="servicos" class="services-section section">
-  <div class="container">
-    <div class="section-header" data-aos="fade-up">
-      <h2 class="section-title">Nossos Serviços</h2>
-      <div class="section-line"></div>
-      <p class="section-subtitle">Soluções completas para o seu negócio digital</p>
+  <section id="servicos" class="services-section section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">Nossos Serviços</h2>
+        <div class="section-line"></div>
+        <p class="section-subtitle">Soluções completas para o seu negócio digital</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-icon">
+            <i class="fas fa-globe"></i>
+          </div>
+          <h3>Desenvolvimento Web</h3>
+          <p>Sites institucionais, landing pages e e-commerces responsivos com design moderno e performance otimizada.
+          </p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Design Responsivo</li>
+            <li><i class="fas fa-check"></i> SEO Otimizado</li>
+            <li><i class="fas fa-check"></i> Performance Máxima</li>
+          </ul>
+          <a href="#contato" class="service-cta">Solicitar Orçamento</a>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>Aplicativos Móveis</h3>
+          <p>Apps nativos e híbridos para Android e iOS com interface intuitiva e funcionalidades personalizadas.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> iOS & Android</li>
+            <li><i class="fas fa-check"></i> Interface Intuitiva</li>
+            <li><i class="fas fa-check"></i> Integração com APIs</li>
+          </ul>
+          <a href="#contato" class="service-cta">Solicitar Orçamento</a>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <h3>Sistemas Web</h3>
+          <p>Plataformas e sistemas personalizados para gestão, vendas, controle e automação de processos empresariais.
+          </p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Gestão Completa</li>
+            <li><i class="fas fa-check"></i> Relatórios Avançados</li>
+            <li><i class="fas fa-check"></i> Segurança Máxima</li>
+          </ul>
+          <a href="#contato" class="service-cta">Solicitar Orçamento</a>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="service-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <h3>Automação Digital</h3>
+          <p>Integrações inteligentes e robôs que otimizam processos, economizam tempo e aumentam a produtividade.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Processos Automatizados</li>
+            <li><i class="fas fa-check"></i> Integração de Sistemas</li>
+            <li><i class="fas fa-check"></i> Economia de Tempo</li>
+          </ul>
+          <a href="#contato" class="service-cta">Solicitar Orçamento</a>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+          <div class="service-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Consultoria Tech</h3>
+          <p>Análise técnica, arquitetura de software e consultoria estratégica para otimizar seus projetos digitais.
+          </p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Análise Técnica</li>
+            <li><i class="fas fa-check"></i> Arquitetura de Software</li>
+            <li><i class="fas fa-check"></i> Estratégia Digital</li>
+          </ul>
+          <a href="#contato" class="service-cta">Solicitar Orçamento</a>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+          <div class="service-icon">
+            <i class="fas fa-tasks"></i>
+          </div>
+          <h3>Gestão de Software</h3>
+          <p>Controle, planejamento e monitoramento eficiente de projetos e equipes para garantir entregas de qualidade.
+          </p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Planejamento Ágil</li>
+            <li><i class="fas fa-check"></i> Monitoramento em Tempo Real</li>
+            <li><i class="fas fa-check"></i> Gestão de Equipes</li>
+          </ul>
+          <a href="#contato" class="service-cta">Solicitar Orçamento</a>
+        </div>
+      </div>
     </div>
-    <div class="services-grid">
-      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="service-icon">
-          <i class="fas fa-globe"></i>
-        </div>
-        <h3>Desenvolvimento Web</h3>
-        <p>Sites institucionais, landing pages e e-commerces responsivos com design moderno e performance otimizada.</p>
-        <ul class="service-features">
-          <li><i class="fas fa-check"></i> Design Responsivo</li>
-          <li><i class="fas fa-check"></i> SEO Otimizado</li>
-          <li><i class="fas fa-check"></i> Performance Máxima</li>
-        </ul>
-        <a href="#contato" class="service-cta">Solicitar Orçamento</a>
-      </div>
-
-      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="service-icon">
-          <i class="fas fa-mobile-alt"></i>
-        </div>
-        <h3>Aplicativos Móveis</h3>
-        <p>Apps nativos e híbridos para Android e iOS com interface intuitiva e funcionalidades personalizadas.</p>
-        <ul class="service-features">
-          <li><i class="fas fa-check"></i> iOS & Android</li>
-          <li><i class="fas fa-check"></i> Interface Intuitiva</li>
-          <li><i class="fas fa-check"></i> Integração com APIs</li>
-        </ul>
-        <a href="#contato" class="service-cta">Solicitar Orçamento</a>
-      </div>
-
-      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-        <div class="service-icon">
-          <i class="fas fa-cogs"></i>
-        </div>
-        <h3>Sistemas Web</h3>
-        <p>Plataformas e sistemas personalizados para gestão, vendas, controle e automação de processos empresariais.</p>
-        <ul class="service-features">
-          <li><i class="fas fa-check"></i> Gestão Completa</li>
-          <li><i class="fas fa-check"></i> Relatórios Avançados</li>
-          <li><i class="fas fa-check"></i> Segurança Máxima</li>
-        </ul>
-        <a href="#contato" class="service-cta">Solicitar Orçamento</a>
-      </div>
-
-      <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-        <div class="service-icon">
-          <i class="fas fa-robot"></i>
-        </div>
-        <h3>Automação Digital</h3>
-        <p>Integrações inteligentes e robôs que otimizam processos, economizam tempo e aumentam a produtividade.</p>
-        <ul class="service-features">
-          <li><i class="fas fa-check"></i> Processos Automatizados</li>
-          <li><i class="fas fa-check"></i> Integração de Sistemas</li>
-          <li><i class="fas fa-check"></i> Economia de Tempo</li>
-        </ul>
-        <a href="#contato" class="service-cta">Solicitar Orçamento</a>
-      </div>
-
-      <div class="service-card" data-aos="fade-up" data-aos-delay="500">
-        <div class="service-icon">
-          <i class="fas fa-shield-alt"></i>
-        </div>
-        <h3>Consultoria Tech</h3>
-        <p>Análise técnica, arquitetura de software e consultoria estratégica para otimizar seus projetos digitais.</p>
-        <ul class="service-features">
-          <li><i class="fas fa-check"></i> Análise Técnica</li>
-          <li><i class="fas fa-check"></i> Arquitetura de Software</li>
-          <li><i class="fas fa-check"></i> Estratégia Digital</li>
-        </ul>
-        <a href="#contato" class="service-cta">Solicitar Orçamento</a>
-      </div>
-
-      <div class="service-card" data-aos="fade-up" data-aos-delay="600">
-        <div class="service-icon">
-          <i class="fas fa-tasks"></i>
-        </div>
-        <h3>Gestão de Software</h3>
-        <p>Controle, planejamento e monitoramento eficiente de projetos e equipes para garantir entregas de qualidade.</p>
-        <ul class="service-features">
-          <li><i class="fas fa-check"></i> Planejamento Ágil</li>
-          <li><i class="fas fa-check"></i> Monitoramento em Tempo Real</li>
-          <li><i class="fas fa-check"></i> Gestão de Equipes</li>
-        </ul>
-        <a href="#contato" class="service-cta">Solicitar Orçamento</a>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- CTA Section -->
   <section class="cta-section">
     <div class="container">
       <div class="cta-content" data-aos="fade-up">
         <h2>Pronto para transformar sua ideia em realidade?</h2>
-        <p>Entre em contato conosco e descubra como podemos impulsionar seu negócio com soluções digitais inovadoras.</p>
+        <p>Entre em contato conosco e descubra como podemos impulsionar seu negócio com soluções digitais inovadoras.
+        </p>
         <a href="#contato" class="cta-button primary large">
           <span>Começar Projeto</span>
           <i class="fas fa-rocket"></i>
@@ -369,396 +443,406 @@
     </div>
   </section>
 
-<!-- Portfolio Section -->
-<section id="portfolio" class="portfolio-section section">
-  <div class="container">
-    <div class="section-header" data-aos="fade-up">
-      <h2 class="section-title">Nosso Portfólio</h2>
-      <div class="section-line"></div>
-      <p class="section-subtitle">Projetos que transformaram negócios</p>
-    </div>
-
-    <!-- Portfolio Tabs -->
-    <div class="portfolio-tabs" data-aos="fade-up">
-      <button class="portfolio-tab active" data-category="sites">
-        <i class="fas fa-globe"></i>
-        <span>Sites</span>
-      </button>
-      <button class="portfolio-tab" data-category="aplicativos">
-        <i class="fas fa-mobile-alt"></i>
-        <span>Aplicativos</span>
-      </button>
-    </div>
-
-    <!-- Sites Portfolio -->
-    <div class="portfolio-category active" id="sites-portfolio">
-      <div class="portfolio-grid">
-
-        <!-- Site Sempre Gestão -->
-        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="project-image">
-            <!-- Substitua pelo link da imagem do site -->
-            <img src="https://i.imgur.com/6G88XR9.png" alt="Sempre Gestão - Sistema de Gestão Empresarial" />
-            <div class="project-overlay">
-              <div class="project-badge">Site Institucional</div>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fas fa-chart-line"></i>
-              </div>
-              <div class="project-title">
-                <h3>Sempre Gestão</h3>
-                <p class="project-category">Site Institucional</p>
-              </div>
-            </div>
-            <p class="project-description">
-              Site institucional moderno para empresa de gestão de projetos e negócios empresariais, com design responsivo e otimizado para conversão.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">HTML5</span>
-              <span class="tech-tag">CSS3</span>
-              <span class="tech-tag">JavaScript</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://sempregestao.srv.br" class="btn-primary" target="_blank" rel="noopener">
-                <i class="fas fa-external-link-alt"></i>
-                <span>Visitar Site</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Site Finagro -->
-        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="project-image">
-            <!-- Substitua pelo link da imagem do site -->
-            <img src="https://i.imgur.com/ZwZc5Xe.png" alt="Finagro - Site Oficial" />
-            <div class="project-overlay">
-              <div class="project-badge">Site Institucional</div>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-header">
-              <img src="assets/FInagro LOGO 3.png" alt="Finagro Logo" class="project-logo" />
-              <div class="project-title">
-                <h3>Finagro</h3>
-                <p class="project-category">Site Institucional</p>
-              </div>
-            </div>
-            <p class="project-description">
-              Site oficial da plataforma Finagro, apresentando soluções de gestão rural com interface moderna e informações detalhadas sobre os serviços.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Next.js</span>
-              <span class="tech-tag">Tailwind CSS</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://finagro.app" class="btn-primary" target="_blank" rel="noopener">
-                <i class="fas fa-external-link-alt"></i>
-                <span>Visitar Site</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Site Lacerda e Lacerda -->
-        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="project-image">
-            <!-- Substitua pelo link da imagem do site -->
-            <img src="https://i.imgur.com/xrq4Pda.png" alt="Lacerda e Lacerda - Advocacia" />
-            <div class="project-overlay">
-              <div class="project-badge">Site Profissional</div>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-header">
-              <img src="assets/LOGO LACERDA E LACERDA.png" alt="Lacerda e Lacerda Logo" class="project-logo" />
-              <div class="project-title">
-                <h3>Lacerda e Lacerda</h3>
-                <p class="project-category">Site Advocacia</p>
-              </div>
-            </div>
-            <p class="project-description">
-              Site institucional para escritório de advocacia, com design elegante, áreas de atuação detalhadas e formulário de contato integrado.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">WordPress</span>
-              <span class="tech-tag">PHP</span>
-              <span class="tech-tag">Custom Theme</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://lacerdaelacerda.visionxma.com" class="btn-primary" target="_blank" rel="noopener">
-                <i class="fas fa-external-link-alt"></i>
-                <span>Visitar Site</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Site Naldo Bebidas -->
-        <div class="project-card" data-aos="fade-up" data-aos-delay="400">
-          <div class="project-image">
-            <!-- Substitua pelo link da imagem do site -->
-            <img src="https://i.imgur.com/56gqIUt.png" alt="Naldo Bebidas - E-commerce" />
-            <div class="project-overlay">
-              <div class="project-badge">E-commerce</div>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fas fa-shopping-cart"></i>
-              </div>
-              <div class="project-title">
-                <h3>Naldo Bebidas</h3>
-                <p class="project-category">E-commerce</p>
-              </div>
-            </div>
-            <p class="project-description">
-              Plataforma de e-commerce para distribuidora de bebidas, com catálogo completo, sistema de pedidos online e integração com pagamento.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">MongoDB</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://naldobebidas.visionxma.com" class="btn-primary" target="_blank" rel="noopener">
-                <i class="fas fa-external-link-alt"></i>
-                <span>Visitar Site</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio-section section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">Nosso Portfólio</h2>
+        <div class="section-line"></div>
+        <p class="section-subtitle">Projetos que transformaram negócios</p>
       </div>
-    </div>
 
-    <!-- Aplicativos Portfolio -->
-    <div class="portfolio-category" id="aplicativos-portfolio">
-      <div class="portfolio-grid">
-
-        <!-- App Finagro -->
-        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="project-image">
-            <!-- Substitua pelo link da imagem do app -->
-            <img src="assets/portfolio/finagro-app-preview.png" alt="Finagro - App de Gestão Rural" />
-            <div class="project-overlay">
-              <div class="project-badge">Destaque</div>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-header">
-              <img src="assets/FInagro LOGO 3.png" alt="Finagro Logo" class="project-logo" />
-              <div class="project-title">
-                <h3>Finagro</h3>
-                <p class="project-category">Aplicativo Mobile</p>
-              </div>
-            </div>
-            <p class="project-description">
-              Aplicativo completo para gestão rural, oferecendo controle de safras, finanças, equipamentos e funcionários. Disponível para Android e iOS.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">React Native</span>
-              <span class="tech-tag">Firebase</span>
-              <span class="tech-tag">Expo</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://finagro.app" class="btn-primary" target="_blank" rel="noopener">
-                <i class="fas fa-external-link-alt"></i>
-                <span>Saiba Mais</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- App Controle de Frotas -->
-        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="project-image">
-            <!-- Substitua pelo link da imagem do app -->
-            <img src="assets/portfolio/frotas-app-preview.png" alt="Controle de Frotas" />
-            <div class="project-overlay">
-              <div class="project-badge">App Web</div>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fas fa-truck"></i>
-              </div>
-              <div class="project-title">
-                <h3>Controle de Frotas</h3>
-                <p class="project-category">Aplicativo Web</p>
-              </div>
-            </div>
-            <p class="project-description">
-              Sistema móvel para gestão completa de frotas, rastreamento em tempo real, controle de manutenção, abastecimento e relatórios detalhados.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Next.js</span>
-              <span class="tech-tag">Firebase</span>
-            </div>
-            <div class="project-actions">
-              <a href="#contato" class="btn-primary">
-                <i class="fas fa-envelope"></i>
-                <span>Solicitar Demo</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- App Controle App -->
-        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="project-image">
-            <!-- Substitua pelo link da imagem do app -->
-            <img src="assets/portfolio/controle-app-preview.png" alt="Controle App - Gestão de Estoque" />
-            <div class="project-overlay">
-              <div class="project-badge">Sistema Completo</div>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fas fa-boxes"></i>
-              </div>
-              <div class="project-title">
-                <h3>Controle App</h3>
-                <p class="project-category">Sistema de Controle</p>
-              </div>
-            </div>
-            <p class="project-description">
-              Sistema completo para controle de produtos, gestão de estoque e vendas. Inclui leitura de código de barras, relatórios e dashboard analítico.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Next.Js</span>
-              <span class="tech-tag">Firebase</span>
-            </div>
-            <div class="project-actions">
-              <a href="#contato" class="btn-primary">
-                <i class="fas fa-envelope"></i>
-                <span>Solicitar Demo</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- App Fideliza -->
-        <div class="project-card" data-aos="fade-up" data-aos-delay="400">
-          <div class="project-image">
-            <!-- Substitua pelo link da imagem do app -->
-            <img src="assets/portfolio/fideliza-app-preview.png" alt="Fideliza - CRM de Mensalidades" />
-            <div class="project-overlay">
-              <div class="project-badge">CRM</div>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fas fa-users"></i>
-              </div>
-              <div class="project-title">
-                <h3>Fideliza</h3>
-                <p class="project-category">CRM de Mensalidades</p>
-              </div>
-            </div>
-            <p class="project-description">
-              CRM especializado para gestão de mensalidades e programas de fidelidade, com notificações automáticas, controle de pagamentos e relatórios.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Firebase</span>
-              <span class="tech-tag">Automação</span>
-            </div>
-            <div class="project-actions">
-              <a href="#contato" class="btn-primary">
-                <i class="fas fa-envelope"></i>
-                <span>Solicitar Demo</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- App Gestão Interna -->
-        <div class="project-card" data-aos="fade-up" data-aos-delay="500">
-          <div class="project-image">
-            <!-- Substitua pelo link da imagem do app -->
-            <img src="https://i.imgur.com/x8zUDAs.png" alt="Gestão Interna - CRM para Agências" />
-            <div class="project-overlay">
-              <div class="project-badge">CRM Empresarial</div>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fas fa-briefcase"></i>
-              </div>
-              <div class="project-title">
-                <h3>Gestão Interna</h3>
-                <p class="project-category">CRM para Agências</p>
-              </div>
-            </div>
-            <p class="project-description">
-              CRM robusto para agências, gerenciando clientes, projetos, equipes e finanças. Sistema completo com dashboard, relatórios e integração com ferramentas.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Next.js</span>
-              <span class="tech-tag">Firebase</span>
-            </div>
-            <div class="project-actions">
-              <a href="#contato" class="btn-primary">
-                <i class="fas fa-envelope"></i>
-                <span>Solicitar Demo</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- App SeLigaAí -->
-        <div class="project-card" data-aos="fade-up" data-aos-delay="600">
-          <div class="project-image">
-            <img src="assets/portfolio/seligaai-app-preview.png" alt="SeLigaAí - Alertas de Segurança" />
-            <div class="project-overlay">
-              <div class="project-badge">Segurança Pública</div>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fas fa-shield-alt"></i>
-              </div>
-              <div class="project-title">
-                <h3>SeLigaAí</h3>
-                <p class="project-category">Aplicativo de Segurança</p>
-              </div>
-            </div>
-            <p class="project-description">
-              🚨 Alertas de áreas de risco em tempo real! Proteção para Pedreiras e região com notificações inteligentes baseadas em dados oficiais da polícia.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">React Native</span>
-              <span class="tech-tag">Expo</span>
-              <span class="tech-tag">Firebase</span>
-            </div>
-            <div class="project-actions">
-              <a href="seligaai.html" class="btn-primary">
-                <i class="fas fa-info-circle"></i>
-                <span>Saiba Mais</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
+      <!-- Portfolio Tabs -->
+      <div class="portfolio-tabs" data-aos="fade-up">
+        <button class="portfolio-tab active" data-category="sites">
+          <i class="fas fa-globe"></i>
+          <span>Sites</span>
+        </button>
+        <button class="portfolio-tab" data-category="aplicativos">
+          <i class="fas fa-mobile-alt"></i>
+          <span>Aplicativos</span>
+        </button>
       </div>
-    </div>
 
-  </div>
-</section>
+      <!-- Sites Portfolio -->
+      <div class="portfolio-category active" id="sites-portfolio">
+        <div class="portfolio-grid">
+
+          <!-- Site Sempre Gestão -->
+          <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-image">
+              <!-- Substitua pelo link da imagem do site -->
+              <img src="https://i.imgur.com/6G88XR9.png" alt="Sempre Gestão - Sistema de Gestão Empresarial" />
+              <div class="project-overlay">
+                <div class="project-badge">Site Institucional</div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <div class="project-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="project-title">
+                  <h3>Sempre Gestão</h3>
+                  <p class="project-category">Site Institucional</p>
+                </div>
+              </div>
+              <p class="project-description">
+                Site institucional moderno para empresa de gestão de projetos e negócios empresariais, com design
+                responsivo e otimizado para conversão.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://sempregestao.srv.br" class="btn-primary" target="_blank" rel="noopener">
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Visitar Site</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Site Finagro -->
+          <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-image">
+              <!-- Substitua pelo link da imagem do site -->
+              <img src="https://i.imgur.com/ZwZc5Xe.png" alt="Finagro - Site Oficial" />
+              <div class="project-overlay">
+                <div class="project-badge">Site Institucional</div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <img src="assets/FInagro LOGO 3.png" alt="Finagro Logo" class="project-logo" />
+                <div class="project-title">
+                  <h3>Finagro</h3>
+                  <p class="project-category">Site Institucional</p>
+                </div>
+              </div>
+              <p class="project-description">
+                Site oficial da plataforma Finagro, apresentando soluções de gestão rural com interface moderna e
+                informações detalhadas sobre os serviços.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">Tailwind CSS</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://finagro.app" class="btn-primary" target="_blank" rel="noopener">
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Visitar Site</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Site Lacerda e Lacerda -->
+          <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="project-image">
+              <!-- Substitua pelo link da imagem do site -->
+              <img src="https://i.imgur.com/xrq4Pda.png" alt="Lacerda e Lacerda - Advocacia" />
+              <div class="project-overlay">
+                <div class="project-badge">Site Profissional</div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <img src="assets/LOGO LACERDA E LACERDA.png" alt="Lacerda e Lacerda Logo" class="project-logo" />
+                <div class="project-title">
+                  <h3>Lacerda e Lacerda</h3>
+                  <p class="project-category">Site Advocacia</p>
+                </div>
+              </div>
+              <p class="project-description">
+                Site institucional para escritório de advocacia, com design elegante, áreas de atuação detalhadas e
+                formulário de contato integrado.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">WordPress</span>
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">Custom Theme</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://lacerdaelacerda.visionxma.com" class="btn-primary" target="_blank" rel="noopener">
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Visitar Site</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Site Naldo Bebidas -->
+          <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="project-image">
+              <!-- Substitua pelo link da imagem do site -->
+              <img src="https://i.imgur.com/56gqIUt.png" alt="Naldo Bebidas - E-commerce" />
+              <div class="project-overlay">
+                <div class="project-badge">E-commerce</div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <div class="project-icon">
+                  <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="project-title">
+                  <h3>Naldo Bebidas</h3>
+                  <p class="project-category">E-commerce</p>
+                </div>
+              </div>
+              <p class="project-description">
+                Plataforma de e-commerce para distribuidora de bebidas, com catálogo completo, sistema de pedidos online
+                e integração com pagamento.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">MongoDB</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://naldobebidas.visionxma.com" class="btn-primary" target="_blank" rel="noopener">
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Visitar Site</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Aplicativos Portfolio -->
+      <div class="portfolio-category" id="aplicativos-portfolio">
+        <div class="portfolio-grid">
+
+          <!-- App Finagro -->
+          <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-image">
+              <!-- Substitua pelo link da imagem do app -->
+              <img src="assets/portfolio/finagro-app-preview.png" alt="Finagro - App de Gestão Rural" />
+              <div class="project-overlay">
+                <div class="project-badge">Destaque</div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <img src="assets/FInagro LOGO 3.png" alt="Finagro Logo" class="project-logo" />
+                <div class="project-title">
+                  <h3>Finagro</h3>
+                  <p class="project-category">Aplicativo Mobile</p>
+                </div>
+              </div>
+              <p class="project-description">
+                Aplicativo completo para gestão rural, oferecendo controle de safras, finanças, equipamentos e
+                funcionários. Disponível para Android e iOS.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">React Native</span>
+                <span class="tech-tag">Firebase</span>
+                <span class="tech-tag">Expo</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://finagro.app" class="btn-primary" target="_blank" rel="noopener">
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Saiba Mais</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- App Controle de Frotas -->
+          <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-image">
+              <!-- Substitua pelo link da imagem do app -->
+              <img src="assets/portfolio/frotas-app-preview.png" alt="Controle de Frotas" />
+              <div class="project-overlay">
+                <div class="project-badge">App Web</div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <div class="project-icon">
+                  <i class="fas fa-truck"></i>
+                </div>
+                <div class="project-title">
+                  <h3>Controle de Frotas</h3>
+                  <p class="project-category">Aplicativo Web</p>
+                </div>
+              </div>
+              <p class="project-description">
+                Sistema móvel para gestão completa de frotas, rastreamento em tempo real, controle de manutenção,
+                abastecimento e relatórios detalhados.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">Firebase</span>
+              </div>
+              <div class="project-actions">
+                <a href="#contato" class="btn-primary">
+                  <i class="fas fa-envelope"></i>
+                  <span>Solicitar Demo</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- App Controle App -->
+          <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="project-image">
+              <!-- Substitua pelo link da imagem do app -->
+              <img src="assets/portfolio/controle-app-preview.png" alt="Controle App - Gestão de Estoque" />
+              <div class="project-overlay">
+                <div class="project-badge">Sistema Completo</div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <div class="project-icon">
+                  <i class="fas fa-boxes"></i>
+                </div>
+                <div class="project-title">
+                  <h3>Controle App</h3>
+                  <p class="project-category">Sistema de Controle</p>
+                </div>
+              </div>
+              <p class="project-description">
+                Sistema completo para controle de produtos, gestão de estoque e vendas. Inclui leitura de código de
+                barras, relatórios e dashboard analítico.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Next.Js</span>
+                <span class="tech-tag">Firebase</span>
+              </div>
+              <div class="project-actions">
+                <a href="#contato" class="btn-primary">
+                  <i class="fas fa-envelope"></i>
+                  <span>Solicitar Demo</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- App Fideliza -->
+          <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="project-image">
+              <!-- Substitua pelo link da imagem do app -->
+              <img src="assets/portfolio/fideliza-app-preview.png" alt="Fideliza - CRM de Mensalidades" />
+              <div class="project-overlay">
+                <div class="project-badge">CRM</div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <div class="project-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <div class="project-title">
+                  <h3>Fideliza</h3>
+                  <p class="project-category">CRM de Mensalidades</p>
+                </div>
+              </div>
+              <p class="project-description">
+                CRM especializado para gestão de mensalidades e programas de fidelidade, com notificações automáticas,
+                controle de pagamentos e relatórios.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Firebase</span>
+                <span class="tech-tag">Automação</span>
+              </div>
+              <div class="project-actions">
+                <a href="#contato" class="btn-primary">
+                  <i class="fas fa-envelope"></i>
+                  <span>Solicitar Demo</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- App Gestão Interna -->
+          <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+            <div class="project-image">
+              <!-- Substitua pelo link da imagem do app -->
+              <img src="https://i.imgur.com/x8zUDAs.png" alt="Gestão Interna - CRM para Agências" />
+              <div class="project-overlay">
+                <div class="project-badge">CRM Empresarial</div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <div class="project-icon">
+                  <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="project-title">
+                  <h3>Gestão Interna</h3>
+                  <p class="project-category">CRM para Agências</p>
+                </div>
+              </div>
+              <p class="project-description">
+                CRM robusto para agências, gerenciando clientes, projetos, equipes e finanças. Sistema completo com
+                dashboard, relatórios e integração com ferramentas.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">Firebase</span>
+              </div>
+              <div class="project-actions">
+                <a href="#contato" class="btn-primary">
+                  <i class="fas fa-envelope"></i>
+                  <span>Solicitar Demo</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- App SeLigaAí -->
+          <div class="project-card" data-aos="fade-up" data-aos-delay="600">
+            <div class="project-image">
+              <img src="assets/portfolio/seligaai-app-preview.png" alt="SeLigaAí - Alertas de Segurança" />
+              <div class="project-overlay">
+                <div class="project-badge">Segurança Pública</div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <div class="project-icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="project-title">
+                  <h3>SeLigaAí</h3>
+                  <p class="project-category">Aplicativo de Segurança</p>
+                </div>
+              </div>
+              <p class="project-description">
+                🚨 Alertas de áreas de risco em tempo real! Proteção para Pedreiras e região com notificações
+                inteligentes baseadas em dados oficiais da polícia.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">React Native</span>
+                <span class="tech-tag">Expo</span>
+                <span class="tech-tag">Firebase</span>
+              </div>
+              <div class="project-actions">
+                <a href="seligaai.html" class="btn-primary">
+                  <i class="fas fa-info-circle"></i>
+                  <span>Saiba Mais</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <!-- Partners Section -->
   <section class="partners-section">
@@ -786,13 +870,13 @@
           </div>
           <div class="partner-slide">
             <img src="assets/Sos Malhas Logo Vetor.png" alt="Sos Malhas - Parceiro VisionX" loading="lazy" />
-          </div>          
+          </div>
           <div class="partner-slide">
             <img src="assets/Lok Fácil.png" alt="Lok Fácil - Parceiro VisionX" loading="lazy" />
           </div>
           <div class="partner-slide">
             <img src="assets/Sernandes Impressão.png" alt="Sernandes Soares - Parceiro VisionX" loading="lazy" />
-          </div>          
+          </div>
           <!-- Duplicar slides para efeito infinito -->
           <div class="partner-slide">
             <img src="assets/FInagro LOGO 3.png" alt="Finagro - Parceiro VisionX" loading="lazy" />
@@ -811,7 +895,7 @@
           </div>
           <div class="partner-slide">
             <img src="assets/Sos Malhas Logo Vetor.png" alt="Sos Malhas - Parceiro VisionX" loading="lazy" />
-          </div>          
+          </div>
           <div class="partner-slide">
             <img src="assets/Lok Fácil.png" alt="Lok Fácil - Parceiro VisionX" loading="lazy" />
           </div>
@@ -826,34 +910,37 @@
     </div>
   </section>
 
-<!-- Expectations Section -->
-<section id="depoimentos" class="testimonials-section section">
-  <div class="container">
-    <div class="section-header" data-aos="fade-up">
-      <h2 class="section-title">O que Você Pode Esperar da VisionX</h2>
-      <div class="section-line"></div>
-      <p class="section-subtitle">Cada projeto é uma nova oportunidade de entregar excelência. Nosso foco está em oferecer soluções eficazes, com atenção aos detalhes e total dedicação desde o primeiro contato.</p>
-    </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="testimonial-content">
-          <div class="stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i>
-            <i class="fas fa-star"></i><i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+  <!-- Expectations Section -->
+  <section id="depoimentos" class="testimonials-section section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">O que Você Pode Esperar da VisionX</h2>
+        <div class="section-line"></div>
+        <p class="section-subtitle">Cada projeto é uma nova oportunidade de entregar excelência. Nosso foco está em
+          oferecer soluções eficazes, com atenção aos detalhes e total dedicação desde o primeiro contato.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="testimonial-content">
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p>"A empresa cumpriu todos os prazos e seguiu fielmente as orientações, sempre com clareza e objetividade
+              na construção do site. Recomendo com confiança, pois demonstram seriedade e comprometimento. Que Deus
+              abençoe cada vez mais o crescimento dessa empresa."</p>
           </div>
-          <p>"A empresa cumpriu todos os prazos e seguiu fielmente as orientações, sempre com clareza e objetividade na construção do site. Recomendo com confiança, pois demonstram seriedade e comprometimento. Que Deus abençoe cada vez mais o crescimento dessa empresa."</p>
-        </div>
-        <div class="testimonial-author">
-          <div class="author-info">
-            <h4>Carlos Coelho</h4>
-            <p>SEMPRE - Gestão de Projetos e Negócios Empresariais</p>
+          <div class="testimonial-author">
+            <div class="author-info">
+              <h4>Carlos Coelho</h4>
+              <p>SEMPRE - Gestão de Projetos e Negócios Empresariais</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- FAQ Section -->
   <section id="faq" class="faq-section section">
@@ -870,7 +957,9 @@
             <i class="fas fa-chevron-down"></i>
           </div>
           <div class="faq-answer">
-            <p>O prazo varia conforme a complexidade do projeto. Sites institucionais simples ficam prontos em 7-15 dias, enquanto e-commerces e sistemas mais complexos podem levar de 30 a 90 dias. Sempre definimos prazos claros no início do projeto.</p>
+            <p>O prazo varia conforme a complexidade do projeto. Sites institucionais simples ficam prontos em 7-15
+              dias, enquanto e-commerces e sistemas mais complexos podem levar de 30 a 90 dias. Sempre definimos prazos
+              claros no início do projeto.</p>
           </div>
         </div>
 
@@ -880,7 +969,8 @@
             <i class="fas fa-chevron-down"></i>
           </div>
           <div class="faq-answer">
-            <p>Sim! Oferecemos 30 dias de suporte gratuito após a entrega para correções e ajustes. Também temos planos de manutenção mensal para atualizações, backups e monitoramento contínuo.</p>
+            <p>Sim! Oferecemos 30 dias de suporte gratuito após a entrega para correções e ajustes. Também temos planos
+              de manutenção mensal para atualizações, backups e monitoramento contínuo.</p>
           </div>
         </div>
 
@@ -890,7 +980,9 @@
             <i class="fas fa-chevron-down"></i>
           </div>
           <div class="faq-answer">
-            <p>Nosso processo é dividido em etapas: 1) Briefing e análise de requisitos, 2) Criação do protótipo/wireframe, 3) Desenvolvimento, 4) Testes e ajustes, 5) Entrega e treinamento. Você acompanha cada etapa e pode sugerir alterações.</p>
+            <p>Nosso processo é dividido em etapas: 1) Briefing e análise de requisitos, 2) Criação do
+              protótipo/wireframe, 3) Desenvolvimento, 4) Testes e ajustes, 5) Entrega e treinamento. Você acompanha
+              cada etapa e pode sugerir alterações.</p>
           </div>
         </div>
 
@@ -900,8 +992,10 @@
             <i class="fas fa-chevron-down"></i>
           </div>
           <div class="faq-answer">
-            <p>Os custos variam de acordo com o escopo e a complexidade do projeto. Desenvolvemos sites institucionais, e-commerces e aplicativos móveis com soluções sob medida para cada necessidade. Oferecemos orçamentos personalizados, sem compromisso. Fale conosco e descubra como podemos transformar sua ideia em realidade.
-</p>
+            <p>Os custos variam de acordo com o escopo e a complexidade do projeto. Desenvolvemos sites institucionais,
+              e-commerces e aplicativos móveis com soluções sob medida para cada necessidade. Oferecemos orçamentos
+              personalizados, sem compromisso. Fale conosco e descubra como podemos transformar sua ideia em realidade.
+            </p>
           </div>
         </div>
 
@@ -911,7 +1005,8 @@
             <i class="fas fa-chevron-down"></i>
           </div>
           <div class="faq-answer">
-            <p>Absolutamente! Atendemos clientes em todo o Brasil. Trabalhamos 100% online com reuniões por videoconferência, ferramentas colaborativas e comunicação constante via WhatsApp e email.</p>
+            <p>Absolutamente! Atendemos clientes em todo o Brasil. Trabalhamos 100% online com reuniões por
+              videoconferência, ferramentas colaborativas e comunicação constante via WhatsApp e email.</p>
           </div>
         </div>
 
@@ -921,7 +1016,8 @@
             <i class="fas fa-chevron-down"></i>
           </div>
           <div class="faq-answer">
-            <p>Sim, todos os nossos projetos são desenvolvidos com design responsivo, garantindo perfeita visualização e funcionamento em smartphones, tablets e desktops. Testamos em diversos dispositivos antes da entrega.</p>
+            <p>Sim, todos os nossos projetos são desenvolvidos com design responsivo, garantindo perfeita visualização e
+              funcionamento em smartphones, tablets e desktops. Testamos em diversos dispositivos antes da entrega.</p>
           </div>
         </div>
       </div>
@@ -939,8 +1035,9 @@
       <div class="contact-content">
         <div class="contact-info" data-aos="fade-right">
           <h3>Fale Conosco</h3>
-          <p>Estamos prontos para transformar sua ideia em uma solução digital de sucesso. Entre em contato e receba um orçamento personalizado.</p>
-          
+          <p>Estamos prontos para transformar sua ideia em uma solução digital de sucesso. Entre em contato e receba um
+            orçamento personalizado.</p>
+
           <div class="contact-methods">
             <div class="contact-method">
               <div class="method-icon">
@@ -982,7 +1079,8 @@
               <a href="https://instagram.com/visionx.dev" target="_blank" rel="noopener" aria-label="Instagram">
                 <i class="fab fa-instagram"></i>
               </a>
-              <a href="https://www.linkedin.com/in/visionx-desenvolvedora-de-software-9b23b1373/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/visionx-desenvolvedora-de-software-9b23b1373/" target="_blank"
+                rel="noopener" aria-label="LinkedIn">
                 <i class="fab fa-linkedin"></i>
               </a>
               <a href="https://github.com/visionxma" target="_blank" rel="noopener" aria-label="GitHub">
@@ -1037,7 +1135,8 @@
 
             <div class="form-group">
               <label for="message">Mensagem *</label>
-              <textarea id="message" name="message" rows="5" placeholder="Descreva seu projeto, objetivos e qualquer informação relevante..." required></textarea>
+              <textarea id="message" name="message" rows="5"
+                placeholder="Descreva seu projeto, objetivos e qualquer informação relevante..." required></textarea>
             </div>
             <button type="submit" class="submit-btn">
               <span>Enviar Mensagem</span>
@@ -1064,7 +1163,8 @@
             <a href="https://instagram.com/visionx.dev" target="_blank" rel="noopener" aria-label="Instagram">
               <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://www.linkedin.com/in/visionx-desenvolvedora-de-software-9b23b1373/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/visionx-desenvolvedora-de-software-9b23b1373/" target="_blank"
+              rel="noopener" aria-label="LinkedIn">
               <i class="fab fa-linkedin"></i>
             </a>
             <a href="https://github.com/visionxma" target="_blank" rel="noopener" aria-label="GitHub">
@@ -1143,22 +1243,30 @@
         <h1>Política de Privacidade - Vision X</h1>
         <p class="last-updated">Última atualização: Outubro de 2025</p>
 
-        <p>A Vision X valoriza a privacidade de seus usuários e está comprometida em proteger as informações pessoais coletadas através de nossos aplicativos e serviços.</p>
+        <p>A Vision X valoriza a privacidade de seus usuários e está comprometida em proteger as informações pessoais
+          coletadas através de nossos aplicativos e serviços.</p>
 
         <h2>1. Coleta de informações</h2>
-        <p>Podemos coletar informações pessoais, como nome, e-mail, e dados de redes sociais, apenas com o consentimento do usuário. Essas informações são utilizadas para autenticação, personalização da experiência e agendamento de postagens.</p>
+        <p>Podemos coletar informações pessoais, como nome, e-mail, e dados de redes sociais, apenas com o consentimento
+          do usuário. Essas informações são utilizadas para autenticação, personalização da experiência e agendamento de
+          postagens.</p>
 
         <h2>2. Uso das informações</h2>
-        <p>As informações coletadas são utilizadas exclusivamente para oferecer os serviços da Vision X, como o gerenciamento de contas e o agendamento de postagens. Não compartilhamos dados pessoais com terceiros sem autorização prévia do usuário.</p>
+        <p>As informações coletadas são utilizadas exclusivamente para oferecer os serviços da Vision X, como o
+          gerenciamento de contas e o agendamento de postagens. Não compartilhamos dados pessoais com terceiros sem
+          autorização prévia do usuário.</p>
 
         <h2>3. Armazenamento e segurança</h2>
-        <p>Os dados são armazenados em servidores seguros, e adotamos medidas técnicas e administrativas para proteger suas informações contra acesso não autorizado.</p>
+        <p>Os dados são armazenados em servidores seguros, e adotamos medidas técnicas e administrativas para proteger
+          suas informações contra acesso não autorizado.</p>
 
         <h2>4. Direitos do usuário</h2>
-        <p>O usuário pode solicitar, a qualquer momento, a exclusão de seus dados pessoais, conforme descrito na página de Exclusão de Dados.</p>
+        <p>O usuário pode solicitar, a qualquer momento, a exclusão de seus dados pessoais, conforme descrito na página
+          de Exclusão de Dados.</p>
 
         <h2>5. Contato</h2>
-        <p>Em caso de dúvidas sobre esta política, entre em contato com nossa equipe pelo e-mail: <strong>visionxma@gmail.com</strong>.</p>
+        <p>Em caso de dúvidas sobre esta política, entre em contato com nossa equipe pelo e-mail:
+          <strong>visionxma@gmail.com</strong>.</p>
 
         <p class="copyright">© 2025 Vision X - Todos os direitos reservados.</p>
       </div>
@@ -1173,12 +1281,15 @@
         <h1>Exclusão de Dados - Vision X</h1>
         <p class="last-updated">Última atualização: Outubro de 2025</p>
 
-        <p>Em conformidade com a LGPD (Lei Geral de Proteção de Dados Pessoais), a Vision X oferece aos usuários o direito de solicitar a exclusão total de seus dados pessoais armazenados em nossos sistemas.</p>
+        <p>Em conformidade com a LGPD (Lei Geral de Proteção de Dados Pessoais), a Vision X oferece aos usuários o
+          direito de solicitar a exclusão total de seus dados pessoais armazenados em nossos sistemas.</p>
 
         <h2>Como solicitar exclusão</h2>
-        <p>Para excluir seus dados, envie uma solicitação para o e-mail: <strong>visionxma@gmail.com</strong> com o assunto "Exclusão de Dados".</p>
+        <p>Para excluir seus dados, envie uma solicitação para o e-mail: <strong>visionxma@gmail.com</strong> com o
+          assunto "Exclusão de Dados".</p>
 
-        <p>Em até 10 dias úteis após a solicitação, todos os dados pessoais associados à sua conta serão permanentemente removidos de nossos servidores.</p>
+        <p>Em até 10 dias úteis após a solicitação, todos os dados pessoais associados à sua conta serão permanentemente
+          removidos de nossos servidores.</p>
 
         <h2>Dados excluídos</h2>
         <ul>
@@ -1197,4 +1308,5 @@
   <!-- Scripts -->
   <script src="script.js"></script>
 </body>
+
 </html>
