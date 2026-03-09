@@ -56,7 +56,7 @@
   }
   </script>
 
-  <!-- Meta Pixel Code -->
+  <!-- Pixel Manager - Cole no <head> do seu site -->
   <script>
     (function () {
       var SUPABASE_URL = 'https://tcwpfgfddxajlewhmwjr.supabase.co';
@@ -71,6 +71,7 @@
       })
         .then(function (r) { return r.json(); })
         .then(function (pixels) {
+          if (!Array.isArray(pixels)) return;
           pixels.forEach(function (p) {
             switch (p.platform) {
               case 'facebook':
@@ -126,12 +127,10 @@
                 break;
             }
           });
-        });
+        })
+        .catch(console.error);
     })();
   </script>
-  <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1251335076510525&ev=PageView&noscript=1" /></noscript>
-  <!-- End Meta Pixel Code -->
 
   <!-- Meta Access Token (Para Conversions API) -->
   <meta name="facebook-api-token"
