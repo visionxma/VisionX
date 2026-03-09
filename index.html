@@ -62,6 +62,7 @@
       var SUPABASE_URL = 'https://tcwpfgfddxajlewhmwjr.supabase.co';
       var SUPABASE_KEY = 'sb_publishable_POXhkhXnii9Jv3o5XNZk2Q_9a0nsxAD';
       var domain = window.location.hostname;
+      var EDGE_FUNCTION_URL = SUPABASE_URL + '/functions/v1';
       var headers = { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer ' + SUPABASE_KEY };
 
       // --- Pixels ---
@@ -74,7 +75,7 @@
                 !function (f, b, e, v, n, t, s) {
                   if (f.fbq) return; n = f.fbq = function () {
                     n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                      n.callMethod.apply(n, arguments) : n.queue.push(arguments)
                   }; if (!f._fbq) f._fbq = n;
                   n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
                   t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
@@ -162,7 +163,7 @@
         .then(function (sites) {
           if (!sites || !sites.length) return;
           var siteId = sites[0].id;
-          var redirectBase = SUPABASE_URL + '/functions/v1/whatsapp-redirect/' + siteId;
+          var redirectBase = EDGE_FUNCTION_URL + '/whatsapp-redirect/' + siteId;
 
           function isWhatsAppLink(href) {
             if (!href) return false;
