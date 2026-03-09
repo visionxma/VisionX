@@ -61,8 +61,8 @@
     (function () {
       var SUPABASE_URL = 'https://tcwpfgfddxajlewhmwjr.supabase.co';
       var SUPABASE_KEY = 'sb_publishable_POXhkhXnii9Jv3o5XNZk2Q_9a0nsxAD';
+      var EDGE_FUNCTION_URL = 'https://fxmsbynbgwlwtekxqmak.supabase.co/functions/v1';
       var domain = window.location.hostname;
-      var EDGE_FUNCTION_URL = SUPABASE_URL + '/functions/v1';
       var headers = { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer ' + SUPABASE_KEY };
 
       // --- Pixels ---
@@ -75,7 +75,7 @@
                 !function (f, b, e, v, n, t, s) {
                   if (f.fbq) return; n = f.fbq = function () {
                     n.callMethod ?
-                      n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
                   }; if (!f._fbq) f._fbq = n;
                   n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
                   t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
@@ -126,38 +126,7 @@
           });
         });
 
-      // --- Button Links (usa data-pm="chave" no HTML) ---
-      fetch(SUPABASE_URL + '/rest/v1/button_links?active=eq.true&domain=eq.' + encodeURIComponent(domain) + '&select=link_key,redirect_url', { headers: headers })
-        .then(function (r) { return r.json(); })
-        .then(function (links) {
-          function applyLinks() {
-            links.forEach(function (l) {
-              var els = document.querySelectorAll('[data-pm="' + l.link_key + '"]');
-              els.forEach(function (el) {
-                if (!el.__pmLinked) {
-                  el.__pmLinked = true;
-                  if (el.tagName === 'A') {
-                    el.href = l.redirect_url;
-                    el.setAttribute('target', '_blank');
-                    el.setAttribute('rel', 'noopener');
-                  } else {
-                    el.style.cursor = 'pointer';
-                    el.addEventListener('click', function () {
-                      window.open(l.redirect_url, '_blank', 'noopener');
-                    });
-                  }
-                }
-              });
-            });
-          }
-          if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', applyLinks);
-          } else {
-            applyLinks();
-          }
-        });
-
-      // --- WhatsApp Link Interceptor ---
+      // --- WhatsApp/Telegram Link Interceptor ---
       fetch(SUPABASE_URL + '/rest/v1/sites?active=eq.true&domain=eq.' + encodeURIComponent(domain) + '&select=id', { headers: headers })
         .then(function (r) { return r.json(); })
         .then(function (sites) {
@@ -165,22 +134,24 @@
           var siteId = sites[0].id;
           var redirectBase = EDGE_FUNCTION_URL + '/whatsapp-redirect?siteId=' + siteId;
 
-          function isWhatsAppLink(href) {
+          function isGroupLink(href) {
             if (!href) return false;
             return href.indexOf('wa.me') !== -1 ||
               href.indexOf('api.whatsapp.com') !== -1 ||
-              href.indexOf('whatsapp.com/send') !== -1;
+              href.indexOf('whatsapp.com') !== -1 ||
+              href.indexOf('chat.whatsapp.com') !== -1 ||
+              href.indexOf('t.me') !== -1 ||
+              href.indexOf('telegram.me') !== -1;
           }
 
           function interceptLinks() {
             var allLinks = document.querySelectorAll('a[href]');
             allLinks.forEach(function (el) {
               if (el.__pmWaIntercepted) return;
-              if (isWhatsAppLink(el.href)) {
+              if (isGroupLink(el.href)) {
                 el.__pmWaIntercepted = true;
                 el.addEventListener('click', function (e) {
                   e.preventDefault();
-                  // Como o redirectBase agora já tem um "?" (devido ao ?siteId=), o próximo parâmetro precisa usar um "&":
                   var redirectUrl = redirectBase + '&original=' + encodeURIComponent(el.href) + '&page=' + encodeURIComponent(window.location.href);
                   window.open(redirectUrl, '_blank', 'noopener');
                 });
@@ -188,14 +159,12 @@
             });
           }
 
-          // Run on load and observe DOM changes
           if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', interceptLinks);
           } else {
             interceptLinks();
           }
 
-          // MutationObserver for dynamic content
           if (typeof MutationObserver !== 'undefined') {
             var observer = new MutationObserver(function () { interceptLinks(); });
             observer.observe(document.body || document.documentElement, { childList: true, subtree: true });
