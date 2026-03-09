@@ -163,7 +163,7 @@
         .then(function (sites) {
           if (!sites || !sites.length) return;
           var siteId = sites[0].id;
-          var redirectBase = EDGE_FUNCTION_URL + '/whatsapp-redirect/' + siteId;
+          var redirectBase = EDGE_FUNCTION_URL + '/whatsapp-redirect?siteId=' + siteId;
 
           function isWhatsAppLink(href) {
             if (!href) return false;
@@ -180,7 +180,8 @@
                 el.__pmWaIntercepted = true;
                 el.addEventListener('click', function (e) {
                   e.preventDefault();
-                  var redirectUrl = redirectBase + '?original=' + encodeURIComponent(el.href) + '&page=' + encodeURIComponent(window.location.href);
+                  // Como o redirectBase agora já tem um "?" (devido ao ?siteId=), o próximo parâmetro precisa usar um "&":
+                  var redirectUrl = redirectBase + '&original=' + encodeURIComponent(el.href) + '&page=' + encodeURIComponent(window.location.href);
                   window.open(redirectUrl, '_blank', 'noopener');
                 });
               }
