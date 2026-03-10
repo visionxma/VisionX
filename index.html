@@ -56,17 +56,19 @@
   }
   </script>
 
-  <!-- Pixel Manager - Cole no <head> do seu site -->
+  <!-- Meta Pixel Code -->
   <script>
     (function () {
       var SUPABASE_URL = 'https://tcwpfgfddxajlewhmwjr.supabase.co';
       var SUPABASE_KEY = 'sb_publishable_POXhkhXnii9Jv3o5XNZk2Q_9a0nsxAD';
-      var EDGE_FUNCTION_URL = 'https://fxmsbynbgwlwtekxqmak.supabase.co/functions/v1';
       var domain = window.location.hostname;
-      var headers = { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer ' + SUPABASE_KEY };
 
-      // --- Pixels ---
-      fetch(SUPABASE_URL + '/rest/v1/pixels?active=eq.true&domain=eq.' + encodeURIComponent(domain) + '&select=platform,pixel_id', { headers: headers })
+      fetch(SUPABASE_URL + '/rest/v1/pixels?active=eq.true&domain=eq.' + encodeURIComponent(domain) + '&select=platform,pixel_id', {
+        headers: {
+          'apikey': SUPABASE_KEY,
+          'Authorization': 'Bearer ' + SUPABASE_KEY
+        }
+      })
         .then(function (r) { return r.json(); })
         .then(function (pixels) {
           pixels.forEach(function (p) {
@@ -75,7 +77,7 @@
                 !function (f, b, e, v, n, t, s) {
                   if (f.fbq) return; n = f.fbq = function () {
                     n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                      n.callMethod.apply(n, arguments) : n.queue.push(arguments)
                   }; if (!f._fbq) f._fbq = n;
                   n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
                   t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
@@ -125,53 +127,11 @@
             }
           });
         });
-
-      // --- WhatsApp/Telegram Link Interceptor ---
-      fetch(SUPABASE_URL + '/rest/v1/sites?active=eq.true&domain=eq.' + encodeURIComponent(domain) + '&select=id', { headers: headers })
-        .then(function (r) { return r.json(); })
-        .then(function (sites) {
-          if (!sites || !sites.length) return;
-          var siteId = sites[0].id;
-          var redirectBase = EDGE_FUNCTION_URL + '/whatsapp-redirect?siteId=' + siteId;
-
-          function isGroupLink(href) {
-            if (!href) return false;
-            return href.indexOf('wa.me') !== -1 ||
-              href.indexOf('api.whatsapp.com') !== -1 ||
-              href.indexOf('whatsapp.com') !== -1 ||
-              href.indexOf('chat.whatsapp.com') !== -1 ||
-              href.indexOf('t.me') !== -1 ||
-              href.indexOf('telegram.me') !== -1;
-          }
-
-          function interceptLinks() {
-            var allLinks = document.querySelectorAll('a[href]');
-            allLinks.forEach(function (el) {
-              if (el.__pmWaIntercepted) return;
-              if (isGroupLink(el.href)) {
-                el.__pmWaIntercepted = true;
-                el.addEventListener('click', function (e) {
-                  e.preventDefault();
-                  var redirectUrl = redirectBase + '&original=' + encodeURIComponent(el.href) + '&page=' + encodeURIComponent(window.location.href);
-                  window.open(redirectUrl, '_blank', 'noopener');
-                });
-              }
-            });
-          }
-
-          if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', interceptLinks);
-          } else {
-            interceptLinks();
-          }
-
-          if (typeof MutationObserver !== 'undefined') {
-            var observer = new MutationObserver(function () { interceptLinks(); });
-            observer.observe(document.body || document.documentElement, { childList: true, subtree: true });
-          }
-        });
     })();
   </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1251335076510525&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
 
   <!-- Meta Access Token (Para Conversions API) -->
   <meta name="facebook-api-token"
