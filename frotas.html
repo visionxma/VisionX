@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Controle de Frotas - Gestão Inteligente da Sua Frota | VisionX</title>
+  <meta name="description"
+    content="Sistema web completo para controle de frotas com rastreamento em tempo real, gestão de manutenção, abastecimento e relatórios detalhados. Desenvolvido pela VisionX.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/flavicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/flavicon.png">
+
+  <!-- Fonts -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1251335076510525');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1251335076510525&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <!-- Meta Access Token (Para Conversions API) -->
+  <meta name="facebook-api-token"
+    content="EAARyFSa6ZBz0BQ2Ls3vfJw9OaMbqpBuPRGxKVSsruNVRRCLy47eTupLi7s7aIGiK1U8nMLGybHCqQozf8BvuPMZCgiKgSa46dfalnANepY7Q0ieLG6Pqt2pZBDtL1DMCljNq5th8vmz3ZC2lrOCK2rBHNG1OnNLFyE6Akj29n7egiLiXMZCXe5e23JfaPRX3R2zl1fiwMss05m8S862yX" />
+
+  <style>
+    .app-page {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      min-height: 100vh;
+      padding-top: 80px;
+    }
+
+    .app-hero {
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 153, 204, 0.05) 100%);
+      padding: 4rem 0;
+      text-align: center;
+      border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+    }
+
+    .app-icon-large {
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg, #00d4ff, #0099cc);
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      box-shadow: 0 20px 60px rgba(0, 212, 255, 0.3);
+    }
+
+    .app-icon-large i {
+      font-size: 4rem;
+      color: #ffffff;
+    }
+
+    .app-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
+
+    .app-subtitle {
+      font-size: 1.5rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 2rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .app-badges {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .app-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .app-badge i {
+      color: #00d4ff;
+    }
+
+    .app-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .content-section {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 3rem;
+      margin-bottom: 2rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .content-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #00d4ff;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .content-section h2 i {
+      font-size: 1.8rem;
+    }
+
+    .content-section h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .content-section p {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .content-section ul {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+
+    .content-section ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .content-section ul li i {
+      color: #00ff88;
+      margin-top: 0.25rem;
+      font-size: 1.2rem;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .feature-box {
+      background: rgba(0, 212, 255, 0.05);
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      border-radius: 15px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-5px);
+      background: rgba(0, 212, 255, 0.1);
+      border-color: rgba(0, 212, 255, 0.4);
+    }
+
+    .feature-box i {
+      font-size: 2.5rem;
+      color: #00d4ff;
+      margin-bottom: 1rem;
+    }
+
+    .feature-box h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+    }
+
+    .feature-box p {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin: 0;
+    }
+
+    /* Placeholder de imagem */
+    .image-placeholder {
+      background: rgba(0, 212, 255, 0.05);
+      border: 2px dashed rgba(0, 212, 255, 0.3);
+      border-radius: 15px;
+      padding: 3rem 2rem;
+      text-align: center;
+      margin: 2rem 0;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 0.95rem;
+    }
+
+    .image-placeholder i {
+      font-size: 3rem;
+      color: rgba(0, 212, 255, 0.3);
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .cta-section-app {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 153, 204, 0.05) 100%);
+      border-radius: 20px;
+      margin: 3rem 0;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .btn-app-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: linear-gradient(135deg, #00d4ff, #0099cc);
+      color: #ffffff;
+      padding: 1.25rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+    }
+
+    .btn-app-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px rgba(0, 212, 255, 0.5);
+    }
+
+    .btn-app-primary i {
+      font-size: 1.3rem;
+    }
+
+    .btn-secondary-app {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: transparent;
+      color: #ffffff;
+      padding: 1.25rem 2.5rem;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary-app:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #00d4ff;
+      transform: translateY(-3px);
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .stat-box {
+      text-align: center;
+      padding: 1.5rem;
+      background: rgba(0, 212, 255, 0.05);
+      border-radius: 15px;
+      border: 1px solid rgba(0, 212, 255, 0.2);
+    }
+
+    .stat-box .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #00d4ff;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-box .stat-label {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 768px) {
+      .app-content {
+        padding: 3rem 1rem;
+      }
+
+      .content-section {
+        padding: 2rem 1.5rem;
+      }
+
+      .content-section h2 {
+        font-size: 1.5rem;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn-app-primary,
+      .btn-secondary-app {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+
+      .stats-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Universe Background -->
+  <div class="universe-background">
+    <canvas id="universe-canvas"></canvas>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo-container">
+          <a href="index.html">
+            <img src="assets/visionx-logo.png" alt="VisionX" class="logo" />
+          </a>
+        </div>
+        <nav class="nav" id="nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Voltar ao Site</a></li>
+            <li><a href="#sobre-sistema" class="nav-link">Sobre o Sistema</a></li>
+            <li><a href="#recursos" class="nav-link">Recursos</a></li>
+            <li><a href="frotas-privacy.html" class="nav-link">Privacidade</a></li>
+            <li><a href="#contato" class="nav-link">Contato</a></li>
+          </ul>
+        </nav>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- App Page -->
+  <div class="app-page">
+
+    <!-- Hero Section -->
+    <section class="app-hero">
+      <div class="container">
+        <div class="app-icon-large">
+          <i class="fas fa-truck"></i>
+        </div>
+        <h1 class="app-title">CONTROLE DE FROTAS</h1>
+        <p class="app-subtitle">Gestão Inteligente da Sua Frota em Tempo Real</p>
+        <div class="app-badges">
+          <span class="app-badge">
+            <i class="fas fa-map-marker-alt"></i>
+            Rastreamento em Tempo Real
+          </span>
+          <span class="app-badge">
+            <i class="fas fa-tools"></i>
+            Gestão de Manutenção
+          </span>
+          <span class="app-badge">
+            <i class="fas fa-chart-bar"></i>
+            Relatórios Detalhados
+          </span>
+          <span class="app-badge">
+            <i class="fas fa-globe"></i>
+            100% Web
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <div class="app-content">
+
+      <!-- Introdução -->
+      <div class="content-section" id="sobre-sistema">
+        <h2><i class="fas fa-info-circle"></i> Sobre o Sistema</h2>
+        <p>
+          Desenvolvido pela <strong>VisionX</strong>, o <strong>Controle de Frotas</strong> é um sistema web completo
+          que centraliza toda a gestão da sua frota em um único lugar. Do rastreamento de veículos ao controle de
+          manutenção preventiva, nossa plataforma entrega visibilidade total e redução de custos operacionais.
+        </p>
+        <p>
+          Pensado para empresas de todos os portes que precisam de organização, eficiência e controle real sobre
+          seus ativos de transporte — sem complexidade desnecessária.
+        </p>
+
+        <div class="stats-row">
+          <div class="stat-box">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Web & Responsivo</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Disponibilidade</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">Real</span>
+            <span class="stat-label">Dados em Tempo Real</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screenshot painel principal -->
+      <div style="margin: 2rem 0; border-radius: 15px; overflow: hidden; border: 1px solid rgba(0, 212, 255, 0.2);">
+        <img src="dist/assets/DASH.png" alt="Painel principal do Sistema de Controle de Frotas" style="width: 100%; display: block;" />
+      </div>
+
+      <!-- Como Funciona -->
+      <div class="content-section">
+        <h2><i class="fas fa-cogs"></i> Como Funciona?</h2>
+        <p>Uma plataforma centralizada, simples de operar:</p>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> <strong>1. Cadastre seus veículos</strong> com todas as informações relevantes — placa, modelo, ano, motorista responsável</li>
+          <li><i class="fas fa-check-circle"></i> <strong>2. Registre abastecimentos e manutenções</strong> em poucos cliques, mantendo o histórico completo</li>
+          <li><i class="fas fa-check-circle"></i> <strong>3. Acompanhe o rastreamento</strong> em tempo real pelo mapa integrado</li>
+          <li><i class="fas fa-check-circle"></i> <strong>4. Analise os relatórios</strong> e tome decisões baseadas em dados reais</li>
+        </ul>
+        <p><strong>CONTROLE TOTAL</strong> sem planilhas, sem papel, sem retrabalho.</p>
+      </div>
+
+      <!-- Recursos Principais -->
+      <div class="content-section" id="recursos">
+        <h2><i class="fas fa-star"></i> Recursos Principais</h2>
+
+        <div class="feature-grid">
+          <div class="feature-box">
+            <i class="fas fa-map-marked-alt"></i>
+            <h4>Rastreamento em Tempo Real</h4>
+            <p>Veja a localização de cada veículo da frota no mapa, atualizada em tempo real</p>
+          </div>
+
+          <div class="feature-box">
+            <i class="fas fa-tools"></i>
+            <h4>Controle de Manutenção</h4>
+            <p>Agenda preventiva, histórico de revisões e alertas automáticos de vencimento</p>
+          </div>
+
+          <div class="feature-box">
+            <i class="fas fa-gas-pump"></i>
+            <h4>Gestão de Abastecimento</h4>
+            <p>Registre cada abastecimento e acompanhe o consumo médio de combustível</p>
+          </div>
+
+          <div class="feature-box">
+            <i class="fas fa-chart-line"></i>
+            <h4>Relatórios & Dashboard</h4>
+            <p>Painéis analíticos com os principais indicadores da sua frota em um clique</p>
+          </div>
+        </div>
+
+        <h3>📍 Rastreamento em Tempo Real</h3>
+        <ul>
+          <li><i class="fas fa-check"></i> Mapa interativo com posição de cada veículo</li>
+          <li><i class="fas fa-check"></i> Histórico de rotas percorridas</li>
+          <li><i class="fas fa-check"></i> Alertas de saída de área definida (cerca virtual)</li>
+          <li><i class="fas fa-check"></i> Velocidade e status do veículo em tempo real</li>
+        </ul>
+
+        <!-- Screenshot rastreamento -->
+        <div style="margin: 2rem 0; border-radius: 15px; overflow: hidden; border: 1px solid rgba(0, 212, 255, 0.2);">
+          <img src="dist/assets/VIAGEM.png" alt="Tela de rastreamento e viagens da frota" style="width: 100%; display: block;" />
+        </div>
+
+        <h3>🔧 Controle de Manutenção</h3>
+        <ul>
+          <li><i class="fas fa-check"></i> Agenda de manutenções preventivas e corretivas</li>
+          <li><i class="fas fa-check"></i> Histórico completo de revisões por veículo</li>
+          <li><i class="fas fa-check"></i> Alertas automáticos por quilometragem ou prazo</li>
+          <li><i class="fas fa-check"></i> Registro de custo por manutenção realizada</li>
+        </ul>
+
+        <h3>⛽ Gestão de Abastecimento</h3>
+        <ul>
+          <li><i class="fas fa-check"></i> Registro de cada abastecimento com data, litros e valor</li>
+          <li><i class="fas fa-check"></i> Cálculo automático de consumo médio por veículo</li>
+          <li><i class="fas fa-check"></i> Comparativo de consumo entre veículos da frota</li>
+          <li><i class="fas fa-check"></i> Identificação de consumo fora do padrão</li>
+        </ul>
+
+        <h3>📊 Dashboard & Relatórios</h3>
+        <ul>
+          <li><i class="fas fa-check"></i> Painel com os principais KPIs da frota</li>
+          <li><i class="fas fa-check"></i> Relatórios exportáveis em PDF e Excel</li>
+          <li><i class="fas fa-check"></i> Custo total por veículo e por período</li>
+          <li><i class="fas fa-check"></i> Gráficos de desempenho e evolução da frota</li>
+        </ul>
+
+        <!-- Screenshot financeiro/relatórios -->
+        <div style="margin: 2rem 0; border-radius: 15px; overflow: hidden; border: 1px solid rgba(0, 212, 255, 0.2);">
+          <img src="dist/assets/FINANC.png" alt="Dashboard financeiro e relatórios da frota" style="width: 100%; display: block;" />
+        </div>
+      </div>
+
+      <!-- Por que usar -->
+      <div class="content-section">
+        <h2><i class="fas fa-thumbs-up"></i> Por Que Escolher Nosso Sistema?</h2>
+        <ul>
+          <li><i class="fas fa-coins"></i> <strong>REDUÇÃO DE CUSTOS:</strong> Menos desperdício de combustível e manutenções emergenciais</li>
+          <li><i class="fas fa-globe"></i> <strong>ACESSO DE QUALQUER LUGAR:</strong> Sistema 100% web, acessível pelo computador, tablet ou celular</li>
+          <li><i class="fas fa-lock"></i> <strong>DADOS SEGUROS:</strong> Seus dados armazenados com segurança na nuvem</li>
+          <li><i class="fas fa-tachometer-alt"></i> <strong>FÁCIL DE USAR:</strong> Interface intuitiva, sem necessidade de treinamento longo</li>
+          <li><i class="fas fa-bell"></i> <strong>ALERTAS AUTOMÁTICOS:</strong> Não perca prazos de manutenção ou vencimentos de documentos</li>
+          <li><i class="fas fa-expand-arrows-alt"></i> <strong>ESCALÁVEL:</strong> Cresce junto com a sua empresa, do veículo único à grande frota</li>
+        </ul>
+      </div>
+
+      <!-- Para quem é -->
+      <div class="content-section">
+        <h2><i class="fas fa-building"></i> Para Quem é Esse Sistema?</h2>
+        <p>O Controle de Frotas da VisionX é ideal para:</p>
+        <ul>
+          <li><i class="fas fa-truck-moving"></i> Transportadoras e empresas de logística</li>
+          <li><i class="fas fa-hard-hat"></i> Construtoras com veículos e máquinas em campo</li>
+          <li><i class="fas fa-hospital"></i> Clínicas e hospitais com frota de atendimento</li>
+          <li><i class="fas fa-store"></i> Empresas com equipes externas e entregas</li>
+          <li><i class="fas fa-city"></i> Prefeituras e órgãos públicos com frotas municipais</li>
+          <li><i class="fas fa-cog"></i> Qualquer negócio que precise controlar veículos com eficiência</li>
+        </ul>
+      </div>
+
+      <!-- Tecnologias -->
+      <div class="content-section">
+        <h2><i class="fas fa-code"></i> Tecnologias Utilizadas</h2>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <i class="fab fa-react"></i>
+            <h4>React</h4>
+            <p>Interface moderna, responsiva e de alto desempenho</p>
+          </div>
+
+          <div class="feature-box">
+            <i class="fas fa-server"></i>
+            <h4>Next.js</h4>
+            <p>Framework robusto para aplicações web escaláveis</p>
+          </div>
+
+          <div class="feature-box">
+            <i class="fas fa-fire"></i>
+            <h4>Firebase</h4>
+            <p>Backend seguro e confiável com banco de dados em tempo real</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Final -->
+      <div class="cta-section-app" id="contato">
+        <h2 style="color: #ffffff; margin-bottom: 1rem;">Quer Esse Sistema Para a Sua Empresa?</h2>
+        <p style="color: rgba(255, 255, 255, 0.8); font-size: 1.1rem; margin-bottom: 2rem;">
+          Entre em contato e descubra como podemos adaptar o sistema à realidade da sua frota.
+        </p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/5599981752560?text=Olá!%20Tenho%20interesse%20no%20sistema%20de%20Controle%20de%20Frotas%20da%20VisionX." class="btn-app-primary" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i>
+            <span>Falar pelo WhatsApp</span>
+          </a>
+          <a href="index.html#contato" class="btn-secondary-app">
+            <i class="fas fa-envelope"></i>
+            <span>Enviar Mensagem</span>
+          </a>
+          <a href="frotas-privacy.html" class="btn-secondary-app">
+            <i class="fas fa-shield-alt"></i>
+            <span>Política de Privacidade</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Suporte -->
+      <div class="content-section">
+        <h2><i class="fas fa-headset"></i> Suporte e Contato</h2>
+        <p>Tem dúvidas ou quer uma demonstração personalizada?</p>
+        <ul>
+          <li><i class="fas fa-envelope"></i> <strong>Email:</strong> visionxma@gmail.com</li>
+          <li><i class="fab fa-whatsapp"></i> <strong>WhatsApp:</strong> (99) 98175-2560</li>
+          <li><i class="fas fa-comment"></i> Nossa equipe está pronta para apresentar o sistema em funcionamento</li>
+        </ul>
+      </div>
+
+      <!-- Sobre a VisionX -->
+      <div class="content-section">
+        <h2><i class="fas fa-building"></i> Sobre a VisionX</h2>
+        <p>
+          Somos uma empresa de tecnologia especializada em criar soluções digitais sob medida para negócios que
+          precisam crescer com organização e eficiência. O Sistema de Controle de Frotas nasceu da demanda real
+          de empresas que perdiam tempo e dinheiro por falta de visibilidade sobre seus veículos.
+        </p>
+        <p><strong>Nossa missão:</strong> Transformar processos manuais em sistemas inteligentes que geram resultados reais.</p>
+        <div style="text-align: center; margin-top: 2rem;">
+          <a href="index.html" class="btn-secondary-app">
+            <i class="fas fa-arrow-left"></i>
+            <span>Voltar ao Site VisionX</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content" style="grid-template-columns: 1fr; text-align: center;">
+        <div class="footer-column">
+          <div class="footer-logo">
+            <img src="assets/visionx-logo.png" alt="VisionX Logo" />
+          </div>
+          <p class="footer-description">
+            Transformamos ideias em soluções digitais inovadoras.
+          </p>
+          <div class="footer-social" style="justify-content: center;">
+            <a href="https://instagram.com/visionx.dev" target="_blank" rel="noopener" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/visionx-desenvolvedora-de-software-9b23b1373/" target="_blank"
+              rel="noopener" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/visionxma" target="_blank" rel="noopener" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p>&copy; 2024 VisionX. Todos os direitos reservados.</p>
+          <p>CNPJ: 61.427.918/0001-06</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+
+</html>
