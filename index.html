@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
+<!-- ============================================================
+     HEAD - Meta tags, fonts, scripts de tracking
+     ============================================================ -->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,18 +22,17 @@
   <link rel="icon" href="assets/flavicon.png">
 
   <!-- Preload critical resources -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    as="style">
-  <link rel="preload" href="style.css" as="style">
-  <link rel="preload" href="script.js" as="script">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap"></noscript>
+  <link rel="preload" href="css/style.css" as="style">
 
-  <!-- Fonts -->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Font Awesome - deferred -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -56,8 +58,9 @@
   }
   </script>
 
-  <!-- Meta Pixel Code -->
+  <!-- Meta Pixel Code - Deferred -->
   <script>
+    window.addEventListener('load', function() { setTimeout(function() {
     (function () {
       var SUPABASE_URL = 'https://tcwpfgfddxajlewhmwjr.supabase.co';
       var SUPABASE_KEY = 'sb_publishable_POXhkhXnii9Jv3o5XNZk2Q_9a0nsxAD';
@@ -128,6 +131,7 @@
           });
         });
     })();
+    }, 2000); });
   </script>
   <noscript><img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=1251335076510525&ev=PageView&noscript=1" /></noscript>
@@ -139,7 +143,9 @@
 </head>
 
 <body>
-  <!-- Loading Screen -->
+  <!-- ============================================================
+       LOADING SCREEN - Tela de carregamento
+       ============================================================ -->
   <div id="loading-screen" class="loading-screen">
     <div class="loading-content">
       <div class="loading-animation">
@@ -177,7 +183,9 @@
     <canvas id="universe-canvas"></canvas>
   </div>
 
-  <!-- Header -->
+  <!-- ============================================================
+       HEADER - Navegação flutuante
+       ============================================================ -->
   <header class="header" id="header">
     <div class="container">
       <div class="header-content">
@@ -205,7 +213,9 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- ============================================================
+       HERO - Seção principal com título e phone mockup
+       ============================================================ -->
   <section class="hero" id="hero">
     <div class="hero-background">
       <canvas id="particles-canvas"></canvas>
@@ -228,23 +238,179 @@
       </div>
     </div>
     <div class="container">
-      <div class="hero-content">
-        <h1 class="hero-title">
-          <span class="title-line">Transformamos ideias em soluções digitais!</span>
-        </h1>
-        <p class="hero-description">
-          Desenvolvemos sites modernos, aplicativos inovadores e sistemas personalizados que impulsionam o crescimento
-          do seu negócio.
-        </p>
-        <div class="hero-actions">
-          <a href="#contato" class="cta-button primary">
-            <span>Solicitar Orçamento</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-          <a href="#portfolio" class="cta-button secondary">
-            <span>Ver Projetos</span>
-            <i class="fas fa-eye"></i>
-          </a>
+      <div class="hero-layout">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="title-line">Transformamos ideias em soluções digitais!</span>
+          </h1>
+          <p class="hero-description">
+            Desenvolvemos sites modernos, aplicativos inovadores e sistemas personalizados que impulsionam o crescimento
+            do seu negócio.
+          </p>
+          <div class="hero-actions">
+            <a href="#contato" class="cta-button primary">
+              <span>Solicitar Orçamento</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#portfolio" class="cta-button secondary">
+              <span>Ver Projetos</span>
+              <i class="fas fa-eye"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Phone Mockup -->
+        <div class="hero-phone">
+          <div class="phone-mockup">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <!-- App screens carousel -->
+              <div class="app-screens">
+                <!-- Screen 1: Dashboard -->
+                <div class="app-screen active" data-screen="1">
+                  <div class="app-statusbar">
+                    <span>9:41</span>
+                    <div class="statusbar-icons">
+                      <i class="fas fa-signal"></i>
+                      <i class="fas fa-wifi"></i>
+                      <i class="fas fa-battery-full"></i>
+                    </div>
+                  </div>
+                  <div class="app-header-mock">
+                    <div class="app-logo-dot"></div>
+                    <span>Dashboard</span>
+                    <i class="fas fa-bell"></i>
+                  </div>
+                  <div class="app-stats-row">
+                    <div class="app-stat-card">
+                      <i class="fas fa-users"></i>
+                      <span class="app-stat-num">1.2k</span>
+                      <span class="app-stat-label">Usuários</span>
+                    </div>
+                    <div class="app-stat-card accent">
+                      <i class="fas fa-chart-line"></i>
+                      <span class="app-stat-num">+34%</span>
+                      <span class="app-stat-label">Crescimento</span>
+                    </div>
+                  </div>
+                  <div class="app-chart-mock">
+                    <div class="chart-bar" style="height: 40%"></div>
+                    <div class="chart-bar" style="height: 65%"></div>
+                    <div class="chart-bar" style="height: 45%"></div>
+                    <div class="chart-bar" style="height: 80%"></div>
+                    <div class="chart-bar" style="height: 55%"></div>
+                    <div class="chart-bar" style="height: 90%"></div>
+                    <div class="chart-bar" style="height: 70%"></div>
+                  </div>
+                  <div class="app-list-mock">
+                    <div class="app-list-item"><div class="list-dot green"></div><span>Vendas Online</span><span class="list-value">R$ 12.4k</span></div>
+                    <div class="app-list-item"><div class="list-dot cyan"></div><span>Novos Leads</span><span class="list-value">+89</span></div>
+                    <div class="app-list-item"><div class="list-dot purple"></div><span>Conversões</span><span class="list-value">23%</span></div>
+                  </div>
+                </div>
+
+                <!-- Screen 2: Map/Fleet -->
+                <div class="app-screen" data-screen="2">
+                  <div class="app-statusbar">
+                    <span>9:41</span>
+                    <div class="statusbar-icons">
+                      <i class="fas fa-signal"></i>
+                      <i class="fas fa-wifi"></i>
+                      <i class="fas fa-battery-full"></i>
+                    </div>
+                  </div>
+                  <div class="app-header-mock">
+                    <div class="app-logo-dot red"></div>
+                    <span>Rastreamento</span>
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div class="app-map-mock">
+                    <div class="map-grid">
+                      <div class="map-line h" style="top: 25%"></div>
+                      <div class="map-line h" style="top: 50%"></div>
+                      <div class="map-line h" style="top: 75%"></div>
+                      <div class="map-line v" style="left: 30%"></div>
+                      <div class="map-line v" style="left: 60%"></div>
+                    </div>
+                    <div class="map-pin pin-1"><i class="fas fa-truck"></i></div>
+                    <div class="map-pin pin-2"><i class="fas fa-truck"></i></div>
+                    <div class="map-pin pin-3"><i class="fas fa-car"></i></div>
+                    <div class="map-route"></div>
+                  </div>
+                  <div class="app-list-mock">
+                    <div class="app-list-item"><div class="list-dot green"></div><span>Veículo 01</span><span class="list-value">Em rota</span></div>
+                    <div class="app-list-item"><div class="list-dot yellow"></div><span>Veículo 02</span><span class="list-value">Parado</span></div>
+                    <div class="app-list-item"><div class="list-dot red"></div><span>Veículo 03</span><span class="list-value">Alerta</span></div>
+                  </div>
+                </div>
+
+                <!-- Screen 3: Chat/Notifications -->
+                <div class="app-screen" data-screen="3">
+                  <div class="app-statusbar">
+                    <span>9:41</span>
+                    <div class="statusbar-icons">
+                      <i class="fas fa-signal"></i>
+                      <i class="fas fa-wifi"></i>
+                      <i class="fas fa-battery-full"></i>
+                    </div>
+                  </div>
+                  <div class="app-header-mock">
+                    <div class="app-logo-dot green"></div>
+                    <span>Notificações</span>
+                    <i class="fas fa-cog"></i>
+                  </div>
+                  <div class="app-notif-list">
+                    <div class="notif-item new">
+                      <div class="notif-icon"><i class="fas fa-check-circle"></i></div>
+                      <div class="notif-text">
+                        <strong>Deploy concluído</strong>
+                        <span>Versão 2.4.1 no ar</span>
+                      </div>
+                      <span class="notif-time">2m</span>
+                    </div>
+                    <div class="notif-item new">
+                      <div class="notif-icon alert"><i class="fas fa-exclamation-triangle"></i></div>
+                      <div class="notif-text">
+                        <strong>Novo alerta</strong>
+                        <span>CPU acima de 80%</span>
+                      </div>
+                      <span class="notif-time">5m</span>
+                    </div>
+                    <div class="notif-item">
+                      <div class="notif-icon success"><i class="fas fa-shopping-cart"></i></div>
+                      <div class="notif-text">
+                        <strong>Nova venda</strong>
+                        <span>Pedido #1847 - R$ 2.350</span>
+                      </div>
+                      <span class="notif-time">12m</span>
+                    </div>
+                    <div class="notif-item">
+                      <div class="notif-icon"><i class="fas fa-user-plus"></i></div>
+                      <div class="notif-text">
+                        <strong>Novo usuário</strong>
+                        <span>Maria S. se cadastrou</span>
+                      </div>
+                      <span class="notif-time">28m</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Screen indicators -->
+              <div class="screen-dots">
+                <div class="screen-dot active"></div>
+                <div class="screen-dot"></div>
+                <div class="screen-dot"></div>
+              </div>
+            </div>
+            <div class="phone-home-bar"></div>
+          </div>
+          <!-- Floating elements around phone -->
+          <div class="phone-float-elements">
+            <div class="phone-float-badge badge-1"><i class="fas fa-code"></i> Apps</div>
+            <div class="phone-float-badge badge-2"><i class="fas fa-globe"></i> Web</div>
+            <div class="phone-float-badge badge-3"><i class="fas fa-database"></i> API</div>
+          </div>
         </div>
       </div>
     </div>
@@ -254,14 +420,12 @@
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- ============================================================
+       SOBRE - Seção sobre a VisionX (fundo branco)
+       ============================================================ -->
   <section id="sobre" class="about-section section">
+    <div class="bg-x-mark">X</div>
     <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="section-title">Sobre a VisionX</h2>
-        <div class="section-line"></div>
-        <p class="section-subtitle">Conheça nossa história e valores</p>
-      </div>
       <div class="about-content">
         <div class="about-text" data-aos="fade-right">
           <h3>Quem Somos</h3>
@@ -300,29 +464,36 @@
         </div>
         <div class="about-visual" data-aos="fade-left">
           <div class="tech-showcase">
-            <div class="tech-item">
-              <i class="fab fa-react"></i>
-              <span>React</span>
+            <div class="tech-group-label">Frontend</div>
+            <div class="tech-row">
+              <div class="tech-item"><i class="fab fa-react"></i><span>React</span></div>
+              <div class="tech-item"><i class="fas fa-n"></i><span>Next.js</span></div>
+              <div class="tech-item"><i class="fab fa-js-square"></i><span>TypeScript</span></div>
+              <div class="tech-item"><i class="fab fa-css3"></i><span>Tailwind</span></div>
             </div>
-            <div class="tech-item">
-              <i class="fab fa-node-js"></i>
-              <span>Node.js</span>
+
+            <div class="tech-group-label">Linguagens</div>
+            <div class="tech-row">
+              <div class="tech-item"><i class="fab fa-js-square"></i><span>JavaScript</span></div>
+              <div class="tech-item"><i class="fab fa-python"></i><span>Python</span></div>
+              <div class="tech-item"><i class="fab fa-php"></i><span>PHP</span></div>
+              <div class="tech-item"><i class="fab fa-html5"></i><span>HTML/CSS</span></div>
             </div>
-            <div class="tech-item">
-              <i class="fab fa-python"></i>
-              <span>Python</span>
+
+            <div class="tech-group-label">Backend & Banco de Dados</div>
+            <div class="tech-row">
+              <div class="tech-item"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+              <div class="tech-item"><i class="fas fa-database"></i><span>MySQL</span></div>
+              <div class="tech-item"><i class="fas fa-bolt"></i><span>Supabase</span></div>
+              <div class="tech-item"><i class="fas fa-fire"></i><span>Firebase</span></div>
             </div>
-            <div class="tech-item">
-              <i class="fab fa-js-square"></i>
-              <span>JavaScript</span>
-            </div>
-            <div class="tech-item">
-              <i class="fab fa-css3-alt"></i>
-              <span>CSS</span>
-            </div>
-            <div class="tech-item">
-              <i class="fab fa-html5"></i>
-              <span>HTML</span>
+
+            <div class="tech-group-label">Ferramentas & IA</div>
+            <div class="tech-row">
+              <div class="tech-item"><i class="fas fa-zap"></i><span>Vite</span></div>
+              <div class="tech-item"><i class="fas fa-brain"></i><span>Claude AI</span></div>
+              <div class="tech-item"><i class="fab fa-git-alt"></i><span>Git</span></div>
+              <div class="tech-item"><i class="fab fa-docker"></i><span>Docker</span></div>
             </div>
           </div>
         </div>
@@ -330,106 +501,108 @@
     </div>
   </section>
 
+  <!-- ============================================================
+       SERVIÇOS - Cards com sticky scroll
+       ============================================================ -->
   <section id="servicos" class="services-section section">
     <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="section-title">Nossos Serviços</h2>
-        <div class="section-line"></div>
-        <p class="section-subtitle">Soluções completas para o seu negócio digital</p>
+      <div class="services-header" data-aos="fade-up">
+        <span class="services-label">O QUE FAZEMOS</span>
+        <h2 class="services-title">Nossos Serviços</h2>
+        <p class="services-desc">Soluções de ponta a ponta para transformar seu negócio digital.</p>
       </div>
+
       <div class="services-grid">
         <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="service-icon">
-            <i class="fas fa-globe"></i>
+          <div class="service-num">01</div>
+          <div class="service-body">
+            <h3>Desenvolvimento Web</h3>
+            <p>Sites institucionais, landing pages e e-commerces responsivos com design moderno e performance otimizada.</p>
+            <div class="service-tags">
+              <span>Design Responsivo</span>
+              <span>SEO</span>
+              <span>Performance</span>
+            </div>
           </div>
-          <h3>Desenvolvimento Web</h3>
-          <p>Sites institucionais, landing pages e e-commerces responsivos com design moderno e performance otimizada.
-          </p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Design Responsivo</li>
-            <li><i class="fas fa-check"></i> SEO Otimizado</li>
-            <li><i class="fas fa-check"></i> Performance Máxima</li>
-          </ul>
-          <a href="#contato" class="service-cta">Solicitar Orçamento</a>
+          <a href="#contato" class="service-arrow"><i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="service-num">02</div>
+          <div class="service-body">
+            <h3>Aplicativos Móveis</h3>
+            <p>Apps nativos e híbridos para Android e iOS com interface intuitiva e funcionalidades personalizadas.</p>
+            <div class="service-tags">
+              <span>iOS & Android</span>
+              <span>UI/UX</span>
+              <span>APIs</span>
+            </div>
+          </div>
+          <a href="#contato" class="service-arrow"><i class="fas fa-arrow-right"></i></a>
         </div>
 
         <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="service-icon">
-            <i class="fas fa-mobile-alt"></i>
+          <div class="service-num">03</div>
+          <div class="service-body">
+            <h3>Sistemas Web</h3>
+            <p>Plataformas e sistemas personalizados para gestão, vendas, controle e automação de processos empresariais.</p>
+            <div class="service-tags">
+              <span>Gestão</span>
+              <span>Relatórios</span>
+              <span>Segurança</span>
+            </div>
           </div>
-          <h3>Aplicativos Móveis</h3>
-          <p>Apps nativos e híbridos para Android e iOS com interface intuitiva e funcionalidades personalizadas.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> iOS & Android</li>
-            <li><i class="fas fa-check"></i> Interface Intuitiva</li>
-            <li><i class="fas fa-check"></i> Integração com APIs</li>
-          </ul>
-          <a href="#contato" class="service-cta">Solicitar Orçamento</a>
+          <a href="#contato" class="service-arrow"><i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="250">
+          <div class="service-num">04</div>
+          <div class="service-body">
+            <h3>Automação Digital</h3>
+            <p>Integrações inteligentes e robôs que otimizam processos, economizam tempo e aumentam a produtividade.</p>
+            <div class="service-tags">
+              <span>Automação</span>
+              <span>Integrações</span>
+              <span>Bots</span>
+            </div>
+          </div>
+          <a href="#contato" class="service-arrow"><i class="fas fa-arrow-right"></i></a>
         </div>
 
         <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="service-icon">
-            <i class="fas fa-cogs"></i>
+          <div class="service-num">05</div>
+          <div class="service-body">
+            <h3>Consultoria Tech</h3>
+            <p>Análise técnica, arquitetura de software e consultoria estratégica para otimizar seus projetos digitais.</p>
+            <div class="service-tags">
+              <span>Arquitetura</span>
+              <span>Estratégia</span>
+              <span>Análise</span>
+            </div>
           </div>
-          <h3>Sistemas Web</h3>
-          <p>Plataformas e sistemas personalizados para gestão, vendas, controle e automação de processos empresariais.
-          </p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Gestão Completa</li>
-            <li><i class="fas fa-check"></i> Relatórios Avançados</li>
-            <li><i class="fas fa-check"></i> Segurança Máxima</li>
-          </ul>
-          <a href="#contato" class="service-cta">Solicitar Orçamento</a>
+          <a href="#contato" class="service-arrow"><i class="fas fa-arrow-right"></i></a>
         </div>
 
-        <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-          <div class="service-icon">
-            <i class="fas fa-robot"></i>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="350">
+          <div class="service-num">06</div>
+          <div class="service-body">
+            <h3>Gestão de Software</h3>
+            <p>Controle, planejamento e monitoramento eficiente de projetos e equipes para garantir entregas de qualidade.</p>
+            <div class="service-tags">
+              <span>Ágil</span>
+              <span>Monitoramento</span>
+              <span>Equipes</span>
+            </div>
           </div>
-          <h3>Automação Digital</h3>
-          <p>Integrações inteligentes e robôs que otimizam processos, economizam tempo e aumentam a produtividade.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Processos Automatizados</li>
-            <li><i class="fas fa-check"></i> Integração de Sistemas</li>
-            <li><i class="fas fa-check"></i> Economia de Tempo</li>
-          </ul>
-          <a href="#contato" class="service-cta">Solicitar Orçamento</a>
-        </div>
-
-        <div class="service-card" data-aos="fade-up" data-aos-delay="500">
-          <div class="service-icon">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <h3>Consultoria Tech</h3>
-          <p>Análise técnica, arquitetura de software e consultoria estratégica para otimizar seus projetos digitais.
-          </p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Análise Técnica</li>
-            <li><i class="fas fa-check"></i> Arquitetura de Software</li>
-            <li><i class="fas fa-check"></i> Estratégia Digital</li>
-          </ul>
-          <a href="#contato" class="service-cta">Solicitar Orçamento</a>
-        </div>
-
-        <div class="service-card" data-aos="fade-up" data-aos-delay="600">
-          <div class="service-icon">
-            <i class="fas fa-tasks"></i>
-          </div>
-          <h3>Gestão de Software</h3>
-          <p>Controle, planejamento e monitoramento eficiente de projetos e equipes para garantir entregas de qualidade.
-          </p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Planejamento Ágil</li>
-            <li><i class="fas fa-check"></i> Monitoramento em Tempo Real</li>
-            <li><i class="fas fa-check"></i> Gestão de Equipes</li>
-          </ul>
-          <a href="#contato" class="service-cta">Solicitar Orçamento</a>
+          <a href="#contato" class="service-arrow"><i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
+  <!-- ============================================================
+       CTA - Call to action
+       ============================================================ -->
   <section class="cta-section">
     <div class="container">
       <div class="cta-content" data-aos="fade-up">
@@ -444,7 +617,9 @@
     </div>
   </section>
 
-  <!-- Portfolio Section -->
+  <!-- ============================================================
+       PORTFOLIO - Seção de projetos
+       ============================================================ -->
   <section id="portfolio" class="portfolio-section section">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
@@ -684,7 +859,7 @@
                 <span class="tech-tag">Firebase</span>
               </div>
               <div class="project-actions">
-                <a href="frotas.html" class="btn-primary">
+                <a href="pages/frotas.html" class="btn-primary">
                   <i class="fas fa-info-circle"></i>
                   <span>Saiba Mais</span>
                 </a>
@@ -831,7 +1006,7 @@
                 <span class="tech-tag">Firebase</span>
               </div>
               <div class="project-actions">
-                <a href="seligaai.html" class="btn-primary">
+                <a href="pages/seligaai.html" class="btn-primary">
                   <i class="fas fa-info-circle"></i>
                   <span>Saiba Mais</span>
                 </a>
@@ -845,106 +1020,63 @@
     </div>
   </section>
 
-  <!-- Partners Section -->
+  <!-- ============================================================
+       PARCERIAS - Carousel de logos
+       ============================================================ -->
   <section class="partners-section">
     <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="section-title">Parcerias de Sucesso</h2>
-        <div class="section-line"></div>
+      <div class="partners-header" data-aos="fade-up">
+        <div class="partners-header-left">
+          <span class="partners-label">EMPRESAS QUE CONFIAM</span>
+          <h2 class="partners-title">Parcerias de Sucesso</h2>
+        </div>
+        <p class="partners-desc">Construímos relações duradouras entregando resultados reais para nossos parceiros.</p>
       </div>
       <div class="partners-carousel-container" data-aos="fade-up" data-aos-delay="200">
         <div class="partners-carousel-track" id="partners-track">
-          <div class="partner-slide">
-            <img src="assets/FInagro LOGO 3.png" alt="Finagro - Parceiro VisionX" loading="lazy" />
-          </div>
-          <div class="partner-slide">
-            <img src="assets/logo-ifma.png" alt="IFMA - Parceiro VisionX" loading="lazy" />
-          </div>
-          <div class="partner-slide">
-            <img src="assets/logo-licc.png" alt="LICC - Parceiro VisionX" loading="lazy" />
-          </div>
-          <div class="partner-slide">
-            <img src="assets/SEMPREBRANCA.png" alt="Sempre Branca - Parceiro VisionX" loading="lazy" />
-          </div>
-          <div class="partner-slide">
-            <img src="assets/LOGO LACERDA E LACERDA.png" alt="Lacerda e Lacerda - Parceiro VisionX" loading="lazy" />
-          </div>
-          <div class="partner-slide">
-            <img src="assets/Sos Malhas Logo Vetor.png" alt="Sos Malhas - Parceiro VisionX" loading="lazy" />
-          </div>
-          <div class="partner-slide">
-            <img src="assets/Lok Fácil.png" alt="Lok Fácil - Parceiro VisionX" loading="lazy" />
-          </div>
-          <div class="partner-slide">
-            <img src="assets/Sernandes Impressão.png" alt="Sernandes Soares - Parceiro VisionX" loading="lazy" />
-          </div>
-          <!-- Duplicar slides para efeito infinito -->
-          <div class="partner-slide">
-            <img src="assets/FInagro LOGO 3.png" alt="Finagro - Parceiro VisionX" loading="lazy" />
-          </div>
-          <div class="partner-slide">
-            <img src="assets/logo-ifma.png" alt="IFMA - Parceiro VisionX" loading="lazy" />
-          </div>
-          <div class="partner-slide">
-            <img src="assets/logo-licc.png" alt="LICC - Parceiro VisionX" loading="lazy" />
-          </div>
-          <div class="partner-slide">
-            <img src="assets/SEMPREBRANCA.png" alt="Sempre Branca - Parceiro VisionX" loading="lazy" />
-          </div>
-          <div class="partner-slide">
-            <img src="assets/LOGO LACERDA E LACERDA.png" alt="Lacerda e Lacerda - Parceiro VisionX" loading="lazy" />
-          </div>
-          <div class="partner-slide">
-            <img src="assets/Sos Malhas Logo Vetor.png" alt="Sos Malhas - Parceiro VisionX" loading="lazy" />
-          </div>
-          <div class="partner-slide">
-            <img src="assets/Lok Fácil.png" alt="Lok Fácil - Parceiro VisionX" loading="lazy" />
-          </div>
-          <div class="partner-slide">
-            <img src="assets/Sernandes Impressão.png" alt="Sernandes Soares - Parceiro VisionX" loading="lazy" />
-          </div>
-          <div class="partner-slide">
-            <img src="assets/FInagro LOGO 3.png" alt="Finagro - Cliente VisionX" loading="lazy" />
-          </div>
+          <div class="partner-slide"><img src="assets/empresas/FInagro LOGO 3.webp" alt="Finagro" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/logo-ifma.webp" alt="IFMA" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/logo-licc.webp" alt="LICC" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/SEMPREBRANCA.webp" alt="Sempre Branca" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/LOGO LACERDA E LACERDA.webp" alt="Lacerda e Lacerda" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/Sos Malhas Logo Vetor.webp" alt="Sos Malhas" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/Lok Fácil.webp" alt="Lok Fácil" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/Sernandes Impressão.webp" alt="Sernandes" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/Arca.svg" alt="Arca" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/FroX-Branco.svg" alt="FroX" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/Logo JP vetor.webp" alt="JP" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/Logo Mentor.webp" alt="Mentor" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/genesis-logo.svg" alt="Genesis" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/ihub.webp" alt="iHub" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/safirion-logo.svg" alt="Safirion" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/logo.webp" alt="Parceiro VisionX" loading="lazy" /></div>
+          <!-- Duplicar para efeito infinito -->
+          <div class="partner-slide"><img src="assets/empresas/FInagro LOGO 3.webp" alt="Finagro" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/logo-ifma.webp" alt="IFMA" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/logo-licc.webp" alt="LICC" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/SEMPREBRANCA.webp" alt="Sempre Branca" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/LOGO LACERDA E LACERDA.webp" alt="Lacerda e Lacerda" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/Sos Malhas Logo Vetor.webp" alt="Sos Malhas" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/Lok Fácil.webp" alt="Lok Fácil" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/Sernandes Impressão.webp" alt="Sernandes" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/Arca.svg" alt="Arca" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/FroX-Branco.svg" alt="FroX" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/Logo JP vetor.webp" alt="JP" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/Logo Mentor.webp" alt="Mentor" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/genesis-logo.svg" alt="Genesis" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/ihub.webp" alt="iHub" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/safirion-logo.svg" alt="Safirion" loading="lazy" /></div>
+          <div class="partner-slide"><img src="assets/empresas/logo.webp" alt="Parceiro VisionX" loading="lazy" /></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Expectations Section -->
-  <section id="depoimentos" class="testimonials-section section">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="section-title">O que Você Pode Esperar da VisionX</h2>
-        <div class="section-line"></div>
-        <p class="section-subtitle">Cada projeto é uma nova oportunidade de entregar excelência. Nosso foco está em
-          oferecer soluções eficazes, com atenção aos detalhes e total dedicação desde o primeiro contato.</p>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="testimonial-content">
-            <div class="stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="fas fa-star"></i><i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <p>"A empresa cumpriu todos os prazos e seguiu fielmente as orientações, sempre com clareza e objetividade
-              na construção do site. Recomendo com confiança, pois demonstram seriedade e comprometimento. Que Deus
-              abençoe cada vez mais o crescimento dessa empresa."</p>
-          </div>
-          <div class="testimonial-author">
-            <div class="author-info">
-              <h4>Carlos Coelho</h4>
-              <p>SEMPRE - Gestão de Projetos e Negócios Empresariais</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
+  <!-- ============================================================
+       FAQ - Perguntas frequentes (fundo branco)
+       ============================================================ -->
   <section id="faq" class="faq-section section">
+    <div class="bg-x-mark">X</div>
     <div class="container">
       <div class="section-header" data-aos="fade-up">
         <h2 class="section-title">Perguntas Frequentes</h2>
@@ -1025,137 +1157,63 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- ============================================================
+       CONTATO - Informações de contato compactas
+       ============================================================ -->
   <section id="contato" class="contact-section section">
     <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="section-title">Entre em Contato</h2>
-        <div class="section-line"></div>
-        <p class="section-subtitle">Vamos conversar sobre seu próximo projeto</p>
-      </div>
-      <div class="contact-content">
-        <div class="contact-info" data-aos="fade-right">
-          <h3>Fale Conosco</h3>
-          <p>Estamos prontos para transformar sua ideia em uma solução digital de sucesso. Entre em contato e receba um
-            orçamento personalizado.</p>
-
-          <div class="contact-methods">
-            <div class="contact-method">
-              <div class="method-icon">
-                <i class="fab fa-whatsapp"></i>
-              </div>
-              <div class="method-info">
-                <h4>WhatsApp</h4>
-                <p>(99) 9 8468-0391</p>
-                <a href="https://wa.me/5599984680391" target="_blank" rel="noopener">Enviar mensagem</a>
-              </div>
-            </div>
-
-            <div class="contact-method">
-              <div class="method-icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div class="method-info">
-                <h4>E-mail</h4>
-                <p>visionxma@gmail.com</p>
-                <a href="mailto:visionxma@gmail.com">Enviar e-mail</a>
-              </div>
-            </div>
-
-            <div class="contact-method">
-              <div class="method-icon">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
-              <div class="method-info">
-                <h4>Localização</h4>
-                <p>Pedreiras - MA, Brasil</p>
-                <span>Atendimento em todo o país</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="social-links">
-            <h4>Siga-nos nas redes sociais</h4>
-            <div class="social-icons">
-              <a href="https://instagram.com/visionx.dev" target="_blank" rel="noopener" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="https://www.linkedin.com/in/visionx-desenvolvedora-de-software-9b23b1373/" target="_blank"
-                rel="noopener" aria-label="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-              </a>
-              <a href="https://github.com/visionxma" target="_blank" rel="noopener" aria-label="GitHub">
-                <i class="fab fa-github"></i>
-              </a>
-            </div>
-          </div>
+      <div class="contact-compact" data-aos="fade-up">
+        <div class="contact-compact-header">
+          <span class="contact-label">CONTATO</span>
+          <h2 class="contact-title">Vamos conversar?</h2>
         </div>
-
-        <div class="contact-form-container" data-aos="fade-left">
-          <form class="contact-form" id="contact-form">
-            <div class="form-group">
-              <label for="name">Nome Completo *</label>
-              <input type="text" id="name" name="name" required>
+        <div class="contact-compact-grid">
+          <a href="https://wa.me/5599984680391" target="_blank" rel="noopener" class="contact-card">
+            <i class="fab fa-whatsapp"></i>
+            <div>
+              <strong>WhatsApp</strong>
+              <span>(99) 9 8468-0391</span>
             </div>
-
-            <div class="form-group">
-              <label for="email">E-mail *</label>
-              <input type="email" id="email" name="email" required>
+          </a>
+          <a href="mailto:visionxma@gmail.com" class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <strong>E-mail</strong>
+              <span>visionxma@gmail.com</span>
             </div>
-
-            <div class="form-group">
-              <label for="phone">Telefone</label>
-              <input type="tel" id="phone" name="phone">
+          </a>
+          <div class="contact-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <strong>Localização</strong>
+              <span>Pedreiras - MA, Brasil</span>
             </div>
-
-            <div class="form-group">
-              <label for="project-type">Tipo de Projeto *</label>
-              <select id="project-type" name="project-type" required>
-                <option value="">Selecione uma opção</option>
-                <option value="site-institucional">Site Institucional</option>
-                <option value="ecommerce">E-commerce</option>
-                <option value="aplicativo-mobile">Aplicativo Mobile</option>
-                <option value="sistema-web">Sistema Web</option>
-                <option value="automacao">Automação Digital</option>
-                <option value="consultoria">Consultoria Tech</option>
-                <option value="outro">Outro</option>
-              </select>
+          </div>
+          <div class="contact-card contact-social">
+            <i class="fas fa-share-alt"></i>
+            <div>
+              <strong>Redes Sociais</strong>
+              <div class="contact-social-icons">
+                <a href="https://instagram.com/visionx.dev" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/visionx-desenvolvedora-de-software-9b23b1373/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/visionxma" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+              </div>
             </div>
-
-            <div class="form-group">
-              <label for="budget">Orçamento Estimado</label>
-              <select id="budget" name="budget">
-                <option value="">Selecione uma faixa</option>
-                <option value="ate-5k">Até R$ 5.000</option>
-                <option value="5k-10k">R$ 5.000 - R$ 10.000</option>
-                <option value="10k-20k">R$ 10.000 - R$ 20.000</option>
-                <option value="20k-50k">R$ 20.000 - R$ 50.000</option>
-                <option value="acima-50k">Acima de R$ 50.000</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="message">Mensagem *</label>
-              <textarea id="message" name="message" rows="5"
-                placeholder="Descreva seu projeto, objetivos e qualquer informação relevante..." required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">
-              <span>Enviar Mensagem</span>
-              <i class="fas fa-paper-plane"></i>
-            </button>
-          </form>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ============================================================
+       FOOTER - Rodapé
+       ============================================================ -->
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-column">
           <div class="footer-logo">
-            <img src="assets/visionx-logo.png" alt="VisionX Logo" />
+            <img src="assets/visionx-logo.png" alt="VisionX Logo" loading="lazy" decoding="async" />
           </div>
           <p class="footer-description">
             Transformamos ideias em soluções digitais inovadoras.
@@ -1212,13 +1270,6 @@
               <span>Pedreiras - MA, Brasil</span>
             </div>
           </div>
-          <div class="footer-partners">
-            <h5>Parcerias</h5>
-            <div class="partner-logos">
-              <img src="assets/logo-ifma.png" alt="IFMA" />
-              <img src="assets/logo-licc.png" alt="LICC" />
-            </div>
-          </div>
         </div>
       </div>
 
@@ -1235,6 +1286,10 @@
       </div>
     </div>
   </footer>
+
+  <!-- ============================================================
+       MODAIS - Modais de política de privacidade e exclusão de dados
+       ============================================================ -->
 
   <!-- Privacy Policy Modal -->
   <div id="privacy-policy-modal" class="policy-modal" style="display: none;">
@@ -1308,7 +1363,7 @@
   </div>
 
   <!-- Scripts -->
-  <script src="script.js"></script>
+  <script src="js/script.js" defer></script>
 </body>
 
 </html>

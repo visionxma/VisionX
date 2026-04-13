@@ -1,13 +1,10 @@
 // Simple Service Worker for caching
-const CACHE_NAME = 'visionx-v1';
+const CACHE_NAME = 'visionx-v2';
 const urlsToCache = [
   '/',
-  '/style.css',
-  '/script.js',
-  '/assets/visionx-logo.png',
-  '/assets/FInagro LOGO 3.png',
-  'https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap',
-  'https://use.fontawesome.com/releases/v6.5.0/css/all.css'
+  '/css/style.css',
+  '/js/script.js',
+  '/assets/visionx-logo.png'
 ];
 
 self.addEventListener('install', event => {

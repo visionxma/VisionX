@@ -1,6 +1,16 @@
-// VisionX - Modern Professional Website JavaScript
+/* ============================================================
+   VisionX - Site Institucional
+   Arquivo: js/script.js
+   Descrição: Lógica principal do site VisionX
+   Classes:
+     - VisionXWebsite: Controlador principal
+     - UniverseBackground: Animação de estrelas (canvas)
+     - ParticleSystem: Sistema de partículas (canvas)
+   ============================================================ */
 
-// Performance optimized script with enhanced functionality
+// ============================================================
+// Classe: VisionXWebsite - Controlador principal do site
+// ============================================================
 class VisionXWebsite {
   constructor() {
     this.isLoaded = false;
@@ -9,11 +19,13 @@ class VisionXWebsite {
     this.init();
   }
 
+  /** Inicializa os listeners e o carregamento da página */
   init() {
     this.setupEventListeners();
     this.handleLoading();
   }
 
+  /** Registra todos os event listeners globais (scroll, resize, visibility) */
   setupEventListeners() {
     // DOM Content Loaded
     if (document.readyState === 'loading') {
@@ -35,6 +47,7 @@ class VisionXWebsite {
     document.addEventListener('visibilitychange', this.handleVisibilityChange.bind(this));
   }
 
+  /** Callback quando o DOM está pronto - inicializa todos os componentes */
   onDOMReady() {
     this.initMobileMenu();
     this.initSmoothScrolling();
@@ -43,8 +56,11 @@ class VisionXWebsite {
     this.initAnimations();
     this.initPortfolioVisibility();
     this.initPolicyModals();
+    this.initPhoneCarousel();
+    this.initServiceCards();
   }
 
+  /** Callback quando a janela termina de carregar - inicia efeitos visuais */
   onWindowLoad() {
     this.hideLoadingScreen();
     this.initBackgroundEffects();
@@ -53,26 +69,20 @@ class VisionXWebsite {
     this.isLoaded = true;
   }
 
-  // Loading Screen
+  /** Gerencia a tela de carregamento com timeout de segurança */
   handleLoading() {
     const loadingScreen = document.getElementById('loading-screen');
     if (loadingScreen) {
-      this.initLoadingAnimation();
-      // Minimum loading time for better UX
+      // Fast loading - hide as soon as page is ready
       setTimeout(() => {
         if (this.isLoaded) {
           this.hideLoadingScreen();
         }
-      }, 3000);
+      }, 500);
     }
   }
 
-  initLoadingAnimation() {
-    this.createCodeLines();
-    this.createFloatingParticles();
-    this.startLoadingMessages();
-  }
-
+  /** Cria linhas de código animadas na tela de carregamento */
   createCodeLines() {
     const codeLines = document.getElementById('code-lines');
     if (!codeLines) return;
@@ -97,6 +107,7 @@ class VisionXWebsite {
     });
   }
 
+  /** Cria partículas flutuantes com símbolos de código na tela de loading */
   createFloatingParticles() {
     const particlesContainer = document.getElementById('code-particles');
     if (!particlesContainer) return;
@@ -135,6 +146,7 @@ class VisionXWebsite {
     }
   }
 
+  /** Exibe mensagens de progresso sequenciais durante o carregamento */
   startLoadingMessages() {
     const messageElement = document.querySelector('.loading-message');
     const subMessageElement = document.querySelector('.loading-submessage');
@@ -170,17 +182,18 @@ class VisionXWebsite {
     updateMessage();
   }
 
+  /** Oculta a tela de carregamento com fade-out */
   hideLoadingScreen() {
     const loadingScreen = document.getElementById('loading-screen');
     if (loadingScreen) {
       loadingScreen.style.opacity = '0';
       setTimeout(() => {
         loadingScreen.style.display = 'none';
-      }, 500);
+      }, 300);
     }
   }
 
-  // Mobile Menu
+  /** Inicializa o menu mobile hamburger */
   initMobileMenu() {
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const nav = document.getElementById('nav');
@@ -210,7 +223,7 @@ class VisionXWebsite {
     }
   }
 
-  // Smooth Scrolling
+  /** Configura a rolagem suave para links de âncora */
   initSmoothScrolling() {
     const links = document.querySelectorAll('a[href^="#"]');
     
@@ -244,6 +257,7 @@ class VisionXWebsite {
     this.initPortfolioNavigation();
   }
 
+  /** Configura navegação específica para a seção de portfólio */
   initPortfolioNavigation() {
     const portfolioTriggers = document.querySelectorAll(
       'a[href="#portfolio"], .cta-button.secondary, .nav-link[href="#portfolio"]'
@@ -259,6 +273,7 @@ class VisionXWebsite {
     this.initPortfolioTabs();
   }
 
+  /** Inicializa as abas de filtro do portfólio por categoria */
   initPortfolioTabs() {
     const tabs = document.querySelectorAll('.portfolio-tab');
     const categories = document.querySelectorAll('.portfolio-category');
@@ -282,6 +297,7 @@ class VisionXWebsite {
     });
   }
 
+  /** Exibe a seção de portfólio com animação de entrada */
   showPortfolioSection() {
     const portfolioSection = document.getElementById('portfolio');
     if (portfolioSection) {
@@ -321,6 +337,7 @@ class VisionXWebsite {
     }
   }
 
+  /** Oculta a seção de portfólio com animação de saída */
   hidePortfolioSection() {
     const portfolioSection = document.getElementById('portfolio');
     if (portfolioSection) {
@@ -332,7 +349,7 @@ class VisionXWebsite {
     }
   }
 
-  // Update the existing showPortfolioSection method
+  /** Garante que o portfólio fique oculto ao carregar e configura triggers */
   initPortfolioVisibility() {
     // Garantir que a seção de portfólio fique oculta inicialmente
     const portfolioSection = document.getElementById('portfolio');
@@ -355,6 +372,7 @@ class VisionXWebsite {
     });
   }
 
+  /** Atualiza o link ativo no menu de navegação */
   updateActiveNavLink(targetId) {
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
@@ -365,7 +383,7 @@ class VisionXWebsite {
     });
   }
 
-  // Scroll Handler
+  /** Controla efeito do header e navegação ativa ao rolar a página */
   handleScroll() {
     const scrollY = window.scrollY;
     const header = document.getElementById('header');
@@ -383,6 +401,7 @@ class VisionXWebsite {
     this.updateActiveSection();
   }
 
+  /** Detecta a seção visível atual e destaca o link correspondente */
   updateActiveSection() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -408,7 +427,7 @@ class VisionXWebsite {
     });
   }
 
-  // FAQ Functionality
+  /** Inicializa o accordion de perguntas frequentes (FAQ) */
   initFAQ() {
     const faqItems = document.querySelectorAll('.faq-item');
     
@@ -431,7 +450,7 @@ class VisionXWebsite {
     });
   }
 
-  // Contact Form
+  /** Inicializa o formulário de contato com validação em tempo real */
   initContactForm() {
     const form = document.getElementById('contact-form');
     
@@ -447,7 +466,8 @@ class VisionXWebsite {
     }
   }
 
-async handleFormSubmit(e) {
+  /** Processa o envio do formulário e redireciona para o WhatsApp */
+  async handleFormSubmit(e) {
     e.preventDefault();
     
     const form = e.target;
@@ -494,6 +514,7 @@ async handleFormSubmit(e) {
     submitBtn.innerHTML = '<span>Enviar Mensagem</span><i class="fas fa-paper-plane"></i>';
 }
 
+  /** Simula envio do formulário para um backend (placeholder) */
   async submitForm(formData) {
     // Convert FormData to object
     const data = {};
@@ -515,6 +536,7 @@ async handleFormSubmit(e) {
     });
   }
 
+  /** Valida todos os campos obrigatórios do formulário */
   validateForm(form) {
     const requiredFields = form.querySelectorAll('[required]');
     let isValid = true;
@@ -528,6 +550,7 @@ async handleFormSubmit(e) {
     return isValid;
   }
 
+  /** Valida um campo individual (obrigatório, e-mail, telefone) */
   validateField(field) {
     const value = field.value.trim();
     const fieldType = field.type;
@@ -563,6 +586,7 @@ async handleFormSubmit(e) {
     return true;
   }
 
+  /** Exibe mensagem de erro abaixo de um campo do formulário */
   showFieldError(field, message) {
     field.classList.add('error');
     
@@ -583,6 +607,7 @@ async handleFormSubmit(e) {
     field.parentNode.appendChild(errorElement);
   }
 
+  /** Remove a mensagem de erro de um campo do formulário */
   clearFieldError(field) {
     field.classList.remove('error');
     const errorElement = field.parentNode.querySelector('.field-error');
@@ -591,14 +616,17 @@ async handleFormSubmit(e) {
     }
   }
 
+  /** Exibe notificação de sucesso após envio do formulário */
   showFormSuccess() {
     this.showNotification('Mensagem enviada com sucesso! Entraremos em contato em breve.', 'success');
   }
 
+  /** Exibe notificação de erro do formulário */
   showFormError(message) {
     this.showNotification(message, 'error');
   }
 
+  /** Cria e exibe uma notificação flutuante com auto-remoção após 5s */
   showNotification(message, type = 'info') {
     // Create notification element
     const notification = document.createElement('div');
@@ -657,14 +685,16 @@ async handleFormSubmit(e) {
     }, 5000);
   }
 
-  // Animations
+  /** Inicializa animações de entrada com IntersectionObserver (estilo AOS) */
   initAnimations() {
-    // Simple AOS-like functionality
+    // Observador dispara quando 10% do elemento fica visível,
+    // com margem inferior de -50px para antecipar a animação
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
     };
 
+    // Ao entrar na viewport, adiciona classe de animação e para de observar
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -674,12 +704,12 @@ async handleFormSubmit(e) {
       });
     }, observerOptions);
 
-    // Observe all elements with data-aos attribute
+    // Seleciona todos os elementos com atributo data-aos para observar
     const animatedElements = document.querySelectorAll('[data-aos]');
     animatedElements.forEach(el => observer.observe(el));
   }
 
-  // Counter Animation
+  /** Inicializa contadores animados que disparam ao entrar na viewport */
   initCounters() {
     const counters = document.querySelectorAll('.stat-number[data-count]');
     
@@ -695,6 +725,7 @@ async handleFormSubmit(e) {
     counters.forEach(counter => counterObserver.observe(counter));
   }
 
+  /** Anima um contador de 0 até o valor alvo usando requestAnimationFrame */
   animateCounter(element) {
     const target = parseInt(element.getAttribute('data-count'));
     const duration = 2000;
@@ -714,7 +745,7 @@ async handleFormSubmit(e) {
     updateCounter();
   }
 
-  // Background Effects
+  /** Inicializa efeitos de fundo (apenas em telas maiores que 768px) */
   initBackgroundEffects() {
     // Only initialize if not on mobile for performance
     if (window.innerWidth > 768) {
@@ -723,6 +754,7 @@ async handleFormSubmit(e) {
     }
   }
 
+  /** Cria a instância do fundo de universo estrelado */
   initUniverseBackground() {
     const canvas = document.getElementById('universe-canvas');
     if (!canvas) return;
@@ -730,6 +762,7 @@ async handleFormSubmit(e) {
     this.universe = new UniverseBackground(canvas);
   }
 
+  /** Cria a instância do sistema de partículas interativo */
   initParticleSystem() {
     const canvas = document.getElementById('particles-canvas');
     if (!canvas) return;
@@ -737,7 +770,7 @@ async handleFormSubmit(e) {
     this.particles = new ParticleSystem(canvas);
   }
 
-  // Utility Functions
+  /** Limita a execução de uma função a no máximo 1 vez por intervalo */
   throttle(func, limit) {
     let inThrottle;
     return function() {
@@ -751,6 +784,7 @@ async handleFormSubmit(e) {
     };
   }
 
+  /** Adia a execução de uma função até que pare de ser chamada */
   debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -763,6 +797,7 @@ async handleFormSubmit(e) {
     };
   }
 
+  /** Redimensiona os canvas de fundo ao alterar tamanho da janela */
   handleResize() {
     // Reinitialize background effects on resize
     if (this.universe) {
@@ -773,6 +808,7 @@ async handleFormSubmit(e) {
     }
   }
 
+  /** Pausa/retoma animações conforme visibilidade da aba do navegador */
   handleVisibilityChange() {
     if (document.hidden) {
       // Pause animations when tab is not visible
@@ -787,44 +823,58 @@ async handleFormSubmit(e) {
     }
   }
 
-  // Partners Carousel
+  /** Inicializa o carrossel infinito de parceiros com scroll automático */
   initPartnersCarousel() {
     const track = document.getElementById('partners-track');
     if (!track) return;
 
-    // Clone slides for infinite scroll effect
     const slides = track.querySelectorAll('.partner-slide');
-    if (slides.length > 0) {
-      // The slides are already duplicated in HTML for infinite effect
-      
-      // Add hover pause functionality
-      const container = document.querySelector('.partners-carousel-container');
-      if (container) {
-        container.addEventListener('mouseenter', () => {
-          track.style.animationPlayState = 'paused';
-        });
-        
-        container.addEventListener('mouseleave', () => {
-          track.style.animationPlayState = 'running';
-        });
+    if (slides.length === 0) return;
+
+    // Calcula metade dos slides (os originais, sem os clones para loop infinito)
+    const halfCount = Math.floor(slides.length / 2);
+    let offset = 0;
+    let speed = 0.8; // velocidade em pixels por frame
+    let paused = false;
+    let halfWidth = 0;
+
+    // Calcula a largura total da primeira metade (slides originais + gap)
+    // para saber o ponto exato de reset do loop infinito
+    const calcHalfWidth = () => {
+      halfWidth = 0;
+      const gap = parseFloat(getComputedStyle(track).gap) || 48;
+      for (let i = 0; i < halfCount; i++) {
+        halfWidth += slides[i].offsetWidth + gap;
       }
+    };
+
+    calcHalfWidth();
+    window.addEventListener('resize', this.throttle(calcHalfWidth, 500));
+
+    // Loop de animação: desloca o track e reseta ao atingir a metade
+    // criando a ilusão de carrossel infinito contínuo
+    const animate = () => {
+      if (!paused) {
+        offset += speed;
+        if (offset >= halfWidth) {
+          offset -= halfWidth; // Volta ao início sem pulo visível
+        }
+        track.style.transform = `translateX(-${offset}px)`;
+      }
+      requestAnimationFrame(animate);
+    };
+
+    requestAnimationFrame(animate);
+
+    // Pause on hover
+    const container = document.querySelector('.partners-carousel-container');
+    if (container) {
+      container.addEventListener('mouseenter', () => { paused = true; });
+      container.addEventListener('mouseleave', () => { paused = false; });
     }
   }
 
-  pausePartnersCarousel() {
-    const track = document.getElementById('partners-track');
-    if (track) {
-      track.style.animationPlayState = 'paused';
-    }
-  }
-
-  resumePartnersCarousel() {
-    const track = document.getElementById('partners-track');
-    if (track) {
-      track.style.animationPlayState = 'running';
-    }
-  }
-
+  /** Configura modais de política de privacidade e exclusão de dados */
   initPolicyModals() {
     const privacyPolicyLink = document.getElementById('privacy-policy-link');
     const dataDeletionLink = document.getElementById('data-deletion-link');
@@ -873,6 +923,7 @@ async handleFormSubmit(e) {
     });
   }
 
+  /** Abre um modal com animação e bloqueia scroll do body */
   openModal(modal) {
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
@@ -881,6 +932,7 @@ async handleFormSubmit(e) {
     }, 10);
   }
 
+  /** Fecha um modal com animação e restaura scroll do body */
   closeModal(modal) {
     modal.classList.remove('show');
     setTimeout(() => {
@@ -888,33 +940,86 @@ async handleFormSubmit(e) {
       document.body.style.overflow = '';
     }, 300);
   }
+
+  /** Observa cards de serviço para aplicar efeito ao entrar na viewport */
+  initServiceCards() {
+    const cards = document.querySelectorAll('.service-card');
+    if (!cards.length) return;
+
+    // Observador com threshold de 60% e margens assimétricas
+    // para destacar o card quando estiver centralizado na tela
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        } else {
+          entry.target.classList.remove('in-view');
+        }
+      });
+    }, {
+      threshold: 0.6,
+      rootMargin: '-10% 0px -30% 0px'
+    });
+
+    cards.forEach(card => observer.observe(card));
+  }
+
+  /** Inicializa carrossel automático de telas do celular (a cada 3.5s) */
+  initPhoneCarousel() {
+    const screens = document.querySelectorAll('.app-screen');
+    const dots = document.querySelectorAll('.screen-dot');
+    if (!screens.length) return;
+
+    let current = 0;
+    const total = screens.length;
+
+    // Alterna telas ciclicamente: remove ativa atual e avança para próxima
+    const switchScreen = () => {
+      screens[current].classList.remove('active');
+      dots[current]?.classList.remove('active');
+
+      current = (current + 1) % total; // Volta ao início ao atingir o fim
+
+      screens[current].classList.add('active');
+      dots[current]?.classList.add('active');
+    };
+
+    setInterval(switchScreen, 3500);
+  }
 }
 
-// Universe Background Class
+// ============================================================
+// Classe: UniverseBackground - Animação de fundo com estrelas
+// ============================================================
 class UniverseBackground {
+  /** Configura o canvas, cria as estrelas e inicia o loop de animação */
   constructor(canvas) {
     this.canvas = canvas;
     this.ctx = canvas.getContext('2d');
     this.stars = [];
     this.isRunning = true;
-    
+
     this.init();
     this.animate();
   }
 
+  /** Inicializa dimensões e cria as estrelas */
   init() {
     this.handleResize();
     this.createStars();
   }
 
+  /** Ajusta o tamanho do canvas ao tamanho da janela */
   handleResize() {
     this.canvas.width = window.innerWidth;
     this.canvas.height = window.innerHeight;
   }
 
+  /** Gera estrelas com posição, tamanho e velocidade de cintilação aleatórios */
   createStars() {
     this.stars = [];
-    const numStars = Math.min(100, Math.floor((this.canvas.width * this.canvas.height) / 10000));
+    // Limita a 40 estrelas; quantidade proporcional à área do canvas
+    const numStars = Math.min(40, Math.floor((this.canvas.width * this.canvas.height) / 30000));
     
     for (let i = 0; i < numStars; i++) {
       this.stars.push({
@@ -927,8 +1032,9 @@ class UniverseBackground {
     }
   }
 
+  /** Desenha o fundo degradê e as estrelas com efeito de cintilação */
   draw() {
-    // Clear canvas with gradient background
+    // Limpa o canvas com gradiente escuro de fundo
     const gradient = this.ctx.createLinearGradient(0, 0, 0, this.canvas.height);
     gradient.addColorStop(0, '#0a0a0a');
     gradient.addColorStop(1, '#1a1a1a');
@@ -936,8 +1042,9 @@ class UniverseBackground {
     this.ctx.fillStyle = gradient;
     this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
     
-    // Draw stars
+    // Desenha cada estrela com opacidade oscilante (cintilação via seno)
     this.stars.forEach(star => {
+      // Varia a opacidade usando seno do tempo * velocidade individual
       star.opacity += Math.sin(Date.now() * star.twinkleSpeed) * 0.1;
       star.opacity = Math.max(0.1, Math.min(1, star.opacity));
       
@@ -951,6 +1058,7 @@ class UniverseBackground {
     });
   }
 
+  /** Loop principal de animação via requestAnimationFrame */
   animate() {
     if (this.isRunning) {
       this.draw();
@@ -958,40 +1066,48 @@ class UniverseBackground {
     requestAnimationFrame(() => this.animate());
   }
 
+  /** Pausa a animação (aba invisível) */
   pause() {
     this.isRunning = false;
   }
 
+  /** Retoma a animação (aba visível) */
   resume() {
     this.isRunning = true;
   }
 }
 
-// Particle System Class
+// ============================================================
+// Classe: ParticleSystem - Sistema de partículas interativo
+// ============================================================
 class ParticleSystem {
+  /** Configura o canvas, cria partículas e inicia o loop de animação */
   constructor(canvas) {
     this.canvas = canvas;
     this.ctx = canvas.getContext('2d');
     this.particles = [];
     this.isRunning = true;
     this.mouse = { x: 0, y: 0 };
-    
+
     this.init();
     this.setupEvents();
     this.animate();
   }
 
+  /** Inicializa dimensões e cria as partículas */
   init() {
     this.handleResize();
     this.createParticles();
   }
 
+  /** Ajusta o canvas e recria partículas ao redimensionar */
   handleResize() {
     this.canvas.width = window.innerWidth;
     this.canvas.height = window.innerHeight;
     this.createParticles();
   }
 
+  /** Rastreia posição do mouse para interação com partículas */
   setupEvents() {
     this.canvas.addEventListener('mousemove', (e) => {
       this.mouse.x = e.clientX;
@@ -999,9 +1115,11 @@ class ParticleSystem {
     });
   }
 
+  /** Gera partículas com posição, velocidade, tamanho e cor aleatórios */
   createParticles() {
     this.particles = [];
-    const numParticles = Math.min(50, Math.floor((this.canvas.width * this.canvas.height) / 20000));
+    // Limita a 20 partículas; quantidade proporcional à área do canvas
+    const numParticles = Math.min(20, Math.floor((this.canvas.width * this.canvas.height) / 50000));
     
     for (let i = 0; i < numParticles; i++) {
       this.particles.push({
@@ -1016,36 +1134,40 @@ class ParticleSystem {
     }
   }
 
+  /** Atualiza posição das partículas aplicando física (colisão, mouse, amortecimento) */
   updateParticles() {
     this.particles.forEach(particle => {
+      // Move a partícula conforme sua velocidade
       particle.x += particle.vx;
       particle.y += particle.vy;
-      
-      // Boundary collision
+
+      // Inverte velocidade ao colidir com as bordas do canvas
       if (particle.x < 0 || particle.x > this.canvas.width) particle.vx *= -1;
       if (particle.y < 0 || particle.y > this.canvas.height) particle.vy *= -1;
-      
-      // Keep in bounds
+
+      // Garante que a partícula não saia dos limites
       particle.x = Math.max(0, Math.min(this.canvas.width, particle.x));
       particle.y = Math.max(0, Math.min(this.canvas.height, particle.y));
-      
-      // Mouse interaction
+
+      // Interação com o mouse: atrai partículas num raio de 100px
       const dx = this.mouse.x - particle.x;
       const dy = this.mouse.y - particle.y;
       const distance = Math.sqrt(dx * dx + dy * dy);
-      
+
       if (distance < 100) {
+        // Força inversamente proporcional à distância (mais perto = mais forte)
         const force = (100 - distance) / 100;
         particle.vx += (dx / distance) * force * 0.01;
         particle.vy += (dy / distance) * force * 0.01;
       }
-      
-      // Damping
+
+      // Amortecimento: reduz velocidade gradualmente para evitar aceleração infinita
       particle.vx *= 0.99;
       particle.vy *= 0.99;
     });
   }
 
+  /** Renderiza cada partícula como um círculo colorido no canvas */
   drawParticles() {
     this.particles.forEach(particle => {
       this.ctx.save();
@@ -1058,14 +1180,17 @@ class ParticleSystem {
     });
   }
 
+  /** Desenha linhas entre partículas próximas (distância < 120px) */
   drawConnections() {
+    // Compara cada par de partículas (sem repetição)
     for (let i = 0; i < this.particles.length; i++) {
       for (let j = i + 1; j < this.particles.length; j++) {
         const dx = this.particles[i].x - this.particles[j].x;
         const dy = this.particles[i].y - this.particles[j].y;
         const distance = Math.sqrt(dx * dx + dy * dy);
-        
+
         if (distance < 120) {
+          // Opacidade da linha diminui com a distância (fade out gradual)
           const opacity = (120 - distance) / 120 * 0.3;
           
           this.ctx.save();
@@ -1082,15 +1207,16 @@ class ParticleSystem {
     }
   }
 
+  /** Limpa o canvas com fade e redesenha as partículas */
   draw() {
-    // Clear with fade effect
+    // Limpa com sobreposição semi-transparente (cria efeito de rastro/fade)
     this.ctx.fillStyle = 'rgba(10, 10, 10, 0.1)';
     this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-    
-    this.drawConnections();
+
     this.drawParticles();
   }
 
+  /** Loop principal de animação via requestAnimationFrame */
   animate() {
     if (this.isRunning) {
       this.updateParticles();
@@ -1099,14 +1225,18 @@ class ParticleSystem {
     requestAnimationFrame(() => this.animate());
   }
 
+  /** Pausa a animação (aba invisível) */
   pause() {
     this.isRunning = false;
   }
 
+  /** Retoma a animação (aba visível) */
   resume() {
     this.isRunning = true;
   }
 }
 
-// Initialize the website
+// ============================================================
+// Inicialização - Ponto de entrada da aplicação
+// ============================================================
 const visionxWebsite = new VisionXWebsite();
