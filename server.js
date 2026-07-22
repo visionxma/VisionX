@@ -557,7 +557,7 @@ window.__DATA__ = ${dataJson};
 
   function esc(s){ s=(s==null?'':String(s)); return s.replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
   // remove chars que quebram um url() de CSS (aspas, parênteses, barra, quebras) e escapa o resto
-  function csurl(s){ return esc(String(s==null?'':s).replace(/["'()\\\r\n]/g,'')); }
+  function csurl(s){ return esc(String(s==null?'':s).replace(/["'()]/g,'')); }
   function stOf(l){ return (l.status && STATUS[l.status]) ? l.status : 'novo'; }
   function fmtFull(d){ try{ return new Date(d).toLocaleString('pt-BR'); }catch(e){ return d; } }
   function fmtRel(d){
