@@ -773,7 +773,6 @@ window.__DATA__ = ${dataJson};
         +csw('sec_cta','Chamada final (CTA)')
       +'</div>'
       +'<div class="cgroup"><div class="cgt">Seções — Página de Serviços</div>'
-        +csw('sec_serv_marketing','Marketing &amp; performance')
         +csw('sec_serv_why','Por que a VisionX')
         +csw('sec_serv_depoimentos','Depoimentos')
         +csw('sec_serv_cta','Chamada final (CTA)')
