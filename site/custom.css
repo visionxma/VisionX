@@ -231,3 +231,59 @@ body {
 
 /* Depoimentos viraram grid: esconde as setas órfãs do carrossel */
 .section_depoimentos .arrows_wrap { display: none !important; }
+
+/* ==================================================================== */
+/* DARK MODE — acionado pela lâmpada da seção "Sobre nós" (icon2.svg)    */
+/* Recolore o site inteiro sobrescrevendo os design tokens do Webflow.   */
+/* ==================================================================== */
+html.vx-dark {
+  color-scheme: dark;
+  /* fundos */
+  --bg-color--bg-default: #0b0e15;
+  --bg-color--bg-white:   #0b0e15;
+  --bg-color--bg-primary: #141a27;
+  --bg-color--bg-subtle:  #141a27;
+  --bg-color--bg-secondary:#1c2432;
+  --bg-color--bg-hover:   #1c2432;
+  --bg-color--bg-dark:    #06080d;
+  /* textos */
+  --text-color--text-primary:   #e9eef6;
+  --text-color--text-secondary: #9fadc0;
+  --text-color--text-subtle:    #6d7b91;
+  --text-color--text-on-primary:  #ffffff;
+  --text-color--text-on-secondary:#e9eef6;
+  /* bordas */
+  --border-color--border-primary:   rgba(255,255,255,.12);
+  --border-color--border-alternate: rgba(255,255,255,.08);
+  --base-color-neutral--neutral-darker: #e9eef6;
+}
+html.vx-dark, html.vx-dark body { background-color: #0b0e15; }
+/* logo preto vira branco no escuro */
+html.vx-dark img[src*="logo.png"] { filter: invert(1) brightness(1.7); }
+/* cartões/painéis claros que não usam token: garante fundo escuro */
+html.vx-dark .card, html.vx-dark [class*="_card"], html.vx-dark .w-form,
+html.vx-dark .footer_top-wrap { background-color: var(--bg-color--bg-primary); }
+/* transição suave (fallback quando não há View Transitions) */
+html.vx-theme-anim, html.vx-theme-anim body,
+html.vx-theme-anim h1, html.vx-theme-anim h2, html.vx-theme-anim h3,
+html.vx-theme-anim p, html.vx-theme-anim a, html.vx-theme-anim div,
+html.vx-theme-anim section { transition: background-color .45s ease, color .45s ease, border-color .45s ease; }
+
+/* --- a lâmpada vira botão: cursor, brilho e "pop" ao clicar --- */
+img.title-icon[src*="icon2"] {
+  cursor: pointer; border-radius: 50%;
+  transition: transform .25s ease, filter .25s ease;
+  animation: vx-bulb-hint 3.4s ease-in-out infinite;
+}
+img.title-icon[src*="icon2"]:hover { transform: scale(1.14); }
+img.title-icon.vx-pop { animation: vx-bulb-pop .55s ease; }
+@keyframes vx-bulb-hint { 0%,100%{filter:drop-shadow(0 0 0 rgba(0,212,255,0))} 50%{filter:drop-shadow(0 0 9px rgba(0,212,255,.55))} }
+@keyframes vx-bulb-pop  { 0%{transform:scale(1)} 28%{transform:scale(.8)} 60%{transform:scale(1.28)} 100%{transform:scale(1)} }
+
+/* --- View Transitions: revelação circular limpa (sem crossfade padrão) --- */
+::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+::view-transition-new(root) { z-index: 2147483646; }
+::view-transition-old(root) { z-index: 1; }
+@media (prefers-reduced-motion: reduce) {
+  img.title-icon[src*="icon2"] { animation: none; }
+}
