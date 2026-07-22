@@ -31,7 +31,7 @@
     if (!payload.email) { if (fail) fail.style.display = 'block'; return; }
 
     // estado de carregamento no botão
-    var btn = form.querySelector('[type="submit"], button[type="submit"], .w-button');
+    var btn = form.querySelector('[type="submit"], button[type="submit"], .w-button, .button-arrow, button');
     var btnOrig = '';
     if (btn) {
       btnOrig = ('value' in btn && btn.value) ? btn.value : btn.textContent;

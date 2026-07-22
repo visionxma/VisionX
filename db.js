@@ -37,6 +37,18 @@ async function sb(pathQuery, opts = {}) {
   return txt ? JSON.parse(txt) : null;
 }
 
+// Detecta se a tabela existe. true = existe, false = NÃO existe (404/PGRST205),
+// null = erro transitório (5xx/rede/timeout). O null NÃO deve virar cache — senão
+// uma falha momentânea travaria o app no JSON local e dessincronizaria do Supabase.
+async function tableProbe(table) {
+  try { await sb(table + '?select=*&limit=1'); return true; }
+  catch (e) {
+    const m = String((e && e.message) || '');
+    if (m.indexOf(' 404') >= 0 || m.indexOf('PGRST205') >= 0 || m.indexOf('Could not find the table') >= 0) return false;
+    return null; // transitório: não cacheia
+  }
+}
+
 // normaliza a linha do banco para o formato que o painel espera
 function normLead(r) {
   return { id: String(r.id), data: r.created_at, nome: r.nome, email: r.email, mensagem: r.mensagem, origem: r.origem, status: r.status || 'novo' };
@@ -48,8 +60,9 @@ let _teamSb = null;
 async function teamUsesSb() {
   if (!USE_SB) return false;
   if (_teamSb !== null) return _teamSb;
-  try { await sb('team?select=id&limit=1'); _teamSb = true; } catch (e) { _teamSb = false; }
-  return _teamSb;
+  const r = await tableProbe('team');
+  if (r !== null) _teamSb = r;   // só cacheia resultado definitivo (existe / não existe)
+  return r === false ? false : true; // transitório -> tenta Supabase (falha visível, não silencia)
 }
 function normTeam(r) { return { id: String(r.id), nome: r.nome, cargo: r.cargo, foto: r.foto, ordem: (r.ordem == null ? 0 : r.ordem), ativo: r.ativo !== false }; }
 
@@ -58,8 +71,9 @@ let _setsSb = null;
 async function setsUsesSb() {
   if (!USE_SB) return false;
   if (_setsSb !== null) return _setsSb;
-  try { await sb('settings?select=chave&limit=1'); _setsSb = true; } catch (e) { _setsSb = false; }
-  return _setsSb;
+  const r = await tableProbe('settings');
+  if (r !== null) _setsSb = r;
+  return r === false ? false : true;
 }
 function loadSettingsJson() { try { return JSON.parse(fs.readFileSync(jfile('settings.json'), 'utf8')); } catch { return {}; } }
 
@@ -68,8 +82,9 @@ let _depSb = null;
 async function depUsesSb() {
   if (!USE_SB) return false;
   if (_depSb !== null) return _depSb;
-  try { await sb('depoimentos?select=id&limit=1'); _depSb = true; } catch (e) { _depSb = false; }
-  return _depSb;
+  const r = await tableProbe('depoimentos');
+  if (r !== null) _depSb = r;
+  return r === false ? false : true;
 }
 function normDep(r) { return { id: String(r.id), texto: r.texto, autor: r.autor, foto: r.foto, ordem: (r.ordem == null ? 0 : r.ordem), ativo: r.ativo !== false }; }
 
@@ -146,7 +161,7 @@ module.exports = {
   },
   async addTeam(o) {
     const row = { nome: o.nome || '', cargo: o.cargo || '', foto: o.foto || '', ordem: Number(o.ordem) || 0, ativo: o.ativo !== false };
-    if (await teamUsesSb()) { const r = await sb('team', { method: 'POST', headers: { Prefer: 'return=representation' }, body: JSON.stringify(row) }); return normTeam(r[0]); }
+    if (await teamUsesSb()) { const r = await sb('team', { method: 'POST', headers: { Prefer: 'return=representation' }, body: JSON.stringify(row) }); if (!r || !r[0]) throw new Error('Supabase não retornou o registro criado (team)'); return normTeam(r[0]); }
     const a = jload('team.json'); const m = { id: jid(), ...row }; a.push(m); jsave('team.json', a); return m;
   },
   async updateTeam(id, o) {
@@ -179,7 +194,7 @@ module.exports = {
   },
   async addDepoimento(o) {
     const row = { texto: o.texto || '', autor: o.autor || '', foto: o.foto || '', ordem: Number(o.ordem) || 0, ativo: o.ativo !== false };
-    if (await depUsesSb()) { const r = await sb('depoimentos', { method: 'POST', headers: { Prefer: 'return=representation' }, body: JSON.stringify(row) }); return normDep(r[0]); }
+    if (await depUsesSb()) { const r = await sb('depoimentos', { method: 'POST', headers: { Prefer: 'return=representation' }, body: JSON.stringify(row) }); if (!r || !r[0]) throw new Error('Supabase não retornou o registro criado (depoimentos)'); return normDep(r[0]); }
     const a = jload('depoimentos.json'); const m = { id: jid(), ...row }; a.push(m); jsave('depoimentos.json', a); return m;
   },
   async updateDepoimento(id, o) {

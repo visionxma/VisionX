@@ -228,3 +228,6 @@ body {
 @media (max-width: 860px) { .section_blog .blog_track { grid-template-columns: 1fr; } }
 .section_blog .blog_card { width: auto !important; margin: 0 !important; flex: none !important; }
 .section_blog .arrows_wrap.is-blog { display: none !important; }
+
+/* Depoimentos viraram grid: esconde as setas órfãs do carrossel */
+.section_depoimentos .arrows_wrap { display: none !important; }

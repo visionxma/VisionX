@@ -1,10 +1,12 @@
-// POST /api/contact — fallback do formulário de contato quando enviado sem JavaScript (urlencoded).
-import { sb, readBody, thanks } from '../_supabase.js';
+// POST /api/contact — formulário de contato. Com JS chega JSON (responde JSON);
+// sem JS chega urlencoded (responde uma página HTML de "obrigado"). Espelha o Express.
+import { sb, json, readBody, thanks } from '../_supabase.js';
 
 export async function onRequestPost({ request, env }) {
+  const isJson = (request.headers.get('content-type') || '').includes('application/json');
   const b = await readBody(request);
   const email = (b.email || b.Address || '').trim();
-  if (!email) return new Response('E-mail obrigatório', { status: 400 });
+  if (!email) return isJson ? json({ ok: false, erro: 'E-mail obrigatório' }, 400) : new Response('E-mail obrigatório', { status: 400 });
   try {
     await sb(env, 'leads', {
       method: 'POST',
@@ -17,6 +19,6 @@ export async function onRequestPost({ request, env }) {
         status: 'novo'
       })
     });
-    return thanks('Mensagem recebida!', 'Obrigado pelo contato — retornaremos em breve.');
-  } catch (e) { return new Response('Falha ao enviar', { status: 500 }); }
+    return isJson ? json({ ok: true }) : thanks('Mensagem recebida!', 'Obrigado pelo contato — retornaremos em breve.');
+  } catch (e) { return isJson ? json({ ok: false, erro: 'Falha ao enviar' }, 500) : new Response('Falha ao enviar', { status: 500 }); }
 }

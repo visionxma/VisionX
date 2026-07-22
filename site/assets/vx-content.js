@@ -30,11 +30,14 @@
       document.querySelectorAll('a[href*="github.com"]').forEach(function (a) { a.href = 'https://github.com/' + gh; });
     }
 
-    // ---- TEXTOS (data-vx) — só troca se mudou, pra preservar estilo/quebras ----
+    // ---- TEXTOS (data-vx) — só troca se mudou de verdade, pra preservar estilo/quebras ----
+    // compara ignorando espaços/quebras: se o valor salvo é o mesmo texto do HTML (ex.: hero
+    // com <br> e <span>), NÃO mexe — assim a marcação estilizada não é destruída à toa.
+    function normTxt(x) { return String(x == null ? '' : x).replace(/\s+/g, ' ').trim(); }
     document.querySelectorAll('[data-vx]').forEach(function (el) {
       var v = s[el.getAttribute('data-vx')];
       if (v == null || v === '') return;
-      if ((el.textContent || '').trim() === String(v).trim()) return;
+      if (normTxt(el.textContent) === normTxt(v)) return;
       el.textContent = v;
     });
 
@@ -43,9 +46,8 @@
       var v = s[el.getAttribute('data-vx-num')];
       if (v == null || v === '') return;
       var digits = String(v).replace(/\D/g, '') || String(v);
-      el.textContent = v;
-      el.setAttribute('fs-numbercount-end', digits);
-      el.setAttribute('fs-numbercount-comeca', digits);
+      el.textContent = digits; // só os dígitos (o "+"/"%" é um elemento irmão)
+      el.setAttribute('fs-numbercount-end', digits); // mantém o "comeca" do HTML (0) pra animar
     });
 
     // ---- TEXTO DO BOTÃO CTA (mantém consistente em todos os "Começar agora") ----

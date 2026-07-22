@@ -23,8 +23,17 @@ const SITE_DIR = path.join(__dirname, 'site');
 const DATA_DIR = path.join(__dirname, 'data');
 const ADMIN_USER = process.env.ADMIN_USER || 'admin';
 const ADMIN_PASS = process.env.ADMIN_PASS || 'visionx2025'; // TROQUE isso (env ADMIN_PASS)
-const ADMIN_SECRET = process.env.ADMIN_SECRET || (ADMIN_PASS + '::vx-sess-2026');
+const IS_DEFAULT_PASS = !process.env.ADMIN_PASS || ADMIN_PASS === 'visionx2025';
+// Segredo de sessão INDEPENDENTE da senha: sabendo a senha não dá pra forjar o cookie.
+// Prioridade: env ADMIN_SECRET (sessão estável entre reinícios) -> aleatório por boot (desloga no restart, mais seguro).
+const ADMIN_SECRET = process.env.ADMIN_SECRET || crypto.randomBytes(32).toString('hex');
 const SESSION_HOURS = 12;
+if (IS_DEFAULT_PASS) {
+  console.warn('\n  ⚠️  ADMIN_PASS está no padrão! Defina ADMIN_PASS (senha forte) no .env antes de publicar.');
+}
+if (!process.env.ADMIN_SECRET) {
+  console.warn('  ℹ️  ADMIN_SECRET não definido — usando segredo aleatório (você precisa relogar a cada reinício). Defina ADMIN_SECRET no .env pra manter a sessão.\n');
+}
 
 fs.mkdirSync(DATA_DIR, { recursive: true });
 
@@ -84,6 +93,24 @@ app.use(function (req, res, next) {
   var ip = req.ip || 'x';
   hits[ip] = (hits[ip] || 0) + 1;
   if (hits[ip] > 200) return res.status(429).send('Muitas requisições. Tente novamente em instantes.');
+  next();
+});
+
+// 5) Anti-brute-force nos endpoints sensíveis (login do admin + formulários públicos)
+var sensiHits = Object.create(null);
+setInterval(function () { sensiHits = Object.create(null); }, 60000);
+function tooMany(req, res, max) {
+  var ip = req.ip || 'x';
+  var k = req.path + '|' + ip;
+  sensiHits[k] = (sensiHits[k] || 0) + 1;
+  if (sensiHits[k] > max) { res.status(429).send('Muitas tentativas. Aguarde um minuto.'); return true; }
+  return false;
+}
+app.use(function (req, res, next) {
+  if (req.method === 'POST') {
+    if (req.path === '/admin/login' && tooMany(req, res, 8)) return;      // 8 logins/min por IP
+    if ((req.path === '/api/lead' || req.path === '/api/newsletter' || req.path === '/api/contact') && tooMany(req, res, 20)) return; // 20 envios/min por IP
+  }
   next();
 });
 // ====================================================
@@ -313,9 +340,9 @@ app.post('/admin/api/dep-reorder', auth, async (req, res) => {
 app.post('/admin/api/upload', auth, (req, res) => {
   try {
     const dataUrl = (req.body || {}).dataUrl || '';
-    const m = /^data:image\/(png|jpe?g|webp|gif|avif|svg\+xml);base64,(.+)$/i.exec(dataUrl);
+    const m = /^data:image\/(png|jpe?g|webp|gif|avif);base64,(.+)$/i.exec(dataUrl); // sem SVG (evita XSS armazenado)
     if (!m) return res.status(400).json({ ok: false, erro: 'Formato inválido' });
-    const ext = m[1].toLowerCase().replace('jpeg', 'jpg').replace('svg+xml', 'svg');
+    const ext = m[1].toLowerCase().replace('jpeg', 'jpg');
     const buf = Buffer.from(m[2], 'base64');
     if (buf.length > 3.5 * 1024 * 1024) return res.status(400).json({ ok: false, erro: 'Imagem muito grande (máx 3,5MB)' });
     const dir = path.join(SITE_DIR, 'images', 'uploads');
@@ -348,7 +375,9 @@ app.get('/admin/export/:tipo.csv', auth, async (req, res) => {
   try {
     const rows = isNews ? await db.getNews() : await db.getLeads();
     const cols = isNews ? ['data', 'email'] : ['data', 'nome', 'email', 'mensagem', 'status', 'origem'];
-    const csv = [cols.join(',')].concat(rows.map(r => cols.map(c => `"${String(r[c] || '').replace(/"/g, '""')}"`).join(','))).join('\n');
+    // neutraliza injeção de fórmula (=,+,-,@ no início viram fórmula no Excel/Sheets)
+    const csvCell = v => { let s = String(v == null ? '' : v); if (/^[=+\-@\t\r]/.test(s)) s = "'" + s; return '"' + s.replace(/"/g, '""') + '"'; };
+    const csv = [cols.join(',')].concat(rows.map(r => cols.map(c => csvCell(r[c])).join(','))).join('\n');
     res.set('Content-Type', 'text/csv; charset=utf-8').set('Content-Disposition', `attachment; filename="${req.params.tipo}.csv"`).send('﻿' + csv);
   } catch (e) { console.error('export:', e.message); res.status(500).send('Falha ao exportar'); }
 });
@@ -527,6 +556,8 @@ window.__DATA__ = ${dataJson};
   var STATUS = { novo:{label:'Novo',cls:'st-novo'}, andamento:{label:'Em andamento',cls:'st-and'}, fechado:{label:'Fechado',cls:'st-fech'} };
 
   function esc(s){ s=(s==null?'':String(s)); return s.replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+  // remove chars que quebram um url() de CSS (aspas, parênteses, barra, quebras) e escapa o resto
+  function csurl(s){ return esc(String(s==null?'':s).replace(/["'()\\\r\n]/g,'')); }
   function stOf(l){ return (l.status && STATUS[l.status]) ? l.status : 'novo'; }
   function fmtFull(d){ try{ return new Date(d).toLocaleString('pt-BR'); }catch(e){ return d; } }
   function fmtRel(d){
@@ -637,7 +668,7 @@ window.__DATA__ = ${dataJson};
     var list=depoimentos.slice().sort(function(a,b){return (a.ordem||0)-(b.ordem||0);}).map(function(d){
       var t=(d.texto||''); if(t.length>90) t=t.slice(0,90)+'…';
       return '<div class="tmember">'
-        +'<div class="tavatar"'+(d.foto?' style="background-image:url(\\''+esc(d.foto)+'\\')"':'')+'></div>'
+        +'<div class="tavatar"'+(d.foto?' style="background-image:url(\\''+csurl(d.foto)+'\\')"':'')+'></div>'
         +'<div class="tinfo"><div class="tname" style="font-weight:500">“'+esc(t)+'”</div><div class="tcargo">'+esc(d.autor||'')+'</div></div>'
         +'<label class="tswitch" title="Mostrar no site"><input type="checkbox" data-dvis="'+esc(d.id)+'" '+(d.ativo===false?'':'checked')+'><span class="tslider"></span></label>'
         +'<button class="ic" title="Editar" data-dact="edit" data-id="'+esc(d.id)+'">✎</button>'
@@ -698,7 +729,7 @@ window.__DATA__ = ${dataJson};
     var s=settings;
     function cinp(key,label,ph){ return '<div class="crow"><label>'+label+'</label><input id="cf-'+key+'" value="'+esc(s[key]||'')+'" placeholder="'+esc(ph||'')+'"></div>'; }
     function csw(key,label,desc){ var on=!(String(s[key])==='0'); return '<div class="secrow"><div><div class="secname">'+label+'</div>'+(desc?'<div class="secdesc">'+desc+'</div>':'')+'</div><label class="tswitch"><input type="checkbox" data-sec="'+key+'" '+(on?'checked':'')+'><span class="tslider"></span></label></div>'; }
-    function cimg(key,label,cur){ var v=s[key]||cur; return '<div class="cimg"><div class="cimg-prev"'+(v?' style="background-image:url(\\''+esc(v)+'\\')"':'')+'></div><div class="cimg-body"><div class="cimg-name">'+label+'</div><input class="cimg-url" data-imgkey="'+key+'" value="'+esc(s[key]||'')+'" placeholder="'+esc(cur)+'"></div><button class="tbtn2" data-imgpick="'+key+'">Trocar</button><input type="file" class="cimg-file" data-imgkey="'+key+'" accept="image/*" style="display:none"></div>'; }
+    function cimg(key,label,cur){ var v=s[key]||cur; return '<div class="cimg"><div class="cimg-prev"'+(v?' style="background-image:url(\\''+csurl(v)+'\\')"':'')+'></div><div class="cimg-body"><div class="cimg-name">'+label+'</div><input class="cimg-url" data-imgkey="'+key+'" value="'+esc(s[key]||'')+'" placeholder="'+esc(cur)+'"></div><button class="tbtn2" data-imgpick="'+key+'">Trocar</button><input type="file" class="cimg-file" data-imgkey="'+key+'" accept="image/*" style="display:none"></div>'; }
     return '<div class="hint">Edite o conteúdo do site aqui — muda na hora, sem tocar no código.</div>'
       +'<div class="cgroup"><div class="cgt">Contatos &amp; redes</div>'
         +cinp('contato_email','E-mail','voce@empresa.com')
@@ -736,7 +767,6 @@ window.__DATA__ = ${dataJson};
         +csw('sec_logos','Logos de parceiros')
         +csw('sec_sobre','Sobre nós')
         +csw('sec_servicos','Serviços')
-        +csw('sec_marketing','Marketing &amp; performance')
         +csw('sec_expertise','Especialidade')
         +csw('sec_depoimentos','Depoimentos')
         +csw('sec_blog','Blog e artigos')
@@ -783,7 +813,7 @@ window.__DATA__ = ${dataJson};
     var list=sorted.map(function(m){
       return '<div class="tmember" draggable="true" data-id="'+esc(m.id)+'">'
         +'<span class="thandle" title="Arraste pra reordenar">\\u2807</span>'
-        +'<div class="tavatar"'+(m.foto?' style="background-image:url(\\''+esc(m.foto)+'\\')"':'')+'></div>'
+        +'<div class="tavatar"'+(m.foto?' style="background-image:url(\\''+csurl(m.foto)+'\\')"':'')+'></div>'
         +'<div class="tinfo"><div class="tname">'+esc(m.nome||'—')+'</div><div class="tcargo">'+esc(m.cargo||'sem cargo')+'</div></div>'
         +'<label class="tswitch" title="Mostrar na página Sobre"><input type="checkbox" data-vis="'+esc(m.id)+'" '+(m.ativo===false?'':'checked')+'><span class="tslider"></span></label>'
         +'<button class="ic" title="Editar" data-tact="edit" data-id="'+esc(m.id)+'">✎</button>'
@@ -893,9 +923,13 @@ window.__DATA__ = ${dataJson};
     if(e.target.id==='tf-foto'){ var area=document.querySelector('.tphoto-area'); if(area){ var v=e.target.value.trim(); area.innerHTML=v?'<img src="'+v.replace(/"/g,'&quot;')+'" alt="">':'<span class="tphoto-ph">📷<br>Enviar foto</span>'; } }
   });
   document.addEventListener('keydown', function(e){
-    if(!state.form) return;
-    if(e.key==='Escape'){ state.form=null; renderContent(); }
-    else if(e.key==='Enter' && e.target.tagName==='INPUT' && e.target.type!=='file'){ e.preventDefault(); saveTeam(); }
+    if(state.form){
+      if(e.key==='Escape'){ state.form=null; renderContent(); }
+      else if(e.key==='Enter' && e.target.tagName==='INPUT' && e.target.type!=='file'){ e.preventDefault(); saveTeam(); }
+    } else if(state.depform){
+      if(e.key==='Escape'){ state.depform=null; renderContent(); }
+      else if(e.key==='Enter' && e.target.tagName==='INPUT' && e.target.type!=='file'){ e.preventDefault(); saveDep(); }
+    }
   });
   document.addEventListener('dragstart', function(e){ var m=e.target.closest && e.target.closest('.tmember'); if(m){ _dragId=m.getAttribute('data-id'); m.classList.add('dragging'); if(e.dataTransfer){ e.dataTransfer.effectAllowed='move'; try{ e.dataTransfer.setData('text/plain', _dragId); }catch(_){} } } });
   document.addEventListener('dragend', function(e){ var m=e.target.closest && e.target.closest('.tmember'); if(m) m.classList.remove('dragging'); });
