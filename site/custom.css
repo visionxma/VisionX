@@ -296,3 +296,10 @@ img.title-icon.vx-pop { animation: vx-bulb-pop .55s ease; }
   transform: translate(-50%, -50%) !important;
   width: 44px !important; height: 44px !important; max-width: none !important; object-fit: contain;
 }
+
+/* --------------------------------------------------------------------------
+   DEPOIMENTOS — ocultos por enquanto (home + serviços)
+   Para voltar a mostrar: apague este bloco (ou comente as linhas abaixo).
+   -------------------------------------------------------------------------- */
+.section_depoimentos,
+.sec_testi-services { display: none !important; }
