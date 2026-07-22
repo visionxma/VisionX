@@ -213,3 +213,18 @@ body {
   width: auto !important; margin: 0 !important; flex: none !important;
   min-height: 320px; position: relative;
 }
+
+/* --------------------------------------------------------------------------
+   BLOG (home) — grid de 3 posts recentes, sem carrossel
+   -------------------------------------------------------------------------- */
+.section_blog .blog_swiper .swiper { overflow: visible !important; }
+.section_blog .blog_track {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px !important;
+  transform: none !important;
+  width: auto !important;
+}
+@media (max-width: 860px) { .section_blog .blog_track { grid-template-columns: 1fr; } }
+.section_blog .blog_card { width: auto !important; margin: 0 !important; flex: none !important; }
+.section_blog .arrows_wrap.is-blog { display: none !important; }
