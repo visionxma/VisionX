@@ -303,3 +303,9 @@ img.title-icon.vx-pop { animation: vx-bulb-pop .55s ease; }
    -------------------------------------------------------------------------- */
 .section_depoimentos,
 .sec_testi-services { display: none !important; }
+
+/* --------------------------------------------------------------------------
+   EQUIPE SEM FOTO — mostra só nome e cargo (por enquanto)
+   Para voltar as fotos: apague este bloco.
+   -------------------------------------------------------------------------- */
+.sec_team .team_card-img { display: none !important; }
