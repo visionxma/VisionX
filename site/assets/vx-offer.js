@@ -3,6 +3,8 @@
 // contador regressivo de 15s e botão de WhatsApp com mensagem pronta.
 // Quando os 15s acabam, a oferta expira e NÃO reaparece (localStorage) —
 // só volta se a pessoa limpar o cache/dados do site.
+// Design nativo: usa os design tokens do site (adapta ao claro/escuro),
+// eyebrow com quadradinho, botão em pílula e a mesma tipografia.
 (function () {
   var K_DEADLINE = 'vx_offer_deadline';   // timestamp de expiração (setado no 1º hover)
   var K_EXPIRED = 'vx_offer_expired';      // '1' quando já acabou
@@ -17,36 +19,38 @@
   var icon = document.querySelector('img.title-icon[src*="icon1"]');
   if (!icon) return;
 
-  // ---- estilos (injetados; CSP já permite inline) ----
+  // ---- estilos nativos (tokens do site; CSP já permite inline) ----
   var css = document.createElement('style');
   css.textContent = [
     'img.title-icon[src*="icon1"]{cursor:pointer;border-radius:50%;animation:vxof-breathe 2.6s ease-in-out infinite}',
-    '@keyframes vxof-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.16)}}',
+    '@keyframes vxof-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}',
     'img.title-icon.vxof-done{animation:none;cursor:default}',
-    '.vxof{position:absolute;z-index:99998;width:300px;max-width:calc(100vw - 24px);padding:20px 20px 18px;border-radius:18px;',
-    'background:linear-gradient(158deg,#0f1a2b 0%,#0a0f1a 100%);border:1px solid rgba(0,212,255,.35);',
-    'box-shadow:0 22px 55px rgba(0,0,0,.5),0 0 40px rgba(0,212,255,.14);color:#eaf2fb;',
-    "font-family:'Plus Jakarta Sans',system-ui,sans-serif;opacity:0;transform:translateY(8px) scale(.97);",
-    'pointer-events:none;transition:opacity .22s ease,transform .22s ease}',
-    '.vxof.is-visible{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}',
-    '.vxof::before{content:"";position:absolute;top:-8px;left:50%;transform:translateX(-50%) rotate(45deg);width:15px;height:15px;background:#0f1a2b;border-left:1px solid rgba(0,212,255,.35);border-top:1px solid rgba(0,212,255,.35)}',
-    '.vxof-x{position:absolute;top:8px;right:11px;background:none;border:0;color:#7d8ba0;font-size:20px;line-height:1;cursor:pointer;padding:2px 4px}',
-    '.vxof-x:hover{color:#fff}',
-    '.vxof-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#04121e;background:linear-gradient(90deg,#00d4ff,#00ff88);padding:5px 11px;border-radius:100px;margin-bottom:12px;animation:vxof-pulse 1.6s ease-in-out infinite}',
-    '@keyframes vxof-pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,212,255,.45)}50%{box-shadow:0 0 0 8px rgba(0,212,255,0)}}',
-    '.vxof-t{font-size:14px;color:#b8c6d8;line-height:1.35}',
-    '.vxof-price{font-size:38px;font-weight:800;letter-spacing:-1px;line-height:1.15;margin:3px 0 1px;background:linear-gradient(90deg,#fff,#bfefff);-webkit-background-clip:text;background-clip:text;color:transparent}',
-    '.vxof-price span{font-size:20px;font-weight:800}',
-    '.vxof-sub{font-size:12.5px;color:#8fa0b5;margin-bottom:14px}',
-    '.vxof-timer{font-size:13px;color:#cdd8e6;margin-bottom:8px;display:flex;align-items:center;gap:7px}',
-    '.vxof-clock{font-weight:800;font-variant-numeric:tabular-nums;color:#00d4ff;font-size:17px}',
-    '.vxof.is-end .vxof-clock{color:#ff5a5a}',
-    '.vxof-bar{height:6px;border-radius:6px;background:rgba(255,255,255,.1);overflow:hidden;margin-bottom:16px}',
-    '.vxof-bar i{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,#00d4ff,#00ff88);transition:width .2s linear}',
-    '.vxof.is-end .vxof-bar i{background:linear-gradient(90deg,#ff8a3d,#ff5a5a)}',
-    '.vxof-wa{display:flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;background:#25d366;color:#04120a;font-weight:800;font-size:15px;padding:13px 16px;border-radius:12px;box-shadow:0 8px 20px rgba(37,211,102,.32);transition:transform .15s ease,box-shadow .15s ease}',
-    '.vxof-wa:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(37,211,102,.45);color:#04120a}',
-    '@media (prefers-reduced-motion:reduce){.vxof,.vxof-badge,img.title-icon[src*="icon1"]{animation:none;transition:none}}'
+    '.vxof{position:absolute;z-index:99998;width:314px;max-width:calc(100vw - 24px);padding:24px 24px 22px;border-radius:22px;',
+    'background:var(--bg-color--bg-white,#fff);border:5px solid var(--bg-color--bg-primary,#f2f2f2);',
+    'box-shadow:0 6px 14px rgba(0,0,0,.07),0 22px 48px rgba(0,0,0,.16);color:var(--text-color--text-primary,#131313);',
+    "font-family:'Plus Jakarta Sans',system-ui,sans-serif;opacity:0;transform:translateY(10px) scale(.97);pointer-events:none;transition:opacity .24s ease,transform .24s cubic-bezier(.2,.8,.2,1)}",
+    '.vxof.is-visible{opacity:1;transform:none;pointer-events:auto}',
+    '.vxof::before{content:"";position:absolute;top:-12px;left:50%;transform:translateX(-50%) rotate(45deg);width:17px;height:17px;background:var(--bg-color--bg-white,#fff);border-left:5px solid var(--bg-color--bg-primary,#f2f2f2);border-top:5px solid var(--bg-color--bg-primary,#f2f2f2)}',
+    '.vxof-x{position:absolute;top:12px;right:14px;background:none;border:0;color:var(--text-color--text-secondary,#585858);font-size:21px;line-height:1;cursor:pointer;opacity:.5;padding:2px 5px;border-radius:8px}',
+    '.vxof-x:hover{opacity:1}',
+    '.vxof-badge{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#00a6d6;margin-bottom:15px}',
+    '.vxof-badge b{width:8px;height:8px;border-radius:2px;background:#00d4ff;display:inline-block;box-shadow:0 0 8px rgba(0,212,255,.8);animation:vxof-blink 1.1s steps(1,end) infinite}',
+    '@keyframes vxof-blink{50%{opacity:.15}}',
+    '.vxof-t{font-size:14.5px;color:var(--text-color--text-secondary,#585858);line-height:1.35}',
+    '.vxof-price{font-size:40px;font-weight:800;letter-spacing:-1.4px;line-height:1.1;margin:5px 0 3px;color:var(--text-color--text-primary,#131313)}',
+    '.vxof-price i{font-style:normal;font-size:21px;font-weight:700;color:var(--text-color--text-secondary,#585858);margin-right:5px}',
+    '.vxof-price span{font-size:21px;font-weight:800;color:var(--text-color--text-secondary,#585858)}',
+    '.vxof-sub{font-size:12.5px;color:var(--text-color--text-secondary,#585858);opacity:.9;margin-bottom:18px}',
+    '.vxof-timer{font-size:13px;color:var(--text-color--text-secondary,#585858);margin-bottom:9px;display:flex;align-items:baseline;gap:7px}',
+    '.vxof-clock{font-weight:800;font-variant-numeric:tabular-nums;color:#00a6d6;font-size:18px;letter-spacing:.5px}',
+    '.vxof.is-end .vxof-clock{color:#ff4d4d}',
+    '.vxof-bar{height:6px;border-radius:100px;background:var(--bg-color--bg-primary,#eee);overflow:hidden;margin-bottom:20px}',
+    '.vxof-bar i{display:block;height:100%;border-radius:100px;background:linear-gradient(90deg,#00d4ff,#00ff88);transition:width .2s linear}',
+    '.vxof.is-end .vxof-bar i{background:linear-gradient(90deg,#ff8a3d,#ff4d4d)}',
+    '.vxof-wa{display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;background:#25d366;color:#04120a;font-weight:700;font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;padding:15px 18px;border-radius:80px;box-shadow:0 10px 24px rgba(37,211,102,.3);transition:transform .16s ease,box-shadow .16s ease}',
+    '.vxof-wa:hover{transform:translateY(-2px);box-shadow:0 15px 30px rgba(37,211,102,.44);color:#04120a}',
+    '.vxof-wa svg{flex:none}',
+    '@media (prefers-reduced-motion:reduce){.vxof,.vxof-badge b,img.title-icon[src*="icon1"]{animation:none;transition:none}}'
   ].join('');
   document.head.appendChild(css);
 
@@ -58,16 +62,16 @@
   pop.setAttribute('aria-label', 'Oferta especial');
   pop.innerHTML =
     '<button class="vxof-x" aria-label="Fechar">×</button>' +
-    '<div class="vxof-badge">⚡ Oferta relâmpago</div>' +
+    '<div class="vxof-badge"><b></b>Oferta relâmpago</div>' +
     '<div class="vxof-t">Seu site profissional por apenas</div>' +
-    '<div class="vxof-price">R$ 1.000<span>,00</span></div>' +
+    '<div class="vxof-price"><i>R$</i>1.000<span>,00</span></div>' +
     '<div class="vxof-sub">Site completo, entregue e no ar.</div>' +
-    '<div class="vxof-timer">⏳ Acaba em <span class="vxof-clock">00:15</span></div>' +
+    '<div class="vxof-timer">Acaba em <span class="vxof-clock">00:15</span></div>' +
     '<div class="vxof-bar"><i style="width:100%"></i></div>' +
     '<a class="vxof-wa" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"' +
     ' href="https://wa.me/' + WA_DEFAULT + '?text=' + encodeURIComponent(WA_MSG) + '">' +
-    '<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="' + WA_PATH + '"/></svg>' +
-    'Quero aproveitar agora</a>';
+    '<svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="' + WA_PATH + '"/></svg>' +
+    'Quero aproveitar</a>';
   document.body.appendChild(pop);
 
   var clockEl = pop.querySelector('.vxof-clock');
@@ -93,7 +97,7 @@
   function position() {
     var r = icon.getBoundingClientRect();
     var docW = document.documentElement.clientWidth;
-    var top = r.bottom + window.scrollY + 13;
+    var top = r.bottom + window.scrollY + 14;
     var left = r.left + window.scrollX + r.width / 2 - pop.offsetWidth / 2;
     left = Math.max(12, Math.min(left, window.scrollX + docW - pop.offsetWidth - 12));
     pop.style.top = top + 'px';
