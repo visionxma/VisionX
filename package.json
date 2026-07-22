@@ -1,14 +1,12 @@
 {
-  "name": "visionx-website",
+  "name": "visionx-site",
+  "version": "1.0.0",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "description": "Site VisionX + backend de leads e painel admin",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "start": "node server.js"
   },
-  "devDependencies": {
-    "vite": "^5.0.0"
+  "dependencies": {
+    "express": "^4.22.2"
   }
 }

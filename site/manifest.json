@@ -1,0 +1,16 @@
+{
+  "name": "VisionX — Sistemas, Sites e Marketing",
+  "short_name": "VisionX",
+  "description": "Empresa de soluções digitais: sistemas, sites e marketing sob medida.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0e14",
+  "theme_color": "#00d4ff",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "/favicon.png?v=5", "sizes": "32x32", "type": "image/png" },
+    { "src": "/apple-touch-icon.png?v=5", "sizes": "180x180", "type": "image/png", "purpose": "any" }
+  ]
+}

@@ -1,0 +1,215 @@
+/* ==========================================================================
+   custom.css — camada de personalização da VisionX
+   --------------------------------------------------------------------------
+   Carregado DEPOIS do CSS original, então tudo aqui sobrescreve o tema
+   sem você precisar mexer no bundle (_astro/BaseLayout.CYTC3jhq.css).
+
+   Regra prática: edite SÓ este arquivo para ajustar cores, fontes, etc.
+   ========================================================================== */
+
+
+/* --------------------------------------------------------------------------
+   PALETA DA MARCA (VisionX)
+   A cor de destaque do site (variável --base--green do tema) já foi trocada
+   para o ciano da VisionX. As variáveis abaixo ficam aqui como referência e
+   ponto único de ajuste — mude o valor e o site inteiro acompanha.
+   -------------------------------------------------------------------------- */
+:root {
+  --vx-ciano: #00d4ff;   /* cor principal da VisionX */
+  --vx-ciano-escuro: #0099cc;
+  --vx-verde: #00ff88;   /* acento secundário */
+  --vx-preto: #0a0a0a;
+
+  /* Reforça o destaque do tema com a cor da VisionX (redundante com o CSS
+     base, mas garante consistência se você editar o bundle depois). */
+  --base--green: var(--vx-ciano);
+  --bg-color--bg-green: var(--vx-ciano);
+  --navbar-accent: var(--vx-ciano);
+}
+
+/* Cor do tema no mobile (barra do navegador) já está #00d4ff no <head>. */
+
+
+/* --------------------------------------------------------------------------
+   LOGO
+   O logo (marca "VISIONX", preto) fica em /images/logo.png. Ajuste a altura
+   na navbar se quiser, descomentando abaixo.
+   -------------------------------------------------------------------------- */
+/*
+.navbar_logo { height: 40px !important; }
+*/
+
+
+/* --------------------------------------------------------------------------
+   EXEMPLOS DE OVERRIDE (descomente e ajuste o que quiser)
+   Use o inspetor do navegador (botão direito → Inspecionar) para achar a
+   classe do elemento que você quer mudar.
+   -------------------------------------------------------------------------- */
+/*
+.button, [class*="button"] {
+  border-radius: 10px !important;
+}
+body {
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif !important;
+}
+*/
+
+
+/* --------------------------------------------------------------------------
+   FAIXA DE PARCEIROS (Parcerias de Sucesso)
+   Logos dos parceiros reais da VisionX. As brancas foram recoloridas para
+   cinza-escuro, então aparecem no fundo claro da página (sem faixa preta).
+   -------------------------------------------------------------------------- */
+.section_loop .loop {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+.section_loop .logo {
+  height: 46px;
+  width: auto;
+  max-width: 190px;
+  object-fit: contain;
+  opacity: .45;                     /* logos suaves */
+  transition: opacity .3s ease;
+}
+.section_loop .logo:hover {
+  opacity: 1;                       /* realça ao passar o mouse */
+}
+
+
+/* --------------------------------------------------------------------------
+   SUAS REGRAS
+   Escreva daqui pra baixo tudo que for personalização sua.
+   -------------------------------------------------------------------------- */
+
+/* --------------------------------------------------------------------------
+   CARDS DO BLOG — imagens quadradas (1:1)
+   O teaser da home (.blog_card) renderizava alto no swiper; forçamos quadrado.
+   -------------------------------------------------------------------------- */
+/* Teaser da home (.blog_card): o swiper estica o slide na vertical.
+   Tiramos a imagem do absolute e deixamos em fluxo com proporção 1:1,
+   então ela mesma dá a altura quadrada ao card (o swiper não estica mais). */
+.blog_card {
+  aspect-ratio: auto !important;
+  padding-top: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  align-self: flex-start !important;
+}
+.blog_card > img.img,
+.blog_card > .img {
+  position: static !important;
+  inset: auto !important;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+}
+/* Índice do blog e card destaque: já usam padding-top:100% (quadrado via grid) */
+.content-blog_card_img,
+.blog_main-card_img {
+  aspect-ratio: 1 / 1 !important;
+  padding-top: 0 !important;
+  height: auto !important;
+}
+
+/* --------------------------------------------------------------------------
+   TIME — 4 cards em uma linha só no desktop (era 3 colunas)
+   -------------------------------------------------------------------------- */
+@media (min-width: 992px) {
+  .sec_team .team_track {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   FUNDOS DARK-TECH (v8) — natureza (flores/capim/trigo) -> tecnologia
+   Home CTA=circuito ciano · Serviços=placa · Sobre=dados · Contato=Terra
+   -------------------------------------------------------------------------- */
+/* CTA da home: texto fica SOBRE a imagem -> overlay escuro (mais forte à esquerda) + texto branco */
+.call-to_card {
+  background-image:
+    linear-gradient(90deg, rgba(6,10,18,.95) 0%, rgba(6,10,18,.84) 50%, rgba(6,10,18,.7) 100%),
+    url(/images/ai-ct-img.avif?v=10) !important;
+  background-size: cover, cover !important;
+  background-position: center, center !important;
+  background-repeat: no-repeat, no-repeat !important;
+}
+.cta-wrap, .cta_wrap {
+  background-image:
+    linear-gradient(90deg, rgba(6,10,18,.95) 0%, rgba(6,10,18,.84) 50%, rgba(6,10,18,.68) 100%),
+    url(/images/cta-bg.avif?v=10) !important;
+  background-size: cover, cover !important;
+  background-position: center, center !important;
+  background-repeat: no-repeat, no-repeat !important;
+}
+/* texto branco só dentro do CTA (não afeta os botões ciano) */
+.call-to_card :where(h1,h2,h3,h4,h5,p),
+.call-to_card .text-color-on-primary,
+.cta-wrap    :where(h1,h2,h3,h4,h5,p),
+.cta-wrap    .text-color-on-primary,
+.cta_wrap    :where(h1,h2,h3,h4,h5,p),
+.cta_wrap    .text-color-on-primary {
+  color: #ffffff !important;
+  text-shadow: 0 1px 14px rgba(0,0,0,.5);
+}
+
+/* Hero do Sobre: painéis-imagem laterais (texto fica ao lado) — só cache-bust */
+.h-abou_wrap {
+  background-image: url(/images/h-abou-img.avif?v=10) !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+.h-about_img {
+  background-image: url(/images/img-h-ab.avif?v=10) !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+/* Hero de Serviços: imagem de fundo escurecida com texto sobreposto -> texto branco */
+.sec_h-services h1,
+.sec_h-services .text-5xl,
+.sec_h-services .text-color-on-primary {
+  color: #ffffff !important;
+  text-shadow: 0 2px 14px rgba(0,0,0,.55);
+}
+
+/* --------------------------------------------------------------------------
+   EQUIPE (Sobre) — grid responsivo gerenciado pelo painel, sem carrossel
+   -------------------------------------------------------------------------- */
+.sec_team .team_cards { overflow: visible !important; }
+.sec_team .team_track {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px !important;
+  transform: none !important;
+  width: auto !important;
+}
+@media (min-width: 992px) {
+  .sec_team .team_track { grid-template-columns: repeat(4, 1fr) !important; }
+}
+.sec_team .team_card-item { width: auto !important; margin: 0 !important; flex: none !important; }
+.sec_team .arrows_wrap.is-team { display: none !important; }
+
+/* Legibilidade do texto do hero com qualquer imagem de fundo (troca pelo painel) */
+.section_hero h1,
+.section_hero [hero-text] {
+  text-shadow: 0 2px 18px rgba(6, 10, 18, .45);
+}
+
+/* --------------------------------------------------------------------------
+   DEPOIMENTOS (home) — grid responsivo gerenciado pelo painel, sem carrossel
+   -------------------------------------------------------------------------- */
+.section_depoimentos .testi_swiper .swiper { overflow: visible !important; }
+.section_depoimentos .depoimentos_cards {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px !important;
+  transform: none !important;
+  width: auto !important;
+}
+.section_depoimentos .depoimentos_card {
+  width: auto !important; margin: 0 !important; flex: none !important;
+  min-height: 320px; position: relative;
+}
