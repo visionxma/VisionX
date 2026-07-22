@@ -287,3 +287,12 @@ img.title-icon.vx-pop { animation: vx-bulb-pop .55s ease; }
 @media (prefers-reduced-motion: reduce) {
   img.title-icon[src*="icon2"] { animation: none; }
 }
+
+/* X da VisionX no centro da órbita (seção Especialidade) */
+.ocard_center { position: relative !important; display: block !important; }
+.ocard_logo-wrap { position: static !important; }
+.ocard_center img.vx-ocard-x {
+  position: absolute !important; top: 50% !important; left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 44px !important; height: 44px !important; max-width: none !important; object-fit: contain;
+}
