@@ -779,7 +779,6 @@ window.__DATA__ = ${dataJson};
       +'</div>'
       +'<div class="cgroup"><div class="cgt">Seções — Página Sobre</div>'
         +csw('sec_sobre_team','Equipe (nosso time)')
-        +csw('sec_sobre_journey','Nossa jornada')
         +csw('sec_sobre_cta','Chamada final (CTA)')
       +'</div>';
   }

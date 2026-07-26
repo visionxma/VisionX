@@ -260,9 +260,72 @@ html.vx-dark {
 html.vx-dark, html.vx-dark body { background-color: #0b0e15; }
 /* logo preto vira branco no escuro */
 html.vx-dark img[src*="logo.png"] { filter: invert(1) brightness(1.7); }
-/* cartões/painéis claros que não usam token: garante fundo escuro */
-html.vx-dark .card, html.vx-dark [class*="_card"], html.vx-dark .w-form,
-html.vx-dark .footer_top-wrap { background-color: var(--bg-color--bg-primary); }
+
+/* ----------------------------------------------------------------------
+   CORREÇÕES DE CONTRASTE DO MODO ESCURO
+   ----------------------------------------------------------------------
+   O bloco acima só troca os tokens SEMÂNTICOS (--bg-color--*, --text-color--*).
+   Mas o CSS do tema usa em ~35 regras os tokens PRIMITIVOS direto
+   (--grey--grey-100, --base--white, --grey--grey-900), que não mudam.
+   Resultado: o fundo continuava claro enquanto o texto virava claro.
+   Aqui cada caso é tratado no lugar certo.
+   ---------------------------------------------------------------------- */
+
+/* 1) PAINÉIS DE PÁGINA presos em --grey--grey-100 (#f2f2f2).
+      Eram o bug do hero do "Sobre" e do hero de Serviços: painel claro
+      com o texto virando claro por cima = texto sumindo. */
+html.vx-dark .h-about_content,
+html.vx-dark .hero-service_left {
+  background-color: var(--bg-color--bg-primary);
+}
+
+/* 2) CARDS DO TIME — o HTML traz style="background-color:rgb(236,236,236)"
+      inline (estático e também gerado pelo vx-team.js), que vence qualquer
+      regra sem !important. Sem isso o card fica branco com nome branco. */
+html.vx-dark .team_card[style] { background-color: var(--bg-color--bg-secondary) !important; }
+
+/* 3) MOCKUPS DE INTERFACE (os "print de produto" que flutuam nas ilustrações).
+      Eles são desenhados para parecer uma tela clara e já têm texto escuro
+      fixo (#131313…). Em vez de escurecê-los pela metade, devolvemos a
+      paleta clara DENTRO deles — as variáveis são herdadas, então tudo que
+      está aninhado volta ao normal de uma vez. */
+html.vx-dark :is(.vcard, .gcard, .bcard, .ocard_pill) {
+  --bg-color--bg-default:   #ffffff;
+  --bg-color--bg-white:     #ffffff;
+  --bg-color--bg-primary:   #f2f2f2;
+  --bg-color--bg-secondary: #ececec;
+  --text-color--text-primary:   #131313;
+  --text-color--text-secondary: #585858;
+}
+/* .ocard define color na raiz do card, então o valor JÁ resolvido desce por
+   herança até a pill — as variáveis acima não alcançam. Fixamos direto. */
+html.vx-dark .ocard_pill, html.vx-dark .ocard_pill-name { color: #131313; }
+
+/* 4) MOCKUPS ESCUROS (.pcard/.ecard/.scard/.ocard_center) têm uma borda de
+      5px em --grey--grey-100. No fundo claro ela é uma moldura discreta; no
+      escuro virava um halo branco brilhante. Escurecemos mantendo a moldura. */
+html.vx-dark :is(.pcard, .ecard, .scard) { border-color: var(--bg-color--bg-secondary); }
+html.vx-dark .ocard_center {
+  border-top-color: var(--bg-color--bg-secondary);
+  border-right-color: var(--bg-color--bg-secondary);
+  border-bottom-color: var(--bg-color--bg-secondary);
+  border-left-color: var(--bg-color--bg-secondary);
+}
+/* anéis da órbita: #e7e7e7 fixo ficava um círculo branco sobre o fundo escuro */
+html.vx-dark .ocard_ring { border-color: rgba(255,255,255,.10); }
+
+/* 5) FOCO DO CAMPO DE FORMULÁRIO — era border preta, invisível no escuro. */
+html.vx-dark .form_input:focus { border-color: var(--vx-ciano); }
+
+/* 6) BLOCO DE FORMULÁRIO DO RODAPÉ — --grey--grey-700 (#2f2f2f) destoava
+      da paleta azulada do tema escuro. */
+html.vx-dark .footer-form { background-color: var(--bg-color--bg-primary); }
+
+/* 7) LOGOS DOS PARCEIROS — foram recoloridos para cinza-escuro (ver bloco
+      "FAIXA DE PARCEIROS" acima), ou seja, somem num fundo escuro.
+      Viram silhueta branca suave. Para reverter, apague estas 2 regras. */
+html.vx-dark .section_loop .logo { filter: brightness(0) invert(1); opacity: .5; }
+html.vx-dark .section_loop .logo:hover { opacity: .95; }
 /* transição suave (fallback quando não há View Transitions) */
 html.vx-theme-anim, html.vx-theme-anim body,
 html.vx-theme-anim h1, html.vx-theme-anim h2, html.vx-theme-anim h3,
@@ -287,6 +350,11 @@ img.title-icon.vx-pop { animation: vx-bulb-pop .55s ease; }
 @media (prefers-reduced-motion: reduce) {
   img.title-icon[src*="icon2"] { animation: none; }
 }
+
+/* 4ª pill da órbita (Raykkony) — o tema só define is-pos-1/2/3.
+   A posição inicial define o raio e o ângulo de partida da órbita; o giro
+   é feito no JS do tema, que usa 50s de período para índices sem valor. */
+.ocard_pill.is-pos-4 { top: 4%; right: -2%; }
 
 /* X da VisionX no centro da órbita (seção Especialidade) */
 .ocard_center { position: relative !important; display: block !important; }
