@@ -326,6 +326,28 @@ html.vx-dark .footer-form { background-color: var(--bg-color--bg-primary); }
       Viram silhueta branca suave. Para reverter, apague estas 2 regras. */
 html.vx-dark .section_loop .logo { filter: brightness(0) invert(1); opacity: .5; }
 html.vx-dark .section_loop .logo:hover { opacity: .95; }
+
+/* 7b) EXCEÇÃO — finagro, lacerda e mentor NÃO são marcas sobre fundo
+       transparente: a arte inclui o próprio fundo (placa cinza com letras
+       brancas, disco cinza com balança preta, disco preto com brasão branco).
+       Nesses, a silhueta apaga o desenho inteiro e sobra um bloco/círculo
+       branco sólido. Os outros logos da faixa são chapados sobre transparente
+       (desvio de luminância = 0), por isso a silhueta funciona neles.
+       Aqui: sem filtro, sobre uma plaquinha clara que devolve o contraste
+       para o qual a arte foi feita. */
+html.vx-dark .section_loop .logo[src*="finagro"],
+html.vx-dark .section_loop .logo[src*="lacerda"],
+html.vx-dark .section_loop .logo[src*="mentor"] {
+  filter: none;
+  opacity: .82;
+  background-color: #e9eef6;
+  border-radius: 9px;
+  padding: 4px 9px;
+  box-sizing: border-box;
+}
+html.vx-dark .section_loop .logo[src*="finagro"]:hover,
+html.vx-dark .section_loop .logo[src*="lacerda"]:hover,
+html.vx-dark .section_loop .logo[src*="mentor"]:hover { opacity: 1; }
 /* transição suave (fallback quando não há View Transitions) */
 html.vx-theme-anim, html.vx-theme-anim body,
 html.vx-theme-anim h1, html.vx-theme-anim h2, html.vx-theme-anim h3,
