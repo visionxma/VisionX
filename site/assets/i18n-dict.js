@@ -1,4 +1,240 @@
 window.VX_DICT = {
+"Site, sistema de gestão e anúncios no Google para quem cansou de perder cliente para o concorrente.": {
+"en": "Websites, management software and Google ads for business owners tired of losing customers to the competition.",
+"es": "Sitios web, sistemas de gestión y anuncios en Google para quien está cansado de perder clientes ante la competencia."
+},
+"Enquanto você decide,": {
+"en": "While you think it over,",
+"es": "Mientras usted lo piensa,"
+},
+"o cliente compra do concorrente": {
+"en": "the customer buys from your competitor",
+"es": "el cliente le compra a su competidor"
+},
+"Cada dia sem site e sem anúncio é venda indo para outro. A gente coloca o seu negócio na frente, com preço fechado antes de começar e prazo combinado por escrito.": {
+"en": "Every day without a website and without ads is a sale going to someone else. We put your business up front, with a fixed price before we start and the deadline agreed in writing.",
+"es": "Cada día sin sitio web y sin anuncios es una venta que se va a otro. Ponemos su negocio al frente, con precio cerrado antes de empezar y plazo acordado por escrito."
+},
+"Quero aparecer primeiro": {
+"en": "I want to show up first",
+"es": "Quiero aparecer primero"
+},
+"Ver o que já fizemos": {
+"en": "See what we have built",
+"es": "Ver lo que ya hicimos"
+},
+"Seu concorrente aparece no Google.": {
+"en": "Your competitor shows up on Google.",
+"es": "Su competidor aparece en Google."
+},
+"E o seu negócio?": {
+"en": "What about your business?",
+"es": "¿Y su negocio?"
+},
+"Se o cliente não encontra a sua empresa na internet, ele compra de quem ele encontra. A VisionX faz o site, o sistema de gestão e os anúncios que colocam o seu negócio na frente.": {
+"en": "If customers cannot find your company online, they buy from the one they do find. VisionX builds the website, the management system and the ads that put your business up front.",
+"es": "Si el cliente no encuentra su empresa en internet, le compra a quien sí encuentra. VisionX hace el sitio web, el sistema de gestión y los anuncios que ponen su negocio al frente."
+},
+"Sites, sistemas e campanhas já entregues e no ar.": {
+"en": "Websites, systems and campaigns already delivered and live.",
+"es": "Sitios, sistemas y campañas ya entregados y en línea."
+},
+"Prazo combinado é prazo cumprido": {
+"en": "An agreed deadline is a deadline we meet",
+"es": "Plazo acordado es plazo cumplido"
+},
+"No ar, funcionando e com suporte depois da entrega.": {
+"en": "Live, working and supported after delivery.",
+"es": "En línea, funcionando y con soporte después de la entrega."
+},
+"resolve": {
+"en": "solves",
+"es": "resuelve"
+},
+"o": {
+"en": "what",
+"es": "lo"
+},
+"que trava": {
+"en": "is holding back",
+"es": "que traba"
+},
+"o seu negócio": {
+"en": "your business",
+"es": "su negocio"
+},
+"com": {
+"en": "with",
+"es": "con"
+},
+"site, sistema": {
+"en": "website, system",
+"es": "sitio, sistema"
+},
+"e anúncios": {
+"en": "and ads",
+"es": "y anuncios"
+},
+"Está perdendo cliente por qual desses três?": {
+"en": "Which of these three is costing you customers?",
+"es": "¿Por cuál de estos tres está perdiendo clientes?"
+},
+"Sem site, o cliente não te acha. Sem sistema, você perde tempo e dinheiro no controle manual. Sem anúncio, ninguém sabe que a sua empresa existe. A gente resolve os três.": {
+"en": "Without a website, customers cannot find you. Without a system, you lose time and money on manual control. Without ads, nobody knows your company exists. We solve all three.",
+"es": "Sin sitio web, el cliente no lo encuentra. Sin sistema, pierde tiempo y dinero en el control manual. Sin anuncios, nadie sabe que su empresa existe. Resolvemos los tres."
+},
+"Cansado de contratar um profissional para cada coisa?": {
+"en": "Tired of hiring a different person for every task?",
+"es": "¿Cansado de contratar a un profesional para cada cosa?"
+},
+"Um faz o site, outro some com a senha, um terceiro cuida do anúncio e ninguém se entende. Aqui é um time só, do começo ao fim, com alguém para atender quando der problema.": {
+"en": "One builds the site, another disappears with the password, a third handles the ads and none of them talk to each other. Here it is a single team, start to finish, with someone to call when something breaks.",
+"es": "Uno hace el sitio, otro desaparece con la contraseña, un tercero cuida los anuncios y nadie se entiende. Aquí es un solo equipo, de principio a fin, con alguien que atiende cuando hay problema."
+},
+"As dúvidas que todo dono de negócio tem": {
+"en": "The questions every business owner has",
+"es": "Las dudas que todo dueño de negocio tiene"
+},
+"Respostas diretas sobre site, sistema e anúncio, escritas sem termo técnico.": {
+"en": "Straight answers about websites, systems and ads, written without technical jargon.",
+"es": "Respuestas directas sobre sitios, sistemas y anuncios, escritas sin términos técnicos."
+},
+"Seu cliente procura no celular e não te encontra. Fazemos o site que aparece no Google, abre rápido e vira pedido no WhatsApp.": {
+"en": "Your customer searches on their phone and cannot find you. We build the site that shows up on Google, loads fast and turns into an order on WhatsApp.",
+"es": "Su cliente busca en el celular y no lo encuentra. Hacemos el sitio que aparece en Google, carga rápido y se convierte en pedido por WhatsApp."
+},
+"Controlar venda, estoque e mensalidade no caderno ou na planilha custa caro e dá erro. Criamos o sistema do jeito que o seu negócio funciona.": {
+"en": "Tracking sales, stock and monthly fees on paper or in a spreadsheet is expensive and error-prone. We build the system around the way your business actually works.",
+"es": "Controlar ventas, inventario y mensualidades en cuaderno o planilla sale caro y da errores. Creamos el sistema tal como funciona su negocio."
+},
+"Impulsionar post não traz cliente. Cuidamos dos seus anúncios no Google e no Instagram para o telefone tocar toda semana.": {
+"en": "Boosting a post does not bring customers. We run your Google and Instagram ads so the phone rings every week.",
+"es": "Promocionar una publicación no trae clientes. Gestionamos sus anuncios en Google e Instagram para que el teléfono suene cada semana."
+},
+"Menos trabalho na mão": {
+"en": "Less work done by hand",
+"es": "Menos trabajo a mano"
+},
+"Tarefa repetida no manual consome o dia do seu time. Automatizamos o que dá para sobrar tempo de vender.": {
+"en": "Repetitive manual tasks eat up your team's day. We automate what can be automated so there is time left to sell.",
+"es": "La tarea repetitiva y manual consume el día de su equipo. Automatizamos lo que se puede para que sobre tiempo para vender."
+},
+"Você sabe de onde vem cada venda?": {
+"en": "Do you know where each sale comes from?",
+"es": "¿Sabe de dónde viene cada venta?"
+},
+"Site e loja virtual": {
+"en": "Website and online store",
+"es": "Sitio web y tienda en línea"
+},
+"Site e loja virtual que abrem rápido no celular e aguentam o crescimento do seu negócio.": {
+"en": "A website and online store that load fast on a phone and hold up as your business grows.",
+"es": "Sitio web y tienda en línea que cargan rápido en el celular y aguantan el crecimiento de su negocio."
+},
+"Sistema de gestão": {
+"en": "Management system",
+"es": "Sistema de gestión"
+},
+"Estoque, vendas, mensalidades e clientes num lugar só, feito sob medida para o seu negócio.": {
+"en": "Stock, sales, monthly fees and customers in one place, built to fit your business.",
+"es": "Inventario, ventas, mensualidades y clientes en un solo lugar, hecho a la medida de su negocio."
+},
+"Anúncio que traz cliente": {
+"en": "Ads that bring customers",
+"es": "Anuncios que traen clientes"
+},
+"Anúncio no Google e no Instagram para o cliente certo achar você na hora em que está querendo comprar.": {
+"en": "Google and Instagram ads so the right customer finds you exactly when they are ready to buy.",
+"es": "Anuncios en Google e Instagram para que el cliente correcto lo encuentre justo cuando quiere comprar."
+},
+"Preço fechado": {
+"en": "Fixed price",
+"es": "Precio cerrado"
+},
+"Prazo por escrito": {
+"en": "Deadline in writing",
+"es": "Plazo por escrito"
+},
+"Suporte depois da entrega": {
+"en": "Support after delivery",
+"es": "Soporte después de la entrega"
+},
+"Sem fidelidade": {
+"en": "No lock-in contract",
+"es": "Sin permanencia"
+},
+"Aparece no Google": {
+"en": "Show up on Google",
+"es": "Aparece en Google"
+},
+"Vende mais": {
+"en": "Sell more",
+"es": "Vende más"
+},
+"Controla tudo": {
+"en": "Control everything",
+"es": "Controla todo"
+},
+"Sem dor de cabeça": {
+"en": "No headaches",
+"es": "Sin dolor de cabeza"
+},
+"Rápido.": {
+"en": "Fast.",
+"es": "Rápido."
+},
+"Do seu jeito.": {
+"en": "Your way.",
+"es": "A su manera."
+},
+"Mais venda no mês": {
+"en": "More sales each month",
+"es": "Más ventas al mes"
+},
+"Site, sistema ou anúncio:": {
+"en": "Website, system or ads:",
+"es": "Sitio, sistema o anuncios:"
+},
+"o que falta no seu negócio?": {
+"en": "what is your business missing?",
+"es": "¿qué le falta a su negocio?"
+},
+"A gente faz os três, do começo ao fim, e explica cada etapa em português claro.": {
+"en": "We do all three, start to finish, and explain every step in plain language.",
+"es": "Hacemos los tres, de principio a fin, y explicamos cada etapa en lenguaje claro."
+},
+"Onde o seu negócio perde dinheiro hoje": {
+"en": "Where your business is losing money today",
+"es": "Dónde su negocio pierde dinero hoy"
+},
+"Cliente que não te acha, controle feito na planilha e anúncio que não traz ninguém. São três buracos diferentes e a gente tapa os três.": {
+"en": "Customers who cannot find you, control done in a spreadsheet and ads that bring no one. Three different holes, and we plug all three.",
+"es": "Clientes que no lo encuentran, control hecho en planilla y anuncios que no traen a nadie. Son tres agujeros distintos y tapamos los tres."
+},
+"Por que quem contrata a gente não volta atrás": {
+"en": "Why the people who hire us do not look back",
+"es": "Por qué quien nos contrata no se arrepiente"
+},
+"Preço fechado antes de começar, prazo por escrito e alguém para atender depois que o site entra no ar. Sem surpresa na fatura.": {
+"en": "A fixed price before we start, the deadline in writing and someone to call after the site goes live. No surprises on the invoice.",
+"es": "Precio cerrado antes de empezar, plazo por escrito y alguien que atiende después de que el sitio esté en línea. Sin sorpresas en la factura."
+},
+"Você não precisa entender de tecnologia. Precisa de resultado.": {
+"en": "You do not need to understand technology. You need results.",
+"es": "Usted no necesita entender de tecnología. Necesita resultados."
+},
+"A gente traduz. Você diz o que está travando o seu negócio e a gente resolve com site, sistema ou anúncio, explicando cada passo sem termo técnico.": {
+"en": "We translate. You tell us what is holding your business back and we solve it with a website, a system or ads, explaining every step without jargon.",
+"es": "Nosotros traducimos. Usted dice qué está trabando su negocio y lo resolvemos con sitio web, sistema o anuncios, explicando cada paso sin términos técnicos."
+},
+"Conte o que está travando o seu negócio": {
+"en": "Tell us what is holding your business back",
+"es": "Cuéntenos qué está trabando su negocio"
+},
+"Descreva em uma frase o que você precisa. A gente responde com um caminho e um preço, sem compromisso.": {
+"en": "Describe what you need in one sentence. We reply with a plan and a price, no strings attached.",
+"es": "Describa en una frase lo que necesita. Respondemos con un camino y un precio, sin compromiso."
+},
 "\"A VisionX entendeu o problema rápido e entregou uma solução sólida, sem enrolação.\"": {
 "en": "\"VisionX understood the problem quickly and delivered a solid solution, no runaround.\"",
 "es": "\"VisionX entendió el problema rápidamente y entregó una solución sólida, sin rodeos.\""
