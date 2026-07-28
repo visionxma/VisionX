@@ -1,4 +1,40 @@
 window.VX_DICT = {
+"Quanto custa fazer um site para a sua empresa (e por que os orçamentos variam tanto)": {
+"en": "How much a website for your company costs (and why quotes vary so much)",
+"es": "Cuánto cuesta hacer un sitio web para su empresa (y por qué los presupuestos varían tanto)"
+},
+"Você pede três orçamentos e recebe R$ 900, R$ 4 mil e R$ 12 mil. Parece que alguém está te enganando. Quase sempre não está: são três coisas diferentes com o mesmo nome.": {
+"en": "You ask for three quotes and get R$900, R$4,000 and R$12,000. It looks like someone is ripping you off. Usually nobody is: they are three different things sharing one name.",
+"es": "Pide tres presupuestos y recibe R$900, R$4.000 y R$12.000. Parece que alguien lo está engañando. Casi nunca es así: son tres cosas distintas con el mismo nombre."
+},
+"Seu negócio não aparece no Google? Veja o que está acontecendo": {
+"en": "Your business does not show up on Google? Here is what is going on",
+"es": "¿Su negocio no aparece en Google? Vea qué está pasando"
+},
+"Você digita o nome do seu serviço e da sua cidade, e quem aparece é o concorrente. Não é azar nem sorte: o Google só mostra o que ele consegue encontrar e confirmar.": {
+"en": "You type your service and your city, and your competitor is the one who shows up. It is not bad luck: Google only shows what it can find and verify.",
+"es": "Escribe el nombre de su servicio y de su ciudad, y quien aparece es el competidor. No es mala suerte: Google solo muestra lo que logra encontrar y confirmar."
+},
+"Planilha ou sistema de gestão: quando a planilha começa a custar caro": {
+"en": "Spreadsheet or management system: when the spreadsheet starts costing you money",
+"es": "Planilla o sistema de gestión: cuándo la planilla empieza a salir cara"
+},
+"Toda empresa começa no caderno ou na planilha, e por um tempo isso funciona muito bem. O problema é que ninguém percebe a hora em que ela passou a atrapalhar.": {
+"en": "Every company starts with a notebook or a spreadsheet, and for a while that works just fine. The problem is that nobody notices the moment it starts getting in the way.",
+"es": "Toda empresa empieza en el cuaderno o en la planilla, y por un tiempo eso funciona muy bien. El problema es que nadie nota el momento en que pasó a estorbar."
+},
+"Vale a pena anunciar no Google? A diferença para impulsionar post no Instagram": {
+"en": "Is advertising on Google worth it? How it differs from boosting an Instagram post",
+"es": "¿Vale la pena anunciar en Google? La diferencia con promocionar una publicación en Instagram"
+},
+"Quase todo dono de negócio já apertou \"impulsionar\", viu o número de visualizações subir e não recebeu nenhuma ligação. O dinheiro saiu e o cliente não chegou.": {
+"en": "Almost every business owner has hit \"boost\", watched the view count climb and received not a single call. The money left and the customer never came.",
+"es": "Casi todo dueño de negocio ya presionó \"promocionar\", vio subir el número de visualizaciones y no recibió ninguna llamada. El dinero salió y el cliente no llegó."
+},
+"Publicações recentes": {
+"en": "Recent posts",
+"es": "Publicaciones recientes"
+},
 "Site, sistema de gestão e anúncios no Google para quem cansou de perder cliente para o concorrente.": {
 "en": "Websites, management software and Google ads for business owners tired of losing customers to the competition.",
 "es": "Sitios web, sistemas de gestión y anuncios en Google para quien está cansado de perder clientes ante la competencia."
