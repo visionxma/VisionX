@@ -18,11 +18,30 @@ node server.js       # ou: npm start
 - **Site:** http://localhost:8099
 - **Painel admin:** http://localhost:8099/admin
 
-## Login do painel (TROQUE a senha)
-Padrão: usuário `admin`, senha `visionx2025`. Rode com variáveis de ambiente:
+## Login do painel
+Defina as credenciais por variável de ambiente — **nunca** deixe a senha no
+código ou neste arquivo (o repositório é público):
 ```bash
-ADMIN_USER=alexandre ADMIN_PASS=umaSenhaForte node server.js
+ADMIN_USER=seu-usuario ADMIN_PASS='sua-senha-forte' node server.js
 ```
+Sem `ADMIN_PASS`, o `server.js` cai num valor padrão que serve só para rodar na
+sua máquina e avisa no console. Em produção o painel só liga com `ADMIN_PASS` e
+`ADMIN_SECRET` definidos.
+
+## Painel em produção (Cloudflare Pages)
+O painel roda como Pages Function em `/admin`. Configure em
+**Settings → Environment variables** do projeto Pages:
+
+| Variável | Para quê |
+|---|---|
+| `ADMIN_PASS` | senha do painel — **obrigatória**, sem ela `/admin` responde 404 |
+| `ADMIN_SECRET` | segredo que assina o cookie de sessão — obrigatória, string longa e aleatória |
+| `ADMIN_USER` | opcional, padrão `admin` |
+| `SUPABASE_URL` / `SUPABASE_SERVICE_ROLE_KEY` | já usadas pelas Functions públicas |
+
+As imagens enviadas pelo painel vão para o bucket **`uploads`** do Supabase
+Storage (público, só tipos de imagem). Workers não têm disco, por isso o upload
+não grava mais em `site/images/`.
 
 ## Formulários → painel
 - **Contato** (página /contact) → salvo em `data/leads.json`
