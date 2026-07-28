@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio - Projetos VisionX | Sites, Apps e Sistemas</title>
+  <meta name="description"
+    content="Conheça os projetos desenvolvidos pela VisionX - sites institucionais, e-commerces, aplicativos mobile e sistemas web.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/flavicon.png">
+
+  <!-- Fonts -->
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap"></noscript>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <style>
+    /* ============================================================
+       Estilos exclusivos da página de Portfólio
+       ============================================================ */
+
+    /* Hero compacto */
+    .portfolio-hero {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      padding: 8rem 0 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portfolio-hero::before {
+      content: 'X';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: clamp(20rem, 40vw, 35rem);
+      color: rgba(255, 255, 255, 0.015);
+      pointer-events: none;
+      transform: rotate(-15deg);
+    }
+
+    .portfolio-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .portfolio-hero-label {
+      font-family: 'Bebas Neue', 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      color: #00d4ff;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .portfolio-hero-title {
+      font-family: 'Bebas Neue', 'Montserrat', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      color: #ffffff;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .portfolio-hero-desc {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 1.05rem;
+      max-width: 550px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+
+    .portfolio-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: color 0.3s;
+      margin-bottom: 2rem;
+    }
+
+    .portfolio-back:hover {
+      color: #00d4ff;
+    }
+
+    /* Seção de projetos */
+    .portfolio-page-section {
+      background: #0a0a0a;
+      padding: 4rem 0 6rem;
+    }
+
+    /* Tabs */
+    .portfolio-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .portfolio-tab {
+      padding: 0.75rem 2rem;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      color: rgba(255, 255, 255, 0.5);
+      font-family: 'Bebas Neue', 'Montserrat', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .portfolio-tab:hover {
+      border-color: rgba(0, 212, 255, 0.3);
+      color: #ffffff;
+    }
+
+    .portfolio-tab.active {
+      background: #00d4ff;
+      border-color: #00d4ff;
+      color: #000000;
+    }
+
+    /* Grid */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+    }
+
+    /* Cards */
+    .project-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 6px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(0, 212, 255, 0.2);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-overlay {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+
+    .project-badge {
+      background: linear-gradient(135deg, #00d4ff, #0099cc);
+      color: #000;
+      padding: 0.35rem 0.75rem;
+      border-radius: 3px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .project-info {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-icon {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, #00d4ff, #0099cc);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .project-icon i {
+      color: #000;
+      font-size: 1.1rem;
+    }
+
+    .project-logo {
+      height: 42px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .project-title h3 {
+      font-family: 'Bebas Neue', 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+      color: #fff;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.15rem;
+    }
+
+    .project-category {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .project-description {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      flex: 1;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .tech-tag {
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: rgba(0, 212, 255, 0.6);
+      padding: 0.2rem 0.5rem;
+      border: 1px solid rgba(0, 212, 255, 0.15);
+      border-radius: 3px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, #00d4ff, #0099cc);
+      color: #000;
+      padding: 0.65rem 1.2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.8rem;
+      transition: all 0.3s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
+    }
+
+    /* Category toggle */
+    .portfolio-category {
+      display: none;
+    }
+
+    .portfolio-category.active {
+      display: block;
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      .portfolio-hero { padding: 6rem 0 3rem; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .portfolio-tabs { flex-wrap: wrap; }
+      .portfolio-tab { padding: 0.6rem 1.5rem; font-size: 0.9rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ============================================================
+       HEADER - Navegação
+       ============================================================ -->
+  <header class="header">
+    <div class="header-content">
+      <a href="../index.html">
+        <img src="../assets/visionx-logo.png" alt="VisionX" class="logo" />
+      </a>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Inicio</a></li>
+          <li><a href="../index.html#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="../index.html#servicos" class="nav-link">Serviços</a></li>
+          <li><a href="#" class="nav-link active">Portfólio</a></li>
+          <li><a href="../index.html#contato" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-menu-btn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       HERO - Cabeçalho do portfólio
+       ============================================================ -->
+  <section class="portfolio-hero">
+    <div class="container">
+      <a href="../index.html" class="portfolio-back"><i class="fas fa-arrow-left"></i> Voltar ao site</a>
+      <span class="portfolio-hero-label">NOSSOS PROJETOS</span>
+      <h1 class="portfolio-hero-title">Portfólio</h1>
+      <p class="portfolio-hero-desc">Projetos que transformaram negócios. Sites, aplicativos e sistemas desenvolvidos com excelência.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJETOS - Grid de projetos com tabs
+       ============================================================ -->
+  <section class="portfolio-page-section">
+    <div class="container">
+
+      <!-- Tabs -->
+      <div class="portfolio-tabs">
+        <button class="portfolio-tab active" data-category="sites">
+          <i class="fas fa-globe"></i> Sites
+        </button>
+        <button class="portfolio-tab" data-category="aplicativos">
+          <i class="fas fa-mobile-alt"></i> Aplicativos
+        </button>
+      </div>
+
+      <!-- ===== Sites ===== -->
+      <div class="portfolio-category active" id="sites-portfolio">
+        <div class="portfolio-grid">
+
+          <!-- Sempre Gestão -->
+          <div class="project-card">
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <div class="project-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="project-title">
+                  <h3>Sempre Gestão</h3>
+                  <p class="project-category">Site Institucional</p>
+                </div>
+              </div>
+              <p class="project-description">Site institucional moderno para empresa de gestão de projetos e negócios empresariais, com design responsivo e otimizado para conversão.</p>
+              <div class="project-tech">
+                <span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">JavaScript</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://sempregestao.srv.br" class="btn-primary" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Visitar Site</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Finagro -->
+          <div class="project-card">
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <img src="../assets/empresas/FInagro LOGO 3.webp" alt="Finagro Logo" class="project-logo" />
+                <div class="project-title">
+                  <h3>Finagro</h3>
+                  <p class="project-category">Site Institucional</p>
+                </div>
+              </div>
+              <p class="project-description">Site oficial da plataforma Finagro, apresentando soluções de gestão rural com interface moderna e informações detalhadas.</p>
+              <div class="project-tech">
+                <span class="tech-tag">React</span><span class="tech-tag">Next.js</span><span class="tech-tag">Tailwind</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://finagro.app" class="btn-primary" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Visitar Site</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lacerda e Lacerda -->
+          <div class="project-card">
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <img src="../assets/empresas/LOGO LACERDA E LACERDA.webp" alt="Lacerda Logo" class="project-logo" />
+                <div class="project-title">
+                  <h3>Lacerda e Lacerda</h3>
+                  <p class="project-category">Site Advocacia</p>
+                </div>
+              </div>
+              <p class="project-description">Site institucional para escritório de advocacia, com design elegante, áreas de atuação e formulário de contato.</p>
+              <div class="project-tech">
+                <span class="tech-tag">WordPress</span><span class="tech-tag">PHP</span><span class="tech-tag">Custom Theme</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://lacerdaelacerda.visionxma.com" class="btn-primary" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Visitar Site</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Naldo Bebidas -->
+          <div class="project-card">
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <div class="project-icon"><i class="fas fa-shopping-cart"></i></div>
+                <div class="project-title">
+                  <h3>Naldo Bebidas</h3>
+                  <p class="project-category">E-commerce</p>
+                </div>
+              </div>
+              <p class="project-description">Plataforma de e-commerce para distribuidora de bebidas, com catálogo, sistema de pedidos e integração com pagamento.</p>
+              <div class="project-tech">
+                <span class="tech-tag">React</span><span class="tech-tag">Node.js</span><span class="tech-tag">MongoDB</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://naldobebidas.visionxma.com" class="btn-primary" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Visitar Site</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ===== Aplicativos ===== -->
+      <div class="portfolio-category" id="aplicativos-portfolio">
+        <div class="portfolio-grid">
+
+          <!-- Finagro App -->
+          <div class="project-card">
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <img src="../assets/empresas/FInagro LOGO 3.webp" alt="Finagro Logo" class="project-logo" />
+                <div class="project-title">
+                  <h3>Finagro</h3>
+                  <p class="project-category">Aplicativo Mobile</p>
+                </div>
+              </div>
+              <p class="project-description">Aplicativo completo para gestão rural, com controle de safras, finanças e equipamentos. Android e iOS.</p>
+              <div class="project-tech">
+                <span class="tech-tag">React Native</span><span class="tech-tag">Firebase</span><span class="tech-tag">Expo</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://finagro.app" class="btn-primary" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Saiba Mais</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controle de Frotas -->
+          <div class="project-card">
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <div class="project-icon"><i class="fas fa-truck"></i></div>
+                <div class="project-title">
+                  <h3>Controle de Frotas</h3>
+                  <p class="project-category">Aplicativo Web</p>
+                </div>
+              </div>
+              <p class="project-description">Sistema para gestão de frotas, rastreamento em tempo real, manutenção e relatórios detalhados.</p>
+              <div class="project-tech">
+                <span class="tech-tag">React</span><span class="tech-tag">Next.js</span><span class="tech-tag">Firebase</span>
+              </div>
+              <div class="project-actions">
+                <a href="frotas.html" class="btn-primary"><i class="fas fa-info-circle"></i> Saiba Mais</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controle App -->
+          <div class="project-card">
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <div class="project-icon"><i class="fas fa-boxes"></i></div>
+                <div class="project-title">
+                  <h3>Controle App</h3>
+                  <p class="project-category">Sistema de Controle</p>
+                </div>
+              </div>
+              <p class="project-description">Sistema para controle de produtos, estoque e vendas com leitura de código de barras e dashboard analítico.</p>
+              <div class="project-tech">
+                <span class="tech-tag">React</span><span class="tech-tag">Next.js</span><span class="tech-tag">Firebase</span>
+              </div>
+              <div class="project-actions">
+                <a href="../index.html#contato" class="btn-primary"><i class="fas fa-envelope"></i> Solicitar Demo</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fideliza -->
+          <div class="project-card">
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <div class="project-icon"><i class="fas fa-users"></i></div>
+                <div class="project-title">
+                  <h3>Fideliza</h3>
+                  <p class="project-category">CRM de Mensalidades</p>
+                </div>
+              </div>
+              <p class="project-description">CRM para gestão de mensalidades e fidelidade, com notificações automáticas e controle de pagamentos.</p>
+              <div class="project-tech">
+                <span class="tech-tag">React</span><span class="tech-tag">Firebase</span><span class="tech-tag">Automação</span>
+              </div>
+              <div class="project-actions">
+                <a href="../index.html#contato" class="btn-primary"><i class="fas fa-envelope"></i> Solicitar Demo</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gestão Interna -->
+          <div class="project-card">
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <div class="project-icon"><i class="fas fa-briefcase"></i></div>
+                <div class="project-title">
+                  <h3>Gestão Interna</h3>
+                  <p class="project-category">CRM para Agências</p>
+                </div>
+              </div>
+              <p class="project-description">CRM robusto para agências, gerenciando clientes, projetos, equipes e finanças com dashboard completo.</p>
+              <div class="project-tech">
+                <span class="tech-tag">React</span><span class="tech-tag">Next.js</span><span class="tech-tag">Firebase</span>
+              </div>
+              <div class="project-actions">
+                <a href="../index.html#contato" class="btn-primary"><i class="fas fa-envelope"></i> Solicitar Demo</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- SeLigaAí -->
+          <div class="project-card">
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
+                <div class="project-title">
+                  <h3>SeLigaAí</h3>
+                  <p class="project-category">Aplicativo de Segurança</p>
+                </div>
+              </div>
+              <p class="project-description">Alertas de áreas de risco em tempo real para Pedreiras e região com notificações baseadas em dados oficiais.</p>
+              <div class="project-tech">
+                <span class="tech-tag">React Native</span><span class="tech-tag">Expo</span><span class="tech-tag">Firebase</span>
+              </div>
+              <div class="project-actions">
+                <a href="seligaai.html" class="btn-primary"><i class="fas fa-info-circle"></i> Saiba Mais</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER SIMPLES
+       ============================================================ -->
+  <footer style="background: #050505; border-top: 1px solid rgba(255,255,255,0.06); padding: 2rem 0; text-align: center;">
+    <div class="container">
+      <a href="../index.html"><img src="../assets/visionx-logo.png" alt="VisionX" style="height: 35px; margin-bottom: 1rem; opacity: 0.7;" loading="lazy" decoding="async" /></a>
+      <p style="color: rgba(255,255,255,0.3); font-size: 0.8rem;">&copy; 2025 VisionX. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Script para tabs e menu mobile -->
+  <script>
+    // Tabs de categoria
+    document.querySelectorAll('.portfolio-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.portfolio-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.portfolio-category').forEach(c => c.classList.remove('active'));
+        tab.classList.add('active');
+        const cat = tab.dataset.category;
+        document.getElementById(cat + '-portfolio').classList.add('active');
+      });
+    });
+
+    // Menu mobile
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+    if (menuBtn && nav) {
+      menuBtn.addEventListener('click', () => {
+        menuBtn.classList.toggle('active');
+        nav.classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+</html>

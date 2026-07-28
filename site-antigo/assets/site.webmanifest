@@ -1,0 +1,20 @@
+{
+    "name": "VisionX - Desenvolvimento de Soluções Digitais",
+    "short_name": "VisionX",
+    "icons": [
+        {
+            "src": "favicon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "favicon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#00d4ff",
+    "background_color": "#0a0a0a",
+    "display": "standalone",
+    "start_url": "/"
+}
