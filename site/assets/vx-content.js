@@ -51,10 +51,10 @@
     });
 
     // ---- TEXTO DO BOTÃO CTA (mantém consistente em todos os "Começar agora") ----
-    if (s.hero_botao) {
+    if (s.hero_botao2) {
       document.querySelectorAll('.text_button').forEach(function (el) {
         // sentinela = texto padrão do botão no HTML (mudou junto com a copy)
-        if ((el.textContent || '').trim() === 'Quero aparecer primeiro') el.textContent = s.hero_botao;
+        if ((el.textContent || '').trim() === 'Quero aparecer primeiro') el.textContent = s.hero_botao2;
       });
     }
 

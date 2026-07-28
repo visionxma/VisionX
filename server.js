@@ -739,9 +739,11 @@ window.__DATA__ = ${dataJson};
         +cinp('rede_github','GitHub — usuário','visionxma')
         +'<div class="cformacts"><button class="tbtn" data-cact="save">Salvar contatos e textos</button></div></div>'
       +'<div class="cgroup"><div class="cgt">Hero — topo da página inicial</div>'
-        +cinp('hero_titulo','Título','')
-        +cinp('hero_subtitulo','Subtítulo','')
-        +cinp('hero_botao','Texto do botão','Começar agora')
+        // chaves com sufixo 2: as antigas guardavam a copy velha e sobrescreviam
+        // o site. Em branco = usa o texto que está no HTML.
+        +cinp('hero_titulo2','Título','Seu concorrente aparece no Google. E o seu negócio?')
+        +cinp('hero_subtitulo2','Subtítulo','Se o cliente não encontra a sua empresa na internet, ele compra de quem ele encontra.')
+        +cinp('hero_botao2','Texto do botão','Quero aparecer primeiro')
         +'<div class="cformacts"><button class="tbtn" data-cact="save">Salvar contatos e textos</button></div></div>'
       +'<div class="cgroup"><div class="cgt">Números — página inicial</div>'
         +'<div class="sechint">Edite os números de destaque e seus rótulos (o sinal + ou % continua fixo).</div>'
