@@ -399,24 +399,3 @@ img.title-icon.vx-pop { animation: vx-bulb-pop .55s ease; }
    Para voltar as fotos: apague este bloco.
    -------------------------------------------------------------------------- */
 .sec_team .team_card-img { display: none !important; }
-
-/* --------------------------------------------------------------------------
-   PORTFOLIO (home) — "Trabalhos no ar": grid de 3 cards no padrão do blog.
-   Screenshots são 4:3 (960x720); mostramos a imagem inteira, sem corte.
-   -------------------------------------------------------------------------- */
-.section_portfolio .blog_track {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-@media (max-width: 860px) { .section_portfolio .blog_track { grid-template-columns: 1fr; } }
-.section_portfolio .blog_card { width: auto; margin: 0; }
-.section_portfolio .blog_card > .img {
-  aspect-ratio: 4 / 3 !important;   /* sobrepõe o 1:1 global do .blog_card */
-  object-position: top center;
-  border: 1px solid rgba(0, 0, 0, .08);
-  border-bottom: none;
-}
-html.vx-dark .section_portfolio .blog_card > .img { border-color: rgba(255, 255, 255, .10); }
-/* âncora #portfolio não fica escondida atrás da navbar fixa */
-#portfolio { scroll-margin-top: 90px; }

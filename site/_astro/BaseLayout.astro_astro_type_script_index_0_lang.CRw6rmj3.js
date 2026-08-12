@@ -4046,7 +4046,7 @@ function Uf() {
         v: t
       },
       a = () => {
-        s.textContent = Math.round(o.v).toLocaleString("pt-BR") + n
+        s.textContent = Math.round(o.v).toLocaleString("en-US") + n
       };
     a(), X.create({
       trigger: s,
