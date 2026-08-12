@@ -1,4 +1,52 @@
 window.VX_DICT = {
+"Trabalhos no ar": {
+"en": "Live work",
+"es": "Trabajos en línea"
+},
+"Feito pela VisionX, funcionando agora": {
+"en": "Built by VisionX, running right now",
+"es": "Hecho por VisionX, funcionando ahora"
+},
+"Sistemas e sites nossos que estão no ar hoje. Toque em um card para visitar.": {
+"en": "Our systems and websites that are live today. Tap a card to visit.",
+"es": "Sistemas y sitios nuestros que están en línea hoy. Toque una tarjeta para visitarlos."
+},
+"SoftPay — PDV, estoque e vendas para o comércio": {
+"en": "SoftPay — POS, inventory and sales for retail",
+"es": "SoftPay — PDV, inventario y ventas para el comercio"
+},
+"FroX — gestão de frotas para o transporte": {
+"en": "FroX — fleet management for transportation",
+"es": "FroX — gestión de flotas para el transporte"
+},
+"Central Palace Hotel — site com reserva direto no WhatsApp": {
+"en": "Central Palace Hotel — website with booking straight on WhatsApp",
+"es": "Central Palace Hotel — sitio con reserva directa por WhatsApp"
+},
+"Mensalidades recebidas": {
+"en": "Subscriptions received",
+"es": "Mensualidades recibidas"
+},
+"Plano Premium": {
+"en": "Premium plan",
+"es": "Plan Premium"
+},
+"Cobranças automáticas no mês": {
+"en": "Automatic charges this month",
+"es": "Cobros automáticos en el mes"
+},
+"05 de agosto de 2026": {
+"en": "August 5, 2026",
+"es": "05 de agosto de 2026"
+},
+"28 de julho de 2026": {
+"en": "July 28, 2026",
+"es": "28 de julio de 2026"
+},
+"19 de julho de 2026": {
+"en": "July 19, 2026",
+"es": "19 de julio de 2026"
+},
 "Quanto custa fazer um site para a sua empresa (e por que os orçamentos variam tanto)": {
 "en": "How much a website for your company costs (and why quotes vary so much)",
 "es": "Cuánto cuesta hacer un sitio web para su empresa (y por qué los presupuestos varían tanto)"
