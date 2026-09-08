@@ -1,3 +1,10 @@
+# O llms.txt precisa chegar como texto puro. Servido como text/html, os
+# assistentes de IA leem a pagina inteira em vez do resumo — foi o que
+# acontecia antes deste arquivo existir: /llms.txt devolvia a home.
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
