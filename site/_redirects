@@ -7,3 +7,15 @@
 /blog/human-machine-finding-the-perfect-balance  /blog/planilha-ou-sistema-de-gestao/  301
 /blog/ia-nas-empresas-europeias/*  /blog/vale-a-pena-anunciar-no-google/  301
 /blog/ia-nas-empresas-europeias  /blog/vale-a-pena-anunciar-no-google/  301
+
+# rotas de servico em ingles (do template) -> portugues (301)
+# O conteudo sempre foi em portugues; so o endereco tinha ficado
+# 'ai-strategy', 'business-consulting' e 'data-insights'.
+/services/ai-strategy/*         /servicos/criacao-de-sites/      301
+/services/ai-strategy           /servicos/criacao-de-sites/      301
+/services/business-consulting/* /servicos/sistema-de-gestao/     301
+/services/business-consulting   /servicos/sistema-de-gestao/     301
+/services/data-insights/*       /servicos/anuncios-no-google/    301
+/services/data-insights         /servicos/anuncios-no-google/    301
+/services/*                     /servicos/                       301
+/services                       /servicos/                       301
