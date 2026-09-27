@@ -37,7 +37,11 @@ próprios em software como serviço (SaaS):
 - **FroX** — sistema de gestão de frotas para transportadoras e
   caminhoneiros: https://site.froxbr.com/
 - **SoftPay** — PDV, controle de estoque e vendas: https://www.softpaybr.com/
-- **PlacarAqui** — placares de futebol ao vivo: https://placaraqui.cc/
+- **HotelGestão** — sistema de gestão de hotéis e pousadas:
+  https://hotelgestao.com.br/
+- **ConstruSoft** — sistema de gestão de obras para construtoras:
+  https://construsoftbr.com/
+- **Finagro** — sistema de gestão rural para o produtor: https://finagro.app/
 
 ## Páginas do site
 
