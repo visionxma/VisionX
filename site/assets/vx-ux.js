@@ -1,6 +1,6 @@
 // VisionX — melhorias de UX: barra de progresso, WhatsApp, voltar-ao-topo, cookies (LGPD)
 (function () {
-  var WHATS = 'https://wa.me/5599984680391?text=' + encodeURIComponent('Olá! Vim pelo site da VisionX e quero um orçamento.');
+  var WHATS = 'https://wa.me/5599984304630?text=' + encodeURIComponent('Olá! Vim pelo site da VisionX e quero um orçamento.');
   var INSTA = 'https://www.instagram.com/visionx.dev/';
   var CY = '#00d4ff';
 

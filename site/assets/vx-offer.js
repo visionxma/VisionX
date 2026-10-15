@@ -9,7 +9,7 @@
   var K_DEADLINE = 'vx_offer_deadline';   // timestamp de expiração (setado no 1º hover)
   var K_EXPIRED = 'vx_offer_expired';      // '1' quando já acabou
   var DURATION = 15000;                    // 15 segundos
-  var WA_DEFAULT = '5599984680391';
+  var WA_DEFAULT = '5599984304630';
   var WA_MSG = 'Olá! Vim pela *oferta especial* — quero meu site por R$ 1.000,00! 🚀';
 
   function lget(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }

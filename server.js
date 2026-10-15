@@ -733,7 +733,7 @@ window.__DATA__ = ${dataJson};
     return '<div class="hint">Edite o conteúdo do site aqui — muda na hora, sem tocar no código.</div>'
       +'<div class="cgroup"><div class="cgt">Contatos &amp; redes</div>'
         +cinp('contato_email','E-mail','voce@empresa.com')
-        +cinp('contato_whatsapp','WhatsApp — só números com DDI','5599984680391')
+        +cinp('contato_whatsapp','WhatsApp — só números com DDI','5599984304630')
         +cinp('rede_instagram','Instagram — usuário','visionx.dev')
         +cinp('rede_linkedin','LinkedIn — URL completa','https://www.linkedin.com/in/...')
         +cinp('rede_github','GitHub — usuário','visionxma')
