@@ -1,0 +1,128 @@
+{
+ "slug": "seuplantao",
+ "nome": "Seu Plantão",
+ "titulo_artigo": "Agenda e faturamento para médicos plantonistas",
+ "resumo": "Seu Plantão organiza a vida do médico plantonista: agenda de plantões, hospitais, valores a receber e relatórios. Funciona offline e instala no celular.",
+ "lede": "Quem faz plantão em vários hospitais precisa saber onde estará e quanto tem a receber. O Seu Plantão organiza agenda, hospitais, valores e relatórios num aplicativo que funciona offline e instala no celular.",
+ "secoes": [
+  {
+   "h2": "Plantonista, vários hospitais e recebimento de vista",
+   "paragrafos": [
+    "Quem faz plantão costuma trabalhar em mais de um serviço, com escalas que mudam e pagamentos que chegam em datas e valores diferentes. Guardar tudo de cabeça, em mensagens ou em planilha é arriscado: um plantão esquecido na agenda ou um pagamento atrasado que passa despercebido custam tempo e dinheiro. O Seu Plantão se apresenta como feito para quem faz plantão e cansou de perder recebimento de vista.",
+    "A proposta do aplicativo é reunir seus plantões, hospitais e recebimentos num lugar só, sem planilha. A agenda diz onde e quando você atua; o controle financeiro diz o que já caiu, o que está previsto e o que passou do prazo. Juntar as duas coisas evita a lacuna entre o que se trabalhou e o que se recebeu."
+   ]
+  },
+  {
+   "h2": "Agenda: calendário mensal com uma cor por hospital",
+   "paragrafos": [
+    "A agenda é um calendário mensal com um bloco colorido por hospital. Segundo a página oficial, basta tocar num dia vazio e o plantão está criado em menos de 10 segundos. A cor por hospital permite enxergar de relance a distribuição do mês, quantos plantões em cada serviço e onde estão os dias livres.",
+    "O cadastro de hospitais é feito uma vez: você define valor, carga horária e cor, e depois é só escolher o hospital ao criar um plantão. O app também permite cadastrar um hospital pelo CNPJ, e o primeiro plantão sai em segundos. Se houver plantões ligados a um hospital, a exclusão é recusada, e a saída é arquivá-lo para tirá-lo da lista sem perder o histórico."
+   ]
+  },
+  {
+   "h2": "Recebimentos: o que caiu, o que está previsto e o que atrasou",
+   "paragrafos": [
+    "O Seu Plantão acompanha o que já caiu, o que está previsto e o que passou do prazo, hospital por hospital. Para conciliar, você informa quanto caiu e o app descobre quais plantões foram quitados; valores que não fecham com nenhum plantão pendente também são sinalizados. É um controle do que você tem a receber e do que está atrasado.",
+    "Há ainda uma alíquota, um percentual único para estimar o valor líquido. A própria página avisa que isso não substitui o cálculo do seu contador. O objetivo é dar uma noção do quanto fica no bolso, deixando claro que a apuração formal de impostos continua sendo assunto de profissional de contabilidade."
+   ]
+  },
+  {
+   "h2": "Relatórios: receita, horas e qual hospital paga melhor",
+   "paragrafos": [
+    "Os relatórios mostram a receita mês a mês, as horas trabalhadas, o valor médio do plantão e qual hospital paga melhor. Para quem concilia vários serviços, essa última informação ajuda a decidir onde vale a pena aceitar mais plantões e onde a hora trabalhada rende menos.",
+    "CRM, especialidade e cidade são campos opcionais, que você preenche depois se quiser; segundo a página, só aparecem nos relatórios. O cadastro inicial pede o mínimo. Para guardar o que registrou, o app permite exportar os dados, e os termos recomendam fazer um backup com frequência, já que o serviço não garante funcionamento sem interrupções."
+   ]
+  },
+  {
+   "h2": "Lembretes e uso offline",
+   "paragrafos": [
+    "Com o aviso ligado, você recebe o lembrete de cada plantão, a véspera e o pagamento atrasado, no horário que definir, mesmo com o app fechado. No iPhone e no iPad, notificação do sistema só existe com o app instalado na tela de início; no navegador, os avisos ficam só dentro do app.",
+    "O Seu Plantão abre em tela cheia, sem barra de navegador, e continua funcionando sem internet: o que você registrar sobe sozinho quando a rede voltar. A página cita iPhone, Android, Mac e Windows. Isso interessa a quem passa o plantão em locais de sinal fraco e não pode perder o registro de um atendimento ou de um valor."
+   ]
+  },
+  {
+   "h2": "Como instalar, quanto custa e como ficam seus dados",
+   "paragrafos": [
+    "Para instalar no iPhone, toque no botão Compartilhar, na barra do Safari, e adicione à tela de início. No computador, clique no ícone de instalar à direita da barra de endereço; se ele não aparecer, procure a opção no menu do navegador. O acesso é grátis, com a conta Google e sem cartão.",
+    "Sobre privacidade, a página afirma que cada médico enxerga apenas os próprios plantões e que nada é compartilhado com hospital ou operadora. Os dados trafegam por conexão segura, cada conta só acessa os próprios registros, e ao excluir a conta eles são apagados, salvo o que a lei obrigue a guardar. O app é destinado a profissionais de saúde adultos e é uma ferramenta de apoio."
+   ]
+  }
+ ],
+ "recursos": [
+  {
+   "titulo": "Agenda de plantões",
+   "texto": "Organize seus plantões médicos em um só aplicativo."
+  },
+  {
+   "titulo": "Hospitais",
+   "texto": "Registre os hospitais onde você atua."
+  },
+  {
+   "titulo": "Valores a receber",
+   "texto": "Acompanhe o que ainda há para receber pelos plantões."
+  },
+  {
+   "titulo": "Relatórios",
+   "texto": "Relatórios para acompanhar seus plantões e valores."
+  },
+  {
+   "titulo": "Funciona offline",
+   "texto": "Use o aplicativo mesmo sem conexão com a internet."
+  },
+  {
+   "titulo": "Instala no celular",
+   "texto": "Instalável no aparelho, com ícone na tela inicial."
+  },
+  {
+   "titulo": "Gratuito",
+   "texto": "A página oficial apresenta o aplicativo como grátis."
+  }
+ ],
+ "motivos": [
+  {
+   "titulo": "Feito para plantonistas",
+   "texto": "Agenda e faturamento pensados para quem trabalha em plantão."
+  },
+  {
+   "titulo": "Agenda e valores juntos",
+   "texto": "O que você trabalha e o que tem a receber no mesmo lugar."
+  },
+  {
+   "titulo": "Funciona offline",
+   "texto": "Continua útil onde o sinal é fraco."
+  },
+  {
+   "titulo": "Instala no celular",
+   "texto": "Fica à mão na tela inicial do aparelho."
+  },
+  {
+   "titulo": "Grátis",
+   "texto": "Comece a organizar os plantões sem custo."
+  }
+ ],
+ "faq": [
+  {
+   "p": "O que é o Seu Plantão?",
+   "r": "É um aplicativo para organizar plantões médicos. Segundo a página oficial, reúne agenda, hospitais, valores a receber e relatórios, para médicos plantonistas que querem controlar escala e faturamento em um só lugar."
+  },
+  {
+   "p": "O Seu Plantão funciona sem internet?",
+   "r": "Sim. A descrição oficial informa que o aplicativo funciona offline, o que ajuda quem atua em locais com sinal instável. A página não detalha como ocorre a sincronização depois."
+  },
+  {
+   "p": "Preciso baixar de uma loja de aplicativos?",
+   "r": "A página oficial diz que o Seu Plantão instala no celular, como aplicativo web, a partir do endereço seuplantao.app. Ela não cita lojas de aplicativos."
+  },
+  {
+   "p": "O Seu Plantão é pago?",
+   "r": "A descrição oficial o apresenta como grátis. A página não traz tabela de planos nem preços, então não há outro valor a informar."
+  },
+  {
+   "p": "Para quem é o Seu Plantão?",
+   "r": "É voltado a médicos plantonistas, que precisam organizar a agenda de plantões e acompanhar os valores a receber de cada hospital onde atuam."
+  }
+ ],
+ "fontes": [
+  "https://seuplantao.app"
+ ]
+}

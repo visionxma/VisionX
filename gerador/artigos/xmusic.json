@@ -1,0 +1,146 @@
+{
+ "slug": "xmusic",
+ "nome": "XMusic",
+ "titulo_artigo": "XMusic: app de música para ouvir suas faixas, sem ruído",
+ "resumo": "O XMusic é o app de música da VisionX: toque suas músicas, monte playlists e favoritas e use fila e timer. No iPhone, sem conta e sem coleta de dados.",
+ "lede": "O XMusic é o app de música da VisionX, com o lema Sua música, sem ruído. No iPhone, ele toca as músicas que você importa, sem conta e sem coletar dados pessoais.",
+ "secoes": [
+  {
+   "h2": "Duas versões, um mesmo propósito",
+   "paragrafos": [
+    "O XMusic é o app de música da VisionX e existe em duas versões com propósitos próximos. A versão para iPhone é um reprodutor que toca as músicas que a pessoa importa. A versão para Android, além de tocar, inclui uma aba para baixar áudio. O lema que aparece no app do iPhone resume a proposta: sua música, sem ruído, com uma interface pensada para ouvir sem distrações.",
+    "A versão do iPhone foi desenvolvida com Expo e React Native e tem o identificador br.visionx.xmusic. A de Android usa o mesmo identificador e chegou à versão 3.0, antes chamada Toada e depois renomeada para XMusic em 21 de outubro de 2026. Segundo a nota do projeto, o app de Android é instalado à mão, sem publicação em loja, e o de iPhone aguarda a revisão da Apple."
+   ]
+  },
+  {
+   "h2": "A biblioteca no iPhone",
+   "paragrafos": [
+    "O app do iPhone tem quatro abas: Músicas, Favoritas, Playlists e Ajustes. Em Músicas, o botão Importar músicas permite trazer arquivos de áudio do iPhone ou do iCloud Drive. Enquanto a biblioteca está vazia, o app orienta a importar os arquivos. Cada faixa importada passa a aparecer na lista, pronta para tocar e para ser organizada da maneira que a pessoa preferir.",
+    "Ao segurar uma música, abre-se um menu com as ações Favoritar, Adicionar à playlist, Duplicar música, Renomear e Excluir. A exclusão pede confirmação antes de apagar a faixa do XMusic. A duplicação cria uma cópia da música, e a renomeação altera o título exibido. Esse conjunto de ações cobre a organização do dia a dia sem exigir telas separadas de gerenciamento."
+   ]
+  },
+  {
+   "h2": "Playlists e favoritas",
+   "paragrafos": [
+    "A aba Favoritas reúne as músicas que a pessoa marcou. Se nenhuma foi marcada, o app explica que é preciso segurar uma música e tocar em Favoritar. Já a aba Playlists tem o botão Nova playlist, que pede um nome, e uma lista das existentes. Para colocar uma faixa em uma playlist, usa-se a ação Adicionar à playlist no menu da música. A aba funciona, portanto, como uma lista de coleções criadas pela própria pessoa, e não como sugestões automáticas.",
+    "Apagar uma playlist exige confirmação, e o app esclarece que as músicas continuam na biblioteca. Isso evita o receio de perder arquivos ao reorganizar listas. Se a pessoa tentar adicionar uma faixa sem ter criado playlist, o app avisa que é preciso criar uma primeiro. Playlists vazias exibem uma orientação sobre como incluir músicas a partir da aba Músicas. Assim, a organização das listas fica sob controle de quem usa o app."
+   ]
+  },
+  {
+   "h2": "Reprodução, fila e timer",
+   "paragrafos": [
+    "O player oferece o controle de repetição, que alterna entre três estados: sem repetir, repetir tudo e repetir uma faixa. Há também uma fila de reprodução, que define o que toca em seguida, e um timer para dormir. Ao acioná-lo, o app pergunta quando parar a música, e uma das opções é parar no fim da faixa atual. Outra opção permite desligar o timer.",
+    "Esses recursos atendem ao uso noturno e ao uso durante deslocamentos, em que o aparelho fica no bolso e o controle precisa ser rápido. A tela de Ajustes tem a seção Aparência e reprodução, que reúne preferências do player. As preferências, assim como as músicas, playlists e favoritas, ficam guardadas apenas no aparelho, segundo a política de privacidade publicada pelo projeto."
+   ]
+  },
+  {
+   "h2": "Privacidade e anúncios próprios",
+   "paragrafos": [
+    "A política de privacidade, atualizada em 21 de outubro de 2026, afirma que o app não cria conta, não coleta dados pessoais e não rastreia o usuário. Nada do que fica no aparelho é enviado a servidores da VisionX, e apagar o app apaga esses dados. A página de suporte e privacidade fica em xmusic-app.pages.dev, e o contato é o e-mail visionxma@gmail.com.",
+    "O XMusic exibe anúncios, mas apenas de produtos da própria VisionX, identificados no app com os rótulos Anúncio ou Oferta. Em Ajustes, há a opção Uma semana sem anúncios, que leva ao Instagram @visionx.dev e funciona por honra, já que o app não verifica se a conta foi seguida. Existe ainda a opção Desativar anúncios para sempre, que pede um código."
+   ]
+  },
+  {
+   "h2": "A versão para Android",
+   "paragrafos": [
+    "A versão para Android organiza a biblioteca em Músicas, Álbuns, Artistas, Playlists, Pastas e Favoritas, além de listas automáticas. O player em tela cheia tem fila editável, retomada de onde parou, equalizador, grave, transição suave, pular silêncio, velocidade, marcadores e timer de sono, que inclui o modo ao fim da música. Há tema claro, escuro ou automático e cinco cores de destaque.",
+    "Outros recursos são widget, integração com Android Auto e Assistente, estatísticas, detecção de duplicadas, corte de trecho para toque, edição de informações, exportação e importação de listas .m3u e backup em arquivo .json. As letras vêm do arquivo MP3 ou do serviço lrclib.net, com acompanhamento linha a linha, ou podem ser escritas à mão. A aba Baixar trata de TikTok, YouTube, Instagram, Kwai e Facebook."
+   ]
+  },
+  {
+   "h2": "Limites conhecidos e estado atual",
+   "paragrafos": [
+    "A nota do projeto registra limites medidos no Android. O YouTube falhou na rede doméstica do desenvolvedor, com pedido de confirmação de que não é robô. Em aparelhos com páginas de memória de 16 KB, o conversor de áudio não abre, e o app usa um plano alternativo sem conversão, o que impede o download de TikTok e Kwai nesses aparelhos. Som audível, Bluetooth e Instagram com login não foram testados.",
+    "No iPhone, a versão 1.0 foi enviada para revisão da Apple em 21 de outubro de 2026 e aguarda aprovação, por isso ainda não está na App Store. As imagens usadas na loja foram geradas por ferramenta de imagem, e a nota admite o risco de a Apple pedir capturas reais. O app do iPhone é apenas player, sem baixador, porque a Apple não aprova essa função."
+   ]
+  }
+ ],
+ "recursos": [
+  {
+   "titulo": "Reprodutor de músicas",
+   "texto": "Toca as músicas que você importa para o app."
+  },
+  {
+   "titulo": "Playlists e favoritas",
+   "texto": "Organize suas faixas em playlists e marque favoritas."
+  },
+  {
+   "titulo": "Fila de reprodução",
+   "texto": "Controle o que toca em seguida."
+  },
+  {
+   "titulo": "Timer para dormir",
+   "texto": "Programe o app para parar de tocar."
+  },
+  {
+   "titulo": "Sem conta e sem rastreio",
+   "texto": "O iPhone não pede cadastro nem coleta dados pessoais."
+  },
+  {
+   "titulo": "Equalizador e velocidade (Android)",
+   "texto": "Ajuste o som e a velocidade de reprodução."
+  },
+  {
+   "titulo": "Letras (Android)",
+   "texto": "Letras com acompanhamento linha a linha."
+  },
+  {
+   "titulo": "Backup e restauração (Android)",
+   "texto": "Salve playlists, favoritas e configurações em um arquivo."
+  },
+  {
+   "titulo": "Baixar áudio (Android)",
+   "texto": "Aba para baixar áudio de TikTok, Instagram, Kwai e Facebook."
+  }
+ ],
+ "motivos": [
+  {
+   "titulo": "Sua música no seu aparelho",
+   "texto": "Músicas e playlists ficam guardadas só no iPhone."
+  },
+  {
+   "titulo": "Sem conta",
+   "texto": "Não é preciso cadastro para usar."
+  },
+  {
+   "titulo": "Sem rastreio",
+   "texto": "O app não coleta dados pessoais nem rastreia você."
+  },
+  {
+   "titulo": "Suporte em português",
+   "texto": "Atendimento por e-mail, em português."
+  },
+  {
+   "titulo": "Duas plataformas",
+   "texto": "Versão para iPhone e versão para Android."
+  }
+ ],
+ "faq": [
+  {
+   "p": "O XMusic já está na App Store?",
+   "r": "Ainda não está confirmado. A versão 1.0 para iPhone foi enviada para revisão da Apple em 21 de outubro de 2026 e aguarda aprovação. Enquanto isso, o app não está disponível para o público geral. Assim que houver aprovação, a disponibilidade será divulgada nos canais da VisionX; até lá, não há data confirmada de publicação na loja."
+  },
+  {
+   "p": "O XMusic baixa músicas no iPhone?",
+   "r": "Não. A versão para iPhone é somente um player: toca as músicas que você importa. A função de baixar áudio existe apenas na versão para Android, que hoje é instalada manualmente. Essa diferença existe porque a Apple não aprova aplicativos com essa função, e por isso a versão para iPhone foi feita apenas como reprodutor."
+  },
+  {
+   "p": "O XMusic coleta meus dados?",
+   "r": "Segundo a política de privacidade, não. O app não cria conta, não coleta dados pessoais e não rastreia o usuário. Músicas, playlists, favoritas e preferências ficam só no iPhone e são apagadas junto com o app. Não é necessário informar nome, e-mail ou telefone para usar o app, que funciona com os arquivos que você mesmo importa para ele."
+  },
+  {
+   "p": "Como falo com o suporte?",
+   "r": "Escreva para visionxma@gmail.com com dúvidas, problemas ou sugestões. O atendimento é em português. A página de suporte e privacidade fica em xmusic-app.pages.dev. A resposta é dada em português, e a página também reúne a política de privacidade completa do aplicativo, com data de atualização."
+  },
+  {
+   "p": "Existe versão para Android?",
+   "r": "Sim, uma versão para Android com biblioteca completa, equalizador, letras, backup e aba Baixar. Hoje ela é instalada manualmente, sem publicação em loja, e tem limites conhecidos em alguns aparelhos. Ela é voltada a quem usa Android e inclui, além do player, recursos como letras, backup e restauração, widget e integração com Android Auto."
+  }
+ ],
+ "fontes": [
+  "/Users/alexandrehenrique/Memoria/assuntos/musica-app.md",
+  "/Users/alexandrehenrique/Projetos/xmusic-ios/App.js",
+  "/Users/alexandrehenrique/Projetos/xmusic-ios/site/index.html",
+  "/Users/alexandrehenrique/Projetos/xmusic-ios/package.json"
+ ]
+}

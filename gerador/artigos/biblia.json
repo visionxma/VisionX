@@ -1,0 +1,149 @@
+{
+ "slug": "biblia",
+ "nome": "Bíblia Sagrada: Dia e Noite",
+ "titulo_artigo": "Bíblia Sagrada: Dia e Noite, app grátis para iPhone",
+ "resumo": "App grátis de Bíblia para iPhone com dois rituais diários: a palavra da manhã e o fechar o dia à noite, com lembretes às 7h e às 22h. Aguarda aprovação.",
+ "lede": "Bíblia Sagrada: Dia e Noite é um app de Bíblia para iPhone com dois rituais diários: a palavra da manhã e o fechar o dia à noite. É gratuito, sem compras, e ainda aguarda aprovação da Apple.",
+ "secoes": [
+  {
+   "h2": "Uma Bíblia com dois momentos no dia",
+   "paragrafos": [
+    "Bíblia Sagrada: Dia e Noite é um aplicativo para iPhone que organiza a leitura em dois momentos curtos. Pela manhã, a pessoa recebe a palavra de hoje; à noite, fecha o dia com um salmo. O subtítulo previsto para a App Store resume o espírito: palavra de manhã, paz à noite. O app é gratuito, sem compras e sem anúncios, e ainda aguarda aprovação da Apple.",
+    "O texto promocional previsto para a loja diz que se começa o dia com uma palavra e se fecha com um salmo, com um minuto de manhã e três à noite. A categoria principal prevista é Livros, com Estilo de vida como secundária. Como o aplicativo ainda não foi aprovado, esses textos são planos de publicação e podem mudar até o lançamento."
+   ]
+  },
+  {
+   "h2": "A palavra de hoje",
+   "paragrafos": [
+    "A tela Hoje apresenta primeiro o bloco Palavra de hoje, com um versículo e uma pergunta para levar durante o dia. O rótulo Para levar no dia indica a pergunta, e a referência do versículo aparece no rodapé do cartão. Quando a pessoa toca para levar a palavra, o cartão passa a mostrar Você levou esta palavra e o aviso Levada hoje.",
+    "O ritual da manhã leva cerca de um minuto, segundo o texto da loja. A proposta é que o versículo e a pergunta acompanhem a pessoa em vez de funcionarem como uma leitura isolada. A estrutura em cartões separa o que é da manhã e o que é da noite, de modo que a tela Hoje mostra o estado de cada ritual no dia corrente."
+   ]
+  },
+  {
+   "h2": "Fechar o dia",
+   "paragrafos": [
+    "À noite, o bloco Fechar o dia propõe a leitura de um salmo, com a referência acompanhada do indicativo à noite. Quem já levou a palavra de manhã vê a indicação De manhã você levou, e quem não levou vê a Pergunta do dia. A pessoa é convidada a responder Como foi o seu dia?, escolhendo entre opções de sentimento como Em paz e Difícil.",
+    "Depois da escolha, o ritual se completa com o aviso Dia entregue. A descrição da loja resume esse momento como a hora de encerrar o dia com um salmo e rever a pergunta da manhã. O fechamento noturno leva cerca de três minutos, segundo o texto promocional, e usa o mesmo princípio da manhã: um gesto curto e repetível, em vez de uma leitura longa."
+   ]
+  },
+  {
+   "h2": "Dias seguidos e lembretes",
+   "paragrafos": [
+    "O app acompanha quantos dias seguidos a pessoa cumpriu os rituais. Quando há sequência, a tela Hoje mostra o número de dias seguidos, e, quando não há, convida a começar hoje. Esse contador funciona como estímulo discreto ao hábito, sem ranking nem comparação com outras pessoas, já que o app não pede conta nem identificação para ser usado. O contador é uma ferramenta de constância, não de cobrança.",
+    "Os lembretes são avisos locais em dois horários fixos: às 7h, com o título Palavra de hoje, e às 22h, com o título Fechar o dia. Em Ajustes, a opção Lembretes diários permite ligar e desligar quando quiser. O app não usa notificações enviadas por servidor, o que dispensa a permissão de push e mantém a configuração restrita ao próprio aparelho."
+   ]
+  },
+  {
+   "h2": "Bíblia completa, sem internet",
+   "paragrafos": [
+    "A aba Bíblia permite ler os 66 livros, com navegação por capítulos e botão para avançar ao próximo. O texto fica no aparelho, de modo que a leitura funciona sem internet, e o tamanho da letra é ajustável, segundo a descrição prevista para a loja. O app também segue a aparência do iPhone, em modo claro ou escuro, conforme a configuração do sistema. Essa escolha reforça a ideia de um aplicativo para o dia a dia.",
+    "Durante a leitura, um toque em um versículo o marca. A aba Marcados reúne os versículos guardados e, quando está vazia, explica que é preciso tocar em um versículo durante a leitura para guardá-lo ali. Cada marcação pode ser removida. É um recurso pensado para quem quer voltar depois a um trecho, sem copiar o texto para outro aplicativo. Assim, a leitura segue o ritmo de cada pessoa."
+   ]
+  },
+  {
+   "h2": "Texto, licença e privacidade",
+   "paragrafos": [
+    "O texto bíblico é o da Bíblia Livre, conhecida pela sigla BLIVRE, publicada sob a licença CC BY. Por isso, o crédito aparece em Ajustes e consta na descrição prevista para a App Store, com a atribuição aos autores. A escolha da versão foi deliberada: outras versões digitais disponíveis têm licença de uso não comercial, incompatível com a distribuição planejada para o app.",
+    "Sobre dados, o texto da loja diz que o app não pede conta, e-mail nem telefone, e que os dados ficam só no aparelho. Em Ajustes, o item Dados guardados neste iPhone reforça essa informação. A política de privacidade ainda precisa ser publicada como parte das etapas finais do lançamento, e esse documento é exigido pela loja antes da aprovação."
+   ]
+  },
+  {
+   "h2": "Estado do projeto",
+   "paragrafos": [
+    "O aplicativo é apenas para iPhone: o iPad foi deixado de fora de propósito, para não exigir imagens e revisão específicas. O identificador é br.visionx.bibliasagrada e a versão atual é a 1.0.0. Na tela do aparelho, o nome é Bíblia Sagrada, enquanto o nome completo, Bíblia Sagrada: Dia e Noite, é o da loja, porque o nome simples já existe na App Store.",
+    "Ainda faltam etapas de publicação: a chave própria do App Store Connect, as imagens da loja, a finalização do texto da loja e a política de privacidade. O aplicativo aguarda aprovação da Apple e, portanto, não está disponível para download. Não há data de lançamento confirmada, e as informações aqui descritas refletem o estado do projeto na data da consulta."
+   ]
+  }
+ ],
+ "recursos": [
+  {
+   "titulo": "Palavra da manhã",
+   "texto": "Ritual diário para começar o dia com uma palavra."
+  },
+  {
+   "titulo": "Fechar o dia à noite",
+   "texto": "Ritual noturno com o salmo da noite."
+  },
+  {
+   "titulo": "Lembrete às 7h",
+   "texto": "Notificação Palavra de hoje, em horário fixo."
+  },
+  {
+   "titulo": "Lembrete às 22h",
+   "texto": "Notificação Fechar o dia, em horário fixo."
+  },
+  {
+   "titulo": "Tela Hoje",
+   "texto": "Reúne os rituais do dia."
+  },
+  {
+   "titulo": "Leitura da Bíblia",
+   "texto": "Área para ler o texto bíblico completo."
+  },
+  {
+   "titulo": "Marcados",
+   "texto": "Guarde o que quiser reler depois."
+  },
+  {
+   "titulo": "Ajustes",
+   "texto": "Configurações do app e crédito do texto bíblico."
+  },
+  {
+   "titulo": "Texto da Bíblia Livre",
+   "texto": "Texto licenciado em CC BY, com crédito no app."
+  }
+ ],
+ "motivos": [
+  {
+   "titulo": "Grátis, sem compras",
+   "texto": "O app não terá compras dentro dele."
+  },
+  {
+   "titulo": "Rotina curta",
+   "texto": "Dois momentos por dia: manhã e noite."
+  },
+  {
+   "titulo": "Feito para iPhone",
+   "texto": "Visual e funcionamento pensados para o iPhone."
+  },
+  {
+   "titulo": "Texto com licença aberta",
+   "texto": "Bíblia Livre, CC BY, com crédito no app."
+  },
+  {
+   "titulo": "Lembretes fixos",
+   "texto": "Avisos às 7h e às 22h ajudam a manter o hábito."
+  }
+ ],
+ "faq": [
+  {
+   "p": "O app já está na App Store?",
+   "r": "Não. O Bíblia Sagrada: Dia e Noite ainda aguarda aprovação da Apple e não está disponível para download. As etapas de publicação, como imagens da loja e política de privacidade, ainda estão sendo concluídas. Quando for aprovado, o plano é que o app seja gratuito e sem compras, mas não há data de lançamento confirmada neste momento."
+  },
+  {
+   "p": "O app é gratuito?",
+   "r": "Sim. A proposta é que o app seja grátis, sem compras dentro dele, e disponível apenas para iPhone. Não há versão para Android prevista nas informações do projeto. O texto bíblico utilizado tem licença que permite uso mediante crédito, e o app não prevê cobrança de nenhum tipo, nem assinatura nem compras internas."
+  },
+  {
+   "p": "Qual versão da Bíblia o app usa?",
+   "r": "Usa a Bíblia Livre, conhecida pela sigla BLIVRE, com licença CC BY. O crédito aparece na tela de Ajustes e deve constar também na descrição da App Store, como exige a licença. Essa licença foi escolhida justamente para permitir a distribuição gratuita, com o texto devidamente atribuído à sua origem dentro do aplicativo."
+  },
+  {
+   "p": "Quais são os dois rituais?",
+   "r": "Pela manhã, a palavra de hoje, com lembrete às 7h. À noite, fechar o dia, lendo o salmo da noite, com lembrete às 22h. Os horários dos lembretes são fixos. A ideia é uma rotina curta e constante, sem exigir longas sessões de leitura, ajudando o leitor a criar o hábito ao longo do tempo."
+  },
+  {
+   "p": "Quais telas o app tem?",
+   "r": "Hoje, Bíblia, Marcados e Ajustes. Hoje reúne os rituais do dia, Bíblia traz o texto, Marcados guarda o que você separou e Ajustes concentra as configurações e o crédito do texto. O visual segue o padrão do iPhone, e o aplicativo foi desenvolvido apenas para esse aparelho, sem versão prevista para outras plataformas."
+  }
+ ],
+ "fontes": [
+  "/Users/alexandrehenrique/Projetos/biblia-app/README.md",
+  "/Users/alexandrehenrique/Projetos/biblia-app/app.config.js",
+  "/Users/alexandrehenrique/Projetos/biblia-app/loja/texto-da-loja.md",
+  "/Users/alexandrehenrique/Projetos/biblia-app/src/telas/Hoje.js",
+  "/Users/alexandrehenrique/Projetos/biblia-app/src/telas/Marcados.js",
+  "/Users/alexandrehenrique/Projetos/biblia-app/src/telas/Ajustes.js",
+  "/Users/alexandrehenrique/Projetos/biblia-app/src/lembretes.js"
+ ]
+}

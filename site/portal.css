@@ -1,0 +1,70 @@
+/* Cartões de produto: mesma linguagem do site antigo (branco, cantos 1rem, ciano var(--base--green), rótulos em fonte alternativa). */
+.section_produtos { background: #f2f2f2; color: #131313; }
+.section_produtos.is-dev { background: #fff; }
+.vxp-grade { display: grid; grid-template-columns: minmax(0, 1fr); gap: .75rem; }
+/* cartão na horizontal: logo à esquerda ocupando a altura do texto, texto à direita */
+.vxp-card { position: relative; display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); column-gap: .9rem; row-gap: .3rem; align-content: start; align-items: start; min-width: 0; height: 100%; padding: .9rem; border-radius: 1rem; background: #fff; color: #131313; text-decoration: none; border: 1px solid #ececec;
+  transition: transform .3s cubic-bezier(.19, 1, .22, 1), box-shadow .3s cubic-bezier(.19, 1, .22, 1), border-color .2s; }
+.vxp-card:active { transform: scale(.985); }
+.vxp-card.is-off { background: transparent; border: 1px dashed #c7c7c7; }
+.vxp-ico { display: grid; place-items: center; width: 3.5rem; height: 3.5rem; grid-row: 1 / span 4; border-radius: .75rem; background: #fff; overflow: clip; box-shadow: 0 0 0 1px rgba(0,0,0,.07); }
+.vxp-ico img { width: 100%; height: 100%; object-fit: cover; }
+.vxp-ico--svg img { width: 70%; height: 70%; object-fit: contain; }
+.vxp-ico--letra { background: #131313; color: var(--base--green, #00d4ff); font-weight: 800; font-size: 1.4rem; box-shadow: none; }
+.vxp-nome h3 { margin: 0; line-height: 1.15; }
+.vxp-setor { display: block; margin-top: .25rem; font-family: var(--_typography---font-family--alternate); font-size: .6875rem; letter-spacing: .1em; text-transform: uppercase; color: #585858; line-height: 1.3; }
+.vxp-texto { display: block; margin: 0; letter-spacing: normal; text-transform: none; font-size: .9375rem; line-height: 1.45; color: #585858; }
+.vxp-et { display: inline-flex; align-items: center; width: fit-content; min-height: 1.5rem; padding: .1rem .6rem; border-radius: 5rem; background: #131313; color: var(--base--green, #00d4ff); font-family: var(--_typography---font-family--alternate); font-size: .6875rem; letter-spacing: .08em; text-transform: uppercase; }
+.vxp-ir { margin-top: auto; display: inline-flex; align-items: center; gap: .3rem; min-height: 44px; font-family: var(--_typography---font-family--alternate); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; color: #131313; }
+.vxp-ir::after { content: ""; flex: 1; }
+.vxp-card > :not(.vxp-ico) { grid-column: 2; min-width: 0; }
+.vxp-card.is-off { padding-bottom: 1rem; }
+@media (hover: hover) and (pointer: fine) {
+  a.vxp-card:hover { transform: translateY(-4px); border-color: var(--base--green, #00d4ff); box-shadow: 0 18px 30px -18px rgba(0,0,0,.3); }
+}
+.logo-produto { height: 3rem; width: 3rem; border-radius: .75rem; object-fit: cover; background: #fff; }
+.rating { text-align: center; }
+/* alvos de toque de 44px que o site antigo deixava menores (logo da barra e links legais do rodapé) */
+.image3d { height: auto; } /* o atributo height das imagens do leque não pode desfazer o aspect-ratio:1 */
+.navbar_logo-link, .footer_bottom-link { min-height: 44px; display: inline-flex; align-items: center; }
+/* ---- páginas de produto com artigo ---- */
+.vxp-trilha { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; margin-bottom: 1rem; font-family: var(--_typography---font-family--alternate); font-size: .6875rem; letter-spacing: .1em; text-transform: uppercase; color: #585858; }
+.vxp-trilha a { color: inherit; text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
+.vxp-logo { background: #fff; box-shadow: 0 0 0 1px rgba(0,0,0,.08); overflow: clip; }
+.vxp-logo img { width: 100%; height: 100%; object-fit: cover; }
+.vxp-logo--letra { background: #131313; color: var(--base--green, #00d4ff); font-weight: 800; font-size: 1.6rem; box-shadow: none; }
+.vxp-oferta { margin: 1rem 0 0; font-weight: 600; color: #131313; }
+.hero-service_right { display: grid; place-items: center; padding: 1rem; }
+.vxp-hero-img { width: auto; max-width: 100%; height: auto; max-height: min(78svh, 640px); aspect-ratio: 1 / 1; object-fit: contain; border-radius: 1.25rem; box-shadow: 0 30px 60px -30px rgba(0,0,0,.35); }
+.vxp-sec { padding: 2.5rem 0; background: #fff; color: #131313; }
+.vxp-sec--claro { background: #f2f2f2; }
+.vxp-recursos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.vxp-recursos li { padding: .9rem; background: #fff; border: 1px solid #ececec; border-radius: 1rem; }
+.vxp-recursos h3 { margin: 0 0 .35rem; font-size: 1.0625rem; line-height: 1.2; }
+.vxp-recursos p { margin: 0; color: #585858; font-size: .9375rem; line-height: 1.45; display: none; }
+.vxp-artigo-grade { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+.vxp-toc { display: none; }
+.vxp-artigo { max-width: 46rem; }
+.vxp-artigo h2 { margin: 1rem 0 .4rem; }
+.vxp-artigo h3 { margin: 2rem 0 0; scroll-margin-top: 6rem; }
+.vxp-artigo p { max-width: 66ch; margin: .9rem 0 0; line-height: 1.65; color: #2f2f2f; }
+.vxp-artigo .vxp-meta { margin: 0 0 1rem; color: #585858; font-size: .875rem; }
+.vxp-veja { padding-top: 1rem; border-top: 1px solid #ececec; }
+.vxp-veja a { text-decoration: underline; }
+.vxp-faq { max-width: 46rem; margin-inline: auto; }
+.vxp-faq details { border-bottom: 1px solid #dcdcdc; }
+.vxp-faq summary { display: flex; align-items: center; min-height: 48px; padding: .6rem 0; font-weight: 600; cursor: pointer; list-style: none; }
+.vxp-faq summary::-webkit-details-marker { display: none; }
+.vxp-faq summary::after { content: "+"; margin-left: auto; padding-left: 1rem; font-size: 1.4rem; transition: transform .2s; }
+.vxp-faq details[open] summary::after { transform: rotate(45deg); }
+.vxp-faq details p { margin: 0; padding-bottom: 1rem; color: #585858; line-height: 1.6; }
+.vxp-ia { text-align: center; }
+.vxp-ia h2 { font-size: clamp(1.4rem, 1.1rem + 1.2vw, 2rem); }
+.vxp-ia p { margin: .75rem auto 1.25rem; color: #585858; }
+.vxp-ia-botoes { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; }
+@media (min-width: 38rem) { .vxp-sec { padding: 3.5rem 0; } .vxp-recursos { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; } .vxp-recursos p { display: block; } }
+@media (min-width: 64rem) { .vxp-sec { padding: 4.5rem 0; } .vxp-artigo-grade { grid-template-columns: 15rem minmax(0, 1fr); gap: 3rem; } .vxp-toc { display: block; position: sticky; top: 6rem; align-self: start; font-size: .9375rem; } .vxp-toc strong { display: block; margin-bottom: .6rem; font-family: var(--_typography---font-family--alternate); font-size: .6875rem; letter-spacing: .1em; text-transform: uppercase; color: #585858; } .vxp-toc ol { margin: 0; padding-left: 1.1rem; display: grid; gap: .4rem; letter-spacing: normal; text-transform: none; font-family: inherit; line-height: 1.35; } .vxp-toc a { color: #2f2f2f; text-decoration: none; display: inline-block; padding-block: .15rem; } }
+@media (min-width: 38rem) {
+  .vxp-grade { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+}
+@media (min-width: 64rem) { .vxp-grade { grid-template-columns: repeat(3, minmax(0, 1fr)); } .vxp-card { padding: 1.1rem; column-gap: 1rem; } }

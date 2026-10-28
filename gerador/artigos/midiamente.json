@@ -1,0 +1,145 @@
+{
+ "slug": "midiamente",
+ "nome": "Mídiamente",
+ "titulo_artigo": "Sistema de gestão para agência de marketing com IA",
+ "resumo": "Mídiamente reúne projetos, CRM, clientes, financeiro e IA em um sistema de gestão para agência de marketing, com aprovação por link e cobrança.",
+ "lede": "Agência de marketing vive de prazo, aprovação de cliente e recorrência, e tudo isso costuma ficar espalhado entre planilha e grupo de WhatsApp. A Mídiamente junta CRM, projetos, clientes, financeiro e inteligência artificial em uma única plataforma.",
+ "secoes": [
+  {
+   "h2": "Gestão de agência sem planilha e grupo de WhatsApp",
+   "paragrafos": [
+    "Planilha resolve no começo; o problema aparece quando entram mais clientes, mais gente e mais aprovações. O prazo some no meio da conversa do grupo, a aprovação vira print solto e a cobrança depende de alguém lembrar. A Mídiamente organiza demandas, aprovação, comercial e financeiro em módulos que conversam entre si, feitos no Brasil e em português, e que rodam no navegador, sem instalar nada.",
+    "A plataforma é descrita como um sistema de gestão para agências de marketing, publicidade e social media que atendem vários clientes ao mesmo tempo. A página oficial fala em 10 módulos numa só plataforma e 10 integrações prontas, com os dados de cada agência isolados, de modo que a equipe trabalhe sobre a mesma informação.",
+    "O site oficial reúne ainda guias gratuitos e artigos de blog sobre a rotina de agência, como montar um calendário editorial, desenhar um fluxo de aprovação, fazer um briefing, precificar serviços e organizar demandas de vários clientes. O material é de uso livre, mesmo para quem ainda não assina nada, e ajuda a definir processo antes de escolher a ferramenta."
+   ]
+  },
+  {
+   "h2": "Projetos, demandas e calendário editorial",
+   "paragrafos": [
+    "O quadro de projetos acompanha cada demanda por etapa, do briefing à publicação, com prazo, responsável e prioridade em cada card. A peça parada esperando o cliente fica sinalizada, com a cobrança pronta depois de 48 horas úteis sem resposta. Assim, o gestor enxerga o gargalo sem precisar perguntar a cada integrante da equipe como anda a entrega.",
+    "O calendário editorial funciona por cliente, mês a mês, e cada etapa do post tem uma cor: ideia, produção, aprovação, aprovado e publicado. O prazo de aprovação segue para o Google Calendar com um clique. O material de apoio do site traz ainda um guia para montar o calendário de cada cliente, com pilares, frequência e ritual mensal."
+   ]
+  },
+  {
+   "h2": "Aprovação, briefing e feedback do cliente",
+   "paragrafos": [
+    "O cliente aprova ou pede ajuste por um link único, sem precisar de login. O card se move no quadro e o retorno fica registrado sozinho, o que substitui o aval informal por mensagem. A agência passa a ter histórico do que foi aprovado, por quem e quando, algo difícil de recuperar quando a decisão ficou perdida em uma conversa antiga.",
+    "Também há um briefing público, um formulário com a marca da agência em que o cliente preenche as informações, que caem direto no sistema, no cliente certo. Por fim, um link de avaliação permite ao cliente dar nota e comentário, e a satisfação, com a média, é acompanhada no perfil dele, dando à agência um termômetro da relação."
+   ]
+  },
+  {
+   "h2": "CRM comercial e carteira de clientes",
+   "paragrafos": [
+    "O funil comercial vai do lead novo ao fechamento, com ticket, MRR (receita recorrente mensal) esperado, canal de origem e follow-up de cada negócio. Quando o negócio fecha, ele vira cliente e projeto num clique, sem digitar tudo de novo. Para a agência, isso encurta o caminho entre a venda e o início da operação com o cliente.",
+    "Na carteira, cada cliente tem um perfil completo, o chamado Clientes 360°: setor, plano, serviços, mensalidade, vencimento, contrato, logins das redes, tom de voz, briefings e resultados. Tudo fica interligado com demandas e financeiro, de maneira que quem atende a conta encontre o contexto num lugar só, em vez de procurar em planilhas e conversas."
+   ]
+  },
+  {
+   "h2": "Financeiro, DRE e cobrança",
+   "paragrafos": [
+    "O financeiro cobre contas a pagar e a receber, com a situação de cada cobrança, e permite cobrar e dar baixa com um clique. A cobrança por Pix, boleto e cartão passa pelo Asaas, de forma avulsa ou recorrente, e a página cita aviso de vencimento por WhatsApp. A recorrência é o coração de muitas agências, e aqui ela fica dentro da própria operação.",
+    "A plataforma traz DRE com margem real, fluxo de caixa, projeção de faturamento e metas do mês. No painel, o dashboard mostra clientes ativos, receita recorrente (MRR), lucro e churn, além dos próximos vencimentos e do que precisa de atenção. Os indicadores são calculados a partir dos dados reais da agência, não de números digitados à parte.",
+    "Esses números alimentam decisões do dia a dia, como saber quais clientes sustentam a margem e quais dão prejuízo, e quanto entrará no caixa nos próximos meses. Como cobrança, projetos e comercial estão na mesma plataforma, a agência evita conciliar relatórios de ferramentas diferentes e passa a acompanhar a saúde do negócio a partir de uma única fonte de informação."
+   ]
+  },
+  {
+   "h2": "Mídio, a IA da agência",
+   "paragrafos": [
+    "O Mídio usa o contexto e os dados disponíveis na plataforma para ajudar a entender números, acompanhar entregas e criar com mais clareza. Entre as funções estão roteiros de vídeo no padrão CENA (ON/OFF), com o apresentador e o tom do cliente, legendas que começam pela informação mais forte, com CTA e hashtags, e geração de arte ou mockup de post a partir do briefing.",
+    "Há ainda análise de tráfego, com resumo, de 3 a 5 insights acionáveis e próximos passos, e um copiloto de gestão que responde perguntas como \"como está o mês?\" com os números reais, inclusive pelo WhatsApp. A página é clara num ponto: você revisa e decide. As respostas dependem dos dados disponíveis na agência, e a IA é apoio, não substituta."
+   ]
+  },
+  {
+   "h2": "Equipe, planos e integrações",
+   "paragrafos": [
+    "Cada pessoa é cadastrada com e-mail e senha e recebe um papel: Admin, Financeiro, Comercial, Social ou Editor. Cada um vê só o que precisa, e o financeiro fica protegido. Os dados ficam isolados por agência, em banco Postgres com Row Level Security por organização, e a hospedagem em nuvem permite acessar de qualquer lugar, com atualização contínua.",
+    "Os planos são Start (grátis para sempre, sem cartão), Pro (R$ 197,00 por mês no ciclo mensal) e Agência+ (R$ 497,90 por mês no ciclo mensal), com condições de semestre e ano na página oficial. As integrações listadas são Claude, OpenRouter, OpenAI, WhatsApp (Z-API), Asaas, Meta Ads, Windsor.ai, Google Calendar, Supabase e Cloudflare."
+   ]
+  }
+ ],
+ "recursos": [
+  {
+   "titulo": "Projetos e demandas",
+   "texto": "Quadro por etapa, do briefing à publicação, com prazo e responsável."
+  },
+  {
+   "titulo": "Calendário editorial",
+   "texto": "Calendário por cliente, com status por etapa do post."
+  },
+  {
+   "titulo": "Aprovação por link",
+   "texto": "O cliente aprova ou pede ajuste sem login, com registro."
+  },
+  {
+   "titulo": "CRM comercial",
+   "texto": "Funil com ticket, MRR, canal de origem e follow-up."
+  },
+  {
+   "titulo": "Clientes 360°",
+   "texto": "Contrato, tom de voz, demandas, financeiro e briefings por cliente."
+  },
+  {
+   "titulo": "Financeiro e DRE",
+   "texto": "Contas a pagar e receber, DRE, metas e cobrança Pix, boleto e cartão."
+  },
+  {
+   "titulo": "IA de conteúdo",
+   "texto": "Roteiros CENA, legendas, arte e análise de tráfego."
+  },
+  {
+   "titulo": "Copiloto de gestão",
+   "texto": "Responde sobre a operação com os dados reais, também no WhatsApp."
+  },
+  {
+   "titulo": "Equipe e acessos",
+   "texto": "Papéis Admin, Financeiro, Comercial, Social e Editor."
+  }
+ ],
+ "motivos": [
+  {
+   "titulo": "Operação interligada",
+   "texto": "Projetos, CRM, clientes e financeiro conversam entre si."
+  },
+  {
+   "titulo": "Aprovação registrada",
+   "texto": "Retorno do cliente fica no sistema, não em print de WhatsApp."
+  },
+  {
+   "titulo": "Cobrança integrada",
+   "texto": "Pix, boleto e cartão pelo Asaas, avulsa ou recorrente."
+  },
+  {
+   "titulo": "Dados isolados por agência",
+   "texto": "Cada agência vê apenas os seus próprios dados."
+  },
+  {
+   "titulo": "Comece sem cartão",
+   "texto": "Plano Start gratuito e 14 dias de Pro para testar."
+  }
+ ],
+ "faq": [
+  {
+   "p": "A Mídiamente tem plano gratuito?",
+   "r": "Sim. O plano Start é gratuito, sem cartão, e inclui Projetos, CRM e Clientes, Financeiro e DRE, com 1 usuário e até 5 clientes. A página também informa 14 dias de Pro grátis para testar."
+  },
+  {
+   "p": "Quanto custa o plano Pro?",
+   "r": "Segundo a página oficial, o Pro custa R$ 197,00 por mês no ciclo mensal, R$ 1.063,80 à vista a cada 6 meses (10% de desconto) e R$ 1.970,00 à vista a cada 12 meses (2 meses grátis). Inclui Copiloto e IA de conteúdo, cobrança recorrente com WhatsApp e usuários e clientes ilimitados."
+  },
+  {
+   "p": "O que é o plano Agência+?",
+   "r": "É o plano para operações maiores: R$ 497,90 por mês no ciclo mensal. Inclui tudo do Pro, implantação dedicada com importação dos dados, treinamento da equipe e suporte prioritário por WhatsApp, conforme a página oficial."
+  },
+  {
+   "p": "O cliente precisa de login para aprovar uma peça?",
+   "r": "Não. A aprovação é feita por um link único: o cliente aprova ou pede ajuste sem login, o card se move no quadro e o retorno fica registrado no sistema."
+  },
+  {
+   "p": "Quais integrações a plataforma tem?",
+   "r": "A página lista Claude (Anthropic), OpenRouter, OpenAI, WhatsApp (Z-API), Asaas, Meta Ads, Windsor.ai, Google Calendar, Supabase e Cloudflare, usadas para IA, cobranças, avisos, métricas de campanha, agenda, banco de dados e hospedagem."
+  }
+ ],
+ "fontes": [
+  "https://midiamente.app"
+ ]
+}

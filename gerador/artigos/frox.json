@@ -1,0 +1,151 @@
+{
+ "slug": "frox",
+ "nome": "FroX",
+ "titulo_artigo": "Gestão de frotas: custo por km, frete e motorista",
+ "resumo": "Gestão de frotas com custo por km, simulador de frete, abastecimento pelo celular e acerto de motorista. Conheça o FroX e comece no plano grátis.",
+ "lede": "Quem opera caminhões sabe que o frete que parece bom nem sempre paga o veículo. A gestão de frotas organiza viagens, abastecimentos, documentos e acertos para decidir com número, não com achismo.",
+ "secoes": [
+  {
+   "h2": "Por que planilha e caderno deixam a frota no escuro",
+   "paragrafos": [
+    "Abastecimento anotado no papel e esquecido depois, manutenção lembrada só depois do caminhão quebrar, motorista que liga para saber o que fazer na viagem. É o retrato de muita operação que ainda depende de planilha e caderno. O problema não é falta de esforço: a informação chega tarde e espalhada, e a decisão sai antes de o número existir. Com tudo no sistema e na hora, o histórico completo de cada placa fica sempre à mão para consulta.",
+    "Também há o documento. CRLV, seguro e revisão têm data de vencimento, e documento vencido vira multa e caminhão parado na fiscalização. Sem aviso antecipado por placa, o controle fica na memória de quem está no escritório, e a memória falha justamente na semana mais corrida do mês. O mesmo vale para a CNH do motorista, que também carrega data de vencimento e precisa ser acompanhada."
+   ]
+  },
+  {
+   "h2": "Custo por quilômetro: o piso do seu frete",
+   "paragrafos": [
+    "O custo por quilômetro rodado (CPK) é o custo total do período dividido pelos quilômetros rodados no mesmo período. Segundo o material do FroX, o custo soma o que depende de rodar, como diesel, pedágio, pneu, manutenção e comissão, com o que se paga mesmo com o caminhão parado, como parcela, seguro, salário, contador e licenças. Para fazer a conta com os seus números, o site oferece calculadoras abertas, como a de custo por km e a de preço mínimo de frete.",
+    "O exemplo publicado no site é direto: R$28.000 de custo total em um mês de 8.000 km resultam em R$3,50 por km. Frete que pague menos que isso por quilômetro rodado dá prejuízo, mesmo parecendo bom no valor cheio. A recomendação é usar um mês inteiro, porque semana é pouco e uma quebra distorce tudo. Isso mostra por que o valor cheio do frete, sozinho, engana quem não conhece o próprio custo.",
+    "No FroX o CPK não é arbitrado: sai dos lançamentos da sua própria operação, caminhão a caminhão. Quem dirige o próprio veículo deve incluir um pró-labore na conta, senão está pagando para trabalhar. O resultado aparece em tempo real, por viagem, por caminhão ou por período, com exportação em PDF. Assim o CPK deixa de ser estimativa e passa a refletir o que o caminhão realmente custa para rodar."
+   ]
+  },
+  {
+   "h2": "A viagem como unidade de medida",
+   "paragrafos": [
+    "Em transporte, o resultado do mês é a soma de decisões tomadas uma a uma, no telefone. Se o resultado só aparece somado no fim, você descobre que ganhou ou perdeu, mas nunca onde. Uma frota pode fechar no positivo com três viagens no prejuízo escondidas dentro do total, e enquanto a conta for mensal essas viagens se repetem. Por isso a viagem, com ida e volta na mesma conta, precisa ser a unidade de medida.",
+    "A volta vazia é onde o dinheiro mais some. Um frete de R$ 9.000 para 1.500 km de ida vira 3.000 km rodados quando não há carga de retorno, e o lucro aparente pode virar prejuízo. No FroX, carga complementar, retorno e frete fracionado entram como receitas separadas da mesma viagem, e o deslocamento vazio também é registrado. Registrar o vazio impede que o veículo pareça mais lucrativo do que realmente é.",
+    "A viagem nasce no sistema com caminhão, motorista, origem, destino, tipo e descrição da carga e datas. Km inicial e final, abastecimentos, pedágio, chapa, diária e adiantamento entram pelo celular com foto do comprovante. O XML da nota importa direto, e a viagem fecha com o saldo em real e o que ainda falta receber ou pagar. Assim não há digitação dupla no fim do mês, e o escritório vê o que a estrada lançou."
+   ]
+  },
+  {
+   "h2": "Abastecimento e diesel sob vigilância",
+   "paragrafos": [
+    "O diesel leva a maior fatia do frete e costuma ser a conta menos medida, porque o abastecimento acontece longe do escritório, à noite, com o motorista apressado. No FroX, o motorista registra litros, valor e a foto do cupom pelo celular, na hora, e também a forma de pagamento, carta frete ou diesel à vista, e o posto. Esse registro cai no painel do escritório na hora, sem cupom perdido no porta-luvas.",
+    "A média km/L sai dos seus quilômetros e dos seus litros, viagem a viagem, e fica no histórico. O arla é registrado, mas fica fora do cálculo do consumo, para o número servir de comparação. Se a relação entre km e litros sair de qualquer padrão possível, o sistema aponta a viagem, o que costuma revelar km digitado errado ou abastecimento não lançado. Cada abastecimento entra na conta da viagem e no custo por km do caminhão, mostrando quanto do frete o tanque consumiu.",
+    "O material do site dá a dimensão do que está em jogo: um caminhão que roda 8 mil km por mês e cai de 3,3 para 2,9 km/L passa a consumir cerca de 330 litros a mais por mês. Não é um estrondo, é um vazamento que some devagar e só aparece no resultado do trimestre, por isso o registro de todo abastecimento é o ponto de partida."
+   ]
+  },
+  {
+   "h2": "Acerto de viagem e comissão de motorista",
+   "paragrafos": [
+    "O acerto costuma ser feito duas vezes: o motorista faz o dele na estrada, e o escritório faz o seu no fim do mês. Quando os números não batem, ninguém sabe qual está certo, porque ninguém tem a lista completa do que aconteceu. No FroX, o percentual de comissão e sobre o que ele incide ficam no cadastro de cada motorista. O combinado deixa de depender da lembrança de qualquer das partes.",
+    "O percentual do dia fica congelado na viagem fechada, então reajustar a comissão depois não recalcula acertos antigos. A comissão entra como despesa da viagem e no CPK do caminhão, o sistema guarda quanto foi pago e quando, e há relatório de comissões por período em PDF. A CNH também tem data, com aviso a partir de 30 dias antes de vencer. Com isso, o lucro que o dono vê já é depois de pagar o motorista, e a pergunta se o acerto de Goiânia já foi feito deixa de existir."
+   ]
+  },
+  {
+   "h2": "Simulador: aceitar, negociar ou recusar",
+   "paragrafos": [
+    "No Plano Frotas, antes de aceitar um frete você informa a distância total, o valor oferecido, pedágio e avulsos e a sua meta de margem. Com o custo por km do caminhão escolhido, o simulador mostra o frete que empata e o frete que bate a meta, calculado como custo dividido por um menos a margem. O objetivo é ter o número na mão, em vez do achismo, no momento da negociação.",
+    "O veredito é um de três. Aceitar, quando a margem bate ou passa a meta. Negociar, quando dá lucro abaixo da meta, e então o sistema diz quanto pedir a mais. Recusar, quando o frete não cobre o próprio custo. Sem histórico suficiente no caminhão, usa a média da frota e avisa na tela; sem nenhuma das bases, diz que não sabe. Essa transparência evita um falso aceite baseado em dado insuficiente.",
+    "O simulador pertence ao Plano Frotas, junto com a tela Atenção e os alertas. Na página, o exemplo de demonstração parte de 1.850 km, frete de R$ 9.000, pedágio de R$ 620 e meta de 15%, e mostra que faltam R$ 108,82 para bater a meta. São números ilustrativos, de demonstração, que servem para explicar o método e não representam dados de cliente."
+   ]
+  },
+  {
+   "h2": "Do plano grátis ao Plano Frotas, com preço na mesa",
+   "paragrafos": [
+    "O FroX Grátis é permanente, com um caminhão e um motorista, viagens e lançamentos financeiros avulsos sem limite de quantidade, Relatório Geral completo em PDF, backup e exportação. O Plano Frotas libera app do motorista, fotos e anexos, recorrências e parcelas, fornecedores e postos, simulador, alertas e todos os relatórios, sem anúncios externos. As quantidades de caminhões, motoristas e usuários do Plano Frotas seguem a oferta contratada.",
+    "O preço é publicado: R$75/mês no ciclo mensal com 2 caminhões inclusos, R$69/mês no semestral e R$63,75/mês no anual, com R$50/mês por caminhão adicional. O pagamento é pelo Asaas, com Pix, boleto ou cartão, sem taxa de implantação. O sistema roda no navegador, pode ser instalado como aplicativo e funciona sem rastreador. O mesmo preço vale em todo o Brasil, e há uma calculadora na página para ver o total da sua frota."
+   ]
+  }
+ ],
+ "recursos": [
+  {
+   "titulo": "Caminhões e documentos",
+   "texto": "Ficha por placa com CRLV, seguro e revisão e alerta antes do vencimento."
+  },
+  {
+   "titulo": "Viagens e fretes",
+   "texto": "Origem, destino, carga e responsável, com saldo em real por viagem e por rota."
+  },
+  {
+   "titulo": "Acerto e comissão",
+   "texto": "Comissão por motorista, adiantamentos, despesas com comprovante e relatório em PDF."
+  },
+  {
+   "titulo": "Abastecimentos",
+   "texto": "Lançamento pelo celular com foto do cupom e km/l calculado por caminhão."
+  },
+  {
+   "titulo": "CPK e financeiro",
+   "texto": "Custo por km, receita, lucro e margem por viagem, caminhão ou período."
+  },
+  {
+   "titulo": "Simulador de frete",
+   "texto": "Mostra o frete de empate, o que bate a meta de margem e o veredito."
+  },
+  {
+   "titulo": "Equipe e comprovantes",
+   "texto": "Colaboradores sem custo por usuário e canhotos e avarias guardados na viagem."
+  },
+  {
+   "titulo": "Nota fiscal por XML",
+   "texto": "Importação do XML, com manifestos, tickets de balança e fotos na viagem."
+  },
+  {
+   "titulo": "Backup e exportação",
+   "texto": "Exportação dos seus dados, permitida também no plano grátis."
+  }
+ ],
+ "motivos": [
+  {
+   "titulo": "Feito para o transporte brasileiro",
+   "texto": "Frete por viagem, CPK em real e documento que vence."
+  },
+  {
+   "titulo": "Plano grátis permanente",
+   "texto": "Um caminhão e um motorista, sem mensalidade e sem prazo."
+  },
+  {
+   "titulo": "Preço publicado",
+   "texto": "Valores e calculadora abertos, sem fale com vendas."
+  },
+  {
+   "titulo": "Plataforma da VisionX",
+   "texto": "Software próprio, desenvolvido e mantido pela VisionX."
+  },
+  {
+   "titulo": "Sem rastreador obrigatório",
+   "texto": "Funciona sem rastreador, sem chip e sem instalação."
+  }
+ ],
+ "faq": [
+  {
+   "p": "O FroX Grátis expira?",
+   "r": "Não. O plano é permanente, dentro dos seus limites: um caminhão, um motorista, viagens e lançamentos financeiros avulsos sem limite de quantidade e o Relatório Geral completo em PDF. Você assina o Plano Frotas apenas quando precisar de mais caminhões, do app do motorista e dos demais relatórios."
+  },
+  {
+   "p": "Quanto custa o Plano Frotas?",
+   "r": "R$75/mês no ciclo mensal, com 2 caminhões inclusos, R$69/mês no semestral e R$63,75/mês no anual. Cada caminhão adicional custa R$50/mês. O valor depende da quantidade de caminhões cadastrados, e não há custo por usuário no Plano Frotas."
+  },
+  {
+   "p": "Como funciona o pagamento?",
+   "r": "O pagamento é processado pelo Asaas, que aceita Pix, boleto bancário e cartão de crédito. Você escolhe o ciclo, mensal, semestral ou anual, e pode cancelar pelo suporte. Ao sair do Plano Frotas, é possível permanecer no FroX Grátis, sem apagar o histórico."
+  },
+  {
+   "p": "Preciso instalar rastreador nos caminhões?",
+   "r": "Não. O FroX funciona sem rastreador. O rastreamento, quando desejado, é um serviço contratado à parte, direto com o parceiro, e o FroX dá acesso ao painel dele. O sistema roda no navegador e pode ser instalado como aplicativo no computador e no celular."
+  },
+  {
+   "p": "O motorista usa o sistema pelo celular?",
+   "r": "O aplicativo do motorista faz parte do Plano Frotas. Por ele o motorista lança abastecimentos, pedágio, chapa, diária e adiantamento com foto de comprovante, e tudo aparece no painel do escritório. O titular também pode usar o sistema pelo navegador do celular em qualquer plano."
+  }
+ ],
+ "fontes": [
+  "https://site.froxbr.com",
+  "https://site.froxbr.com/blog/custo-por-km-rodado-caminhao/",
+  "https://site.froxbr.com/recursos/viagens-e-fretes/",
+  "https://site.froxbr.com/recursos/acerto-e-comissao-de-motorista/",
+  "https://site.froxbr.com/recursos/abastecimento-e-diesel/"
+ ]
+}

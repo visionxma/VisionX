@@ -1,0 +1,143 @@
+{
+ "slug": "urnometro",
+ "nome": "Urnômetro",
+ "titulo_artigo": "Urnômetro: apuração do 2º turno de 2026 pelo que falta",
+ "resumo": "O Urnômetro mostra a apuração do 2º turno de 2026 como um boletim de urna: placar, quanto falta apurar e quanto cada candidato precisa. Dados lidos do TSE.",
+ "lede": "O Urnômetro apresenta a apuração do 2º turno de 2026 como um boletim de urna impresso: placar, quanto falta apurar, quanto cada candidato precisa e o Brasil em pontos. Os dados são lidos direto do TSE.",
+ "secoes": [
+  {
+   "h2": "Uma apuração contada pelo que falta",
+   "paragrafos": [
+    "O Urnômetro nasce de uma ideia simples de explicar: em vez de olhar apenas para o placar parcial, acompanhar o que ainda não foi contado. A página descreve o produto como a apuração do 2º turno de 2026 impressa como um boletim de urna, com placar, quanto falta apurar, quanto cada candidato precisa e o Brasil em pontos. É uma página web gratuita que abre em qualquer navegador.",
+    "A autoria é da VisionX, que aparece como publicadora no código da página, e o rodapé convida a seguir a empresa no Instagram, em @visionx.dev. O site foi concebido para os dias de apuração, quando o interesse do público se concentra em poucas horas. Por isso o desenho privilegia respostas rápidas às perguntas que se faz durante a noite: quem está na frente e quanto ainda falta."
+   ]
+  },
+  {
+   "h2": "O painel de controle",
+   "paragrafos": [
+    "No topo da página, o usuário escolhe o modo e o recorte. Há o modo Ao vivo, do 2º turno de 25 de outubro de 2026, e o modo Replay, do 1º turno de 4 de outubro de 2026. Um seletor define o território, com o Brasil como padrão, e outro alterna entre Presidente e Governador. Um botão Atualizar recarrega os números sob demanda.",
+    "Logo abaixo, a página informa a hora e o percentual apurado, que funcionam como o relógio da apuração. No momento em que este artigo foi escrito, a página exibia o percentual em zero, porque o 2º turno ainda não tinha dados carregados. Esse detalhe mostra que os valores variam conforme a leitura mais recente feita do TSE, e que o painel só reflete o que foi apurado até então."
+   ]
+  },
+  {
+   "h2": "Placar e quanto falta",
+   "paragrafos": [
+    "O placar mostra os dois candidatos do 2º turno presidencial, com partido e número, o percentual e a quantidade de votos de cada um. Um indicador sinaliza quem está na frente e, ao fim da apuração, quem foi eleito. A estrutura lembra a de um boletim de urna, com informação direta e pouca decoração, o que facilita a leitura em telas pequenas.",
+    "Logo depois, o bloco Faltam estima quantos votos ainda precisam ser contados. A página compara o percentual do que falta que cada candidato precisa conquistar com o que vem tendo até agora. Quem está atrás vê o quanto precisa do que resta, e quem está na frente vê se a vantagem se sustenta. A leitura transforma o placar parcial em uma conta compreensível."
+   ]
+  },
+  {
+   "h2": "A noite, linha a linha",
+   "paragrafos": [
+    "A seção de atualizações impressas simula o rolo de papel de uma urna que vai imprimindo informações. A cada atualização entra uma linha com a hora, o quanto a apuração avançou e a vantagem naquele momento. Quem acompanha só no fim pode rolar a lista e rever como o resultado foi se formando ao longo da noite, sem depender de memória nem de capturas de tela.",
+    "O recurso tem valor também depois do fim da apuração. Com o modo Replay, é possível rever o 1º turno de 4 de outubro de 2026 e entender como a contagem evoluiu. Ao encerrar, a página exibe uma janela com o nome de quem foi eleito, o partido, o número, o percentual e os votos, e a mensagem de que o Urnômetro volta nas próximas eleições."
+   ]
+  },
+  {
+   "h2": "O Brasil em pontos",
+   "paragrafos": [
+    "O mapa em pontos desenha o país de modo que cada ponto equivale a 10 mil eleitores. A legenda distingue os pontos por candidato e inclui uma categoria para outros votos. A legenda explica a escala, o que evita interpretações erradas sobre o tamanho das áreas, já que o mapa representa pessoas e não território. Essa leitura geográfica complementa o placar numérico.",
+    "Acima do mapa, o placar por região mostra os votos já apurados em cada uma. Ao abrir uma região, um botão permite voltar à visão do Brasil. Em estados de grande população, como os do Sudeste, o desenho ganha mais pontos, mostrando visualmente onde está o peso do eleitorado. É uma forma de ler a geografia do voto sem tabelas."
+   ]
+  },
+  {
+   "h2": "De onde vem o que falta",
+   "paragrafos": [
+    "A seção De onde vem o que falta lista os estados com a quantidade de votos que ainda faltam apurar e quem está na frente em cada um. Filtros por região permitem ver apenas o Norte, o Nordeste, o Centro-Oeste, o Sudeste ou o Sul, e um toque em um estado abre o detalhe. Para o recorte de governador, o seletor mostra os estados em que há 2º turno.",
+    "A estimativa segue uma regra única, declarada na página: em cada lugar, quem falta apurar vota como quem já foi apurado. Trata-se de uma premissa, não de uma previsão, e a página a deixa visível para que o leitor saiba o que está por trás do número. Se o perfil das urnas pendentes for diferente das já contadas, o resultado final pode se afastar da estimativa."
+   ]
+  },
+  {
+   "h2": "Fonte, limites e responsabilidade",
+   "paragrafos": [
+    "Os dados são lidos direto do TSE, o Tribunal Superior Eleitoral, e a página afirma isso em seu rodapé. Também esclarece que a soma e a estimativa são do Urnômetro, enquanto o resultado oficial é o divulgado pelo TSE. A separação entre dado oficial e cálculo próprio é importante porque números derivados podem divergir, em especial nos primeiros minutos da apuração.",
+    "O produto é gratuito e a descrição técnica da página o classifica como aplicação web acessível em qualquer navegador. Ele foi pensado para o ciclo eleitoral de 2026, e a própria página avisa que volta nas próximas eleições. O texto das janelas Como o Urnômetro conta e Lembrete do 2º turno não pôde ser lido integralmente e, por isso, não foi usado para detalhar este artigo."
+   ]
+  }
+ ],
+ "recursos": [
+  {
+   "titulo": "Placar do 2º turno",
+   "texto": "Votos e porcentagem de cada candidato, em formato de boletim de urna."
+  },
+  {
+   "titulo": "Percentual apurado",
+   "texto": "Mostra quanto da apuração já foi contado e o horário."
+  },
+  {
+   "titulo": "Quanto falta apurar",
+   "texto": "Estimativa dos votos que ainda precisam ser contados."
+  },
+  {
+   "titulo": "Quanto cada candidato precisa",
+   "texto": "Compara o necessário com o que vem tendo."
+  },
+  {
+   "titulo": "A noite, linha a linha",
+   "texto": "Registro da apuração por hora, com avanço e vantagem."
+  },
+  {
+   "titulo": "Brasil em pontos",
+   "texto": "Cada ponto equivale a 10 mil eleitores, com placar por região."
+  },
+  {
+   "titulo": "Presidente e governador",
+   "texto": "Presidente no país e governador onde há 2º turno."
+  },
+  {
+   "titulo": "Filtro por região",
+   "texto": "Norte, Nordeste, Centro-Oeste, Sudeste e Sul."
+  },
+  {
+   "titulo": "Replay do 1º turno",
+   "texto": "Revisite a apuração de 4 de outubro de 2026."
+  }
+ ],
+ "motivos": [
+  {
+   "titulo": "Dados do TSE",
+   "texto": "Os números são lidos direto do Tribunal Superior Eleitoral."
+  },
+  {
+   "titulo": "Conta pelo que falta",
+   "texto": "Mostra o que ainda resta apurar, não só o placar."
+  },
+  {
+   "titulo": "Premissa declarada",
+   "texto": "A estimativa e sua regra aparecem na própria página."
+  },
+  {
+   "titulo": "Grátis e sem instalar",
+   "texto": "Abre em qualquer navegador, sem custo."
+  },
+  {
+   "titulo": "Leitura de relance",
+   "texto": "Boletim de urna e mapa de pontos resumem a apuração."
+  }
+ ],
+ "faq": [
+  {
+   "p": "De onde vêm os dados do Urnômetro?",
+   "r": "Os dados são lidos direto do TSE, o Tribunal Superior Eleitoral. A soma e a estimativa são feitas pelo Urnômetro, e a página lembra que o resultado oficial é sempre o divulgado pelo TSE. Ou seja, o Urnômetro não substitui a divulgação oficial: ele organiza os números do TSE em uma leitura pensada para acompanhar a apuração ao vivo."
+  },
+  {
+   "p": "Como o Urnômetro estima o que falta?",
+   "r": "Pela premissa descrita na página: em cada lugar, quem falta apurar vota como quem já foi apurado. A partir disso ele calcula quanto cada candidato precisa do que ainda falta contar. É uma estimativa, não o resultado oficial. Por isso, em lugares com comportamento de voto diferente entre as seções já contadas e as que faltam, o resultado real pode divergir do estimado."
+  },
+  {
+   "p": "Quais eleições o Urnômetro cobre?",
+   "r": "O 2º turno de 2026, com presidente em todo o país e governador nos estados em que há segundo turno. O site traz o modo ao vivo de 25 de outubro de 2026 e um replay do 1º turno, de 4 de outubro de 2026."
+  },
+  {
+   "p": "O que significa cada ponto do mapa?",
+   "r": "No mapa Brasil em pontos, 1 ponto equivale a 10 mil eleitores. Os pontos aparecem coloridos conforme o candidato e permitem ver o placar por região e abrir cada estado com um toque. Isso facilita enxergar de relance onde está a força de cada candidato, região por região, antes de abrir o detalhe de um estado."
+  },
+  {
+   "p": "O Urnômetro é gratuito?",
+   "r": "Sim. O site é gratuito e roda em qualquer navegador, segundo sua descrição. Foi criado pela VisionX, e a página informa que ele volta nas próximas eleições. Os números exibidos vêm do TSE, e o resultado oficial é sempre o divulgado por ele, conforme a própria página esclarece ao leitor."
+  }
+ ],
+ "fontes": [
+  "https://urnometro.visionxma.com"
+ ]
+}

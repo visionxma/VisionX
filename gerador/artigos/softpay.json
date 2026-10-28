@@ -1,0 +1,147 @@
+{
+ "slug": "softpay",
+ "nome": "SoftPay",
+ "titulo_artigo": "Sistema para loja: PDV, estoque, fiado e lucro real",
+ "resumo": "Sistema de gestão para loja com PDV, estoque que baixa sozinho, fiado com lembrete no WhatsApp, NFC-e e lucro real. Conheça o SoftPay ERP Completo.",
+ "lede": "Quem vende no balcão, no WhatsApp ou na internet precisa saber quanto a loja lucrou de verdade, não só quanto entrou. Caixa, estoque, fiado e financeiro no mesmo sistema respondem a isso.",
+ "secoes": [
+  {
+   "h2": "Fechar o mês no escuro",
+   "paragrafos": [
+    "Não saber quanto a loja lucrou no mês, descobrir que o estoque sumiu só quando o cliente pede, deixar o fiado no caderno e fechar o caixa sem saber se bateu: o site do SoftPay descreve assim a rotina de quem controla tudo entre caderno, planilha e memória. O dinheiro entra, mas ninguém sabe o que sobrou. O site resume o efeito em uma frase: quem não sabe o lucro da loja acaba trabalhando só para pagar fornecedor.",
+    "O site cita a Agência Sebrae de Notícias, de 07/01/2026: 61% dos empreendedores brasileiros pagam contas da empresa com a conta pessoal. Quando as finanças da loja e as da pessoa se misturam, o lucro some na confusão, e a loja passa a trabalhar só para pagar fornecedor. É um dado que mostra o tamanho do problema da mistura entre finanças pessoais e da empresa."
+   ]
+  },
+  {
+   "h2": "Lucro real: a maquininha mostra o que entrou, o sistema mostra o que sobrou",
+   "paragrafos": [
+    "A maquininha mostra o que entrou. O SoftPay propõe mostrar o que sobrou: você informa uma vez as taxas da maquininha, o imposto e as contas do mês, e o sistema desconta tudo das vendas. O período é livre, das vendas de hoje, dos últimos 30 dias ou o que você escolher. A informação das taxas é digitada uma só vez, e depois o cálculo acompanha as vendas.",
+    "O lucro real, segundo a página, é vendas menos custo, taxas, imposto e contas. Isso transforma o fechamento do mês em número conferível e dá base para decidir preço, compra e desconto. O financeiro inclui contas a pagar e a receber e serviços e garantias. O fechamento deixa de ser um chute e vira um número que a própria tela mostra.",
+    "Na prática, o dono passa a saber se uma venda no cartão com taxa alta compensa, se o imposto está pesando e se as contas do mês cabem na margem. A página mostra um print real do sistema, numa loja de demonstração, com as vendas do período e o lucro que sobra depois dos descontos informados, e não promete resultado de faturamento a ninguém."
+   ]
+  },
+  {
+   "h2": "Caixa, PDV e estoque que baixa sozinho",
+   "paragrafos": [
+    "O caixa funciona no celular e no computador, com leitor de código de barras e Pix no balcão. O fechamento sai conferido, com o total de cada forma de pagamento. O site cita, em depoimento de lojista, que uma venda se faz com apenas três cliques. Também há mesas e comandas para quem atende no salão.",
+    "Cada venda baixa o estoque, e o sistema avisa o que está acabando. O estoque trabalha com variações e curva ABC, que ajuda a separar o que mais pesa nas vendas. Quem já tem produtos em outro sistema, planilha ou catálogo pode importá-los, e o plano anual inclui essa importação feita pela equipe do SoftPay. Isso evita o inventário surpresa, em que o saldo do sistema não bate com a prateleira."
+   ]
+  },
+  {
+   "h2": "Fiado na ficha do cliente, com lembrete pelo WhatsApp",
+   "paragrafos": [
+    "O fiado deixa o caderno e vai para a ficha do cliente, onde fica registrado o que ele deve. O sistema envia lembrete pelo WhatsApp, o que evita o cliente que esquece de pagar e o lojista que esquece de cobrar. Há também cobrança por link Pix. O cliente passa a ter ficha própria, com o histórico do que comprou e do que deve.",
+    "O módulo de clientes se integra ao restante: o que foi vendido a prazo entra no financeiro e nas contas a receber. Para o lojista, isso significa saber quem deve, quanto e desde quando, sem folhear caderno, e cobrar na hora certa. Cupons e cartão fidelidade ajudam ainda a trazer o cliente de volta, usando o mesmo cadastro."
+   ]
+  },
+  {
+   "h2": "Notas fiscais, loja online e venda por áudio",
+   "paragrafos": [
+    "O SoftPay emite NFC-e (nota do consumidor) e NF-e direto do caixa. É preciso apenas o certificado digital da empresa, e o suporte ajuda a configurar. O sistema também recebe notas e oferece um pacote do contador. Para o contador, há ainda o pacote do contador com o que ele precisa.",
+    "A loja online recebe pedidos com Pix e tem link para a bio do Instagram e para o WhatsApp. Há ainda venda registrada por áudio no WhatsApp, como em: vendi 2 coca no Pix. Equipe com até 10 usuários, mesas e comandas, cupons e cartão fidelidade e relatórios completam a lista publicada. Tudo isso fica dentro do mesmo sistema, sem integrar ferramentas diferentes para cada tarefa."
+   ]
+  },
+  {
+   "h2": "Planos e garantia",
+   "paragrafos": [
+    "O sistema é o mesmo nos dois planos. O Plano Mensal custa R$109 por mês, com garantia de 14 dias e suporte no WhatsApp, e cancela quando quiser, sem multa. O Plano Anual sai por 12x R$83,08 ou R$997 à vista, contra R$1.308 de 12 meses no mensal, com preço travado por 12 meses. A garantia é de 14 dias: se não gostar, devolve-se 100% do valor.",
+    "O Anual inclui sua loja configurada pela equipe, com produtos importados, loja online montada, atendimento preferencial no WhatsApp e suporte completo por 12 meses. Em qualquer plano, o reembolso integral pode ser pedido em até 14 dias depois do pagamento, por e-mail. Passado o prazo, o anual não é reembolsável. Sem a opção do anual, o mensal permanece com todas as funções do ERP Completo.",
+    "A contratação é feita pelo WhatsApp, onde se recebe o link de pagamento por Pix ou cartão, e o acesso é liberado no mesmo dia. Os termos de uso, a política de privacidade e a política de reembolso estão publicados no rodapé da página. A empresa responsável é a VisionX Inova Simples, CNPJ 61.427.918/0001-06, com suporte pelo e-mail suporte@softpaybr.com."
+   ]
+  },
+  {
+   "h2": "Para qual loja serve e como é o suporte",
+   "paragrafos": [
+    "O site indica loja que vende produto no balcão, no WhatsApp ou na internet: roupas, celulares, cosméticos, mercadinho, pet shop, autopeças e variedades. Não é preciso instalar nada: abre no navegador do celular e do computador, e pode ser instalado como aplicativo. Na dúvida, o site orienta chamar no WhatsApp para saber se serve.",
+    "O SoftPay é feito pela VisionX Inova Simples, empresa brasileira, e quem responde no WhatsApp conhece o sistema por dentro. Quem não souber usar conta com o suporte humano no WhatsApp e com a aba Tutoriais, que tem vídeos curtos de cada parte do sistema. Esse atendimento humano é uma das promessas centrais do plano, e o acesso é liberado no mesmo dia.",
+    "Para o lojista que já tem produtos em outro sistema, planilha ou catálogo, o plano anual prevê que a equipe passe tudo para o SoftPay e monte a loja online com a logo do cliente e o link pronto para a bio do Instagram e para o WhatsApp. É um trabalho feito pela equipe, que tira do dono a tarefa de cadastrar item por item antes de começar a vender."
+   ]
+  }
+ ],
+ "recursos": [
+  {
+   "titulo": "Caixa e PDV",
+   "texto": "No celular e no computador, com leitor de código de barras e Pix no balcão."
+  },
+  {
+   "titulo": "Estoque com aviso",
+   "texto": "Cada venda baixa o estoque e o sistema avisa o que está acabando."
+  },
+  {
+   "titulo": "Variações e curva ABC",
+   "texto": "Controle de variações de produto e curva ABC no estoque."
+  },
+  {
+   "titulo": "Fiado com lembrete",
+   "texto": "Fiado na ficha do cliente, com lembrete pelo WhatsApp e cobrança por link Pix."
+  },
+  {
+   "titulo": "Financeiro com lucro real",
+   "texto": "Vendas menos custo, taxas, imposto e contas, com contas a pagar e a receber."
+  },
+  {
+   "titulo": "NFC-e e NF-e",
+   "texto": "Emissão direto do caixa, com certificado digital da empresa."
+  },
+  {
+   "titulo": "Loja online com Pix",
+   "texto": "Pedidos online, com link para a bio do Instagram e o WhatsApp."
+  },
+  {
+   "titulo": "Venda por áudio",
+   "texto": "Venda registrada por áudio no WhatsApp."
+  },
+  {
+   "titulo": "Equipe, mesas e fidelidade",
+   "texto": "Até 10 usuários, mesas e comandas, cupons e cartão fidelidade."
+  }
+ ],
+ "motivos": [
+  {
+   "titulo": "Lucro real na tela",
+   "texto": "Mostra o que sobrou depois de custo, taxas, imposto e contas."
+  },
+  {
+   "titulo": "14 dias de garantia",
+   "texto": "Reembolso integral em até 14 dias depois do pagamento."
+  },
+  {
+   "titulo": "Suporte humano no WhatsApp",
+   "texto": "Quem responde conhece o sistema por dentro."
+  },
+  {
+   "titulo": "Nada para instalar",
+   "texto": "Abre no navegador do celular e do computador."
+  },
+  {
+   "titulo": "Cancelamento sem multa",
+   "texto": "O plano mensal cancela quando quiser, pelo WhatsApp."
+  }
+ ],
+ "faq": [
+  {
+   "p": "O SoftPay emite nota fiscal?",
+   "r": "Sim. O SoftPay emite NFC-e, a nota do consumidor, e NF-e direto do caixa. Você só precisa do certificado digital da sua empresa, e a equipe ajuda a configurar. O sistema também registra notas recebidas e oferece um pacote do contador."
+  },
+  {
+   "p": "Quanto custa o SoftPay?",
+   "r": "O Plano Mensal custa R$109 por mês. O Plano Anual sai por 12x R$83,08 ou R$997 à vista, contra R$1.308 de 12 meses no mensal. O sistema é o mesmo; o anual inclui configuração da loja, loja online montada e suporte completo por 12 meses."
+  },
+  {
+   "p": "Preciso instalar alguma coisa?",
+   "r": "Não. O SoftPay abre no navegador do celular e do computador. Se quiser, é possível instalar como aplicativo. O caixa funciona com leitor de código de barras, e a loja online recebe pedidos com Pix."
+  },
+  {
+   "p": "Posso cancelar ou pedir reembolso?",
+   "r": "Pode. O mensal cancela quando quiser pelo WhatsApp, sem multa. Em qualquer plano, o reembolso integral pode ser pedido em até 14 dias depois do pagamento, por e-mail. Depois desse prazo, o plano anual não é reembolsável."
+  },
+  {
+   "p": "E se eu não souber usar o sistema?",
+   "r": "O suporte atende pelo WhatsApp, com gente do time SoftPay. A aba Tutoriais também tem vídeos curtos de cada parte do sistema. O plano anual inclui atendimento preferencial e suporte completo por 12 meses."
+  }
+ ],
+ "fontes": [
+  "https://erp.softpaybr.com",
+  "https://www.softpaybr.com"
+ ]
+}

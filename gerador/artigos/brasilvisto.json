@@ -1,0 +1,148 @@
+{
+ "slug": "brasilvisto",
+ "nome": "BrasilVisto",
+ "titulo_artigo": "BrasilVisto: portal de notícias, política, economia e dados",
+ "resumo": "O BrasilVisto é um portal de notícias com política, economia, negócios, finanças e indicadores, com manchetes de fontes identificadas e análises próprias.",
+ "lede": "O BrasilVisto é um portal de notícias e dados com foco em política, economia, negócios, finanças e indicadores. Ele agrega manchetes de fontes identificadas e publica análises próprias, com a fonte à vista.",
+ "secoes": [
+  {
+   "h2": "Três tipos de conteúdo, sempre identificados",
+   "paragrafos": [
+    "A página Sobre explica que o BrasilVisto combina três tipos de conteúdo, e que cada um é identificado na página. O primeiro são manchetes de outras fontes, coletadas automaticamente de feeds e interfaces públicas de veículos e instituições. O segundo são análises e explicadores escritos pela redação, com o selo Análise do portal. O terceiro são dados e indicadores, com séries oficiais do Banco Central e do IBGE.",
+    "Para as manchetes de outras fontes, o portal mostra o título, um trecho curto quando a fonte o oferece, o nome da fonte e o horário de publicação. O link sempre leva ao texto original, que o portal afirma não reproduzir. Essa separação evita que o leitor confunda o que foi produzido pelo portal com o que apenas foi indexado a partir de outro veículo."
+   ]
+  },
+  {
+   "h2": "Como funciona a coleta",
+   "paragrafos": [
+    "Segundo a página Sobre, uma rotina automática consulta as fontes habilitadas, remove duplicatas, ordena por data e relevância e atualiza os arquivos do portal. Se uma fonte sai do ar, as demais continuam funcionando e as notícias anteriores são mantidas. A relação completa de fontes, incluindo as desligadas e o motivo, fica no arquivo data/sources.json do projeto, que não é público no site.",
+    "A manchete principal não depende da ordem em que um feed respondeu. Ela é escolhida por atualidade, prioridade da fonte e cobertura por mais de um veículo. Na página inicial, a data e a hora da última atualização aparecem no topo, e cada item exibe o horário em que foi publicado, de modo que o leitor percebe rapidamente o que é recente e o que ficou para trás."
+   ]
+  },
+  {
+   "h2": "Editorias e navegação",
+   "paragrafos": [
+    "O menu organiza o portal em editorias. Política tem Governo e Congresso, STF e Justiça e Eleições. Economia reúne Negócios e empresas, Finanças e Mercados. Há ainda Tecnologia e IA, Mundo, Gestão empresarial e Dados e indicadores. Cada editoria tem página própria, e o mapa do site lista endereços como /politica, /economia, /mundo e /gestao, além de um campo de busca no topo.",
+    "A editoria de Política se apresenta como cobertura da política brasileira, com Planalto, partidos, articulação e decisões que mexem com o país. A página reúne um bloco de análises do portal e outro de manchetes recentes com links para as fontes originais. O bloco de análises traz, por exemplo, um texto sobre presidencialismo de coalizão, assinado pela Redação, com data e tempo de leitura."
+   ]
+  },
+  {
+   "h2": "Explicadores e análises do portal",
+   "paragrafos": [
+    "Além do noticiário agregado, o BrasilVisto publica textos explicativos que ajudam a entender o contexto das notícias. O mapa do site lista títulos como Como funciona o Congresso Nacional, Como funciona o Supremo Tribunal Federal e Como funciona o sistema eleitoral brasileiro. Na economia, há textos sobre a taxa Selic, o IPCA, o PIB e a cotação do dólar. Esses títulos aparecem na lista de endereços do site e funcionam como material de apoio para quem quer entender o assunto antes de acompanhar o noticiário.",
+    "Na área de negócios, aparecem explicadores sobre como ler um balanço empresarial e sobre fluxo de caixa para pequenas e médias empresas, e há um texto sobre a LGPD. Há também uma explicação sobre o Conselho de Segurança da ONU, que cobre a parte internacional. Quanto a erros em análises próprias, a seção de correções informa que eles são corrigidos diretamente no texto, com data de atualização visível."
+   ]
+  },
+  {
+   "h2": "Dados e indicadores",
+   "paragrafos": [
+    "A página Dados e indicadores se descreve como inteligência de dados, com séries oficiais atualizadas pela rotina automática. Segundo o portal, cada indicador traz fonte, data de referência, unidade e metodologia. A página mostra a data da última coleta, o que permite avaliar a atualidade dos números. Entre os indicadores listados estão a meta da taxa Selic, o dólar comercial, o IPCA mensal e acumulado em doze meses e a taxa de desocupação.",
+    "Há ainda uma tabela de cotações, com dólar PTAX, ações da B3 como PETR4, VALE3, ITUB4 e MGLU3, além de Bitcoin e Ethereum. A página cita as fontes: BCB Olinda para o PTAX, brapi.dev para a B3 e CoinGecko para as criptomoedas. Ela avisa que brapi e CoinGecko operam em plano gratuito com atribuição, e que uso comercial exige outra condição, o que mostra cuidado com a origem dos dados."
+   ]
+  },
+  {
+   "h2": "Transparência e correções",
+   "paragrafos": [
+    "A seção de correções informa que erros em análises próprias são corrigidos no texto, com a data de atualização visível. Para as manchetes de outras fontes, o texto original pertence ao veículo que o publicou, e o portal apenas indexa o título e o link. Essa distinção protege o leitor de atribuir ao portal algo que foi escrito por outra redação, e protege os veículos de reprodução indevida.",
+    "O site tem ainda páginas de contato, política de privacidade e termos de uso, listadas no mapa do site. Elas completam a camada institucional de um portal que se apresenta como agregador de fontes identificadas e produtor de análises próprias. O conteúdo exato dessas páginas não foi consultado para este artigo, e quem precisar de detalhes jurídicos deve ler os textos diretamente no site."
+   ]
+  },
+  {
+   "h2": "Para quem é o portal",
+   "paragrafos": [
+    "O BrasilVisto atende a quem quer acompanhar política, economia e negócios sem alternar entre vários sites. A página inicial entrega manchetes de diferentes veículos lado a lado, com a editoria e o horário, e o leitor decide em qual aprofundar. O tom é de organização e não de opinião: o lema, política, economia e dados, com a fonte à vista, resume a promessa de transparência.",
+    "Para quem trabalha com empresas, a editoria de Gestão empresarial e os explicadores de balanço e fluxo de caixa dão apoio prático. Para quem acompanha mercados, a tabela de cotações e os indicadores oficiais funcionam como referência rápida. O portal está no ar em brasilvisto.com.br desde 28 de outubro de 2026 e faz parte do conjunto de produtos da VisionX."
+   ]
+  }
+ ],
+ "recursos": [
+  {
+   "titulo": "Manchete e últimas notícias",
+   "texto": "A página inicial destaca a manchete do momento e as notícias mais recentes."
+  },
+  {
+   "titulo": "Política",
+   "texto": "Governo e Congresso, STF e Justiça e Eleições."
+  },
+  {
+   "titulo": "Economia",
+   "texto": "Negócios e empresas, Finanças e Mercados."
+  },
+  {
+   "titulo": "Tecnologia e IA",
+   "texto": "Editoria dedicada a tecnologia e inteligência artificial."
+  },
+  {
+   "titulo": "Mundo",
+   "texto": "Notícias internacionais reunidas em uma editoria própria."
+  },
+  {
+   "titulo": "Gestão empresarial",
+   "texto": "Editoria voltada ao universo da gestão de empresas."
+  },
+  {
+   "titulo": "Dados e indicadores",
+   "texto": "Área dedicada a números que contextualizam o noticiário."
+  },
+  {
+   "titulo": "Busca no portal",
+   "texto": "Campo de busca para localizar assuntos."
+  },
+  {
+   "titulo": "Fonte e horário em cada item",
+   "texto": "Cada notícia mostra o veículo de origem e a hora."
+  }
+ ],
+ "motivos": [
+  {
+   "titulo": "Fonte à vista",
+   "texto": "Cada manchete mostra o veículo que a publicou."
+  },
+  {
+   "titulo": "Notícia e dado juntos",
+   "texto": "Política, economia e indicadores no mesmo portal."
+  },
+  {
+   "titulo": "Análises próprias",
+   "texto": "Além de agregar manchetes, o portal publica análises."
+  },
+  {
+   "titulo": "Editorias claras",
+   "texto": "Menu separado por política, economia, mundo e mais."
+  },
+  {
+   "titulo": "Atualização informada",
+   "texto": "A página mostra a data e a hora da última atualização."
+  }
+ ],
+ "faq": [
+  {
+   "p": "O que é o BrasilVisto?",
+   "r": "É um portal de notícias, política, economia e dados da VisionX. Segundo a descrição do site, ele agrega manchetes de fontes identificadas e publica análises próprias, com cada notícia indicando o veículo de origem. O objetivo é reunir em um só lugar notícia, análise e dado, sempre com a origem de cada informação visível ao leitor."
+  },
+  {
+   "p": "Quais assuntos o portal cobre?",
+   "r": "A navegação inclui Política, Economia, Tecnologia e IA, Mundo, Gestão empresarial e Dados e indicadores. Dentro de Política há Governo e Congresso, STF e Justiça e Eleições. Em Economia há Negócios e empresas, Finanças e Mercados. Há ainda um campo de busca para localizar assuntos específicos no portal, e cada editoria reúne as notícias do tema correspondente."
+  },
+  {
+   "p": "De onde vêm as notícias?",
+   "r": "As manchetes agregadas vêm de fontes identificadas, e o nome do veículo aparece junto de cada título. Na página inicial é possível ver, por exemplo, BBC News Brasil, CNN Brasil, G1 e UOL. O portal também publica análises próprias. Isso permite ao leitor chegar ao texto completo na fonte original e decidir em qual reportagem vale a pena se aprofundar."
+  },
+  {
+   "p": "O portal mostra quando foi atualizado?",
+   "r": "Sim. A página inicial exibe a data e a hora da última atualização, e cada notícia traz o horário de publicação. Assim o leitor sabe quão recente é o conteúdo que está lendo. Assim, o leitor consegue avaliar rapidamente se aquilo que está lendo é recente, algo importante em assuntos que mudam ao longo do dia."
+  },
+  {
+   "p": "Preciso de cadastro para ler?",
+   "r": "A página inicial pode ser lida diretamente no navegador, sem etapa de login ou cadastro visível. O portal está no ar em brasilvisto.com.br e é escrito em português. Se houver exigências futuras de acesso, elas serão informadas no próprio site, que é a fonte mais confiável para esse tipo de dúvida."
+  }
+ ],
+ "fontes": [
+  "https://brasilvisto.com.br",
+  "https://brasilvisto.com.br/sobre/",
+  "https://brasilvisto.com.br/dados/",
+  "https://brasilvisto.com.br/politica/",
+  "https://brasilvisto.com.br/sitemap.xml",
+  "/Users/alexandrehenrique/Memoria/assuntos/brasilvisto.md"
+ ]
+}

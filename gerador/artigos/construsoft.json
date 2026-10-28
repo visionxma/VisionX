@@ -1,0 +1,149 @@
+{
+ "slug": "construsoft",
+ "nome": "ConstruSoft",
+ "titulo_artigo": "Gestão de obras: parcelas, despesas e lucro por obra",
+ "resumo": "Sistema de gestão de obras para construtora e empreiteiro: parcelas com recibo em PDF, despesas, estoque e lucro por obra. Teste o ConstruSoft por 14 dias.",
+ "lede": "No fim do mês, quem toca obra quer saber o que entrou, o que saiu e quem deve. A gestão de obras liga cliente, despesa e caixa para responder isso sem depender de arquivos soltos.",
+ "secoes": [
+  {
+   "h2": "O dinheiro sai antes de entrar quando ninguém vê o vencimento",
+   "paragrafos": [
+    "Na construção, o caixa aperta quando a parcela do cliente vence e a despesa de material chega no mesmo período, sem que ninguém tenha enxergado os dois lados. Quem controla tudo em planilha e caderno costuma ter uma aba por obra, vencimentos lançados à mão e notas guardadas em pastas ou em fotos no celular. Construtora, empreiteiro com várias obras e quem ainda junta tudo na planilha sentem o mesmo aperto, cada um por uma tela diferente.",
+    "O resultado é um controle que depende de memória. A pergunta que se repete toda semana, qual parcela vence e de qual cliente, exige abrir arquivo por arquivo. E a seguinte, aquela despesa foi de qual obra e quando, fica sem resposta rápida justamente quando o fornecedor cobra. Quando as respostas ficam em lugares diferentes, o dono só percebe o problema quando o caixa já está pressionado."
+   ]
+  },
+  {
+   "h2": "Lucro real de cada obra: orçado, gasto e recebido",
+   "paragrafos": [
+    "Empreiteiro com várias obras abertas precisa saber qual delas puxou o caixa para baixo. Para chegar ao lucro de cada uma é preciso somar gasto e recebido obra por obra, e quando o dinheiro de uma é usado para pagar o material de outra, o resultado individual se perde. O dinheiro de uma obra não deve sumir pagando o material de outra, e para isso cada obra precisa aparecer com o progresso, o orçado e o gasto.",
+    "No ConstruSoft, cada obra tem uma aba de resumo que compara o valor de venda fechado com o cliente com as despesas lançadas e os recebimentos. O painel mostra gasto, recebido e saldo de todas as obras em tempo real, com fluxo de caixa dos últimos 12 meses. A aba financeira guarda lucro estimado, comissão e margem. Os relatórios filtram o período e saem em PDF e CSV."
+   ]
+  },
+  {
+   "h2": "Parcelas de clientes e recibo numerado",
+   "paragrafos": [
+    "Construtora que vende em parcelas lida com entrada, vencimentos e pagamentos parciais. No sistema, entrada e parcelas saem da negociação da obra, e a baixa aceita pagamento parcial, mantendo o saldo em aberto. O histórico financeiro de cada cliente, pessoa física ou jurídica, fica guardado, com busca automática de CNPJ. Cada cliente guarda o histórico financeiro, e as parcelas aparecem separadas por obra ou por cliente.",
+    "Ao registrar o recebimento, o recibo sai em PDF, numerado, com o valor por extenso, os dados do pagador e a forma de pagamento. A tela de contas a receber mostra no topo o total, o recebido, o pendente e o atrasado, e separa as parcelas por obra ou por cliente. Não é preciso redigitar nome, documento e valor por extenso a cada parcela paga, como acontece com recibo feito à mão."
+   ]
+  },
+  {
+   "h2": "Despesas, contas a pagar e estoque de material",
+   "paragrafos": [
+    "Cada despesa entra com data, obra, categoria, valor e situação: pendente, aprovada ou paga. A nota fica anexada ao lançamento, e o vencimento gera a conta a pagar automaticamente. Equipe e fornecedores, de pedreiro a mestre de obras, são cadastrados com a função e vinculados a cada obra. Assim, a nota não fica de um lado e o valor de outro.",
+    "O estoque registra entradas e saídas de material com custo unitário e avisa quando um item fica abaixo do mínimo definido. Os fornecedores são vinculados às obras e as compras entram como despesas. Relatórios filtram por período e saem em PDF e CSV, e as permissões granulares definem o que cada pessoa vê e faz. Quem precisa de cotação ou pedido de compra com fornecedores deve saber que esses módulos não existem; as compras entram como despesas.",
+    "Pedreiro, eletricista, mestre: cada pessoa é cadastrada com a função dela, e as permissões granulares definem, ação por ação, o que cada usuário pode ver, criar, editar ou excluir. Como os usuários são ilimitados, o time inteiro entra no sistema sem mudar o preço, e o dono controla o acesso em vez de limitar quantas pessoas o utilizam."
+   ]
+  },
+  {
+   "h2": "Como começar: três passos e 14 dias de teste",
+   "paragrafos": [
+    "O primeiro passo é criar a conta, com 14 dias grátis e o sistema completo, sem cartão de crédito. O segundo é lançar a obra e a negociação: cliente, valor acordado, entrada e parcelas. O terceiro é acompanhar o resumo da obra, com total recebido e lucro líquido lado a lado. As parcelas das contas a receber nascem da negociação da obra.",
+    "Ninguém precisa passar a limpo o histórico inteiro para ver o caixa de hoje: a orientação do site é começar pelas obras em andamento. Ao fim do teste, o acesso fica bloqueado até o primeiro pagamento ser confirmado. Não existe plano gratuito permanente, e o sistema funciona no navegador do celular e do computador, com internet. O sistema roda no navegador do celular e do computador, não tem aplicativo nas lojas e precisa de internet para funcionar."
+   ]
+  },
+  {
+   "h2": "Preço fixo, com obras e usuários ilimitados",
+   "paragrafos": [
+    "O plano Pro custa R$ 479,99 por mês, sem fidelidade, com obras e usuários ilimitados, e não há cobrança por pessoa ou por obra. Inclui permissões granulares, estoque, despesas, contas a pagar e a receber, relatórios avançados, integrações com BrasilAPI e ViaCEP e suporte prioritário. O plano é sempre o mesmo: muda só por quanto tempo você contrata.",
+    "Os pacotes pré-pagos não renovam sozinhos. Em 6 meses são R$ 2.039,95 à vista no PIX ou boleto, ou 6x de R$ 399,99 no cartão. Em 12 meses, R$ 3.875,90 à vista ou 12x de R$ 379,99. Em 18 meses, R$ 5.507,85 à vista ou 18x de R$ 359,99. Equivalem a R$ 339,99, R$ 322,99 e R$ 305,99 por mês, e a cobrança é processada pelo Asaas.",
+    "Quem prefere o plano mensal paga por PIX ou boleto e cancela quando quiser, mantendo o acesso até o fim do período pago. Cada pagamento libera 30 dias de acesso por mês contratado, contados a partir do vencimento, e pagar adiantado soma os dias ao que ainda resta. Se a próxima cobrança não for paga, o sistema bloqueia o acesso e mostra a tela de assinatura. Os pacotes pagos à vista no PIX ou boleto saem 15% abaixo do parcelado no cartão."
+   ]
+  },
+  {
+   "h2": "O que o ConstruSoft não faz, dito com clareza",
+   "paragrafos": [
+    "A página publica o que o sistema não cobre. Ele não emite nota fiscal nem se conecta à Sefaz: guarda o arquivo da nota como anexo da despesa. Também não tem orçamento com composições SINAPI ou SICRO, cronograma físico-financeiro, Gantt, medições por etapa nem diário de obra (RDO). Cada obra tem um valor orçado para comparar com o gasto real.",
+    "Tampouco tem módulos típicos de incorporadora, como espelho de vendas de unidades, portal do comprador, reajuste por índice e gestão de distrato, nem cotação ou pedido de compra. Em segurança, os dados ficam em servidor em São Paulo, cada empresa isolada das demais, com termos, privacidade, consentimento registrado e exclusão de conta. A página reúne um glossário de gestão de obras que indica, termo a termo, se o ConstruSoft tem ou não aquele recurso.",
+    "O ConstruSoft é desenvolvido pela VisionX, com sede em Pedreiras, no Maranhão, e está no ar desde maio de 2026. A empresa não tem relação com a Construsoft europeia, de software BIM. Para quem precisa de orçamento SINAPI, cronograma ou diário de obra, o próprio FAQ indica que o ideal é avaliar sistemas especializados nesses módulos, o que mostra a delimitação honesta do que o produto cobre."
+   ]
+  }
+ ],
+ "recursos": [
+  {
+   "titulo": "Obras completas",
+   "texto": "Lista de obras com situação e 7 abas por obra, da negociação ao resumo."
+  },
+  {
+   "titulo": "Clientes PF e PJ",
+   "texto": "Ficha com total acordado e já pago, com busca automática de CNPJ."
+  },
+  {
+   "titulo": "Contas a receber",
+   "texto": "Parcelas por obra ou cliente, com pagamento parcial."
+  },
+  {
+   "titulo": "Recibo em PDF",
+   "texto": "Numerado, com valor por extenso, dados do pagador e forma de pagamento."
+  },
+  {
+   "titulo": "Despesas e contas a pagar",
+   "texto": "Despesa com obra, categoria e nota anexada; o vencimento gera a conta a pagar."
+  },
+  {
+   "titulo": "Estoque com movimentação",
+   "texto": "Entradas e saídas com custo unitário e alerta de estoque mínimo."
+  },
+  {
+   "titulo": "Equipe e fornecedores",
+   "texto": "Cada pessoa com a função dela, vinculada à obra."
+  },
+  {
+   "titulo": "Permissões granulares",
+   "texto": "Uma permissão para cada ação: ver, criar, editar e excluir."
+  },
+  {
+   "titulo": "Relatórios e painel",
+   "texto": "Recebido, gasto e saldo, fluxo de 12 meses e relatórios em PDF e CSV."
+  }
+ ],
+ "motivos": [
+  {
+   "titulo": "Lucro por obra",
+   "texto": "Gasto, recebido e lucro de cada obra em tempo real."
+  },
+  {
+   "titulo": "Obras e usuários ilimitados",
+   "texto": "O plano custa o mesmo com 1 ou com 20 obras."
+  },
+  {
+   "titulo": "14 dias grátis",
+   "texto": "Sistema completo para testar, sem cartão de crédito."
+  },
+  {
+   "titulo": "Dados no Brasil",
+   "texto": "Servidor em São Paulo, com cada empresa isolada."
+  },
+  {
+   "titulo": "Sem fidelidade",
+   "texto": "No plano mensal você cancela quando quiser, sem multa."
+  }
+ ],
+ "faq": [
+  {
+   "p": "O que é o ConstruSoft?",
+   "r": "É um sistema online de gestão de obras para construtoras brasileiras, da VisionX. Reúne obras, clientes, parcelas a receber com recibo em PDF, despesas, estoque de material e equipe em um só lugar, e mostra o lucro de cada obra em tempo real."
+  },
+  {
+   "p": "Quanto custa o ConstruSoft?",
+   "r": "O plano Pro custa R$ 479,99 por mês, com usuários e obras ilimitados. Os pacotes à vista no PIX ou boleto saem a R$ 2.039,95 (6 meses), R$ 3.875,90 (12 meses) e R$ 5.507,85 (18 meses). Os pacotes não renovam sozinhos e podem ser parcelados no cartão."
+  },
+  {
+   "p": "Existe teste grátis?",
+   "r": "Sim. Os primeiros 14 dias são grátis, com o sistema completo e sem cartão de crédito. Ao fim do teste o acesso fica bloqueado até o primeiro pagamento ser confirmado. Não existe plano gratuito permanente."
+  },
+  {
+   "p": "O ConstruSoft emite nota fiscal?",
+   "r": "Não. O sistema não emite nota fiscal eletrônica nem se conecta à Sefaz. Ele guarda o arquivo da nota como anexo da despesa lançada na obra. Para emitir nota é preciso usar o emissor da prefeitura, do estado ou um sistema de faturamento separado."
+  },
+  {
+   "p": "Onde ficam os dados da minha empresa?",
+   "r": "Os dados ficam em servidor no Brasil, em São Paulo, e uma construtora nunca vê os dados de outra. Termos de uso e política de privacidade são publicados, com consentimento registrado e exclusão de conta."
+  }
+ ],
+ "fontes": [
+  "https://construsoftbr.com",
+  "https://construsoftbr.com/precos",
+  "https://construsoftbr.com/perguntas-frequentes",
+  "https://construsoftbr.com/glossario"
+ ]
+}

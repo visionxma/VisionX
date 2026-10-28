@@ -1,0 +1,148 @@
+{
+ "slug": "api-nota-fiscal",
+ "nome": "API de Nota Fiscal",
+ "titulo_artigo": "API de Nota Fiscal modular: NFC-e, NF-e, MDF-e e NFS-e",
+ "resumo": "API fiscal modular da VisionX, em desenvolvimento: módulos como NFC-e, NF-e, MDF-e e NFS-e, ativados por cliente conforme o nicho do negócio.",
+ "lede": "A API de Nota Fiscal da VisionX é uma API fiscal universal, organizada em módulos como NFC-e, NF-e, MDF-e e NFS-e. O produto está em desenvolvimento e ainda não foi lançado.",
+ "secoes": [
+  {
+   "h2": "Um motor fiscal para vários negócios",
+   "paragrafos": [
+    "A API de Nota Fiscal da VisionX é o motor fiscal do SoftPay V2, descrito no repositório como uma API fiscal universal. A proposta é atender negócios muito diferentes, como varejo, distribuidora, serviços e comércio eletrônico, com um único núcleo técnico. O produto está em desenvolvimento, o repositório é privado e não há lançamento público, preço ou data confirmados. A descrição do pacote usa a mesma expressão, API fiscal universal, e cita documentos como NF-e, NFC-e, MDF-e e NFS-e.",
+    "O motor foi desenhado como multi-tenant: cada empresa é um emitente, com certificado, numeração e chaves de API próprios. Sistemas externos, como um CRM, não embutem o motor; eles chamam a API por REST. Certificado, assinatura, numeração e comunicação com os órgãos fiscais ficam todos centralizados no motor, o que reduz o risco de segredos espalhados. Isso também facilita a manutenção, porque uma correção feita no motor vale para todos os sistemas conectados a ele."
+   ]
+  },
+  {
+   "h2": "Módulos ativáveis por cliente",
+   "paragrafos": [
+    "Cada documento ou imposto é um módulo isolado, ativado por cliente por meio de feature flags, que são chaves de ativação. O questionário de entrada do SoftPay V2 identifica o nicho do cliente e liga apenas os módulos relevantes, de modo que ele não vê funções que não usa. Um registro de módulos organiza o conjunto no código. Essa divisão torna o sistema mais fácil de manter e de testar.",
+    "Os módulos previstos são NFC-e modelo 65, NF-e modelo 55, MDF-e modelo 58 e NFS-e, além de Substituição Tributária do ICMS, IPI, FECOEP e romaneio de entrega com frota. Uma distribuidora, por exemplo, depende da substituição tributária, enquanto um varejo de balcão depende da NFC-e. Essa lógica evita sobrecarregar a interface de quem só precisa de um tipo de nota. Cada módulo é independente e pode evoluir sem alterar os demais."
+   ]
+  },
+  {
+   "h2": "Integração por API REST",
+   "paragrafos": [
+    "Um guia do repositório descreve como sistemas externos integram a emissão de NFS-e. O setup é feito uma vez por empresa: cadastra-se o emitente com CNPJ, razão social, regime, endereço e inscrição municipal, envia-se o certificado A1 e gera-se uma chave de API para o sistema chamador. A chave deve ficar apenas no backend de quem chama, nunca no front.",
+    "A emissão usa o Padrão Nacional da NFS-e, em comunicação segura com o gov.br/nfse. O chamador informa tomador, serviço e valores, junto de uma chave de idempotência, que impede nota duplicada se a requisição for repetida por falha de rede ou clique duplo. A resposta traz a chave de acesso e a nota, ou o motivo da recusa para que se corrija e reenvie."
+   ]
+  },
+  {
+   "h2": "Consulta, cancelamento e arquivos",
+   "paragrafos": [
+    "Depois da emissão, o motor oferece consulta da nota pela chave. Se uma falha de rede deixou a nota como rejeitada localmente, mas ela foi autorizada no órgão fiscal, a consulta corrige o status, comportamento descrito no guia como autocorreção. Também há cancelamento por evento, com motivo de 15 a 255 caracteres e códigos para erro de emissão, serviço não prestado e outros.",
+    "Cada tentativa de cancelamento fica registrada, com numeração sequencial automática, e repetir o pedido numa nota já cancelada é seguro. Para obter os documentos, existem rotas que entregam o PDF da nota e o XML autorizado. Um SDK em TypeScript, sem dependências e baseado em fetch nativo, pode ser copiado para o backend do chamador e expõe operações de emitir, consultar e cancelar."
+   ]
+  },
+  {
+   "h2": "Pacotes para os produtos da VisionX",
+   "paragrafos": [
+    "Um plano do repositório propõe empacotar o motor em dois pacotes instaláveis. O fiscal-core reúne cálculo de imposto, tabelas e validação, funciona offline e não carrega segredos. O fiscal-sdk é o cliente tipado que se comunica com o motor central para o que depende de estado ou segredo, como emitir, assinar, numerar e consultar a SEFAZ. Essa divisão torna o sistema mais fácil de manter e de testar.",
+    "O objetivo declarado é permitir que produtos próprios da VisionX, como SoftPay, FroX e Cortex, usem o mesmo motor sem duplicá-lo e sem que cada um vire dono de certificado, numeração ou comunicação fiscal. Certificado A1, assinatura, numeração sequencial e atualização da legislação nunca são embutidos offline. Segundo o plano, a numeração é um ponto sensível, pois pode colidir entre processos. Isso mostra a preocupação do projeto em separar o que pode rodar localmente do que precisa de proteção central."
+   ]
+  },
+  {
+   "h2": "Piloto em homologação",
+   "paragrafos": [
+    "O repositório traz um roteiro de implantação do piloto em ambiente de homologação, no qual as notas não têm valor fiscal e servem para provar o fluxo sem risco. O roteiro pede configuração de ambiente, instalação, uma verificação chamada doctor que confere chave mestra, banco, certificado e resposta da SEFAZ, cadastro de um emitente de teste e um teste de fumaça que emite uma NF-e e, havendo CSC, uma NFC-e.",
+    "O sucesso do teste é uma nota autorizada com código de status 100 e protocolo. O documento prevê ainda subir o motor numa VPS Ubuntu com PM2 e nginx. Enquanto o teste não autorizar, a orientação é não liberar o motor para ninguém de fora. A produção exige que cada empresa esteja credenciada na SEFAZ, etapa que depende das próprias empresas."
+   ]
+  },
+  {
+   "h2": "O que ainda não está pronto",
+   "paragrafos": [
+    "O próprio roteiro lista o que não está pronto. O aplicativo V1 do SoftPay ainda não fala com o motor, e sua tela de notas é uma maquete. Não há contingência de NFC-e em modo offline caso a SEFAZ do Maranhão fique fora do ar. Quanto à escala, o piloto usa SQLite e uma única instância, solução considerada adequada para teste, mas não para grande volume.",
+    "O código inclui scripts de apoio, como testes de fumaça para MDF-e e NFS-e nacional, monitoramento do TLS da SEFAZ e backup, além de uma suíte de testes automatizados com arquivos para chave de acesso, cálculo de tributos, manifestação do destinatário e fila de reenvio. Por estar em desenvolvimento, nada aqui deve ser lido como promessa de funcionalidade disponível ao público."
+   ]
+  }
+ ],
+ "recursos": [
+  {
+   "titulo": "NFC-e (modelo 65)",
+   "texto": "Cupom fiscal para o varejo de balcão."
+  },
+  {
+   "titulo": "NF-e (modelo 55)",
+   "texto": "Nota fiscal para vendas entre empresas."
+  },
+  {
+   "titulo": "MDF-e (modelo 58)",
+   "texto": "Manifesto de documentos fiscais para transporte."
+  },
+  {
+   "titulo": "NFS-e",
+   "texto": "Nota fiscal de serviço municipal."
+  },
+  {
+   "titulo": "Substituição Tributária (ICMS-ST)",
+   "texto": "Módulo essencial para distribuidoras."
+  },
+  {
+   "titulo": "IPI e FECOEP",
+   "texto": "Módulos para o IPI e o Fundo de Combate à Pobreza."
+  },
+  {
+   "titulo": "Romaneio de entrega",
+   "texto": "Romaneio de entrega com frota."
+  },
+  {
+   "titulo": "Ativação por cliente",
+   "texto": "Módulos ligados por feature flags conforme o nicho."
+  },
+  {
+   "titulo": "Pacotes fiscal-core e fiscal-sdk",
+   "texto": "Cálculo e validação offline, mais um cliente tipado."
+  }
+ ],
+ "motivos": [
+  {
+   "titulo": "Um motor para vários nichos",
+   "texto": "Varejo, distribuidora, serviço e e-commerce no mesmo motor."
+  },
+  {
+   "titulo": "Só o que o cliente usa",
+   "texto": "Módulos ativados por cliente, sem funções sobrando."
+  },
+  {
+   "titulo": "Cálculo e validação offline",
+   "texto": "O fiscal-core calcula imposto sem rede e sem segredos."
+  },
+  {
+   "titulo": "Segredo no motor central",
+   "texto": "Certificado A1 e numeração ficam fora dos produtos."
+  },
+  {
+   "titulo": "Reuso nos produtos VisionX",
+   "texto": "O mesmo motor serve vários produtos, sem duplicação."
+  }
+ ],
+ "faq": [
+  {
+   "p": "A API de Nota Fiscal já está disponível?",
+   "r": "Não. O produto está em desenvolvimento, em repositório privado, e ainda não foi lançado. Não há data de lançamento, preço ou condições comerciais confirmados no material consultado. Esta página descreve o que o projeto prevê, e não um serviço já disponível, e as informações podem mudar durante o desenvolvimento."
+  },
+  {
+   "p": "Quais documentos fiscais a API prevê?",
+   "r": "Os módulos previstos são NFC-e (modelo 65), NF-e (modelo 55), MDF-e (modelo 58) e NFS-e, além de ICMS-ST, IPI, FECOEP e romaneio de entrega. Todos fazem parte do desenho do projeto em desenvolvimento. Os demais módulos, como Substituição Tributária, IPI, FECOEP e romaneio de entrega, completam o desenho previsto para atender diferentes nichos de negócio."
+  },
+  {
+   "p": "O que significa módulo ativável por cliente?",
+   "r": "Cada documento ou imposto é um módulo isolado, ligado por feature flags apenas para os clientes que precisam dele. O quiz de onboarding do SoftPay V2 detecta o nicho e ativa os módulos relevantes. Dessa forma, um varejista, uma distribuidora e uma empresa de serviços usam o mesmo motor, cada um com apenas os módulos de que precisa."
+  },
+  {
+   "p": "Quem usará a API?",
+   "r": "O motor é a base fiscal do SoftPay V2. Um plano do repositório prevê pacotes npm para que outros produtos da VisionX usem o mesmo motor, sem cada um cuidar de certificado, numeração e SEFAZ. O objetivo declarado no plano é evitar duplicar o motor, mantendo um único ponto central para as regras e os segredos da emissão fiscal."
+  },
+  {
+   "p": "O que fica sempre no motor central?",
+   "r": "Segundo o plano do projeto, certificado A1, assinatura, numeração sequencial e atualização de legislação não são embutidos offline. Esses itens ficam no motor central e chegam aos produtos por meio do SDK. Já o cálculo de imposto, as tabelas fiscais e a validação ficam no pacote fiscal-core, que funciona offline e sem qualquer segredo embutido."
+  }
+ ],
+ "fontes": [
+  "gh api repos/visionxma/softpay-nfe-api/readme",
+  "gh api repos/visionxma/softpay-nfe-api/contents/INTEGRACAO-CRM-NFSE.md",
+  "gh api repos/visionxma/softpay-nfe-api/contents/DEPLOY-PILOTO.md",
+  "gh api repos/visionxma/softpay-nfe-api/contents/PLANO-PACOTES.md",
+  "gh api repos/visionxma/softpay-nfe-api/contents/package.json",
+  "gh api repos/visionxma/softpay-nfe-api/git/trees/HEAD (lista de arquivos de src)"
+ ]
+}

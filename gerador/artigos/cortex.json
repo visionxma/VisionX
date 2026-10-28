@@ -1,0 +1,136 @@
+{
+ "slug": "cortex",
+ "nome": "CorteX",
+ "titulo_artigo": "Atendimento e vendas por WhatsApp com IA: CorteX",
+ "resumo": "CorteX é o sistema de atendimento e vendas por inteligência artificial no WhatsApp, da primeira mensagem à conversão, com memória do cliente e agentes.",
+ "lede": "O CorteX opera atendimento e vendas por inteligência artificial, da primeira mensagem à conversão. Segundo a documentação do projeto, é um sistema cognitivo modular para negócios que atendem pelo WhatsApp.",
+ "secoes": [
+  {
+   "h2": "Atendimento e vendas por WhatsApp além do chatbot",
+   "paragrafos": [
+    "Negócios que vendem pelo WhatsApp costumam repetir as mesmas respostas o dia todo, perder o histórico do cliente e depender de quem está online. A documentação do CorteX o descreve como um sistema cognitivo de negócio, modular, projetado para pequenas e médias empresas que operam via WhatsApp: ele entende a mensagem, decide e executa, em vez de apenas devolver textos prontos.",
+    "A proposta é acompanhar o cliente da primeira mensagem à conversão. Para isso, o sistema combina uma camada de inteligência artificial com memória, regras do negócio, um painel de administração e a integração com o WhatsApp, de modo que a conversa de atendimento esteja ligada ao catálogo, aos pedidos e às informações que o dono configurou."
+   ]
+  },
+  {
+   "h2": "Memória que lembra do cliente",
+   "paragrafos": [
+    "O CorteX trabalha com três camadas de memória. A de curto prazo mantém o contexto da conversa atual, como pedidos pendentes e endereços em confirmação. A de longo prazo guarda preferências do cliente, histórico de compras e regras do negócio, com busca semântica. A terceira, de regras de aprendizado, detecta padrões e cria novas regras de atendimento automaticamente.",
+    "Na prática, isso significa que o cliente não precisa repetir quem é a cada contato e que o atendimento passa a refletir o que o negócio já aprendeu. A documentação contrasta essa abordagem com sistemas que esquecem o cliente a cada conversa, e apresenta a memória como o elemento que diferencia a operação de um chatbot comum.",
+    "O repositório também menciona o uso de busca semântica sobre o conhecimento do negócio para trazer as memórias relevantes a cada resposta. Isso permite que a IA responda com base nas regras e no histórico da própria empresa, e não apenas em conhecimento genérico, o que aproxima o atendimento automatizado do jeito como aquele negócio específico conversa com seus clientes."
+   ]
+  },
+  {
+   "h2": "Agentes especializados e administração por conversa",
+   "paragrafos": [
+    "O sistema se organiza em agentes. O orquestrador interpreta as intenções do cliente e cria missões persistidas no banco de dados, de modo que uma tarefa, como um pedido, possa ser retomada de onde parou mesmo após uma reinicialização do servidor. Há também agentes voltados a entender o perfil operacional do cliente e a converter conversas em fluxos que podem ser automatizados.",
+    "Para o proprietário, existe uma interface conversacional interna: ele gerencia o negócio sem navegar por menus complexos, criando itens de catálogo, definindo perguntas frequentes e ajustando parâmetros de venda cruzada. Uma camada de FAQ resolve as perguntas recorrentes antes de acionar o modelo de IA, o que, segundo o repositório, reduz a latência e o consumo de recursos."
+   ]
+  },
+  {
+   "h2": "O caminho de cada mensagem",
+   "paragrafos": [
+    "Toda mensagem segue um fluxo em etapas. O sistema recebe o aviso do WhatsApp e evita processar duas vezes a mesma mensagem. Em seguida, verifica condições críticas: se o cliente é prioritário, se um humano assumiu a conversa, caso em que a IA é silenciada, e se o horário de funcionamento permite resposta ou exige mensagem automática. Confirmações de endereço e pagamento seguem lógica determinística.",
+    "Depois disso, o CorteX reúne o contexto, com as últimas mensagens, a lista de produtos, as zonas de entrega e as memórias relevantes, e consulta o serviço de venda cruzada. A IA responde, e o servidor valida se a ação sugerida é permitida no estado atual do pedido antes de enviar. Por fim, a interação é salva na memória e registrada para acompanhamento.",
+    "Todo esse fluxo existe para que nenhuma mensagem seja perdida nem processada de forma incorreta, segundo a documentação. A separação entre as diretrizes de personalidade da IA e os dados variáveis do usuário no momento de montar a instrução também faz parte do desenho, e ajuda a manter a resposta alinhada às regras que o proprietário definiu para o negócio."
+   ]
+  },
+  {
+   "h2": "Tom de voz e humanização",
+   "paragrafos": [
+    "O repositório descreve uma estratégia de voz inspirada em documentações de experiência do cliente. Um guia de voz define palavras preferidas e palavras proibidas no atendimento, para manter o tom de um atendente profissional. A IA também identifica o humor do cliente: se ele tem pressa, as respostas ficam curtas; se está frustrado, ela demonstra empatia antes de resolver o problema.",
+    "Instruções dinâmicas orientam o estilo de cada resposta, como colocar o preço na primeira frase, para manter a objetividade nas vendas. O ponto é tratar a conversa como parte da experiência de compra: o cliente recebe respostas diretas, no ritmo dele, e o negócio mantém uma identidade de atendimento consistente, sem depender do humor ou do cansaço de quem digita.",
+    "A documentação resume o objetivo dessa camada de linguagem: o cliente deve sentir que conversa com um atendente humano profissional, que anota o pedido, confirma os detalhes e resolve o problema sem frases burocráticas. Para o dono do negócio, a vantagem está em padronizar essa postura em todas as conversas, inclusive nas de horários em que ninguém da equipe está disponível."
+   ]
+  },
+  {
+   "h2": "Entrega, pagamento e painel em tempo real",
+   "paragrafos": [
+    "Para operações com entrega, o sistema valida o endereço informado e calcula taxas com base nas zonas geográficas configuradas no painel. Na confirmação de pagamento por Pix, processa imagens de comprovantes, detectando valores e datas, o que agiliza a liberação do pedido. Também há suporte a áudio, com transcrição das mensagens de voz enviadas pelos clientes.",
+    "O painel administrativo recebe novas mensagens e pedidos em tempo real, sem recarregar a página. Para acompanhar a qualidade, a documentação cita rastreio das interações da IA, gestão remota dos prompts, monitoramento de custos e de erros do backend, e um framework de avaliação que simula conversas e usa outra IA para julgar precisão, tom de voz e conformidade com as regras do negócio."
+   ]
+  }
+ ],
+ "recursos": [
+  {
+   "titulo": "Memória do cliente",
+   "texto": "Contexto da conversa, preferências, histórico e regras do negócio."
+  },
+  {
+   "titulo": "Orquestrador de missões",
+   "texto": "Tarefas persistidas, que podem ser retomadas de onde pararam."
+  },
+  {
+   "titulo": "Agente de administração",
+   "texto": "O dono gerencia o negócio conversando, sem navegar por menus."
+  },
+  {
+   "titulo": "FAQ rápido",
+   "texto": "Perguntas frequentes respondidas antes de acionar o modelo de IA."
+  },
+  {
+   "titulo": "Cross-sell",
+   "texto": "Consulta pareamentos autorizados para os itens detectados."
+  },
+  {
+   "titulo": "Entrada humana",
+   "texto": "Conversa assumida por humano silencia a IA."
+  },
+  {
+   "titulo": "Horário de funcionamento",
+   "texto": "Mensagem automática fora do expediente."
+  },
+  {
+   "titulo": "Rastreio das interações",
+   "texto": "Registro do que a IA recebeu e respondeu, para auditoria."
+  },
+  {
+   "titulo": "Entrega por zonas",
+   "texto": "Valida endereço e calcula taxa conforme as zonas do painel."
+  }
+ ],
+ "motivos": [
+  {
+   "titulo": "Vai além do chatbot",
+   "texto": "Entende, decide e executa, segundo a documentação."
+  },
+  {
+   "titulo": "Lembra do cliente",
+   "texto": "Memória de curto e longo prazo por cliente."
+  },
+  {
+   "titulo": "Humano no controle",
+   "texto": "Quando uma pessoa assume a conversa, a IA é silenciada."
+  },
+  {
+   "titulo": "Qualidade medida",
+   "texto": "Avaliação com cenários de teste e rastreio das respostas."
+  }
+ ],
+ "faq": [
+  {
+   "p": "O que é o CorteX?",
+   "r": "É um sistema de atendimento e vendas por inteligência artificial, que acompanha o cliente da primeira mensagem à conversão. Segundo a documentação, é um sistema cognitivo modular para negócios que operam pelo WhatsApp."
+  },
+  {
+   "p": "O CorteX é um chatbot comum?",
+   "r": "A documentação o descreve como mais do que um chatbot: ele interpreta a intenção, decide e executa ações, mantendo memória do cliente e das regras do negócio, em vez de apenas devolver respostas prontas."
+  },
+  {
+   "p": "A IA continua respondendo se uma pessoa assumir a conversa?",
+   "r": "Não. De acordo com o fluxo descrito na documentação, quando a conversa é assumida por um humano, a IA é silenciada, e o sistema também trata clientes prioritários e mensagens fora do horário de funcionamento."
+  },
+  {
+   "p": "O dono consegue configurar o negócio sem menus complexos?",
+   "r": "Sim, segundo a documentação existe uma interface conversacional interna para o proprietário, capaz de criar itens de catálogo, definir perguntas frequentes e ajustar parâmetros de venda cruzada."
+  },
+  {
+   "p": "Como a qualidade das respostas é acompanhada?",
+   "r": "A documentação cita rastreio das interações da IA, monitoramento de erros do backend e um framework de avaliação que simula conversas e usa outra IA para avaliar precisão, tom de voz e conformidade com as regras do negócio."
+  }
+ ],
+ "fontes": [
+  "https://cortexvs.com",
+  "https://github.com/visionxma/CorteX (README.md)"
+ ]
+}

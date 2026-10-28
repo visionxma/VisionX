@@ -1,0 +1,202 @@
+// Páginas de produto no visual antigo: hero de serviço, recursos, artigo, motivos, FAQ, "pergunte a uma IA", outros produtos e chamada final.
+// Cada página nasce de gerador/produtos.mjs + gerador/artigos/<slug>.json (texto lido do site oficial do produto).
+// Regras de SEO e GEO vêm do roteiro tirado do documento "Métodos LP/SEO" (19/10/2026): ver gerador/seo-regras.md.
+import { createHash } from 'node:crypto';
+import { existsSync, readFileSync, mkdirSync, writeFileSync } from 'node:fs';
+import { join } from 'node:path';
+
+export const HOJE = '2026-10-28';
+export const HOJE_EXTENSO = '28 de outubro de 2026';
+const SITE_URL = 'https://visionxma.com';
+
+const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const palavras = (t) => String(t).trim().split(/\s+/).filter(Boolean).length;
+
+// preço só entra se estiver escrito na página oficial do produto (fonte: texto lido em 28/10/2026)
+export const OFERTAS = {
+  frox: { texto: 'Plano Grátis para 1 caminhão; Plano Frotas a partir de R$ 63,75/mês', preco: '63.75', moeda: 'BRL' },
+  construsoft: { texto: 'R$ 479,99/mês ou a partir de R$ 305,99/mês, usuários ilimitados', preco: '305.99', moeda: 'BRL' }
+};
+
+export function versao(siteDir, caminho) {
+  const f = join(siteDir, caminho.replace(/^\//, '').split('?')[0]);
+  if (!existsSync(f)) return caminho;
+  return `${caminho}?v=${createHash('md5').update(readFileSync(f)).digest('hex').slice(0, 8)}`;
+}
+
+function trocaMeta(topo, { titulo, desc, caminho, imagem, ld }) {
+  const url = SITE_URL + caminho;
+  const r = (re, para) => { if (!re.test(topo)) throw new Error('meta não achada: ' + re); topo = topo.replace(re, () => para); };
+  r(/<title>.*?<\/title>/s, `<title>${esc(titulo)}</title>`);
+  r(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${esc(desc)}">`);
+  r(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${url}">`);
+  r(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${esc(titulo)}">`);
+  r(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${esc(desc)}">`);
+  r(/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${url}">`);
+  r(/<meta property="og:image" content="[^"]*">/, `<meta property="og:image" content="${imagem}">`);
+  r(/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${esc(titulo)}">`);
+  r(/<meta name="twitter:description" content="[^"]*">/, `<meta name="twitter:description" content="${esc(desc)}">`);
+  r(/<meta name="twitter:image" content="[^"]*">/, `<meta name="twitter:image" content="${imagem}">`);
+  r(/<script type="application\/ld\+json">.*?<\/script>/s, `<script type="application/ld+json">${JSON.stringify(ld)}</script>`);
+  return topo;
+}
+
+export function gerarPaginas({ topo, rodape, footerHtml, produtos, siteDir, gerDir, ic, ORG_ID }) {
+  const avisos = [];
+  const naoDev = produtos.filter((p) => p.grupo !== 'dev');
+  const arquivoCartao = (p) => ({ meuescritorio: 'advocacia' }[p.slug] || p.slug);
+  const lerArtigo = (p) => {
+    const f = join(gerDir, 'artigos', p.slug + '.json');
+    return existsSync(f) ? JSON.parse(readFileSync(f, 'utf8').replace(/,?\s*CNPJ\s*\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}/g, '')) : null;
+  };
+  const imagemDe = (p) => {
+    const c = `/img/cartoes/${arquivoCartao(p)}.webp`;
+    if (existsSync(join(siteDir, c))) return c;
+    if (p.captura && existsSync(join(siteDir, `/img/capturas/${p.captura}`))) return `/img/capturas/${p.captura}`;
+    return null;
+  };
+  const ogDe = (p) => {
+    const o = `/img/og/${p.slug}.png`;
+    return existsSync(join(siteDir, o)) ? SITE_URL + o : SITE_URL + '/img/og/visionx.png';
+  };
+
+  const cartaoRelacionado = (o) => {
+    const ico = o.icone ? `<span class="vxp-ico${o.icone.endsWith('.svg') ? ' vxp-ico--svg' : ''}"><img src="${ic(o.icone)}" alt="" loading="lazy" width="48" height="48"></span>` : `<span class="vxp-ico vxp-ico--letra" aria-hidden="true">${esc(o.nome[0])}</span>`;
+    return `<a class="vxp-card" href="/produtos/${o.slug}/">${ico}<div class="vxp-nome"><h3 class="text-xl">${esc(o.nome)}</h3><span class="vxp-setor">${esc(o.setor)}</span></div><p class="vxp-texto">${esc(o.resumo)}</p><span class="vxp-ir">Saiba mais <span aria-hidden="true">→</span></span></a>`;
+  };
+
+  const paginas = [];
+  for (const p of naoDev) {
+    const art = lerArtigo(p);
+    const caminho = `/produtos/${p.slug}/`;
+    const grupoNome = p.grupo === 'gestao' ? 'Sistemas de gestão' : 'Ferramentas e plataformas';
+    const h1 = `${p.nome}: ${p.resumo.replace(/\.$/, '')}`;
+    const titulo = `${p.nome} — ${p.setor} | VisionX`.slice(0, 60);
+    const limpa = (t) => t.replace(/\s+/g, ' ').trim();
+    let desc = limpa(art?.resumo || p.resumo);
+    if (desc.length < 150) {
+      const extra = limpa(`${p.texto} ${p.resumo}`).split(' ');
+      desc = desc.replace(/[.\s]+$/, '') + '.';
+      for (const w of extra) { if (desc.length >= 150) break; desc += ' ' + w; }
+      desc = desc.replace(/[ ,;:]+$/, '');
+    }
+    if (desc.length > 160) desc = desc.slice(0, 160).replace(/\s+\S*$/, '').replace(/[ ,;:]+$/, '');
+    if (!/[.!?]$/.test(desc) && desc.length < 160) desc += '.';
+    if (desc.length < 150 || desc.length > 160) avisos.push(`${p.slug}: description com ${desc.length} caracteres (meta 150 a 160)`);
+    if (titulo.length > 60) avisos.push(`${p.slug}: title com ${titulo.length} caracteres`);
+    const imagem = imagemDe(p);
+    const outros = naoDev.filter((o) => o.slug !== p.slug && o.grupo === p.grupo).slice(0, 4);
+    const oferta = OFERTAS[p.slug];
+
+    const recursos = art?.recursos?.length ? art.recursos : p.pontos.map((t) => ({ titulo: t, texto: '' }));
+    const secoes = art?.secoes || [];
+    const faq = art?.faq || [];
+    const motivos = art?.motivos || [];
+    const ledeBase = art?.lede || p.texto;
+    const frases = (`${ledeBase} ${p.texto}`).replace(/\s+/g, ' ').match(/[^.!?]+[.!?]+/g) || [ledeBase];
+    let lede = ''; for (const f of frases) { if (palavras(lede + ' ' + f) > 60) break; lede = (lede + ' ' + f).trim(); }
+    if (palavras(lede) < 40) lede = ledeBase;
+    if (!art) avisos.push(`${p.slug}: sem artigo (gerador/artigos/${p.slug}.json); página sai só com resumo e pontos`);
+    else if (palavras(lede) < 40 || palavras(lede) > 60) avisos.push(`${p.slug}: lede com ${palavras(lede)} palavras (bloco citável pede 40 a 60)`);
+    const corpoArtigo = secoes.flatMap((s) => s.paragrafos).join(' ');
+    const nPal = palavras(corpoArtigo);
+
+    const ld = { '@context': 'https://schema.org', '@graph': [
+      { '@type': 'WebPage', '@id': SITE_URL + caminho + '#pagina', url: SITE_URL + caminho, name: titulo, description: desc, inLanguage: 'pt-BR', isPartOf: { '@id': SITE_URL + '/#site' }, dateModified: HOJE },
+      { '@type': 'BreadcrumbList', itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'VisionX', item: SITE_URL + '/' },
+        { '@type': 'ListItem', position: 2, name: grupoNome, item: SITE_URL + (p.grupo === 'gestao' ? '/#sistemas' : '/#ferramentas') },
+        { '@type': 'ListItem', position: 3, name: p.nome, item: SITE_URL + caminho } ] },
+      { '@type': 'SoftwareApplication', name: p.nome, description: p.resumo, applicationCategory: 'BusinessApplication', operatingSystem: 'Web', url: p.url || SITE_URL + caminho, publisher: { '@id': ORG_ID },
+        ...(oferta ? { offers: { '@type': 'Offer', price: oferta.preco, priceCurrency: oferta.moeda } } : {}) },
+      ...(art ? [{ '@type': 'Article', headline: art.titulo_artigo, description: desc, inLanguage: 'pt-BR', author: { '@id': ORG_ID }, publisher: { '@id': ORG_ID }, datePublished: HOJE, dateModified: HOJE, mainEntityOfPage: SITE_URL + caminho, image: ogDe(p) }] : []),
+      ...(faq.length ? [{ '@type': 'FAQPage', mainEntity: faq.map((q) => ({ '@type': 'Question', name: q.p, acceptedAnswer: { '@type': 'Answer', text: q.r } })) }] : [])
+    ] };
+
+    const logo = p.icone ? `<div class="container-icon vxp-logo"><img src="${ic(p.icone)}" alt="Logo do ${esc(p.nome)}" width="64" height="64" class="icon-1x1-medium"></div>` : `<div class="container-icon vxp-logo vxp-logo--letra" aria-hidden="true">${esc(p.nome[0])}</div>`;
+    const botao = p.url
+      ? `<a href="${p.url}" target="_blank" rel="noopener" class="button-arrow w-inline-block"><div class="button-arrow_wrap"><div class="button-arrow_text"><div class="text_button">Acessar ${esc(p.nome)}</div></div><div class="button_container-arrow"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></div><div class="button-arrow_bg"></div></div></a>`
+      : `<a href="/#contato" class="button-arrow w-inline-block"><div class="button-arrow_wrap"><div class="button-arrow_text"><div class="text_button">${p.estado === 'app' ? 'Falar sobre o aplicativo' : 'Falar com a VisionX'}</div></div><div class="button_container-arrow"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></div><div class="button-arrow_bg"></div></div></a>`;
+
+    const slugId = (t) => t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 48);
+    const relLinks = outros.slice(0, 3).map((o) => `<a href="/produtos/${o.slug}/">${esc(o.nome)}</a>`).join(', ');
+    const pergunta = `O que é o ${p.nome} e para quem serve?`;
+    const q = encodeURIComponent(pergunta + ' ' + p.resumo);
+
+    const main = `<main class="main-wrapper">
+<section class="sec_hero-service"><div class="container-full height-100"><div class="hero-service_layout">
+  <div class="hero-service_left">
+    <nav class="vxp-trilha" aria-label="Trilha"><a href="/">VisionX</a> <span aria-hidden="true">/</span> <a href="${p.grupo === 'gestao' ? '/#sistemas' : '/#ferramentas'}">${grupoNome}</a> <span aria-hidden="true">/</span> <span>${esc(p.nome)}</span></nav>
+    ${logo}
+    <div class="spacer-medium"></div>
+    <h1 class="text-4xl text-color-primary">${esc(h1)}</h1>
+    <div class="spacer-medium"></div>
+    <div class="text-base text-color-secondary w-richtext"><p>${esc(lede)}</p></div>
+    ${oferta ? `<p class="vxp-oferta">${esc(oferta.texto)}</p>` : ''}
+    <div class="spacer-huge"></div>
+    ${botao}
+  </div>
+  ${imagem ? `<div class="hero-service_right"><img class="img vxp-hero-img" src="${versao(siteDir, imagem)}" alt="Tela e recursos do ${esc(p.nome)}, ${esc(p.setor.toLowerCase())}" width="1024" height="1024"></div>` : ''}
+</div></div></section>
+
+<section class="vxp-sec vxp-sec--claro" id="recursos"><div class="padding-global"><div class="container-large">
+  <div class="vertical-center"><div data-reveal class="tag"><div class="dot-square"></div><div>Recursos</div></div><div class="spacer-large"></div>
+  <h2 class="text-align-center">O que o ${esc(p.nome)} faz</h2></div><div class="spacer-large"></div>
+  <ul class="vxp-recursos">${recursos.map((r) => `<li><h3>${esc(r.titulo)}</h3>${r.texto ? `<p>${esc(r.texto)}</p>` : ''}</li>`).join('')}</ul>
+</div></div></section>
+
+${art ? `<section class="vxp-sec" id="artigo"><div class="padding-global"><div class="container-large"><div class="vxp-artigo-grade">
+  <aside class="vxp-toc" aria-label="Neste artigo"><strong>Neste artigo</strong><ol>${secoes.map((s) => `<li><a href="#${slugId(s.h2)}">${esc(s.h2)}</a></li>`).join('')}${faq.length ? '<li><a href="#perguntas">Perguntas frequentes</a></li>' : ''}</ol></aside>
+  <article class="vxp-artigo">
+    <div class="tag"><div class="dot-square"></div><div>Artigo</div></div>
+    <h2>${esc(art.titulo_artigo)}</h2>
+    <p class="vxp-meta">Por VisionX · Atualizado em <time datetime="${HOJE}">${HOJE_EXTENSO}</time></p>
+    ${secoes.map((s) => `<h3 id="${slugId(s.h2)}">${esc(s.h2)}</h3>${s.paragrafos.map((t) => `<p>${esc(t)}</p>`).join('')}`).join('')}
+    <p class="vxp-veja">Veja também: ${relLinks}. <a href="/">Página inicial da VisionX</a>.</p>
+  </article>
+</div></div></div></section>` : ''}
+
+${motivos.length ? `<section class="vxp-sec vxp-sec--claro" id="motivos"><div class="padding-global"><div class="container-large">
+  <div class="vertical-center"><div data-reveal class="tag"><div class="dot-square"></div><div>Por que escolher</div></div><div class="spacer-large"></div><h2 class="text-align-center">Por que escolher o ${esc(p.nome)}</h2></div><div class="spacer-large"></div>
+  <ul class="vxp-recursos">${motivos.map((m) => `<li><h3>${esc(m.titulo)}</h3><p>${esc(m.texto)}</p></li>`).join('')}</ul>
+</div></div></section>` : ''}
+
+${faq.length ? `<section class="vxp-sec" id="perguntas"><div class="padding-global"><div class="container-large"><div class="vxp-faq">
+  <div class="vertical-center"><div data-reveal class="tag"><div class="dot-square"></div><div>Perguntas</div></div><div class="spacer-large"></div><h2 class="text-align-center">Perguntas frequentes sobre o ${esc(p.nome)}</h2></div><div class="spacer-large"></div>
+  ${faq.map((f) => `<details name="faq"><summary>${esc(f.p)}</summary><p>${esc(f.r)}</p></details>`).join('')}
+</div></div></div></section>` : ''}
+
+<section class="vxp-sec vxp-sec--claro vxp-ia"><div class="padding-global"><div class="container-large">
+  <h2>Quer uma segunda opinião? Pergunte a uma IA.</h2>
+  <p>Faça a pergunta sobre o ${esc(p.nome)} direto no assistente que você já usa:</p>
+  <div class="vxp-ia-botoes">
+    <a class="button" rel="noopener nofollow" target="_blank" href="https://chatgpt.com/?q=${q}"><div class="text-button-wrap"><div>ChatGPT</div></div></a>
+    <a class="button" rel="noopener nofollow" target="_blank" href="https://www.google.com/search?udm=50&q=${q}"><div class="text-button-wrap"><div>Google IA</div></div></a>
+    <a class="button" rel="noopener nofollow" target="_blank" href="https://www.perplexity.ai/search?q=${q}"><div class="text-button-wrap"><div>Perplexity</div></div></a>
+  </div>
+</div></div></section>
+
+${outros.length ? `<section class="vxp-sec" id="outros"><div class="padding-global"><div class="container-large">
+  <div class="vertical-center"><div class="tag"><div class="dot-square"></div><div>${grupoNome}</div></div><div class="spacer-large"></div><h2 class="text-align-center">Outros produtos da VisionX</h2></div><div class="spacer-large"></div>
+  <div class="vxp-grade">${outros.map(cartaoRelacionado).join('')}</div>
+</div></div></section>` : ''}
+
+<section class="section_cta"><div class="padding-global is-cta"><div class="cta-wrap"><div class="container-large">
+  <div class="cta_top"><div class="cta_text"><div class="text-color-on-primary">${esc(p.setor)}</div></div></div><div class="spacer-huge"></div>
+  <h2 class="text-color-on-primary">Conheça o ${esc(p.nome)}</h2><div class="spacer-medium"></div>
+  <div class="max-width-medium is-33rem"><div class="text-color-on-primary">${esc(p.resumo)}</div></div><div class="spacer-huge"></div>
+  <div class="button_wrapper">${botao}</div>
+</div><div class="overlay"></div></div></div></section>
+</main>`;
+
+    const V = ' w-variant-b70328b2-1dfd-ba7a-c1d1-5c2a5b388d0d';
+    let topoPagina = trocaMeta(topo, { titulo, desc, caminho, imagem: ogDe(p), ld });
+    for (const [de, para] of [['class="navbar"', `class="navbar${V}"`], ['class="padding-global is-navbar"', `class="padding-global is-navbar${V}"`], ['class="navbar_logo-link w-inline-block"', `class="navbar_logo-link w-inline-block${V}"`], ['class="navbar_logo"', `class="navbar_logo${V}"`], ['class="nav_mobile"', `class="nav_mobile${V}"`], ['class="navbar_list"', `class="navbar_list${V}"`]]) {
+      if (!topoPagina.includes(de)) throw new Error('barra: não achei ' + de);
+      topoPagina = topoPagina.replace(de, para);
+    }
+    paginas.push({ caminho, slug: p.slug, html: topoPagina + main.replace(/<\/main>$/, footerHtml + '</main>') + rodape, titulo, desc, art, faq, nPal, recursos, nome: p.nome });
+    if (art && (nPal < 800 || nPal > 1500)) avisos.push(`${p.slug}: artigo com ${nPal} palavras (meta 800 a 1.500)`);
+  }
+  return { paginas, avisos };
+}

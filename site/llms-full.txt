@@ -1,0 +1,894 @@
+# VisionX — texto completo do site
+
+Atualizado em 28 de outubro de 2026.
+
+## FroX
+Endereço: https://visionxma.com/produtos/frox/
+
+Quem opera caminhões sabe que o frete que parece bom nem sempre paga o veículo. A gestão de frotas organiza viagens, abastecimentos, documentos e acertos para decidir com número, não com achismo.
+
+### Por que planilha e caderno deixam a frota no escuro
+Abastecimento anotado no papel e esquecido depois, manutenção lembrada só depois do caminhão quebrar, motorista que liga para saber o que fazer na viagem. É o retrato de muita operação que ainda depende de planilha e caderno. O problema não é falta de esforço: a informação chega tarde e espalhada, e a decisão sai antes de o número existir. Com tudo no sistema e na hora, o histórico completo de cada placa fica sempre à mão para consulta.
+
+Também há o documento. CRLV, seguro e revisão têm data de vencimento, e documento vencido vira multa e caminhão parado na fiscalização. Sem aviso antecipado por placa, o controle fica na memória de quem está no escritório, e a memória falha justamente na semana mais corrida do mês. O mesmo vale para a CNH do motorista, que também carrega data de vencimento e precisa ser acompanhada.
+
+### Custo por quilômetro: o piso do seu frete
+O custo por quilômetro rodado (CPK) é o custo total do período dividido pelos quilômetros rodados no mesmo período. Segundo o material do FroX, o custo soma o que depende de rodar, como diesel, pedágio, pneu, manutenção e comissão, com o que se paga mesmo com o caminhão parado, como parcela, seguro, salário, contador e licenças. Para fazer a conta com os seus números, o site oferece calculadoras abertas, como a de custo por km e a de preço mínimo de frete.
+
+O exemplo publicado no site é direto: R$28.000 de custo total em um mês de 8.000 km resultam em R$3,50 por km. Frete que pague menos que isso por quilômetro rodado dá prejuízo, mesmo parecendo bom no valor cheio. A recomendação é usar um mês inteiro, porque semana é pouco e uma quebra distorce tudo. Isso mostra por que o valor cheio do frete, sozinho, engana quem não conhece o próprio custo.
+
+No FroX o CPK não é arbitrado: sai dos lançamentos da sua própria operação, caminhão a caminhão. Quem dirige o próprio veículo deve incluir um pró-labore na conta, senão está pagando para trabalhar. O resultado aparece em tempo real, por viagem, por caminhão ou por período, com exportação em PDF. Assim o CPK deixa de ser estimativa e passa a refletir o que o caminhão realmente custa para rodar.
+
+### A viagem como unidade de medida
+Em transporte, o resultado do mês é a soma de decisões tomadas uma a uma, no telefone. Se o resultado só aparece somado no fim, você descobre que ganhou ou perdeu, mas nunca onde. Uma frota pode fechar no positivo com três viagens no prejuízo escondidas dentro do total, e enquanto a conta for mensal essas viagens se repetem. Por isso a viagem, com ida e volta na mesma conta, precisa ser a unidade de medida.
+
+A volta vazia é onde o dinheiro mais some. Um frete de R$ 9.000 para 1.500 km de ida vira 3.000 km rodados quando não há carga de retorno, e o lucro aparente pode virar prejuízo. No FroX, carga complementar, retorno e frete fracionado entram como receitas separadas da mesma viagem, e o deslocamento vazio também é registrado. Registrar o vazio impede que o veículo pareça mais lucrativo do que realmente é.
+
+A viagem nasce no sistema com caminhão, motorista, origem, destino, tipo e descrição da carga e datas. Km inicial e final, abastecimentos, pedágio, chapa, diária e adiantamento entram pelo celular com foto do comprovante. O XML da nota importa direto, e a viagem fecha com o saldo em real e o que ainda falta receber ou pagar. Assim não há digitação dupla no fim do mês, e o escritório vê o que a estrada lançou.
+
+### Abastecimento e diesel sob vigilância
+O diesel leva a maior fatia do frete e costuma ser a conta menos medida, porque o abastecimento acontece longe do escritório, à noite, com o motorista apressado. No FroX, o motorista registra litros, valor e a foto do cupom pelo celular, na hora, e também a forma de pagamento, carta frete ou diesel à vista, e o posto. Esse registro cai no painel do escritório na hora, sem cupom perdido no porta-luvas.
+
+A média km/L sai dos seus quilômetros e dos seus litros, viagem a viagem, e fica no histórico. O arla é registrado, mas fica fora do cálculo do consumo, para o número servir de comparação. Se a relação entre km e litros sair de qualquer padrão possível, o sistema aponta a viagem, o que costuma revelar km digitado errado ou abastecimento não lançado. Cada abastecimento entra na conta da viagem e no custo por km do caminhão, mostrando quanto do frete o tanque consumiu.
+
+O material do site dá a dimensão do que está em jogo: um caminhão que roda 8 mil km por mês e cai de 3,3 para 2,9 km/L passa a consumir cerca de 330 litros a mais por mês. Não é um estrondo, é um vazamento que some devagar e só aparece no resultado do trimestre, por isso o registro de todo abastecimento é o ponto de partida.
+
+### Acerto de viagem e comissão de motorista
+O acerto costuma ser feito duas vezes: o motorista faz o dele na estrada, e o escritório faz o seu no fim do mês. Quando os números não batem, ninguém sabe qual está certo, porque ninguém tem a lista completa do que aconteceu. No FroX, o percentual de comissão e sobre o que ele incide ficam no cadastro de cada motorista. O combinado deixa de depender da lembrança de qualquer das partes.
+
+O percentual do dia fica congelado na viagem fechada, então reajustar a comissão depois não recalcula acertos antigos. A comissão entra como despesa da viagem e no CPK do caminhão, o sistema guarda quanto foi pago e quando, e há relatório de comissões por período em PDF. A CNH também tem data, com aviso a partir de 30 dias antes de vencer. Com isso, o lucro que o dono vê já é depois de pagar o motorista, e a pergunta se o acerto de Goiânia já foi feito deixa de existir.
+
+### Simulador: aceitar, negociar ou recusar
+No Plano Frotas, antes de aceitar um frete você informa a distância total, o valor oferecido, pedágio e avulsos e a sua meta de margem. Com o custo por km do caminhão escolhido, o simulador mostra o frete que empata e o frete que bate a meta, calculado como custo dividido por um menos a margem. O objetivo é ter o número na mão, em vez do achismo, no momento da negociação.
+
+O veredito é um de três. Aceitar, quando a margem bate ou passa a meta. Negociar, quando dá lucro abaixo da meta, e então o sistema diz quanto pedir a mais. Recusar, quando o frete não cobre o próprio custo. Sem histórico suficiente no caminhão, usa a média da frota e avisa na tela; sem nenhuma das bases, diz que não sabe. Essa transparência evita um falso aceite baseado em dado insuficiente.
+
+O simulador pertence ao Plano Frotas, junto com a tela Atenção e os alertas. Na página, o exemplo de demonstração parte de 1.850 km, frete de R$ 9.000, pedágio de R$ 620 e meta de 15%, e mostra que faltam R$ 108,82 para bater a meta. São números ilustrativos, de demonstração, que servem para explicar o método e não representam dados de cliente.
+
+### Do plano grátis ao Plano Frotas, com preço na mesa
+O FroX Grátis é permanente, com um caminhão e um motorista, viagens e lançamentos financeiros avulsos sem limite de quantidade, Relatório Geral completo em PDF, backup e exportação. O Plano Frotas libera app do motorista, fotos e anexos, recorrências e parcelas, fornecedores e postos, simulador, alertas e todos os relatórios, sem anúncios externos. As quantidades de caminhões, motoristas e usuários do Plano Frotas seguem a oferta contratada.
+
+O preço é publicado: R$75/mês no ciclo mensal com 2 caminhões inclusos, R$69/mês no semestral e R$63,75/mês no anual, com R$50/mês por caminhão adicional. O pagamento é pelo Asaas, com Pix, boleto ou cartão, sem taxa de implantação. O sistema roda no navegador, pode ser instalado como aplicativo e funciona sem rastreador. O mesmo preço vale em todo o Brasil, e há uma calculadora na página para ver o total da sua frota.
+
+### Perguntas frequentes
+**O FroX Grátis expira?**
+Não. O plano é permanente, dentro dos seus limites: um caminhão, um motorista, viagens e lançamentos financeiros avulsos sem limite de quantidade e o Relatório Geral completo em PDF. Você assina o Plano Frotas apenas quando precisar de mais caminhões, do app do motorista e dos demais relatórios.
+
+**Quanto custa o Plano Frotas?**
+R$75/mês no ciclo mensal, com 2 caminhões inclusos, R$69/mês no semestral e R$63,75/mês no anual. Cada caminhão adicional custa R$50/mês. O valor depende da quantidade de caminhões cadastrados, e não há custo por usuário no Plano Frotas.
+
+**Como funciona o pagamento?**
+O pagamento é processado pelo Asaas, que aceita Pix, boleto bancário e cartão de crédito. Você escolhe o ciclo, mensal, semestral ou anual, e pode cancelar pelo suporte. Ao sair do Plano Frotas, é possível permanecer no FroX Grátis, sem apagar o histórico.
+
+**Preciso instalar rastreador nos caminhões?**
+Não. O FroX funciona sem rastreador. O rastreamento, quando desejado, é um serviço contratado à parte, direto com o parceiro, e o FroX dá acesso ao painel dele. O sistema roda no navegador e pode ser instalado como aplicativo no computador e no celular.
+
+**O motorista usa o sistema pelo celular?**
+O aplicativo do motorista faz parte do Plano Frotas. Por ele o motorista lança abastecimentos, pedágio, chapa, diária e adiantamento com foto de comprovante, e tudo aparece no painel do escritório. O titular também pode usar o sistema pelo navegador do celular em qualquer plano.
+
+---
+
+## ConstruSoft
+Endereço: https://visionxma.com/produtos/construsoft/
+
+No fim do mês, quem toca obra quer saber o que entrou, o que saiu e quem deve. A gestão de obras liga cliente, despesa e caixa para responder isso sem depender de arquivos soltos.
+
+### O dinheiro sai antes de entrar quando ninguém vê o vencimento
+Na construção, o caixa aperta quando a parcela do cliente vence e a despesa de material chega no mesmo período, sem que ninguém tenha enxergado os dois lados. Quem controla tudo em planilha e caderno costuma ter uma aba por obra, vencimentos lançados à mão e notas guardadas em pastas ou em fotos no celular. Construtora, empreiteiro com várias obras e quem ainda junta tudo na planilha sentem o mesmo aperto, cada um por uma tela diferente.
+
+O resultado é um controle que depende de memória. A pergunta que se repete toda semana, qual parcela vence e de qual cliente, exige abrir arquivo por arquivo. E a seguinte, aquela despesa foi de qual obra e quando, fica sem resposta rápida justamente quando o fornecedor cobra. Quando as respostas ficam em lugares diferentes, o dono só percebe o problema quando o caixa já está pressionado.
+
+### Lucro real de cada obra: orçado, gasto e recebido
+Empreiteiro com várias obras abertas precisa saber qual delas puxou o caixa para baixo. Para chegar ao lucro de cada uma é preciso somar gasto e recebido obra por obra, e quando o dinheiro de uma é usado para pagar o material de outra, o resultado individual se perde. O dinheiro de uma obra não deve sumir pagando o material de outra, e para isso cada obra precisa aparecer com o progresso, o orçado e o gasto.
+
+No ConstruSoft, cada obra tem uma aba de resumo que compara o valor de venda fechado com o cliente com as despesas lançadas e os recebimentos. O painel mostra gasto, recebido e saldo de todas as obras em tempo real, com fluxo de caixa dos últimos 12 meses. A aba financeira guarda lucro estimado, comissão e margem. Os relatórios filtram o período e saem em PDF e CSV.
+
+### Parcelas de clientes e recibo numerado
+Construtora que vende em parcelas lida com entrada, vencimentos e pagamentos parciais. No sistema, entrada e parcelas saem da negociação da obra, e a baixa aceita pagamento parcial, mantendo o saldo em aberto. O histórico financeiro de cada cliente, pessoa física ou jurídica, fica guardado, com busca automática de CNPJ. Cada cliente guarda o histórico financeiro, e as parcelas aparecem separadas por obra ou por cliente.
+
+Ao registrar o recebimento, o recibo sai em PDF, numerado, com o valor por extenso, os dados do pagador e a forma de pagamento. A tela de contas a receber mostra no topo o total, o recebido, o pendente e o atrasado, e separa as parcelas por obra ou por cliente. Não é preciso redigitar nome, documento e valor por extenso a cada parcela paga, como acontece com recibo feito à mão.
+
+### Despesas, contas a pagar e estoque de material
+Cada despesa entra com data, obra, categoria, valor e situação: pendente, aprovada ou paga. A nota fica anexada ao lançamento, e o vencimento gera a conta a pagar automaticamente. Equipe e fornecedores, de pedreiro a mestre de obras, são cadastrados com a função e vinculados a cada obra. Assim, a nota não fica de um lado e o valor de outro.
+
+O estoque registra entradas e saídas de material com custo unitário e avisa quando um item fica abaixo do mínimo definido. Os fornecedores são vinculados às obras e as compras entram como despesas. Relatórios filtram por período e saem em PDF e CSV, e as permissões granulares definem o que cada pessoa vê e faz. Quem precisa de cotação ou pedido de compra com fornecedores deve saber que esses módulos não existem; as compras entram como despesas.
+
+Pedreiro, eletricista, mestre: cada pessoa é cadastrada com a função dela, e as permissões granulares definem, ação por ação, o que cada usuário pode ver, criar, editar ou excluir. Como os usuários são ilimitados, o time inteiro entra no sistema sem mudar o preço, e o dono controla o acesso em vez de limitar quantas pessoas o utilizam.
+
+### Como começar: três passos e 14 dias de teste
+O primeiro passo é criar a conta, com 14 dias grátis e o sistema completo, sem cartão de crédito. O segundo é lançar a obra e a negociação: cliente, valor acordado, entrada e parcelas. O terceiro é acompanhar o resumo da obra, com total recebido e lucro líquido lado a lado. As parcelas das contas a receber nascem da negociação da obra.
+
+Ninguém precisa passar a limpo o histórico inteiro para ver o caixa de hoje: a orientação do site é começar pelas obras em andamento. Ao fim do teste, o acesso fica bloqueado até o primeiro pagamento ser confirmado. Não existe plano gratuito permanente, e o sistema funciona no navegador do celular e do computador, com internet. O sistema roda no navegador do celular e do computador, não tem aplicativo nas lojas e precisa de internet para funcionar.
+
+### Preço fixo, com obras e usuários ilimitados
+O plano Pro custa R$ 479,99 por mês, sem fidelidade, com obras e usuários ilimitados, e não há cobrança por pessoa ou por obra. Inclui permissões granulares, estoque, despesas, contas a pagar e a receber, relatórios avançados, integrações com BrasilAPI e ViaCEP e suporte prioritário. O plano é sempre o mesmo: muda só por quanto tempo você contrata.
+
+Os pacotes pré-pagos não renovam sozinhos. Em 6 meses são R$ 2.039,95 à vista no PIX ou boleto, ou 6x de R$ 399,99 no cartão. Em 12 meses, R$ 3.875,90 à vista ou 12x de R$ 379,99. Em 18 meses, R$ 5.507,85 à vista ou 18x de R$ 359,99. Equivalem a R$ 339,99, R$ 322,99 e R$ 305,99 por mês, e a cobrança é processada pelo Asaas.
+
+Quem prefere o plano mensal paga por PIX ou boleto e cancela quando quiser, mantendo o acesso até o fim do período pago. Cada pagamento libera 30 dias de acesso por mês contratado, contados a partir do vencimento, e pagar adiantado soma os dias ao que ainda resta. Se a próxima cobrança não for paga, o sistema bloqueia o acesso e mostra a tela de assinatura. Os pacotes pagos à vista no PIX ou boleto saem 15% abaixo do parcelado no cartão.
+
+### O que o ConstruSoft não faz, dito com clareza
+A página publica o que o sistema não cobre. Ele não emite nota fiscal nem se conecta à Sefaz: guarda o arquivo da nota como anexo da despesa. Também não tem orçamento com composições SINAPI ou SICRO, cronograma físico-financeiro, Gantt, medições por etapa nem diário de obra (RDO). Cada obra tem um valor orçado para comparar com o gasto real.
+
+Tampouco tem módulos típicos de incorporadora, como espelho de vendas de unidades, portal do comprador, reajuste por índice e gestão de distrato, nem cotação ou pedido de compra. Em segurança, os dados ficam em servidor em São Paulo, cada empresa isolada das demais, com termos, privacidade, consentimento registrado e exclusão de conta. A página reúne um glossário de gestão de obras que indica, termo a termo, se o ConstruSoft tem ou não aquele recurso.
+
+O ConstruSoft é desenvolvido pela VisionX, com sede em Pedreiras, no Maranhão, e está no ar desde maio de 2026. A empresa não tem relação com a Construsoft europeia, de software BIM. Para quem precisa de orçamento SINAPI, cronograma ou diário de obra, o próprio FAQ indica que o ideal é avaliar sistemas especializados nesses módulos, o que mostra a delimitação honesta do que o produto cobre.
+
+### Perguntas frequentes
+**O que é o ConstruSoft?**
+É um sistema online de gestão de obras para construtoras brasileiras, da VisionX. Reúne obras, clientes, parcelas a receber com recibo em PDF, despesas, estoque de material e equipe em um só lugar, e mostra o lucro de cada obra em tempo real.
+
+**Quanto custa o ConstruSoft?**
+O plano Pro custa R$ 479,99 por mês, com usuários e obras ilimitados. Os pacotes à vista no PIX ou boleto saem a R$ 2.039,95 (6 meses), R$ 3.875,90 (12 meses) e R$ 5.507,85 (18 meses). Os pacotes não renovam sozinhos e podem ser parcelados no cartão.
+
+**Existe teste grátis?**
+Sim. Os primeiros 14 dias são grátis, com o sistema completo e sem cartão de crédito. Ao fim do teste o acesso fica bloqueado até o primeiro pagamento ser confirmado. Não existe plano gratuito permanente.
+
+**O ConstruSoft emite nota fiscal?**
+Não. O sistema não emite nota fiscal eletrônica nem se conecta à Sefaz. Ele guarda o arquivo da nota como anexo da despesa lançada na obra. Para emitir nota é preciso usar o emissor da prefeitura, do estado ou um sistema de faturamento separado.
+
+**Onde ficam os dados da minha empresa?**
+Os dados ficam em servidor no Brasil, em São Paulo, e uma construtora nunca vê os dados de outra. Termos de uso e política de privacidade são publicados, com consentimento registrado e exclusão de conta.
+
+---
+
+## SoftPay
+Endereço: https://visionxma.com/produtos/softpay/
+
+Quem vende no balcão, no WhatsApp ou na internet precisa saber quanto a loja lucrou de verdade, não só quanto entrou. Caixa, estoque, fiado e financeiro no mesmo sistema respondem a isso.
+
+### Fechar o mês no escuro
+Não saber quanto a loja lucrou no mês, descobrir que o estoque sumiu só quando o cliente pede, deixar o fiado no caderno e fechar o caixa sem saber se bateu: o site do SoftPay descreve assim a rotina de quem controla tudo entre caderno, planilha e memória. O dinheiro entra, mas ninguém sabe o que sobrou. O site resume o efeito em uma frase: quem não sabe o lucro da loja acaba trabalhando só para pagar fornecedor.
+
+O site cita a Agência Sebrae de Notícias, de 07/01/2026: 61% dos empreendedores brasileiros pagam contas da empresa com a conta pessoal. Quando as finanças da loja e as da pessoa se misturam, o lucro some na confusão, e a loja passa a trabalhar só para pagar fornecedor. É um dado que mostra o tamanho do problema da mistura entre finanças pessoais e da empresa.
+
+### Lucro real: a maquininha mostra o que entrou, o sistema mostra o que sobrou
+A maquininha mostra o que entrou. O SoftPay propõe mostrar o que sobrou: você informa uma vez as taxas da maquininha, o imposto e as contas do mês, e o sistema desconta tudo das vendas. O período é livre, das vendas de hoje, dos últimos 30 dias ou o que você escolher. A informação das taxas é digitada uma só vez, e depois o cálculo acompanha as vendas.
+
+O lucro real, segundo a página, é vendas menos custo, taxas, imposto e contas. Isso transforma o fechamento do mês em número conferível e dá base para decidir preço, compra e desconto. O financeiro inclui contas a pagar e a receber e serviços e garantias. O fechamento deixa de ser um chute e vira um número que a própria tela mostra.
+
+Na prática, o dono passa a saber se uma venda no cartão com taxa alta compensa, se o imposto está pesando e se as contas do mês cabem na margem. A página mostra um print real do sistema, numa loja de demonstração, com as vendas do período e o lucro que sobra depois dos descontos informados, e não promete resultado de faturamento a ninguém.
+
+### Caixa, PDV e estoque que baixa sozinho
+O caixa funciona no celular e no computador, com leitor de código de barras e Pix no balcão. O fechamento sai conferido, com o total de cada forma de pagamento. O site cita, em depoimento de lojista, que uma venda se faz com apenas três cliques. Também há mesas e comandas para quem atende no salão.
+
+Cada venda baixa o estoque, e o sistema avisa o que está acabando. O estoque trabalha com variações e curva ABC, que ajuda a separar o que mais pesa nas vendas. Quem já tem produtos em outro sistema, planilha ou catálogo pode importá-los, e o plano anual inclui essa importação feita pela equipe do SoftPay. Isso evita o inventário surpresa, em que o saldo do sistema não bate com a prateleira.
+
+### Fiado na ficha do cliente, com lembrete pelo WhatsApp
+O fiado deixa o caderno e vai para a ficha do cliente, onde fica registrado o que ele deve. O sistema envia lembrete pelo WhatsApp, o que evita o cliente que esquece de pagar e o lojista que esquece de cobrar. Há também cobrança por link Pix. O cliente passa a ter ficha própria, com o histórico do que comprou e do que deve.
+
+O módulo de clientes se integra ao restante: o que foi vendido a prazo entra no financeiro e nas contas a receber. Para o lojista, isso significa saber quem deve, quanto e desde quando, sem folhear caderno, e cobrar na hora certa. Cupons e cartão fidelidade ajudam ainda a trazer o cliente de volta, usando o mesmo cadastro.
+
+### Notas fiscais, loja online e venda por áudio
+O SoftPay emite NFC-e (nota do consumidor) e NF-e direto do caixa. É preciso apenas o certificado digital da empresa, e o suporte ajuda a configurar. O sistema também recebe notas e oferece um pacote do contador. Para o contador, há ainda o pacote do contador com o que ele precisa.
+
+A loja online recebe pedidos com Pix e tem link para a bio do Instagram e para o WhatsApp. Há ainda venda registrada por áudio no WhatsApp, como em: vendi 2 coca no Pix. Equipe com até 10 usuários, mesas e comandas, cupons e cartão fidelidade e relatórios completam a lista publicada. Tudo isso fica dentro do mesmo sistema, sem integrar ferramentas diferentes para cada tarefa.
+
+### Planos e garantia
+O sistema é o mesmo nos dois planos. O Plano Mensal custa R$109 por mês, com garantia de 14 dias e suporte no WhatsApp, e cancela quando quiser, sem multa. O Plano Anual sai por 12x R$83,08 ou R$997 à vista, contra R$1.308 de 12 meses no mensal, com preço travado por 12 meses. A garantia é de 14 dias: se não gostar, devolve-se 100% do valor.
+
+O Anual inclui sua loja configurada pela equipe, com produtos importados, loja online montada, atendimento preferencial no WhatsApp e suporte completo por 12 meses. Em qualquer plano, o reembolso integral pode ser pedido em até 14 dias depois do pagamento, por e-mail. Passado o prazo, o anual não é reembolsável. Sem a opção do anual, o mensal permanece com todas as funções do ERP Completo.
+
+A contratação é feita pelo WhatsApp, onde se recebe o link de pagamento por Pix ou cartão, e o acesso é liberado no mesmo dia. Os termos de uso, a política de privacidade e a política de reembolso estão publicados no rodapé da página. A empresa responsável é a VisionX Inova Simples, com suporte pelo e-mail suporte@softpaybr.com.
+
+### Para qual loja serve e como é o suporte
+O site indica loja que vende produto no balcão, no WhatsApp ou na internet: roupas, celulares, cosméticos, mercadinho, pet shop, autopeças e variedades. Não é preciso instalar nada: abre no navegador do celular e do computador, e pode ser instalado como aplicativo. Na dúvida, o site orienta chamar no WhatsApp para saber se serve.
+
+O SoftPay é feito pela VisionX Inova Simples, empresa brasileira, e quem responde no WhatsApp conhece o sistema por dentro. Quem não souber usar conta com o suporte humano no WhatsApp e com a aba Tutoriais, que tem vídeos curtos de cada parte do sistema. Esse atendimento humano é uma das promessas centrais do plano, e o acesso é liberado no mesmo dia.
+
+Para o lojista que já tem produtos em outro sistema, planilha ou catálogo, o plano anual prevê que a equipe passe tudo para o SoftPay e monte a loja online com a logo do cliente e o link pronto para a bio do Instagram e para o WhatsApp. É um trabalho feito pela equipe, que tira do dono a tarefa de cadastrar item por item antes de começar a vender.
+
+### Perguntas frequentes
+**O SoftPay emite nota fiscal?**
+Sim. O SoftPay emite NFC-e, a nota do consumidor, e NF-e direto do caixa. Você só precisa do certificado digital da sua empresa, e a equipe ajuda a configurar. O sistema também registra notas recebidas e oferece um pacote do contador.
+
+**Quanto custa o SoftPay?**
+O Plano Mensal custa R$109 por mês. O Plano Anual sai por 12x R$83,08 ou R$997 à vista, contra R$1.308 de 12 meses no mensal. O sistema é o mesmo; o anual inclui configuração da loja, loja online montada e suporte completo por 12 meses.
+
+**Preciso instalar alguma coisa?**
+Não. O SoftPay abre no navegador do celular e do computador. Se quiser, é possível instalar como aplicativo. O caixa funciona com leitor de código de barras, e a loja online recebe pedidos com Pix.
+
+**Posso cancelar ou pedir reembolso?**
+Pode. O mensal cancela quando quiser pelo WhatsApp, sem multa. Em qualquer plano, o reembolso integral pode ser pedido em até 14 dias depois do pagamento, por e-mail. Depois desse prazo, o plano anual não é reembolsável.
+
+**E se eu não souber usar o sistema?**
+O suporte atende pelo WhatsApp, com gente do time SoftPay. A aba Tutoriais também tem vídeos curtos de cada parte do sistema. O plano anual inclui atendimento preferencial e suporte completo por 12 meses.
+
+---
+
+## HotelGestão
+Endereço: https://visionxma.com/produtos/hotelgestao/
+
+Na recepção de um hotel ou pousada, reserva, hóspede, pagamento e quarto costumam viver em lugares diferentes. O HotelGestão reúne tudo num sistema em nuvem, com preço fixo por plano.
+
+### O que a hospedagem perde quando a operação vive em lugares separados
+Em muita pousada e em muito hotel, a reserva chega por WhatsApp, a ficha do hóspede fica em papel, o sinal é cobrado à mão e o café da manhã, a limpeza e o estoque têm cada um o seu caderno. Cada informação mora num lugar, e a recepção passa o turno procurando o dado certo em vez de receber o hóspede.
+
+O custo aparece nos detalhes: um comprovante que se perde, um quarto que ninguém sabe se já foi liberado, um caixa que não fecha na troca de turno e, no pior caso, dois hóspedes com a mesma reserva. Nenhum desses problemas nasce de falta de cuidado da equipe, e sim de uma operação espalhada, que obriga a anotar a mesma coisa duas vezes.
+
+### Reserva dupla: um mapa único para balcão, WhatsApp, site e agências
+Overbooking é vender mais reservas do que o hotel tem de quartos. Pelo Código de Defesa do Consumidor, quem chega com a reserva confirmada pode exigir o cumprimento da oferta, aceitar hospedagem equivalente ou cancelar com devolução atualizada, e o hotel responde pelos danos independentemente de culpa. Por isso evitar a reserva dupla é questão de operação, não de sorte.
+
+O HotelGestão coloca todos os quartos e dias numa grade só, o mapa de reservas interativo. Dá para arrastar e soltar para mover uma reserva e criar grupos com vários quartos, com extrato e pagamento do grupo. Balcão, WhatsApp, site e agências alimentam o mesmo mapa, e a trava contra reserva dupla fica no banco de dados, não só na tela.
+
+O calendário também conversa com os canais: a ligação com Booking, Airbnb e Vrbo é feita por calendário iCal. No plano Avançado entram a interface de integração (API) e o conector Channex. A página oficial é direta num ponto: o HotelGestão não tem gestor de canais próprio, e quem precisa disso deve planejar a integração por essas vias.
+
+### Caixa por operador: quem abriu, quem fechou, o que foi estornado
+A troca de turno é onde o caixa costuma se perder. No HotelGestão, cada operador abre e fecha o próprio caixa, e dinheiro, cartão e Pix aparecem separados. Pagamento, estorno e alteração ficam no histórico com nome e hora, o que dá rastro de quem fez o quê e encurta a conferência no fim do dia.
+
+A cobrança sai da própria reserva. O sistema gera QR Code e copia e cola do Pix no valor do sinal ou do saldo, sem digitar o valor de novo, e o pagamento cai no caixa. Comprovante, extrato e cobrança seguem pelo WhatsApp, com mensagens editáveis e prévia ao vivo e, no plano Profissional, o resumo do dia enviado ao dono.
+
+### Ficha do hóspede: da FNRH de papel ao pré-check-in no celular
+A Ficha Nacional de Registro de Hóspedes (FNRH) é digital, na plataforma do Ministério do Turismo, e substitui a ficha de papel em hotéis, pousadas e demais meios de hospedagem; segundo o guia do próprio HotelGestão, é obrigatória desde 20 de abril de 2026, pela Portaria MTur nº 41/2025. Entre os dados pedidos estão identificação, contato, endereço, informações de viagem e dados da hospedagem.
+
+No HotelGestão, a FNRH digital com modelos prontos está em todos os planos. No Profissional, o hóspede preenche a ficha e assina pelo celular antes de chegar, e na recepção o check-in vira um clique. No Avançado, a ficha é enviada à plataforma do Ministério do Turismo com a chave do seu estabelecimento, evitando o retrabalho de lançar a mesma ficha duas vezes.
+
+### Governança, estoque e a visão do dono
+Na saída do hóspede, o quarto vai para a limpeza e só volta à venda quando a vistoria o libera, de modo que a camareira saiba qual quarto liberar e a recepção não ofereça um quarto ainda sujo. No plano Profissional somam-se estoque, consumo por quarto e por hóspede, café da manhã e garagem, além do day use com venda avulsa e pagamento dividido.
+
+Para o dono, há relatórios de ocupação, receita e conciliação por conta; no Avançado entram diária média, receita por quarto disponível, receita por canal e DRE mensal. O Monitor de Reputação varre a internet atrás de avaliações e menções, mostra cada comentário com fonte e data, classifica por risco Baixo, Moderado ou Alto e avisa no WhatsApp se algo mudar. As permissões por tela mostram a cada papel só o que ele precisa.
+
+### Um sistema para cada tipo de hospedagem
+O mesmo sistema muda de vocabulário e de telas conforme a casa: quarto, suíte, cama, chalé, imóvel ou área de barraca. Há páginas dedicadas a pousada, hotel, chalés e cabanas, aluguel por temporada, hostel, motel e camping e glamping. No hostel, por exemplo, cada 4 camas contam como 1 quarto no limite do plano; no motel, o painel de suítes é ao vivo e o plano de entrada é o Essencial, a R$ 199 por mês.
+
+Nos demais casos, os planos são fixos pelo tamanho da casa: Início, R$ 99 por mês, até 12 quartos e 2 usuários (a página de pousada informa até 15 quartos); Profissional, R$ 209 por mês, até 40 quartos, com usuários ilimitados; Avançado, R$ 350 por mês, até 80 quartos; e Rede, R$ 649 por mês, com quartos ilimitados, duas propriedades na mesma conta e gerente de conta dedicado. No pagamento anual, os valores mensais são R$ 85, R$ 179 e R$ 300 para Início, Profissional e Avançado.
+
+Todos os planos começam com 14 dias de teste do Avançado completo, sem cartão, sem fidelidade, sem taxa de implantação e sem comissão sobre as reservas. A migração dos dados é gratuita. O sistema roda no navegador do computador, do tablet e do celular, sem instalar nada: basta cadastrar os quartos e tarifas e começar a operar no mesmo dia.
+
+### Perguntas frequentes
+**Preciso instalar alguma coisa?**
+Não. O HotelGestão roda no navegador do computador, do tablet e do celular. Basta ter acesso à internet.
+
+**Quanto custa o HotelGestão?**
+Início custa R$ 99 por mês até 12 quartos, Profissional R$ 209 até 40 quartos e Avançado R$ 350 até 80 quartos. O plano Rede custa R$ 649 por mês, com quartos ilimitados. O preço é fixo por plano e não há comissão por reserva.
+
+**Tem fidelidade ou taxa de implantação?**
+Não tem nenhuma das duas. A assinatura é mês a mês, você cancela quando quiser, e a migração dos seus dados é gratuita em todos os planos.
+
+**O sistema faz a ficha digital de hóspedes (FNRH)?**
+Faz, em todos os planos. No plano Avançado, a ficha é enviada à plataforma do Ministério do Turismo com a chave do seu estabelecimento.
+
+**Funciona com Booking e Airbnb?**
+O calendário se liga ao Booking, ao Airbnb e ao Vrbo por iCal. O plano Avançado traz interface de integração (API) e o conector Channex. O HotelGestão não tem gestor de canais próprio.
+
+---
+
+## Finagro
+Endereço: https://visionxma.com/produtos/finagro/
+
+Caderno que molha, planilha que só uma pessoa entende e decisão no achismo: é assim que muita fazenda ainda se gere. O FINAGRO junta rebanho, dinheiro, tarefas e mapa da fazenda num app só.
+
+### Por que o caderno e a planilha deixam a fazenda no escuro
+Quem cuida de gado, leite, lavoura ou granja anota onde o trabalho acontece: no curral, na loja agropecuária, na estrada. O caderno molha e se perde, a planilha só uma pessoa sabe usar e, no fim do mês, ninguém afirma se a atividade deu lucro. A decisão de vender, comprar ou cortar gasto acaba sendo tomada no achismo.
+
+Gestão rural começa com o registro na hora e com a resposta a três perguntas: quanto entrou, quanto saiu e o que vence. Quando esses dados ficam espalhados, o produtor descobre o atraso da vacina ou o aperto de caixa tarde demais. O FINAGRO propõe concentrar tudo num app de celular, que também abre no computador.
+
+### Lançar no curral, mesmo sem sinal
+O app foi pensado para o celular, com botões grandes e lançamentos em segundos: despesa, venda ou leite do dia. Segundo a página oficial, sem sinal o gasto, a venda ou a vacina ficam salvos no aparelho e sobem sozinhos quando a internet volta, e o app avisa isso na hora. Para entrar pela primeira vez num aparelho e ver o que a equipe lançou em outro celular, é preciso sinal.
+
+Quem já tem a vida numa planilha não precisa redigitar: no Excel, basta salvar como CSV e enviar o arquivo, e o FINAGRO importa animais, despesas, receitas, fornecedores e itens de estoque. Os dados ficam guardados na nuvem com a sua conta, de modo que trocar de celular não faz perder nada, e as listas e os relatórios saem em PDF e planilha quando você quiser.
+
+### Controle de rebanho: ficha, lote, vacina e pesagem
+Controle de rebanho é anotar, de cada animal ou lote, o que entra, o que sai e o que acontece: nascimento, compra, pesagem, vacina, cobertura, venda e morte. No FINAGRO, a ficha individual guarda brinco, raça, peso e foto, e serve para a vaca de leite, a matriz ou o reprodutor. A ficha de lote serve quando importa o grupo: bezerros da recria, boi na engorda, galpão, tanque ou apiário.
+
+O plano grátis aceita até 1.000 animais com ficha, e o lote não tem limite de cabeças: um galpão com 25 mil aves conta como um lote só. O app cuida de vacinas e sanidade, reprodução com parto previsto, pesagem e ganho médio diário (GMD), e avisa o que está atrasado, como bezerras na idade da vacina de brucelose ou animais sem pesagem há mais de 60 dias.
+
+### GTA: o app registra e lembra, mas não emite
+A GTA (Guia de Trânsito Animal) é o documento obrigatório para transportar animais vivos, seja para venda, abate, leilão, exposição ou outra fazenda. É emitida pelo serviço de defesa agropecuária do estado, em geral pela internet, e depende do cadastro da propriedade e das vacinas obrigatórias em dia. Regras e prazos mudam de um estado para outro.
+
+O FINAGRO não emite a guia. Ele cuida do que vem antes e do que vem depois: avisa quando há bezerras na idade da vacina de brucelose ainda sem a vacina anotada, lista na tela O que vence as vacinas e declarações obrigatórias do seu estado para o que você cria, registra cada GTA emitida e lembra um dia antes do vencimento.
+
+### Dinheiro da fazenda: fluxo de caixa, contas e relatórios
+Fluxo de caixa rural é a lista, por data, do dinheiro que entra e sai: venda de animais, leite e grãos, compra de insumos, diárias, parcelas e impostos. No FINAGRO, toda conta lançada com vencimento entra em Contas a pagar e a receber e no saldo previsto, e quando é paga passa de prevista para realizada sem redigitar. A primeira tela mostra entrou, saiu e sobrou no mês.
+
+Cada lançamento leva a fazenda e, se você quiser, o centro de custo, como cria, engorda, leite ou lavoura. O relatório Resultado por propriedade mostra qual fazenda deu lucro e qual deu prejuízo no período. Os relatórios de receitas e despesas e de despesas por categoria saem em PDF e CSV, que é o que o contador costuma pedir no fechamento do ano.
+
+### LCDPR: o arquivo para o contador
+O LCDPR (Livro Caixa Digital do Produtor Rural) é o arquivo em que o produtor pessoa física registra receitas, despesas de custeio e investimentos da atividade rural para a Receita Federal. Segundo a página do FINAGRO, é obrigatório para quem teve receita bruta rural acima de R$ 4,8 milhões no ano e é entregue até o fim do prazo da declaração do Imposto de Renda.
+
+O app gera o arquivo TXT no leiaute da Receita, com a abertura, os imóveis (uma linha por fazenda cadastrada) e os lançamentos de receitas e despesas que você registrou. Os dados do contribuinte e das contas bancárias saem para o contador completar. O app não transmite o livro: a validação, a assinatura e a entrega são feitas no programa da Receita Federal, pelo produtor ou pelo contador.
+
+### Lavoura, equipe, mercado e planos
+Para quem planta, o app tem safras, talhões, caderno de campo, custo por hectare, chuva do pluviômetro e colheita com o comprador, além de área por GPS, máquinas e manutenção, estoque de insumos e clima da fazenda. A equipe entra com papel e permissão: no plano Campo são 5 pessoas. No mercado, há a cotação do boi gordo pela CONAB, notícias do agro, marketplace de animais, simulador de crédito do Pronaf e o assistente FINAGRO AI.
+
+O plano Campo é grátis para sempre: até 3 fazendas, 5 pessoas e 1.000 animais com ficha, com todas as funções. Essencial custa R$ 59,90 por mês ou R$ 599 por ano (6 fazendas, 10 pessoas, 5.000 animais); Profissional, R$ 149,90 ou R$ 1.499 (15 fazendas, 30 pessoas, 25.000 animais); Avançado, R$ 299,90 ou R$ 2.999 (50 fazendas, 100 pessoas, animais sem limite). O Empresarial parte de R$ 699 por mês. O aplicativo está na Google Play para Android; no iPhone, no tablet e no computador, funciona pelo navegador em app.finagro.app.
+
+### Perguntas frequentes
+**O FINAGRO é grátis mesmo?**
+O plano Campo é grátis para sempre e não pede cartão: até 3 fazendas, 5 pessoas e 1.000 animais com ficha, com lote de qualquer tamanho e todas as funções do app. Os planos pagos, de R$ 59,90 a R$ 299,90 por mês, atendem quem precisa de mais fazendas, gente ou animais com ficha.
+
+**Funciona sem internet no curral?**
+Para lançar, funciona. Sem sinal, o gasto, a venda ou a vacina ficam salvos no celular e sobem sozinhos quando a internet voltar. Para entrar pela primeira vez num aparelho e ver o que a equipe lançou em outro celular, é preciso sinal.
+
+**Tem para iPhone?**
+O aplicativo de celular está na Play Store, para Android. No iPhone, no tablet e no computador, o FINAGRO funciona pelo navegador em app.finagro.app, com a mesma conta e os mesmos dados.
+
+**O FINAGRO emite a GTA?**
+Não. A GTA é emitida no sistema da defesa agropecuária do seu estado. No FINAGRO você registra as GTAs emitidas, o app lembra um dia antes do vencimento e avisa quando falta anotar a vacina que trava a guia.
+
+**Consigo trazer a planilha que já uso?**
+Consegue. No Excel, salve a planilha como CSV e envie o arquivo: o FINAGRO importa animais, despesas, receitas, fornecedores e itens de estoque, e ninguém precisa redigitar o que já está na planilha.
+
+---
+
+## Seu Plantão
+Endereço: https://visionxma.com/produtos/seuplantao/
+
+Quem faz plantão em vários hospitais precisa saber onde estará e quanto tem a receber. O Seu Plantão organiza agenda, hospitais, valores e relatórios num aplicativo que funciona offline e instala no celular.
+
+### Plantonista, vários hospitais e recebimento de vista
+Quem faz plantão costuma trabalhar em mais de um serviço, com escalas que mudam e pagamentos que chegam em datas e valores diferentes. Guardar tudo de cabeça, em mensagens ou em planilha é arriscado: um plantão esquecido na agenda ou um pagamento atrasado que passa despercebido custam tempo e dinheiro. O Seu Plantão se apresenta como feito para quem faz plantão e cansou de perder recebimento de vista.
+
+A proposta do aplicativo é reunir seus plantões, hospitais e recebimentos num lugar só, sem planilha. A agenda diz onde e quando você atua; o controle financeiro diz o que já caiu, o que está previsto e o que passou do prazo. Juntar as duas coisas evita a lacuna entre o que se trabalhou e o que se recebeu.
+
+### Agenda: calendário mensal com uma cor por hospital
+A agenda é um calendário mensal com um bloco colorido por hospital. Segundo a página oficial, basta tocar num dia vazio e o plantão está criado em menos de 10 segundos. A cor por hospital permite enxergar de relance a distribuição do mês, quantos plantões em cada serviço e onde estão os dias livres.
+
+O cadastro de hospitais é feito uma vez: você define valor, carga horária e cor, e depois é só escolher o hospital ao criar um plantão. O app também permite cadastrar um hospital pelo CNPJ, e o primeiro plantão sai em segundos. Se houver plantões ligados a um hospital, a exclusão é recusada, e a saída é arquivá-lo para tirá-lo da lista sem perder o histórico.
+
+### Recebimentos: o que caiu, o que está previsto e o que atrasou
+O Seu Plantão acompanha o que já caiu, o que está previsto e o que passou do prazo, hospital por hospital. Para conciliar, você informa quanto caiu e o app descobre quais plantões foram quitados; valores que não fecham com nenhum plantão pendente também são sinalizados. É um controle do que você tem a receber e do que está atrasado.
+
+Há ainda uma alíquota, um percentual único para estimar o valor líquido. A própria página avisa que isso não substitui o cálculo do seu contador. O objetivo é dar uma noção do quanto fica no bolso, deixando claro que a apuração formal de impostos continua sendo assunto de profissional de contabilidade.
+
+### Relatórios: receita, horas e qual hospital paga melhor
+Os relatórios mostram a receita mês a mês, as horas trabalhadas, o valor médio do plantão e qual hospital paga melhor. Para quem concilia vários serviços, essa última informação ajuda a decidir onde vale a pena aceitar mais plantões e onde a hora trabalhada rende menos.
+
+CRM, especialidade e cidade são campos opcionais, que você preenche depois se quiser; segundo a página, só aparecem nos relatórios. O cadastro inicial pede o mínimo. Para guardar o que registrou, o app permite exportar os dados, e os termos recomendam fazer um backup com frequência, já que o serviço não garante funcionamento sem interrupções.
+
+### Lembretes e uso offline
+Com o aviso ligado, você recebe o lembrete de cada plantão, a véspera e o pagamento atrasado, no horário que definir, mesmo com o app fechado. No iPhone e no iPad, notificação do sistema só existe com o app instalado na tela de início; no navegador, os avisos ficam só dentro do app.
+
+O Seu Plantão abre em tela cheia, sem barra de navegador, e continua funcionando sem internet: o que você registrar sobe sozinho quando a rede voltar. A página cita iPhone, Android, Mac e Windows. Isso interessa a quem passa o plantão em locais de sinal fraco e não pode perder o registro de um atendimento ou de um valor.
+
+### Como instalar, quanto custa e como ficam seus dados
+Para instalar no iPhone, toque no botão Compartilhar, na barra do Safari, e adicione à tela de início. No computador, clique no ícone de instalar à direita da barra de endereço; se ele não aparecer, procure a opção no menu do navegador. O acesso é grátis, com a conta Google e sem cartão.
+
+Sobre privacidade, a página afirma que cada médico enxerga apenas os próprios plantões e que nada é compartilhado com hospital ou operadora. Os dados trafegam por conexão segura, cada conta só acessa os próprios registros, e ao excluir a conta eles são apagados, salvo o que a lei obrigue a guardar. O app é destinado a profissionais de saúde adultos e é uma ferramenta de apoio.
+
+### Perguntas frequentes
+**O que é o Seu Plantão?**
+É um aplicativo para organizar plantões médicos. Segundo a página oficial, reúne agenda, hospitais, valores a receber e relatórios, para médicos plantonistas que querem controlar escala e faturamento em um só lugar.
+
+**O Seu Plantão funciona sem internet?**
+Sim. A descrição oficial informa que o aplicativo funciona offline, o que ajuda quem atua em locais com sinal instável. A página não detalha como ocorre a sincronização depois.
+
+**Preciso baixar de uma loja de aplicativos?**
+A página oficial diz que o Seu Plantão instala no celular, como aplicativo web, a partir do endereço seuplantao.app. Ela não cita lojas de aplicativos.
+
+**O Seu Plantão é pago?**
+A descrição oficial o apresenta como grátis. A página não traz tabela de planos nem preços, então não há outro valor a informar.
+
+**Para quem é o Seu Plantão?**
+É voltado a médicos plantonistas, que precisam organizar a agenda de plantões e acompanhar os valores a receber de cada hospital onde atuam.
+
+---
+
+## MeuEscritório
+Endereço: https://visionxma.com/produtos/meuescritorio/
+
+Processo em um lugar, prazo em outro e financeiro em uma planilha: é assim que a rotina de muitos escritórios se fragmenta. O MeuEscritório reúne clientes, processos, agenda, protocolos, financeiro, documentos e equipe em uma única plataforma de gestão jurídica.
+
+### Gestão jurídica sem informação espalhada
+O escritório de advocacia lida ao mesmo tempo com carteira de clientes, processos em andamento, audiências, protocolos, honorários e documentos. Quando cada frente vive em uma ferramenta diferente, a equipe perde tempo procurando informação, e a chance de um prazo escapar cresce. O MeuEscritório concentra essa operação em um único sistema de gestão jurídica, acessível pelo navegador e instalável como aplicativo.
+
+A plataforma cobre clientes, processos, agenda e prazos, protocolos, financeiro, documentos, equipe e ferramentas de inteligência artificial. Cada conta criada vira um escritório próprio, com dados separados dos demais, e o administrador convida a equipe para trabalhar sobre a mesma base, sem planilhas paralelas nem anotações soltas que dependam da memória de uma pessoa só.
+
+Para quem está começando a avaliar, o cadastro libera um teste grátis, e o administrador escolhe o plano já na entrada. Essa escolha pode ser trocada durante o período de teste, sem pagamento, o que permite ao escritório experimentar a plataforma com a equipe real antes de decidir se ela atende ao modo como a banca trabalha no dia a dia.
+
+### Clientes e fila de atendimento
+Cada cliente tem cadastro e uma ficha de detalhes, onde o histórico do atendimento fica reunido. O formulário aplica máscaras e validação de documentos, como CPF, CNPJ, RG, OAB, telefone e CEP, com conferência do dígito verificador de CPF e CNPJ, o que reduz erro de digitação logo na entrada do dado e evita retrabalho depois.
+
+O módulo de atendimento organiza uma fila, para a secretaria saber quem aguarda e em que ordem. Há ainda a guarda de credenciais de portais por cliente, com as senhas cifradas, e uma função de sugestão de mensagem de WhatsApp apoiada por IA, útil para manter o contato com o cliente em linguagem clara sem começar do zero a cada conversa.
+
+### Processos e consulta ao CNJ
+Os processos do escritório ficam cadastrados no sistema e podem ser consultados nas bases públicas do CNJ/DataJud, com acompanhamento de movimentações e estatísticas. Isso aproxima o dado oficial da rotina do advogado, que deixa de alternar entre vários sites para conferir andamento e passa a ver tudo dentro do mesmo ambiente em que cuida do cliente.
+
+O uso das consultas e da IA é medido por cota mensal, compartilhada pelo escritório, e a própria tela mostra o consumo em relação ao limite do plano. Para o sócio que administra a banca, isso dá previsibilidade: ele sabe quanto da cota já foi usado e quem precisa de orientação para aproveitar melhor o recurso.
+
+### Agenda, prazos, protocolos e metas
+A agenda reúne compromissos e prazos, com lembretes e notificações para a equipe, inclusive por notificação push no celular. O módulo de protocolos registra cada protocolo e os advogados vinculados a ele, e as tarefas e anotações ajudam a distribuir o trabalho do dia entre os integrantes do escritório, mantendo o responsável sempre identificado.
+
+As metas permitem acompanhar objetivos financeiros e a página de atividades mostra o que cada pessoa tem a fazer. Como prazo, protocolo e meta estão no mesmo lugar dos processos, o escritório consegue cruzar informações sem exportar dados, e a rotina de acompanhamento deixa de depender de controles paralelos mantidos à mão.
+
+### Financeiro, documentos e relatórios
+O financeiro registra as transações do escritório, e o sistema trata valores em centavos para evitar diferenças de arredondamento nas somas e no parcelamento. O módulo de documentos conta com modelos, e há geração de arquivos em PDF e em formato de texto editável, de modo que peças e relatórios saem do mesmo ambiente em que o caso é acompanhado.
+
+A página de relatórios consolida a informação para o sócio decidir com base em dados do próprio escritório. Reunir honorários, documentos e indicadores junto de clientes e processos evita a digitação repetida e deixa mais clara a situação financeira de cada frente, algo que, em planilhas separadas, costuma ficar desatualizado.
+
+### Equipe, permissões e segurança
+O administrador do escritório gerencia a equipe e define permissões por módulo, com os papéis de administrador, advogado e secretário. Quem acessa vê o que o seu perfil permite. O sistema mantém lixeira, histórico de edições e registros de auditoria, recursos úteis para entender quem alterou o quê e recuperar um item removido por engano.
+
+Na camada de dados, o isolamento entre escritórios é feito por regras de acesso no banco de dados, as senhas de portais são cifradas e a sessão conta com bloqueio após tentativas, logout ao fechar e tempo limite de inatividade. O pagamento é recorrente pelo Asaas, e a documentação do projeto descreve validação do webhook e proteção contra processamento duplicado.
+
+O sistema ainda oferece uma central de ajuda com chatbot e uma página de configurações e de perfil. Para o administrador, isso significa que a equipe consegue tirar dúvidas de uso sem interromper o sócio, e que o escritório adapta a plataforma à própria rotina, com a identidade e os dados de cada usuário mantidos de forma organizada.
+
+### Inteligência artificial e uso em qualquer dispositivo
+As ferramentas de IA incluem busca de jurisprudência, pesquisa de proposições legislativas com resumo, chatbot de ajuda e sugestão de mensagens de WhatsApp. São apoios ao trabalho: a conferência da fonte e a decisão sobre a tese continuam com o profissional, que responde pelo caso. As funções de IA também respeitam a cota mensal do plano contratado.
+
+O MeuEscritório é um aplicativo web instalável (PWA), com página de instalação e notificações push, para que a equipe acompanhe o escritório pelo computador ou pelo celular. Há ainda um período de teste grátis no cadastro, em que o administrador escolhe o plano, e uma central de ajuda dentro do próprio sistema para tirar dúvidas de uso.
+
+### Perguntas frequentes
+**O que é o MeuEscritório?**
+É uma plataforma de gestão jurídica para escritórios de advocacia. Reúne clientes, processos, agenda e prazos, protocolos, financeiro, documentos, equipe e ferramentas de inteligência artificial em um só lugar, acessível pelo navegador e instalável como aplicativo no celular ou no computador.
+
+**Os dados de um escritório ficam separados dos outros?**
+Sim. Cada conta criada vira um escritório isolado, e os dados são separados por escritório no banco de dados por regras de acesso. Dentro do escritório, o administrador define o que cada integrante da equipe pode acessar, módulo por módulo.
+
+**Quais papéis existem na equipe?**
+O sistema trabalha com os papéis de administrador, advogado e secretário. O administrador do escritório gerencia a equipe e a assinatura, e as permissões por módulo definem o que cada pessoa enxerga e pode fazer dentro da plataforma.
+
+**O sistema tem inteligência artificial?**
+Tem ferramentas de IA como busca de jurisprudência, resumo de proposições legislativas, chatbot de ajuda e sugestão de mensagens de WhatsApp. Elas apoiam o trabalho, e a revisão e a decisão continuam com o profissional responsável pelo caso.
+
+**Posso usar no celular?**
+Sim. O MeuEscritório é um aplicativo web instalável (PWA), então pode ser acessado pelo navegador ou instalado no celular e no computador, mantendo a mesma operação do escritório disponível nos dois.
+
+---
+
+## Mídiamente
+Endereço: https://visionxma.com/produtos/midiamente/
+
+Agência de marketing vive de prazo, aprovação de cliente e recorrência, e tudo isso costuma ficar espalhado entre planilha e grupo de WhatsApp. A Mídiamente junta CRM, projetos, clientes, financeiro e inteligência artificial em uma única plataforma.
+
+### Gestão de agência sem planilha e grupo de WhatsApp
+Planilha resolve no começo; o problema aparece quando entram mais clientes, mais gente e mais aprovações. O prazo some no meio da conversa do grupo, a aprovação vira print solto e a cobrança depende de alguém lembrar. A Mídiamente organiza demandas, aprovação, comercial e financeiro em módulos que conversam entre si, feitos no Brasil e em português, e que rodam no navegador, sem instalar nada.
+
+A plataforma é descrita como um sistema de gestão para agências de marketing, publicidade e social media que atendem vários clientes ao mesmo tempo. A página oficial fala em 10 módulos numa só plataforma e 10 integrações prontas, com os dados de cada agência isolados, de modo que a equipe trabalhe sobre a mesma informação.
+
+O site oficial reúne ainda guias gratuitos e artigos de blog sobre a rotina de agência, como montar um calendário editorial, desenhar um fluxo de aprovação, fazer um briefing, precificar serviços e organizar demandas de vários clientes. O material é de uso livre, mesmo para quem ainda não assina nada, e ajuda a definir processo antes de escolher a ferramenta.
+
+### Projetos, demandas e calendário editorial
+O quadro de projetos acompanha cada demanda por etapa, do briefing à publicação, com prazo, responsável e prioridade em cada card. A peça parada esperando o cliente fica sinalizada, com a cobrança pronta depois de 48 horas úteis sem resposta. Assim, o gestor enxerga o gargalo sem precisar perguntar a cada integrante da equipe como anda a entrega.
+
+O calendário editorial funciona por cliente, mês a mês, e cada etapa do post tem uma cor: ideia, produção, aprovação, aprovado e publicado. O prazo de aprovação segue para o Google Calendar com um clique. O material de apoio do site traz ainda um guia para montar o calendário de cada cliente, com pilares, frequência e ritual mensal.
+
+### Aprovação, briefing e feedback do cliente
+O cliente aprova ou pede ajuste por um link único, sem precisar de login. O card se move no quadro e o retorno fica registrado sozinho, o que substitui o aval informal por mensagem. A agência passa a ter histórico do que foi aprovado, por quem e quando, algo difícil de recuperar quando a decisão ficou perdida em uma conversa antiga.
+
+Também há um briefing público, um formulário com a marca da agência em que o cliente preenche as informações, que caem direto no sistema, no cliente certo. Por fim, um link de avaliação permite ao cliente dar nota e comentário, e a satisfação, com a média, é acompanhada no perfil dele, dando à agência um termômetro da relação.
+
+### CRM comercial e carteira de clientes
+O funil comercial vai do lead novo ao fechamento, com ticket, MRR (receita recorrente mensal) esperado, canal de origem e follow-up de cada negócio. Quando o negócio fecha, ele vira cliente e projeto num clique, sem digitar tudo de novo. Para a agência, isso encurta o caminho entre a venda e o início da operação com o cliente.
+
+Na carteira, cada cliente tem um perfil completo, o chamado Clientes 360°: setor, plano, serviços, mensalidade, vencimento, contrato, logins das redes, tom de voz, briefings e resultados. Tudo fica interligado com demandas e financeiro, de maneira que quem atende a conta encontre o contexto num lugar só, em vez de procurar em planilhas e conversas.
+
+### Financeiro, DRE e cobrança
+O financeiro cobre contas a pagar e a receber, com a situação de cada cobrança, e permite cobrar e dar baixa com um clique. A cobrança por Pix, boleto e cartão passa pelo Asaas, de forma avulsa ou recorrente, e a página cita aviso de vencimento por WhatsApp. A recorrência é o coração de muitas agências, e aqui ela fica dentro da própria operação.
+
+A plataforma traz DRE com margem real, fluxo de caixa, projeção de faturamento e metas do mês. No painel, o dashboard mostra clientes ativos, receita recorrente (MRR), lucro e churn, além dos próximos vencimentos e do que precisa de atenção. Os indicadores são calculados a partir dos dados reais da agência, não de números digitados à parte.
+
+Esses números alimentam decisões do dia a dia, como saber quais clientes sustentam a margem e quais dão prejuízo, e quanto entrará no caixa nos próximos meses. Como cobrança, projetos e comercial estão na mesma plataforma, a agência evita conciliar relatórios de ferramentas diferentes e passa a acompanhar a saúde do negócio a partir de uma única fonte de informação.
+
+### Mídio, a IA da agência
+O Mídio usa o contexto e os dados disponíveis na plataforma para ajudar a entender números, acompanhar entregas e criar com mais clareza. Entre as funções estão roteiros de vídeo no padrão CENA (ON/OFF), com o apresentador e o tom do cliente, legendas que começam pela informação mais forte, com CTA e hashtags, e geração de arte ou mockup de post a partir do briefing.
+
+Há ainda análise de tráfego, com resumo, de 3 a 5 insights acionáveis e próximos passos, e um copiloto de gestão que responde perguntas como "como está o mês?" com os números reais, inclusive pelo WhatsApp. A página é clara num ponto: você revisa e decide. As respostas dependem dos dados disponíveis na agência, e a IA é apoio, não substituta.
+
+### Equipe, planos e integrações
+Cada pessoa é cadastrada com e-mail e senha e recebe um papel: Admin, Financeiro, Comercial, Social ou Editor. Cada um vê só o que precisa, e o financeiro fica protegido. Os dados ficam isolados por agência, em banco Postgres com Row Level Security por organização, e a hospedagem em nuvem permite acessar de qualquer lugar, com atualização contínua.
+
+Os planos são Start (grátis para sempre, sem cartão), Pro (R$ 197,00 por mês no ciclo mensal) e Agência+ (R$ 497,90 por mês no ciclo mensal), com condições de semestre e ano na página oficial. As integrações listadas são Claude, OpenRouter, OpenAI, WhatsApp (Z-API), Asaas, Meta Ads, Windsor.ai, Google Calendar, Supabase e Cloudflare.
+
+### Perguntas frequentes
+**A Mídiamente tem plano gratuito?**
+Sim. O plano Start é gratuito, sem cartão, e inclui Projetos, CRM e Clientes, Financeiro e DRE, com 1 usuário e até 5 clientes. A página também informa 14 dias de Pro grátis para testar.
+
+**Quanto custa o plano Pro?**
+Segundo a página oficial, o Pro custa R$ 197,00 por mês no ciclo mensal, R$ 1.063,80 à vista a cada 6 meses (10% de desconto) e R$ 1.970,00 à vista a cada 12 meses (2 meses grátis). Inclui Copiloto e IA de conteúdo, cobrança recorrente com WhatsApp e usuários e clientes ilimitados.
+
+**O que é o plano Agência+?**
+É o plano para operações maiores: R$ 497,90 por mês no ciclo mensal. Inclui tudo do Pro, implantação dedicada com importação dos dados, treinamento da equipe e suporte prioritário por WhatsApp, conforme a página oficial.
+
+**O cliente precisa de login para aprovar uma peça?**
+Não. A aprovação é feita por um link único: o cliente aprova ou pede ajuste sem login, o card se move no quadro e o retorno fica registrado no sistema.
+
+**Quais integrações a plataforma tem?**
+A página lista Claude (Anthropic), OpenRouter, OpenAI, WhatsApp (Z-API), Asaas, Meta Ads, Windsor.ai, Google Calendar, Supabase e Cloudflare, usadas para IA, cobranças, avisos, métricas de campanha, agenda, banco de dados e hospedagem.
+
+---
+
+## CorteX
+Endereço: https://visionxma.com/produtos/cortex/
+
+O CorteX opera atendimento e vendas por inteligência artificial, da primeira mensagem à conversão. Segundo a documentação do projeto, é um sistema cognitivo modular para negócios que atendem pelo WhatsApp.
+
+### Atendimento e vendas por WhatsApp além do chatbot
+Negócios que vendem pelo WhatsApp costumam repetir as mesmas respostas o dia todo, perder o histórico do cliente e depender de quem está online. A documentação do CorteX o descreve como um sistema cognitivo de negócio, modular, projetado para pequenas e médias empresas que operam via WhatsApp: ele entende a mensagem, decide e executa, em vez de apenas devolver textos prontos.
+
+A proposta é acompanhar o cliente da primeira mensagem à conversão. Para isso, o sistema combina uma camada de inteligência artificial com memória, regras do negócio, um painel de administração e a integração com o WhatsApp, de modo que a conversa de atendimento esteja ligada ao catálogo, aos pedidos e às informações que o dono configurou.
+
+### Memória que lembra do cliente
+O CorteX trabalha com três camadas de memória. A de curto prazo mantém o contexto da conversa atual, como pedidos pendentes e endereços em confirmação. A de longo prazo guarda preferências do cliente, histórico de compras e regras do negócio, com busca semântica. A terceira, de regras de aprendizado, detecta padrões e cria novas regras de atendimento automaticamente.
+
+Na prática, isso significa que o cliente não precisa repetir quem é a cada contato e que o atendimento passa a refletir o que o negócio já aprendeu. A documentação contrasta essa abordagem com sistemas que esquecem o cliente a cada conversa, e apresenta a memória como o elemento que diferencia a operação de um chatbot comum.
+
+O repositório também menciona o uso de busca semântica sobre o conhecimento do negócio para trazer as memórias relevantes a cada resposta. Isso permite que a IA responda com base nas regras e no histórico da própria empresa, e não apenas em conhecimento genérico, o que aproxima o atendimento automatizado do jeito como aquele negócio específico conversa com seus clientes.
+
+### Agentes especializados e administração por conversa
+O sistema se organiza em agentes. O orquestrador interpreta as intenções do cliente e cria missões persistidas no banco de dados, de modo que uma tarefa, como um pedido, possa ser retomada de onde parou mesmo após uma reinicialização do servidor. Há também agentes voltados a entender o perfil operacional do cliente e a converter conversas em fluxos que podem ser automatizados.
+
+Para o proprietário, existe uma interface conversacional interna: ele gerencia o negócio sem navegar por menus complexos, criando itens de catálogo, definindo perguntas frequentes e ajustando parâmetros de venda cruzada. Uma camada de FAQ resolve as perguntas recorrentes antes de acionar o modelo de IA, o que, segundo o repositório, reduz a latência e o consumo de recursos.
+
+### O caminho de cada mensagem
+Toda mensagem segue um fluxo em etapas. O sistema recebe o aviso do WhatsApp e evita processar duas vezes a mesma mensagem. Em seguida, verifica condições críticas: se o cliente é prioritário, se um humano assumiu a conversa, caso em que a IA é silenciada, e se o horário de funcionamento permite resposta ou exige mensagem automática. Confirmações de endereço e pagamento seguem lógica determinística.
+
+Depois disso, o CorteX reúne o contexto, com as últimas mensagens, a lista de produtos, as zonas de entrega e as memórias relevantes, e consulta o serviço de venda cruzada. A IA responde, e o servidor valida se a ação sugerida é permitida no estado atual do pedido antes de enviar. Por fim, a interação é salva na memória e registrada para acompanhamento.
+
+Todo esse fluxo existe para que nenhuma mensagem seja perdida nem processada de forma incorreta, segundo a documentação. A separação entre as diretrizes de personalidade da IA e os dados variáveis do usuário no momento de montar a instrução também faz parte do desenho, e ajuda a manter a resposta alinhada às regras que o proprietário definiu para o negócio.
+
+### Tom de voz e humanização
+O repositório descreve uma estratégia de voz inspirada em documentações de experiência do cliente. Um guia de voz define palavras preferidas e palavras proibidas no atendimento, para manter o tom de um atendente profissional. A IA também identifica o humor do cliente: se ele tem pressa, as respostas ficam curtas; se está frustrado, ela demonstra empatia antes de resolver o problema.
+
+Instruções dinâmicas orientam o estilo de cada resposta, como colocar o preço na primeira frase, para manter a objetividade nas vendas. O ponto é tratar a conversa como parte da experiência de compra: o cliente recebe respostas diretas, no ritmo dele, e o negócio mantém uma identidade de atendimento consistente, sem depender do humor ou do cansaço de quem digita.
+
+A documentação resume o objetivo dessa camada de linguagem: o cliente deve sentir que conversa com um atendente humano profissional, que anota o pedido, confirma os detalhes e resolve o problema sem frases burocráticas. Para o dono do negócio, a vantagem está em padronizar essa postura em todas as conversas, inclusive nas de horários em que ninguém da equipe está disponível.
+
+### Entrega, pagamento e painel em tempo real
+Para operações com entrega, o sistema valida o endereço informado e calcula taxas com base nas zonas geográficas configuradas no painel. Na confirmação de pagamento por Pix, processa imagens de comprovantes, detectando valores e datas, o que agiliza a liberação do pedido. Também há suporte a áudio, com transcrição das mensagens de voz enviadas pelos clientes.
+
+O painel administrativo recebe novas mensagens e pedidos em tempo real, sem recarregar a página. Para acompanhar a qualidade, a documentação cita rastreio das interações da IA, gestão remota dos prompts, monitoramento de custos e de erros do backend, e um framework de avaliação que simula conversas e usa outra IA para julgar precisão, tom de voz e conformidade com as regras do negócio.
+
+### Perguntas frequentes
+**O que é o CorteX?**
+É um sistema de atendimento e vendas por inteligência artificial, que acompanha o cliente da primeira mensagem à conversão. Segundo a documentação, é um sistema cognitivo modular para negócios que operam pelo WhatsApp.
+
+**O CorteX é um chatbot comum?**
+A documentação o descreve como mais do que um chatbot: ele interpreta a intenção, decide e executa ações, mantendo memória do cliente e das regras do negócio, em vez de apenas devolver respostas prontas.
+
+**A IA continua respondendo se uma pessoa assumir a conversa?**
+Não. De acordo com o fluxo descrito na documentação, quando a conversa é assumida por um humano, a IA é silenciada, e o sistema também trata clientes prioritários e mensagens fora do horário de funcionamento.
+
+**O dono consegue configurar o negócio sem menus complexos?**
+Sim, segundo a documentação existe uma interface conversacional interna para o proprietário, capaz de criar itens de catálogo, definir perguntas frequentes e ajustar parâmetros de venda cruzada.
+
+**Como a qualidade das respostas é acompanhada?**
+A documentação cita rastreio das interações da IA, monitoramento de erros do backend e um framework de avaliação que simula conversas e usa outra IA para avaliar precisão, tom de voz e conformidade com as regras do negócio.
+
+---
+
+## PDF sem Cadastro
+Endereço: https://visionxma.com/produtos/pdf-sem-cadastro/
+
+O PDF sem Cadastro reúne as ferramentas de PDF e de imagem que as pessoas mais procuram, grátis e sem criar conta. Tudo é feito no seu celular ou computador, e o arquivo não sai do seu aparelho.
+
+### Uma ferramenta para cada tarefa
+O PDF sem Cadastro não é uma página única com um botão genérico: cada tarefa tem endereço próprio, o que facilita chegar direto ao que se procura. O mapa do site lista 35 páginas além da inicial, cada uma dedicada a uma ação, como Comprimir PDF, Juntar PDF ou Assinar PDF. O título de cada página já diz o que ela faz e reforça que o uso é grátis e sem cadastro.
+
+Na página inicial, as ferramentas aparecem agrupadas por assunto: diminuir, juntar e separar; organizar páginas; assinar e proteger; ferramentas de imagem para diminuir e converter; e documentos. Cada ferramenta tem uma cor própria no ícone, e o visual é claro e limpo, com cartões brancos sobre fundo quase branco. Essa organização busca reduzir o tempo entre abrir o site e encontrar a ação certa.
+
+### Ferramentas de PDF
+O conjunto de PDF cobre o ciclo de vida de um documento. Há páginas para comprimir, juntar, dividir, extrair páginas, excluir páginas, organizar e girar. Para transformar conteúdo, existem foto para PDF, JPG para PDF, PDF para JPG e PDF para texto. Quem precisa ler documentos escaneados encontra a página de OCR, que extrai texto de imagens, e quem precisa identificar um arquivo pode usar a página de carimbo.
+
+Outras ferramentas atendem à formalização e à proteção do documento: assinar, tarjar dados, proteger com senha, numerar páginas e aplicar marca d'água. A página inicial resume o objetivo ao dizer que o site reúne as ferramentas de PDF que as pessoas mais procuram. Como todas rodam no próprio aparelho, o mesmo cuidado com a privacidade vale para um contrato, um extrato ou um simples comprovante.
+
+### Ferramentas de imagem
+Além dos PDFs, o site oferece um grupo de ferramentas de imagem. Entre elas estão comprimir imagem, redimensionar, recortar, girar, editor de fotos, marca d'água em imagem e desfocar imagem, esta última citada na página inicial como forma de desfocar um rosto. A compressão de foto em KB aparece entre os usos descritos, útil quando um cadastro online impõe limite de tamanho para a imagem enviada.
+
+Também existem conversores de formato: HEIC para JPG, PNG para JPG, WebP para JPG e JPG para PNG. O HEIC é o formato que muitos iPhones usam para fotos, e a conversão para JPG ajuda quando o destino não aceita o formato original. Para quem monta o próprio material, há ainda páginas para criar GIF e para o gerador de memes, que ampliam o uso do site além dos documentos.
+
+### Documentos, QR Code e Pix
+Um grupo da página inicial se chama Documentos e reúne páginas voltadas a necessidades burocráticas. O mapa do site traz a foto 3x4 e o documento frente e verso, além do gerador de QR Code. A página descreve como um dos usos a geração de QR Code de Pix com valor, e existe uma ferramenta específica para isso, separada do gerador de QR Code comum.
+
+Esses recursos mostram o foco declarado do site em documentos do dia a dia no Brasil. A página inicial cita reduzir PDF para 5 MB ou 2 MB para caber no limite de portais, bancos, tribunais e do gov.br, juntar documentos escaneados e assinar ou rubricar contratos. A combinação de ferramentas de PDF, imagem e documentos cobre boa parte do que uma pessoa precisa enviar a um órgão ou empresa.
+
+### Privacidade na prática
+O argumento central do PDF sem Cadastro é que o arquivo não sai do aparelho. Em vez de enviar o documento para o computador de uma empresa, o processamento ocorre no celular ou no computador de quem usa. O site afirma que ninguém vê o conteúdo, nem a própria equipe, e que depois de carregada a página as ferramentas funcionam até sem internet, o que qualquer pessoa pode testar desligando a conexão.
+
+Sobre medição de uso, a página diz que o site conta apenas quantas pessoas visitam e o que clicam, e somente se a pessoa permitir. Nome e conteúdo de arquivo nunca entram nessa conta. Como não existe cadastro, não há senha para lembrar, e-mail para confirmar ou conta para apagar depois. O site é operado pela VisionX, e a política de funcionamento está descrita nas respostas da própria página.
+
+### Instalação e uso no celular
+Quem usa o site com frequência pode instalá-lo como aplicativo, pelo botão Instalar app. No iPhone o caminho é diferente: a página orienta tocar em Compartilhar, o quadrado com a seta, e depois em Adicionar à Tela de Início. Em qualquer caso, o resultado é um ícone na tela inicial que abre direto as ferramentas, sem passar pela busca no navegador.
+
+O site funciona no navegador do Android, do iPhone e do computador, sem exigir download de programa. As ferramentas são gratuitas e sem limite de arquivos por dia. Os PDFs gerados recebem uma pequena assinatura no canto, com o texto Feito no PDF sem Cadastro. Várias páginas trazem ainda um exemplo visual de antes e depois, identificado como foto ilustrativa, feito com a própria ferramenta.
+
+### Quando usar o PDF sem Cadastro
+O site é adequado quando a tarefa é pontual e o documento é sensível. Enviar um holerite para um banco, juntar páginas escaneadas de um processo ou reduzir um arquivo que o portal recusou por tamanho são exemplos que a página inicial usa para explicar o propósito. O fato de não haver conta ajuda quando a pessoa está em um computador emprestado ou de outra pessoa.
+
+Vale lembrar que as informações sobre o funcionamento vêm da descrição publicada pelo próprio site. Como cada ferramenta tem sua página, o caminho mais seguro para conhecer os detalhes e os limites de uma função específica é abri-la e testá-la com um arquivo sem importância. O mapa do site é a melhor lista atual das funções disponíveis. Também vale conferir o resultado final antes de enviá-lo a um órgão, como se faz com qualquer arquivo importante.
+
+### Perguntas frequentes
+**O PDF sem Cadastro é grátis?**
+Sim. Todas as ferramentas são grátis e não há limite de arquivos por dia. Os PDFs gerados levam uma pequena assinatura no canto, com o texto Feito no PDF sem Cadastro. Não é necessário criar conta nem pagar para usar qualquer uma das ferramentas disponíveis no site.
+
+**Meu arquivo é enviado para algum servidor?**
+Não. Segundo o site, tudo é feito no seu celular ou computador, e o arquivo não é enviado para lugar nenhum. Depois que a página abre, as ferramentas funcionam até sem internet, o que permite conferir essa característica por conta própria.
+
+**Preciso criar uma conta?**
+Não. O site não pede cadastro. Como ele não guarda nada seu, também não existe conta para criar nem arquivo para apagar depois. Você abre a ferramenta, escolhe o arquivo e baixa o resultado diretamente no aparelho. Basta abrir a página da ferramenta desejada e começar a usar.
+
+**Funciona no iPhone e no Android?**
+Sim. O site funciona no navegador do Android, do iPhone e do computador. Também dá para instalar como aplicativo pelo botão Instalar app. No iPhone, toque em Compartilhar e depois em Adicionar à Tela de Início para criar o atalho.
+
+**O site coleta algum dado?**
+O site conta quantas pessoas o visitam e o que elas clicam, se você permitir. Ele nunca registra o nome nem o conteúdo dos arquivos, que não saem do aparelho. O site é operado pela VisionX. Em outras palavras, o site mede apenas visitas e cliques, e somente com a sua permissão, nunca o conteúdo dos documentos.
+
+---
+
+## BrasilVisto
+Endereço: https://visionxma.com/produtos/brasilvisto/
+
+O BrasilVisto é um portal de notícias e dados com foco em política, economia, negócios, finanças e indicadores. Ele agrega manchetes de fontes identificadas e publica análises próprias, com a fonte à vista.
+
+### Três tipos de conteúdo, sempre identificados
+A página Sobre explica que o BrasilVisto combina três tipos de conteúdo, e que cada um é identificado na página. O primeiro são manchetes de outras fontes, coletadas automaticamente de feeds e interfaces públicas de veículos e instituições. O segundo são análises e explicadores escritos pela redação, com o selo Análise do portal. O terceiro são dados e indicadores, com séries oficiais do Banco Central e do IBGE.
+
+Para as manchetes de outras fontes, o portal mostra o título, um trecho curto quando a fonte o oferece, o nome da fonte e o horário de publicação. O link sempre leva ao texto original, que o portal afirma não reproduzir. Essa separação evita que o leitor confunda o que foi produzido pelo portal com o que apenas foi indexado a partir de outro veículo.
+
+### Como funciona a coleta
+Segundo a página Sobre, uma rotina automática consulta as fontes habilitadas, remove duplicatas, ordena por data e relevância e atualiza os arquivos do portal. Se uma fonte sai do ar, as demais continuam funcionando e as notícias anteriores são mantidas. A relação completa de fontes, incluindo as desligadas e o motivo, fica no arquivo data/sources.json do projeto, que não é público no site.
+
+A manchete principal não depende da ordem em que um feed respondeu. Ela é escolhida por atualidade, prioridade da fonte e cobertura por mais de um veículo. Na página inicial, a data e a hora da última atualização aparecem no topo, e cada item exibe o horário em que foi publicado, de modo que o leitor percebe rapidamente o que é recente e o que ficou para trás.
+
+### Editorias e navegação
+O menu organiza o portal em editorias. Política tem Governo e Congresso, STF e Justiça e Eleições. Economia reúne Negócios e empresas, Finanças e Mercados. Há ainda Tecnologia e IA, Mundo, Gestão empresarial e Dados e indicadores. Cada editoria tem página própria, e o mapa do site lista endereços como /politica, /economia, /mundo e /gestao, além de um campo de busca no topo.
+
+A editoria de Política se apresenta como cobertura da política brasileira, com Planalto, partidos, articulação e decisões que mexem com o país. A página reúne um bloco de análises do portal e outro de manchetes recentes com links para as fontes originais. O bloco de análises traz, por exemplo, um texto sobre presidencialismo de coalizão, assinado pela Redação, com data e tempo de leitura.
+
+### Explicadores e análises do portal
+Além do noticiário agregado, o BrasilVisto publica textos explicativos que ajudam a entender o contexto das notícias. O mapa do site lista títulos como Como funciona o Congresso Nacional, Como funciona o Supremo Tribunal Federal e Como funciona o sistema eleitoral brasileiro. Na economia, há textos sobre a taxa Selic, o IPCA, o PIB e a cotação do dólar. Esses títulos aparecem na lista de endereços do site e funcionam como material de apoio para quem quer entender o assunto antes de acompanhar o noticiário.
+
+Na área de negócios, aparecem explicadores sobre como ler um balanço empresarial e sobre fluxo de caixa para pequenas e médias empresas, e há um texto sobre a LGPD. Há também uma explicação sobre o Conselho de Segurança da ONU, que cobre a parte internacional. Quanto a erros em análises próprias, a seção de correções informa que eles são corrigidos diretamente no texto, com data de atualização visível.
+
+### Dados e indicadores
+A página Dados e indicadores se descreve como inteligência de dados, com séries oficiais atualizadas pela rotina automática. Segundo o portal, cada indicador traz fonte, data de referência, unidade e metodologia. A página mostra a data da última coleta, o que permite avaliar a atualidade dos números. Entre os indicadores listados estão a meta da taxa Selic, o dólar comercial, o IPCA mensal e acumulado em doze meses e a taxa de desocupação.
+
+Há ainda uma tabela de cotações, com dólar PTAX, ações da B3 como PETR4, VALE3, ITUB4 e MGLU3, além de Bitcoin e Ethereum. A página cita as fontes: BCB Olinda para o PTAX, brapi.dev para a B3 e CoinGecko para as criptomoedas. Ela avisa que brapi e CoinGecko operam em plano gratuito com atribuição, e que uso comercial exige outra condição, o que mostra cuidado com a origem dos dados.
+
+### Transparência e correções
+A seção de correções informa que erros em análises próprias são corrigidos no texto, com a data de atualização visível. Para as manchetes de outras fontes, o texto original pertence ao veículo que o publicou, e o portal apenas indexa o título e o link. Essa distinção protege o leitor de atribuir ao portal algo que foi escrito por outra redação, e protege os veículos de reprodução indevida.
+
+O site tem ainda páginas de contato, política de privacidade e termos de uso, listadas no mapa do site. Elas completam a camada institucional de um portal que se apresenta como agregador de fontes identificadas e produtor de análises próprias. O conteúdo exato dessas páginas não foi consultado para este artigo, e quem precisar de detalhes jurídicos deve ler os textos diretamente no site.
+
+### Para quem é o portal
+O BrasilVisto atende a quem quer acompanhar política, economia e negócios sem alternar entre vários sites. A página inicial entrega manchetes de diferentes veículos lado a lado, com a editoria e o horário, e o leitor decide em qual aprofundar. O tom é de organização e não de opinião: o lema, política, economia e dados, com a fonte à vista, resume a promessa de transparência.
+
+Para quem trabalha com empresas, a editoria de Gestão empresarial e os explicadores de balanço e fluxo de caixa dão apoio prático. Para quem acompanha mercados, a tabela de cotações e os indicadores oficiais funcionam como referência rápida. O portal está no ar em brasilvisto.com.br desde 28 de outubro de 2026 e faz parte do conjunto de produtos da VisionX.
+
+### Perguntas frequentes
+**O que é o BrasilVisto?**
+É um portal de notícias, política, economia e dados da VisionX. Segundo a descrição do site, ele agrega manchetes de fontes identificadas e publica análises próprias, com cada notícia indicando o veículo de origem. O objetivo é reunir em um só lugar notícia, análise e dado, sempre com a origem de cada informação visível ao leitor.
+
+**Quais assuntos o portal cobre?**
+A navegação inclui Política, Economia, Tecnologia e IA, Mundo, Gestão empresarial e Dados e indicadores. Dentro de Política há Governo e Congresso, STF e Justiça e Eleições. Em Economia há Negócios e empresas, Finanças e Mercados. Há ainda um campo de busca para localizar assuntos específicos no portal, e cada editoria reúne as notícias do tema correspondente.
+
+**De onde vêm as notícias?**
+As manchetes agregadas vêm de fontes identificadas, e o nome do veículo aparece junto de cada título. Na página inicial é possível ver, por exemplo, BBC News Brasil, CNN Brasil, G1 e UOL. O portal também publica análises próprias. Isso permite ao leitor chegar ao texto completo na fonte original e decidir em qual reportagem vale a pena se aprofundar.
+
+**O portal mostra quando foi atualizado?**
+Sim. A página inicial exibe a data e a hora da última atualização, e cada notícia traz o horário de publicação. Assim o leitor sabe quão recente é o conteúdo que está lendo. Assim, o leitor consegue avaliar rapidamente se aquilo que está lendo é recente, algo importante em assuntos que mudam ao longo do dia.
+
+**Preciso de cadastro para ler?**
+A página inicial pode ser lida diretamente no navegador, sem etapa de login ou cadastro visível. O portal está no ar em brasilvisto.com.br e é escrito em português. Se houver exigências futuras de acesso, elas serão informadas no próprio site, que é a fonte mais confiável para esse tipo de dúvida.
+
+---
+
+## Urnômetro
+Endereço: https://visionxma.com/produtos/urnometro/
+
+O Urnômetro apresenta a apuração do 2º turno de 2026 como um boletim de urna impresso: placar, quanto falta apurar, quanto cada candidato precisa e o Brasil em pontos. Os dados são lidos direto do TSE.
+
+### Uma apuração contada pelo que falta
+O Urnômetro nasce de uma ideia simples de explicar: em vez de olhar apenas para o placar parcial, acompanhar o que ainda não foi contado. A página descreve o produto como a apuração do 2º turno de 2026 impressa como um boletim de urna, com placar, quanto falta apurar, quanto cada candidato precisa e o Brasil em pontos. É uma página web gratuita que abre em qualquer navegador.
+
+A autoria é da VisionX, que aparece como publicadora no código da página, e o rodapé convida a seguir a empresa no Instagram, em @visionx.dev. O site foi concebido para os dias de apuração, quando o interesse do público se concentra em poucas horas. Por isso o desenho privilegia respostas rápidas às perguntas que se faz durante a noite: quem está na frente e quanto ainda falta.
+
+### O painel de controle
+No topo da página, o usuário escolhe o modo e o recorte. Há o modo Ao vivo, do 2º turno de 25 de outubro de 2026, e o modo Replay, do 1º turno de 4 de outubro de 2026. Um seletor define o território, com o Brasil como padrão, e outro alterna entre Presidente e Governador. Um botão Atualizar recarrega os números sob demanda.
+
+Logo abaixo, a página informa a hora e o percentual apurado, que funcionam como o relógio da apuração. No momento em que este artigo foi escrito, a página exibia o percentual em zero, porque o 2º turno ainda não tinha dados carregados. Esse detalhe mostra que os valores variam conforme a leitura mais recente feita do TSE, e que o painel só reflete o que foi apurado até então.
+
+### Placar e quanto falta
+O placar mostra os dois candidatos do 2º turno presidencial, com partido e número, o percentual e a quantidade de votos de cada um. Um indicador sinaliza quem está na frente e, ao fim da apuração, quem foi eleito. A estrutura lembra a de um boletim de urna, com informação direta e pouca decoração, o que facilita a leitura em telas pequenas.
+
+Logo depois, o bloco Faltam estima quantos votos ainda precisam ser contados. A página compara o percentual do que falta que cada candidato precisa conquistar com o que vem tendo até agora. Quem está atrás vê o quanto precisa do que resta, e quem está na frente vê se a vantagem se sustenta. A leitura transforma o placar parcial em uma conta compreensível.
+
+### A noite, linha a linha
+A seção de atualizações impressas simula o rolo de papel de uma urna que vai imprimindo informações. A cada atualização entra uma linha com a hora, o quanto a apuração avançou e a vantagem naquele momento. Quem acompanha só no fim pode rolar a lista e rever como o resultado foi se formando ao longo da noite, sem depender de memória nem de capturas de tela.
+
+O recurso tem valor também depois do fim da apuração. Com o modo Replay, é possível rever o 1º turno de 4 de outubro de 2026 e entender como a contagem evoluiu. Ao encerrar, a página exibe uma janela com o nome de quem foi eleito, o partido, o número, o percentual e os votos, e a mensagem de que o Urnômetro volta nas próximas eleições.
+
+### O Brasil em pontos
+O mapa em pontos desenha o país de modo que cada ponto equivale a 10 mil eleitores. A legenda distingue os pontos por candidato e inclui uma categoria para outros votos. A legenda explica a escala, o que evita interpretações erradas sobre o tamanho das áreas, já que o mapa representa pessoas e não território. Essa leitura geográfica complementa o placar numérico.
+
+Acima do mapa, o placar por região mostra os votos já apurados em cada uma. Ao abrir uma região, um botão permite voltar à visão do Brasil. Em estados de grande população, como os do Sudeste, o desenho ganha mais pontos, mostrando visualmente onde está o peso do eleitorado. É uma forma de ler a geografia do voto sem tabelas.
+
+### De onde vem o que falta
+A seção De onde vem o que falta lista os estados com a quantidade de votos que ainda faltam apurar e quem está na frente em cada um. Filtros por região permitem ver apenas o Norte, o Nordeste, o Centro-Oeste, o Sudeste ou o Sul, e um toque em um estado abre o detalhe. Para o recorte de governador, o seletor mostra os estados em que há 2º turno.
+
+A estimativa segue uma regra única, declarada na página: em cada lugar, quem falta apurar vota como quem já foi apurado. Trata-se de uma premissa, não de uma previsão, e a página a deixa visível para que o leitor saiba o que está por trás do número. Se o perfil das urnas pendentes for diferente das já contadas, o resultado final pode se afastar da estimativa.
+
+### Fonte, limites e responsabilidade
+Os dados são lidos direto do TSE, o Tribunal Superior Eleitoral, e a página afirma isso em seu rodapé. Também esclarece que a soma e a estimativa são do Urnômetro, enquanto o resultado oficial é o divulgado pelo TSE. A separação entre dado oficial e cálculo próprio é importante porque números derivados podem divergir, em especial nos primeiros minutos da apuração.
+
+O produto é gratuito e a descrição técnica da página o classifica como aplicação web acessível em qualquer navegador. Ele foi pensado para o ciclo eleitoral de 2026, e a própria página avisa que volta nas próximas eleições. O texto das janelas Como o Urnômetro conta e Lembrete do 2º turno não pôde ser lido integralmente e, por isso, não foi usado para detalhar este artigo.
+
+### Perguntas frequentes
+**De onde vêm os dados do Urnômetro?**
+Os dados são lidos direto do TSE, o Tribunal Superior Eleitoral. A soma e a estimativa são feitas pelo Urnômetro, e a página lembra que o resultado oficial é sempre o divulgado pelo TSE. Ou seja, o Urnômetro não substitui a divulgação oficial: ele organiza os números do TSE em uma leitura pensada para acompanhar a apuração ao vivo.
+
+**Como o Urnômetro estima o que falta?**
+Pela premissa descrita na página: em cada lugar, quem falta apurar vota como quem já foi apurado. A partir disso ele calcula quanto cada candidato precisa do que ainda falta contar. É uma estimativa, não o resultado oficial. Por isso, em lugares com comportamento de voto diferente entre as seções já contadas e as que faltam, o resultado real pode divergir do estimado.
+
+**Quais eleições o Urnômetro cobre?**
+O 2º turno de 2026, com presidente em todo o país e governador nos estados em que há segundo turno. O site traz o modo ao vivo de 25 de outubro de 2026 e um replay do 1º turno, de 4 de outubro de 2026.
+
+**O que significa cada ponto do mapa?**
+No mapa Brasil em pontos, 1 ponto equivale a 10 mil eleitores. Os pontos aparecem coloridos conforme o candidato e permitem ver o placar por região e abrir cada estado com um toque. Isso facilita enxergar de relance onde está a força de cada candidato, região por região, antes de abrir o detalhe de um estado.
+
+**O Urnômetro é gratuito?**
+Sim. O site é gratuito e roda em qualquer navegador, segundo sua descrição. Foi criado pela VisionX, e a página informa que ele volta nas próximas eleições. Os números exibidos vêm do TSE, e o resultado oficial é sempre o divulgado por ele, conforme a própria página esclarece ao leitor.
+
+---
+
+## XMusic
+Endereço: https://visionxma.com/produtos/xmusic/
+
+O XMusic é o app de música da VisionX, com o lema Sua música, sem ruído. No iPhone, ele toca as músicas que você importa, sem conta e sem coletar dados pessoais.
+
+### Duas versões, um mesmo propósito
+O XMusic é o app de música da VisionX e existe em duas versões com propósitos próximos. A versão para iPhone é um reprodutor que toca as músicas que a pessoa importa. A versão para Android, além de tocar, inclui uma aba para baixar áudio. O lema que aparece no app do iPhone resume a proposta: sua música, sem ruído, com uma interface pensada para ouvir sem distrações.
+
+A versão do iPhone foi desenvolvida com Expo e React Native e tem o identificador br.visionx.xmusic. A de Android usa o mesmo identificador e chegou à versão 3.0, antes chamada Toada e depois renomeada para XMusic em 21 de outubro de 2026. Segundo a nota do projeto, o app de Android é instalado à mão, sem publicação em loja, e o de iPhone aguarda a revisão da Apple.
+
+### A biblioteca no iPhone
+O app do iPhone tem quatro abas: Músicas, Favoritas, Playlists e Ajustes. Em Músicas, o botão Importar músicas permite trazer arquivos de áudio do iPhone ou do iCloud Drive. Enquanto a biblioteca está vazia, o app orienta a importar os arquivos. Cada faixa importada passa a aparecer na lista, pronta para tocar e para ser organizada da maneira que a pessoa preferir.
+
+Ao segurar uma música, abre-se um menu com as ações Favoritar, Adicionar à playlist, Duplicar música, Renomear e Excluir. A exclusão pede confirmação antes de apagar a faixa do XMusic. A duplicação cria uma cópia da música, e a renomeação altera o título exibido. Esse conjunto de ações cobre a organização do dia a dia sem exigir telas separadas de gerenciamento.
+
+### Playlists e favoritas
+A aba Favoritas reúne as músicas que a pessoa marcou. Se nenhuma foi marcada, o app explica que é preciso segurar uma música e tocar em Favoritar. Já a aba Playlists tem o botão Nova playlist, que pede um nome, e uma lista das existentes. Para colocar uma faixa em uma playlist, usa-se a ação Adicionar à playlist no menu da música. A aba funciona, portanto, como uma lista de coleções criadas pela própria pessoa, e não como sugestões automáticas.
+
+Apagar uma playlist exige confirmação, e o app esclarece que as músicas continuam na biblioteca. Isso evita o receio de perder arquivos ao reorganizar listas. Se a pessoa tentar adicionar uma faixa sem ter criado playlist, o app avisa que é preciso criar uma primeiro. Playlists vazias exibem uma orientação sobre como incluir músicas a partir da aba Músicas. Assim, a organização das listas fica sob controle de quem usa o app.
+
+### Reprodução, fila e timer
+O player oferece o controle de repetição, que alterna entre três estados: sem repetir, repetir tudo e repetir uma faixa. Há também uma fila de reprodução, que define o que toca em seguida, e um timer para dormir. Ao acioná-lo, o app pergunta quando parar a música, e uma das opções é parar no fim da faixa atual. Outra opção permite desligar o timer.
+
+Esses recursos atendem ao uso noturno e ao uso durante deslocamentos, em que o aparelho fica no bolso e o controle precisa ser rápido. A tela de Ajustes tem a seção Aparência e reprodução, que reúne preferências do player. As preferências, assim como as músicas, playlists e favoritas, ficam guardadas apenas no aparelho, segundo a política de privacidade publicada pelo projeto.
+
+### Privacidade e anúncios próprios
+A política de privacidade, atualizada em 21 de outubro de 2026, afirma que o app não cria conta, não coleta dados pessoais e não rastreia o usuário. Nada do que fica no aparelho é enviado a servidores da VisionX, e apagar o app apaga esses dados. A página de suporte e privacidade fica em xmusic-app.pages.dev, e o contato é o e-mail visionxma@gmail.com.
+
+O XMusic exibe anúncios, mas apenas de produtos da própria VisionX, identificados no app com os rótulos Anúncio ou Oferta. Em Ajustes, há a opção Uma semana sem anúncios, que leva ao Instagram @visionx.dev e funciona por honra, já que o app não verifica se a conta foi seguida. Existe ainda a opção Desativar anúncios para sempre, que pede um código.
+
+### A versão para Android
+A versão para Android organiza a biblioteca em Músicas, Álbuns, Artistas, Playlists, Pastas e Favoritas, além de listas automáticas. O player em tela cheia tem fila editável, retomada de onde parou, equalizador, grave, transição suave, pular silêncio, velocidade, marcadores e timer de sono, que inclui o modo ao fim da música. Há tema claro, escuro ou automático e cinco cores de destaque.
+
+Outros recursos são widget, integração com Android Auto e Assistente, estatísticas, detecção de duplicadas, corte de trecho para toque, edição de informações, exportação e importação de listas .m3u e backup em arquivo .json. As letras vêm do arquivo MP3 ou do serviço lrclib.net, com acompanhamento linha a linha, ou podem ser escritas à mão. A aba Baixar trata de TikTok, YouTube, Instagram, Kwai e Facebook.
+
+### Limites conhecidos e estado atual
+A nota do projeto registra limites medidos no Android. O YouTube falhou na rede doméstica do desenvolvedor, com pedido de confirmação de que não é robô. Em aparelhos com páginas de memória de 16 KB, o conversor de áudio não abre, e o app usa um plano alternativo sem conversão, o que impede o download de TikTok e Kwai nesses aparelhos. Som audível, Bluetooth e Instagram com login não foram testados.
+
+No iPhone, a versão 1.0 foi enviada para revisão da Apple em 21 de outubro de 2026 e aguarda aprovação, por isso ainda não está na App Store. As imagens usadas na loja foram geradas por ferramenta de imagem, e a nota admite o risco de a Apple pedir capturas reais. O app do iPhone é apenas player, sem baixador, porque a Apple não aprova essa função.
+
+### Perguntas frequentes
+**O XMusic já está na App Store?**
+Ainda não está confirmado. A versão 1.0 para iPhone foi enviada para revisão da Apple em 21 de outubro de 2026 e aguarda aprovação. Enquanto isso, o app não está disponível para o público geral. Assim que houver aprovação, a disponibilidade será divulgada nos canais da VisionX; até lá, não há data confirmada de publicação na loja.
+
+**O XMusic baixa músicas no iPhone?**
+Não. A versão para iPhone é somente um player: toca as músicas que você importa. A função de baixar áudio existe apenas na versão para Android, que hoje é instalada manualmente. Essa diferença existe porque a Apple não aprova aplicativos com essa função, e por isso a versão para iPhone foi feita apenas como reprodutor.
+
+**O XMusic coleta meus dados?**
+Segundo a política de privacidade, não. O app não cria conta, não coleta dados pessoais e não rastreia o usuário. Músicas, playlists, favoritas e preferências ficam só no iPhone e são apagadas junto com o app. Não é necessário informar nome, e-mail ou telefone para usar o app, que funciona com os arquivos que você mesmo importa para ele.
+
+**Como falo com o suporte?**
+Escreva para visionxma@gmail.com com dúvidas, problemas ou sugestões. O atendimento é em português. A página de suporte e privacidade fica em xmusic-app.pages.dev. A resposta é dada em português, e a página também reúne a política de privacidade completa do aplicativo, com data de atualização.
+
+**Existe versão para Android?**
+Sim, uma versão para Android com biblioteca completa, equalizador, letras, backup e aba Baixar. Hoje ela é instalada manualmente, sem publicação em loja, e tem limites conhecidos em alguns aparelhos. Ela é voltada a quem usa Android e inclui, além do player, recursos como letras, backup e restauração, widget e integração com Android Auto.
+
+---
+
+## Bíblia Sagrada: Dia e Noite
+Endereço: https://visionxma.com/produtos/biblia/
+
+Bíblia Sagrada: Dia e Noite é um app de Bíblia para iPhone com dois rituais diários: a palavra da manhã e o fechar o dia à noite. É gratuito, sem compras, e ainda aguarda aprovação da Apple.
+
+### Uma Bíblia com dois momentos no dia
+Bíblia Sagrada: Dia e Noite é um aplicativo para iPhone que organiza a leitura em dois momentos curtos. Pela manhã, a pessoa recebe a palavra de hoje; à noite, fecha o dia com um salmo. O subtítulo previsto para a App Store resume o espírito: palavra de manhã, paz à noite. O app é gratuito, sem compras e sem anúncios, e ainda aguarda aprovação da Apple.
+
+O texto promocional previsto para a loja diz que se começa o dia com uma palavra e se fecha com um salmo, com um minuto de manhã e três à noite. A categoria principal prevista é Livros, com Estilo de vida como secundária. Como o aplicativo ainda não foi aprovado, esses textos são planos de publicação e podem mudar até o lançamento.
+
+### A palavra de hoje
+A tela Hoje apresenta primeiro o bloco Palavra de hoje, com um versículo e uma pergunta para levar durante o dia. O rótulo Para levar no dia indica a pergunta, e a referência do versículo aparece no rodapé do cartão. Quando a pessoa toca para levar a palavra, o cartão passa a mostrar Você levou esta palavra e o aviso Levada hoje.
+
+O ritual da manhã leva cerca de um minuto, segundo o texto da loja. A proposta é que o versículo e a pergunta acompanhem a pessoa em vez de funcionarem como uma leitura isolada. A estrutura em cartões separa o que é da manhã e o que é da noite, de modo que a tela Hoje mostra o estado de cada ritual no dia corrente.
+
+### Fechar o dia
+À noite, o bloco Fechar o dia propõe a leitura de um salmo, com a referência acompanhada do indicativo à noite. Quem já levou a palavra de manhã vê a indicação De manhã você levou, e quem não levou vê a Pergunta do dia. A pessoa é convidada a responder Como foi o seu dia?, escolhendo entre opções de sentimento como Em paz e Difícil.
+
+Depois da escolha, o ritual se completa com o aviso Dia entregue. A descrição da loja resume esse momento como a hora de encerrar o dia com um salmo e rever a pergunta da manhã. O fechamento noturno leva cerca de três minutos, segundo o texto promocional, e usa o mesmo princípio da manhã: um gesto curto e repetível, em vez de uma leitura longa.
+
+### Dias seguidos e lembretes
+O app acompanha quantos dias seguidos a pessoa cumpriu os rituais. Quando há sequência, a tela Hoje mostra o número de dias seguidos, e, quando não há, convida a começar hoje. Esse contador funciona como estímulo discreto ao hábito, sem ranking nem comparação com outras pessoas, já que o app não pede conta nem identificação para ser usado. O contador é uma ferramenta de constância, não de cobrança.
+
+Os lembretes são avisos locais em dois horários fixos: às 7h, com o título Palavra de hoje, e às 22h, com o título Fechar o dia. Em Ajustes, a opção Lembretes diários permite ligar e desligar quando quiser. O app não usa notificações enviadas por servidor, o que dispensa a permissão de push e mantém a configuração restrita ao próprio aparelho.
+
+### Bíblia completa, sem internet
+A aba Bíblia permite ler os 66 livros, com navegação por capítulos e botão para avançar ao próximo. O texto fica no aparelho, de modo que a leitura funciona sem internet, e o tamanho da letra é ajustável, segundo a descrição prevista para a loja. O app também segue a aparência do iPhone, em modo claro ou escuro, conforme a configuração do sistema. Essa escolha reforça a ideia de um aplicativo para o dia a dia.
+
+Durante a leitura, um toque em um versículo o marca. A aba Marcados reúne os versículos guardados e, quando está vazia, explica que é preciso tocar em um versículo durante a leitura para guardá-lo ali. Cada marcação pode ser removida. É um recurso pensado para quem quer voltar depois a um trecho, sem copiar o texto para outro aplicativo. Assim, a leitura segue o ritmo de cada pessoa.
+
+### Texto, licença e privacidade
+O texto bíblico é o da Bíblia Livre, conhecida pela sigla BLIVRE, publicada sob a licença CC BY. Por isso, o crédito aparece em Ajustes e consta na descrição prevista para a App Store, com a atribuição aos autores. A escolha da versão foi deliberada: outras versões digitais disponíveis têm licença de uso não comercial, incompatível com a distribuição planejada para o app.
+
+Sobre dados, o texto da loja diz que o app não pede conta, e-mail nem telefone, e que os dados ficam só no aparelho. Em Ajustes, o item Dados guardados neste iPhone reforça essa informação. A política de privacidade ainda precisa ser publicada como parte das etapas finais do lançamento, e esse documento é exigido pela loja antes da aprovação.
+
+### Estado do projeto
+O aplicativo é apenas para iPhone: o iPad foi deixado de fora de propósito, para não exigir imagens e revisão específicas. O identificador é br.visionx.bibliasagrada e a versão atual é a 1.0.0. Na tela do aparelho, o nome é Bíblia Sagrada, enquanto o nome completo, Bíblia Sagrada: Dia e Noite, é o da loja, porque o nome simples já existe na App Store.
+
+Ainda faltam etapas de publicação: a chave própria do App Store Connect, as imagens da loja, a finalização do texto da loja e a política de privacidade. O aplicativo aguarda aprovação da Apple e, portanto, não está disponível para download. Não há data de lançamento confirmada, e as informações aqui descritas refletem o estado do projeto na data da consulta.
+
+### Perguntas frequentes
+**O app já está na App Store?**
+Não. O Bíblia Sagrada: Dia e Noite ainda aguarda aprovação da Apple e não está disponível para download. As etapas de publicação, como imagens da loja e política de privacidade, ainda estão sendo concluídas. Quando for aprovado, o plano é que o app seja gratuito e sem compras, mas não há data de lançamento confirmada neste momento.
+
+**O app é gratuito?**
+Sim. A proposta é que o app seja grátis, sem compras dentro dele, e disponível apenas para iPhone. Não há versão para Android prevista nas informações do projeto. O texto bíblico utilizado tem licença que permite uso mediante crédito, e o app não prevê cobrança de nenhum tipo, nem assinatura nem compras internas.
+
+**Qual versão da Bíblia o app usa?**
+Usa a Bíblia Livre, conhecida pela sigla BLIVRE, com licença CC BY. O crédito aparece na tela de Ajustes e deve constar também na descrição da App Store, como exige a licença. Essa licença foi escolhida justamente para permitir a distribuição gratuita, com o texto devidamente atribuído à sua origem dentro do aplicativo.
+
+**Quais são os dois rituais?**
+Pela manhã, a palavra de hoje, com lembrete às 7h. À noite, fechar o dia, lendo o salmo da noite, com lembrete às 22h. Os horários dos lembretes são fixos. A ideia é uma rotina curta e constante, sem exigir longas sessões de leitura, ajudando o leitor a criar o hábito ao longo do tempo.
+
+**Quais telas o app tem?**
+Hoje, Bíblia, Marcados e Ajustes. Hoje reúne os rituais do dia, Bíblia traz o texto, Marcados guarda o que você separou e Ajustes concentra as configurações e o crédito do texto. O visual segue o padrão do iPhone, e o aplicativo foi desenvolvido apenas para esse aparelho, sem versão prevista para outras plataformas.
+
+---
+
+## API de Nota Fiscal
+Endereço: https://visionxma.com/produtos/api-nota-fiscal/
+
+A API de Nota Fiscal da VisionX é uma API fiscal universal, organizada em módulos como NFC-e, NF-e, MDF-e e NFS-e. O produto está em desenvolvimento e ainda não foi lançado.
+
+### Um motor fiscal para vários negócios
+A API de Nota Fiscal da VisionX é o motor fiscal do SoftPay V2, descrito no repositório como uma API fiscal universal. A proposta é atender negócios muito diferentes, como varejo, distribuidora, serviços e comércio eletrônico, com um único núcleo técnico. O produto está em desenvolvimento, o repositório é privado e não há lançamento público, preço ou data confirmados. A descrição do pacote usa a mesma expressão, API fiscal universal, e cita documentos como NF-e, NFC-e, MDF-e e NFS-e.
+
+O motor foi desenhado como multi-tenant: cada empresa é um emitente, com certificado, numeração e chaves de API próprios. Sistemas externos, como um CRM, não embutem o motor; eles chamam a API por REST. Certificado, assinatura, numeração e comunicação com os órgãos fiscais ficam todos centralizados no motor, o que reduz o risco de segredos espalhados. Isso também facilita a manutenção, porque uma correção feita no motor vale para todos os sistemas conectados a ele.
+
+### Módulos ativáveis por cliente
+Cada documento ou imposto é um módulo isolado, ativado por cliente por meio de feature flags, que são chaves de ativação. O questionário de entrada do SoftPay V2 identifica o nicho do cliente e liga apenas os módulos relevantes, de modo que ele não vê funções que não usa. Um registro de módulos organiza o conjunto no código. Essa divisão torna o sistema mais fácil de manter e de testar.
+
+Os módulos previstos são NFC-e modelo 65, NF-e modelo 55, MDF-e modelo 58 e NFS-e, além de Substituição Tributária do ICMS, IPI, FECOEP e romaneio de entrega com frota. Uma distribuidora, por exemplo, depende da substituição tributária, enquanto um varejo de balcão depende da NFC-e. Essa lógica evita sobrecarregar a interface de quem só precisa de um tipo de nota. Cada módulo é independente e pode evoluir sem alterar os demais.
+
+### Integração por API REST
+Um guia do repositório descreve como sistemas externos integram a emissão de NFS-e. O setup é feito uma vez por empresa: cadastra-se o emitente com CNPJ, razão social, regime, endereço e inscrição municipal, envia-se o certificado A1 e gera-se uma chave de API para o sistema chamador. A chave deve ficar apenas no backend de quem chama, nunca no front.
+
+A emissão usa o Padrão Nacional da NFS-e, em comunicação segura com o gov.br/nfse. O chamador informa tomador, serviço e valores, junto de uma chave de idempotência, que impede nota duplicada se a requisição for repetida por falha de rede ou clique duplo. A resposta traz a chave de acesso e a nota, ou o motivo da recusa para que se corrija e reenvie.
+
+### Consulta, cancelamento e arquivos
+Depois da emissão, o motor oferece consulta da nota pela chave. Se uma falha de rede deixou a nota como rejeitada localmente, mas ela foi autorizada no órgão fiscal, a consulta corrige o status, comportamento descrito no guia como autocorreção. Também há cancelamento por evento, com motivo de 15 a 255 caracteres e códigos para erro de emissão, serviço não prestado e outros.
+
+Cada tentativa de cancelamento fica registrada, com numeração sequencial automática, e repetir o pedido numa nota já cancelada é seguro. Para obter os documentos, existem rotas que entregam o PDF da nota e o XML autorizado. Um SDK em TypeScript, sem dependências e baseado em fetch nativo, pode ser copiado para o backend do chamador e expõe operações de emitir, consultar e cancelar.
+
+### Pacotes para os produtos da VisionX
+Um plano do repositório propõe empacotar o motor em dois pacotes instaláveis. O fiscal-core reúne cálculo de imposto, tabelas e validação, funciona offline e não carrega segredos. O fiscal-sdk é o cliente tipado que se comunica com o motor central para o que depende de estado ou segredo, como emitir, assinar, numerar e consultar a SEFAZ. Essa divisão torna o sistema mais fácil de manter e de testar.
+
+O objetivo declarado é permitir que produtos próprios da VisionX, como SoftPay, FroX e Cortex, usem o mesmo motor sem duplicá-lo e sem que cada um vire dono de certificado, numeração ou comunicação fiscal. Certificado A1, assinatura, numeração sequencial e atualização da legislação nunca são embutidos offline. Segundo o plano, a numeração é um ponto sensível, pois pode colidir entre processos. Isso mostra a preocupação do projeto em separar o que pode rodar localmente do que precisa de proteção central.
+
+### Piloto em homologação
+O repositório traz um roteiro de implantação do piloto em ambiente de homologação, no qual as notas não têm valor fiscal e servem para provar o fluxo sem risco. O roteiro pede configuração de ambiente, instalação, uma verificação chamada doctor que confere chave mestra, banco, certificado e resposta da SEFAZ, cadastro de um emitente de teste e um teste de fumaça que emite uma NF-e e, havendo CSC, uma NFC-e.
+
+O sucesso do teste é uma nota autorizada com código de status 100 e protocolo. O documento prevê ainda subir o motor numa VPS Ubuntu com PM2 e nginx. Enquanto o teste não autorizar, a orientação é não liberar o motor para ninguém de fora. A produção exige que cada empresa esteja credenciada na SEFAZ, etapa que depende das próprias empresas.
+
+### O que ainda não está pronto
+O próprio roteiro lista o que não está pronto. O aplicativo V1 do SoftPay ainda não fala com o motor, e sua tela de notas é uma maquete. Não há contingência de NFC-e em modo offline caso a SEFAZ do Maranhão fique fora do ar. Quanto à escala, o piloto usa SQLite e uma única instância, solução considerada adequada para teste, mas não para grande volume.
+
+O código inclui scripts de apoio, como testes de fumaça para MDF-e e NFS-e nacional, monitoramento do TLS da SEFAZ e backup, além de uma suíte de testes automatizados com arquivos para chave de acesso, cálculo de tributos, manifestação do destinatário e fila de reenvio. Por estar em desenvolvimento, nada aqui deve ser lido como promessa de funcionalidade disponível ao público.
+
+### Perguntas frequentes
+**A API de Nota Fiscal já está disponível?**
+Não. O produto está em desenvolvimento, em repositório privado, e ainda não foi lançado. Não há data de lançamento, preço ou condições comerciais confirmados no material consultado. Esta página descreve o que o projeto prevê, e não um serviço já disponível, e as informações podem mudar durante o desenvolvimento.
+
+**Quais documentos fiscais a API prevê?**
+Os módulos previstos são NFC-e (modelo 65), NF-e (modelo 55), MDF-e (modelo 58) e NFS-e, além de ICMS-ST, IPI, FECOEP e romaneio de entrega. Todos fazem parte do desenho do projeto em desenvolvimento. Os demais módulos, como Substituição Tributária, IPI, FECOEP e romaneio de entrega, completam o desenho previsto para atender diferentes nichos de negócio.
+
+**O que significa módulo ativável por cliente?**
+Cada documento ou imposto é um módulo isolado, ligado por feature flags apenas para os clientes que precisam dele. O quiz de onboarding do SoftPay V2 detecta o nicho e ativa os módulos relevantes. Dessa forma, um varejista, uma distribuidora e uma empresa de serviços usam o mesmo motor, cada um com apenas os módulos de que precisa.
+
+**Quem usará a API?**
+O motor é a base fiscal do SoftPay V2. Um plano do repositório prevê pacotes npm para que outros produtos da VisionX usem o mesmo motor, sem cada um cuidar de certificado, numeração e SEFAZ. O objetivo declarado no plano é evitar duplicar o motor, mantendo um único ponto central para as regras e os segredos da emissão fiscal.
+
+**O que fica sempre no motor central?**
+Segundo o plano do projeto, certificado A1, assinatura, numeração sequencial e atualização de legislação não são embutidos offline. Esses itens ficam no motor central e chegam aos produtos por meio do SDK. Já o cálculo de imposto, as tabelas fiscais e a validação ficam no pacote fiscal-core, que funciona offline e sem qualquer segredo embutido.

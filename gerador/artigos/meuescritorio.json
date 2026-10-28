@@ -1,0 +1,146 @@
+{
+ "slug": "meuescritorio",
+ "nome": "MeuEscritório",
+ "titulo_artigo": "Sistema de gestão jurídica para escritório de advocacia",
+ "resumo": "MeuEscritório reúne processos, clientes, agenda e prazos, protocolos, financeiro, documentos e equipe em um sistema de gestão jurídica para advocacia.",
+ "lede": "Processo em um lugar, prazo em outro e financeiro em uma planilha: é assim que a rotina de muitos escritórios se fragmenta. O MeuEscritório reúne clientes, processos, agenda, protocolos, financeiro, documentos e equipe em uma única plataforma de gestão jurídica.",
+ "secoes": [
+  {
+   "h2": "Gestão jurídica sem informação espalhada",
+   "paragrafos": [
+    "O escritório de advocacia lida ao mesmo tempo com carteira de clientes, processos em andamento, audiências, protocolos, honorários e documentos. Quando cada frente vive em uma ferramenta diferente, a equipe perde tempo procurando informação, e a chance de um prazo escapar cresce. O MeuEscritório concentra essa operação em um único sistema de gestão jurídica, acessível pelo navegador e instalável como aplicativo.",
+    "A plataforma cobre clientes, processos, agenda e prazos, protocolos, financeiro, documentos, equipe e ferramentas de inteligência artificial. Cada conta criada vira um escritório próprio, com dados separados dos demais, e o administrador convida a equipe para trabalhar sobre a mesma base, sem planilhas paralelas nem anotações soltas que dependam da memória de uma pessoa só.",
+    "Para quem está começando a avaliar, o cadastro libera um teste grátis, e o administrador escolhe o plano já na entrada. Essa escolha pode ser trocada durante o período de teste, sem pagamento, o que permite ao escritório experimentar a plataforma com a equipe real antes de decidir se ela atende ao modo como a banca trabalha no dia a dia."
+   ]
+  },
+  {
+   "h2": "Clientes e fila de atendimento",
+   "paragrafos": [
+    "Cada cliente tem cadastro e uma ficha de detalhes, onde o histórico do atendimento fica reunido. O formulário aplica máscaras e validação de documentos, como CPF, CNPJ, RG, OAB, telefone e CEP, com conferência do dígito verificador de CPF e CNPJ, o que reduz erro de digitação logo na entrada do dado e evita retrabalho depois.",
+    "O módulo de atendimento organiza uma fila, para a secretaria saber quem aguarda e em que ordem. Há ainda a guarda de credenciais de portais por cliente, com as senhas cifradas, e uma função de sugestão de mensagem de WhatsApp apoiada por IA, útil para manter o contato com o cliente em linguagem clara sem começar do zero a cada conversa."
+   ]
+  },
+  {
+   "h2": "Processos e consulta ao CNJ",
+   "paragrafos": [
+    "Os processos do escritório ficam cadastrados no sistema e podem ser consultados nas bases públicas do CNJ/DataJud, com acompanhamento de movimentações e estatísticas. Isso aproxima o dado oficial da rotina do advogado, que deixa de alternar entre vários sites para conferir andamento e passa a ver tudo dentro do mesmo ambiente em que cuida do cliente.",
+    "O uso das consultas e da IA é medido por cota mensal, compartilhada pelo escritório, e a própria tela mostra o consumo em relação ao limite do plano. Para o sócio que administra a banca, isso dá previsibilidade: ele sabe quanto da cota já foi usado e quem precisa de orientação para aproveitar melhor o recurso."
+   ]
+  },
+  {
+   "h2": "Agenda, prazos, protocolos e metas",
+   "paragrafos": [
+    "A agenda reúne compromissos e prazos, com lembretes e notificações para a equipe, inclusive por notificação push no celular. O módulo de protocolos registra cada protocolo e os advogados vinculados a ele, e as tarefas e anotações ajudam a distribuir o trabalho do dia entre os integrantes do escritório, mantendo o responsável sempre identificado.",
+    "As metas permitem acompanhar objetivos financeiros e a página de atividades mostra o que cada pessoa tem a fazer. Como prazo, protocolo e meta estão no mesmo lugar dos processos, o escritório consegue cruzar informações sem exportar dados, e a rotina de acompanhamento deixa de depender de controles paralelos mantidos à mão."
+   ]
+  },
+  {
+   "h2": "Financeiro, documentos e relatórios",
+   "paragrafos": [
+    "O financeiro registra as transações do escritório, e o sistema trata valores em centavos para evitar diferenças de arredondamento nas somas e no parcelamento. O módulo de documentos conta com modelos, e há geração de arquivos em PDF e em formato de texto editável, de modo que peças e relatórios saem do mesmo ambiente em que o caso é acompanhado.",
+    "A página de relatórios consolida a informação para o sócio decidir com base em dados do próprio escritório. Reunir honorários, documentos e indicadores junto de clientes e processos evita a digitação repetida e deixa mais clara a situação financeira de cada frente, algo que, em planilhas separadas, costuma ficar desatualizado."
+   ]
+  },
+  {
+   "h2": "Equipe, permissões e segurança",
+   "paragrafos": [
+    "O administrador do escritório gerencia a equipe e define permissões por módulo, com os papéis de administrador, advogado e secretário. Quem acessa vê o que o seu perfil permite. O sistema mantém lixeira, histórico de edições e registros de auditoria, recursos úteis para entender quem alterou o quê e recuperar um item removido por engano.",
+    "Na camada de dados, o isolamento entre escritórios é feito por regras de acesso no banco de dados, as senhas de portais são cifradas e a sessão conta com bloqueio após tentativas, logout ao fechar e tempo limite de inatividade. O pagamento é recorrente pelo Asaas, e a documentação do projeto descreve validação do webhook e proteção contra processamento duplicado.",
+    "O sistema ainda oferece uma central de ajuda com chatbot e uma página de configurações e de perfil. Para o administrador, isso significa que a equipe consegue tirar dúvidas de uso sem interromper o sócio, e que o escritório adapta a plataforma à própria rotina, com a identidade e os dados de cada usuário mantidos de forma organizada."
+   ]
+  },
+  {
+   "h2": "Inteligência artificial e uso em qualquer dispositivo",
+   "paragrafos": [
+    "As ferramentas de IA incluem busca de jurisprudência, pesquisa de proposições legislativas com resumo, chatbot de ajuda e sugestão de mensagens de WhatsApp. São apoios ao trabalho: a conferência da fonte e a decisão sobre a tese continuam com o profissional, que responde pelo caso. As funções de IA também respeitam a cota mensal do plano contratado.",
+    "O MeuEscritório é um aplicativo web instalável (PWA), com página de instalação e notificações push, para que a equipe acompanhe o escritório pelo computador ou pelo celular. Há ainda um período de teste grátis no cadastro, em que o administrador escolhe o plano, e uma central de ajuda dentro do próprio sistema para tirar dúvidas de uso."
+   ]
+  }
+ ],
+ "recursos": [
+  {
+   "titulo": "Clientes",
+   "texto": "Cadastro e ficha detalhada de cada cliente do escritório."
+  },
+  {
+   "titulo": "Processos",
+   "texto": "Acompanhamento de processos, com consulta às bases do CNJ/DataJud."
+  },
+  {
+   "titulo": "Agenda e prazos",
+   "texto": "Compromissos e prazos com lembretes e notificações à equipe."
+  },
+  {
+   "titulo": "Protocolos",
+   "texto": "Registro de protocolos com os advogados vinculados."
+  },
+  {
+   "titulo": "Financeiro e metas",
+   "texto": "Transações do escritório e acompanhamento de metas."
+  },
+  {
+   "titulo": "Documentos",
+   "texto": "Gestão de documentos com modelos e exportação em PDF."
+  },
+  {
+   "titulo": "Equipe e permissões",
+   "texto": "Papéis e permissões por módulo para cada pessoa."
+  },
+  {
+   "titulo": "Ferramentas de IA",
+   "texto": "Jurisprudência, legislativo, chatbot de ajuda e mensagens de WhatsApp."
+  },
+  {
+   "titulo": "Auditoria e lixeira",
+   "texto": "Histórico de edições, logs de auditoria e lixeira."
+  }
+ ],
+ "motivos": [
+  {
+   "titulo": "Uma plataforma só",
+   "texto": "Clientes, processos, agenda, financeiro e documentos juntos."
+  },
+  {
+   "titulo": "Dados isolados",
+   "texto": "Cada escritório tem seus dados separados dos demais."
+  },
+  {
+   "titulo": "Controle de acesso",
+   "texto": "Permissões por módulo para cada integrante da equipe."
+  },
+  {
+   "titulo": "Rastreabilidade",
+   "texto": "Auditoria e histórico de edições para saber quem alterou o quê."
+  },
+  {
+   "titulo": "Acesso de qualquer lugar",
+   "texto": "Aplicativo web instalável, no computador ou no celular."
+  }
+ ],
+ "faq": [
+  {
+   "p": "O que é o MeuEscritório?",
+   "r": "É uma plataforma de gestão jurídica para escritórios de advocacia. Reúne clientes, processos, agenda e prazos, protocolos, financeiro, documentos, equipe e ferramentas de inteligência artificial em um só lugar, acessível pelo navegador e instalável como aplicativo no celular ou no computador."
+  },
+  {
+   "p": "Os dados de um escritório ficam separados dos outros?",
+   "r": "Sim. Cada conta criada vira um escritório isolado, e os dados são separados por escritório no banco de dados por regras de acesso. Dentro do escritório, o administrador define o que cada integrante da equipe pode acessar, módulo por módulo."
+  },
+  {
+   "p": "Quais papéis existem na equipe?",
+   "r": "O sistema trabalha com os papéis de administrador, advogado e secretário. O administrador do escritório gerencia a equipe e a assinatura, e as permissões por módulo definem o que cada pessoa enxerga e pode fazer dentro da plataforma."
+  },
+  {
+   "p": "O sistema tem inteligência artificial?",
+   "r": "Tem ferramentas de IA como busca de jurisprudência, resumo de proposições legislativas, chatbot de ajuda e sugestão de mensagens de WhatsApp. Elas apoiam o trabalho, e a revisão e a decisão continuam com o profissional responsável pelo caso."
+  },
+  {
+   "p": "Posso usar no celular?",
+   "r": "Sim. O MeuEscritório é um aplicativo web instalável (PWA), então pode ser acessado pelo navegador ou instalado no celular e no computador, mantendo a mesma operação do escritório disponível nos dois."
+  }
+ ],
+ "fontes": [
+  "https://saasadvocacia.pages.dev",
+  "https://github.com/visionxma/saasadvocacia (README.md e DOCUMENTACAO.md)"
+ ]
+}

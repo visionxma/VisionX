@@ -1,81 +1,41 @@
-# VisionX — sites, sistemas de gestão e anúncios para empresas
+# VisionX — sistemas de gestão para cada setor
+> A VisionX é uma empresa brasileira de software, com sede em Pedreiras, Maranhão. Desenvolve e opera produtos próprios: sistemas de gestão para diversos setores e ferramentas de uso direto. Cada produto tem página, artigo e teste próprios.
 
-> Empresa brasileira de desenvolvimento de soluções digitais: criação de
-> sites e lojas virtuais, sistemas de gestão sob medida e gestão de
-> anúncios no Google e no Instagram. Atende empresas de todo o Brasil,
-> com sede em Pedreiras, Maranhão. CNPJ 61.427.918/0001-06.
-> Preço fechado antes de começar, prazo por escrito e suporte depois da
-> entrega, sem contrato de fidelidade.
+## O que a VisionX não é
+- Não é agência nem revenda de site pronto: o portal apresenta produtos de software próprios.
 
-## O que a VisionX faz
+## Sistemas de gestão
+- [FroX](https://visionxma.com/produtos/frox/) (Transporte e frotas): Gestão de frota de caminhões para transportadora e autônomo. Preço: Plano Grátis para 1 caminhão; Plano Frotas a partir de R$ 63,75/mês.
+- [ConstruSoft](https://visionxma.com/produtos/construsoft/) (Construção civil): Gestão de obras para construtoras. Preço: R$ 479,99/mês ou a partir de R$ 305,99/mês, usuários ilimitados.
+- [SoftPay](https://visionxma.com/produtos/softpay/) (Comércio e varejo): PDV, estoque e vendas para o comércio.
+- [HotelGestão](https://visionxma.com/produtos/hotelgestao/) (Hotéis e pousadas): Sistema para hotel e pousada na nuvem.
+- [Finagro](https://visionxma.com/produtos/finagro/) (Agropecuária): Gestão rural para fazenda e sítio, no celular e no computador.
+- [Seu Plantão](https://visionxma.com/produtos/seuplantao/) (Saúde): Agenda e faturamento para médicos plantonistas.
+- [MeuEscritório](https://visionxma.com/produtos/meuescritorio/) (Advocacia): Gestão jurídica para escritórios de advocacia.
+- [Mídiamente](https://visionxma.com/produtos/midiamente/) (Agências de marketing): Gestão com IA para agências de marketing.
+- [CorteX](https://visionxma.com/produtos/cortex/) (Atendimento e vendas com IA): Operação de atendimento e vendas por inteligência artificial.
 
-- **Sites e lojas virtuais** — site institucional, landing page e loja
-  virtual que abrem rápido no celular, aparecem no Google e convertem em
-  pedido pelo WhatsApp.
-- **Sistemas de gestão sob medida** — substitui caderno e planilha por um
-  sistema feito para o jeito que o negócio funciona: vendas, estoque,
-  mensalidades, financeiro e automação de tarefas repetidas.
-- **Anúncios no Google e no Instagram** — campanhas gerenciadas, com
-  acompanhamento de onde vem cada venda.
+## Ferramentas e plataformas
+- [PDF sem Cadastro](https://visionxma.com/produtos/pdf-sem-cadastro/) (Ferramenta): Comprima, junte, assine e converta PDF e imagem, grátis.
+- [BrasilVisto](https://visionxma.com/produtos/brasilvisto/) (Notícias e dados): Política, economia e dados, com a fonte à vista.
+- [Urnômetro](https://visionxma.com/produtos/urnometro/) (Apuração eleitoral): A apuração do 2º turno contada pelo que falta apurar.
+- [XMusic](https://visionxma.com/produtos/xmusic/) (Música): Aplicativo de música.
+- [Bíblia Sagrada: Dia e Noite](https://visionxma.com/produtos/biblia/) (Leitura e rotina): Aplicativo de iPhone com rituais de manhã e de noite.
+- [API de Nota Fiscal](https://visionxma.com/produtos/api-nota-fiscal/) (Fiscal para desenvolvedores): API fiscal modular: NFC-e, NF-e, MDF-e, NFS-e e impostos.
 
-Os três serviços são entregues pelo mesmo time, do começo ao fim, com
-uma pessoa responsável pelo atendimento depois que o projeto entra no ar.
+## Em desenvolvimento
+- [Agendador](https://visionxma.com/) (Agendamento): Sistema de agendamento. Em desenvolvimento.
+- [Achegar](https://visionxma.com/) (Hospedagem): Rede de reservas de hospedagem. Em desenvolvimento.
+- [Remessa](https://visionxma.com/) (E-mail): API de e-mail transacional e campanhas. Em desenvolvimento.
+- [Elo](https://visionxma.com/) (Família): Aplicativo de localização para a família. Em desenvolvimento.
+- [Cabeceira](https://visionxma.com/) (Leitura): Leitor de PDF para Windows. Em desenvolvimento.
+- [CiberAtlas](https://visionxma.com/) (Cibersegurança): Atlas aberto de cibersegurança defensiva. Em desenvolvimento.
+- [LeLink](https://visionxma.com/) (Ferramenta para IA): Lê links e responde só com evidência verificável. Em desenvolvimento.
 
-## O que a VisionX NÃO é
+## Institucional
+- [Contato](https://visionxma.com/contact/): formulário e WhatsApp (99) 98430-4630
+- [Política de privacidade](https://visionxma.com/privacidade/)
+- [Termos de serviço](https://visionxma.com/termos/)
+- [Texto completo do site](https://visionxma.com/llms-full.txt)
 
-- Não é marketplace de freelancers nem revenda de site pronto: cada
-  projeto é desenvolvido pela própria equipe.
-- Não trabalha com orçamento aberto que muda no meio do caminho: o preço
-  é fechado antes de começar.
-- Não exige contrato de fidelidade.
-
-## Produtos próprios da VisionX
-
-Além dos projetos sob medida, a VisionX desenvolve e opera produtos
-próprios em software como serviço (SaaS):
-
-- **FroX** — sistema de gestão de frotas para transportadoras e
-  caminhoneiros: https://site.froxbr.com/
-- **SoftPay** — PDV, controle de estoque e vendas: https://www.softpaybr.com/
-- **HotelGestão** — sistema de gestão de hotéis e pousadas:
-  https://hotelgestao.com.br/
-- **ConstruSoft** — sistema de gestão de obras para construtoras:
-  https://construsoftbr.com/
-- **Finagro** — sistema de gestão rural para o produtor: https://finagro.app/
-
-## Páginas do site
-
-- Home: https://visionxma.com/
-- Serviços (visão geral): https://visionxma.com/servicos/
-- Criação de sites e loja virtual: https://visionxma.com/servicos/criacao-de-sites/
-- Sistema de gestão sob medida: https://visionxma.com/servicos/sistema-de-gestao/
-- Anúncios no Google e Instagram: https://visionxma.com/servicos/anuncios-no-google/
-- Sobre a empresa: https://visionxma.com/about/
-- Contato e orçamento: https://visionxma.com/contact/
-- Blog: https://visionxma.com/blog/
-
-## Conteúdo do blog
-
-Artigos em linguagem simples, sem termo técnico, sobre as dúvidas de
-quem contrata:
-
-- Quanto custa um site para empresa:
-  https://visionxma.com/blog/quanto-custa-um-site-para-empresa/
-- Meu negócio não aparece no Google:
-  https://visionxma.com/blog/meu-negocio-nao-aparece-no-google/
-- Planilha ou sistema de gestão:
-  https://visionxma.com/blog/planilha-ou-sistema-de-gestao/
-- Vale a pena anunciar no Google:
-  https://visionxma.com/blog/vale-a-pena-anunciar-no-google/
-
-## Contato
-
-- Site: https://visionxma.com/
-- Orçamento sem compromisso: https://visionxma.com/contact/
-- Sede: Pedreiras, Maranhão, Brasil
-- Atendimento: todo o Brasil, remoto
-
-## Termos e privacidade
-
-- Política de privacidade: https://visionxma.com/privacidade/
-- Termos de uso: https://visionxma.com/termos/
+Atualizado em 28 de outubro de 2026.
