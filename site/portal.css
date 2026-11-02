@@ -51,7 +51,7 @@
 .vxp-artigo .vxp-meta { margin: 0 0 1rem; color: #585858; font-size: .875rem; }
 .vxp-veja { padding-top: 1rem; border-top: 1px solid #ececec; }
 .vxp-veja a { text-decoration: underline; }
-.vxp-artigo p a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .18em; }
+.vxp-artigo p a { color: inherit; letter-spacing: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .18em; }
 @media (hover: hover) and (pointer: fine) { .vxp-artigo p a:hover { text-decoration-thickness: 2px; } }
 .vxp-tabela { margin: 1.25rem 0 0; }
 .vxp-tabela table { width: 100%; border-collapse: collapse; font-size: .9375rem; line-height: 1.4; }
