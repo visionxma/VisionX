@@ -1,12 +1,13 @@
 // Portal de produtos NO VISUAL ANTIGO da VisionX (céu estrelado, leque de cartões, ciano, rodapé escuro).
-// Parte sempre do site/index.html do commit HEAD e troca só texto e seções de conteúdo, para o visual não mudar.
+// Parte sempre do site/index.html do commit-base (o último com o site antigo intacto, antes do portal) e troca só
+// texto e seções de conteúdo, para o visual não mudar. Partir do HEAD quebrava: depois do 1º portal o HEAD já é o gerado.
 // Os dados vêm de gerador/produtos.mjs.  Uso: node gerador/portal-antigo.mjs
 import { execFileSync } from 'node:child_process';
 import { writeFileSync, mkdirSync, copyFileSync, existsSync, readFileSync, rmSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { grupos, produtos } from './produtos.mjs';
-import { gerarPaginas, versao, HOJE, HOJE_EXTENSO, OFERTAS } from './paginas-produto.mjs';
+import { gerarPaginas, versao, HOJE, HOJE_EXTENSO, DATA_BASE, OFERTAS } from './paginas-produto.mjs';
 
 const RAIZ = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = join(RAIZ, 'site');
@@ -17,7 +18,8 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 const noAr = produtos.filter((p) => p.estado === 'no-ar');
 const g = (k) => produtos.filter((p) => p.grupo === k);
 
-let h = execFileSync('git', ['show', 'HEAD:site/index.html'], { cwd: RAIZ, encoding: 'utf8', env: { ...process.env, DEVELOPER_DIR: '/Library/Developer/CommandLineTools' } });
+const BASE = '9572918';
+let h = execFileSync('git', ['show', `${BASE}:site/index.html`], { cwd: RAIZ, encoding: 'utf8', env: { ...process.env, DEVELOPER_DIR: '/Library/Developer/CommandLineTools' } });
 // compacta o espaço em branco fora de <script>/<style>, para os trechos se acharem por texto
 const guarda = [];
 h = h.replace(/<(script|style)\b[\s\S]*?<\/\1>/g, (m) => { guarda.push(m); return `\u0000${guarda.length - 1}\u0000`; });
@@ -197,6 +199,23 @@ writeFileSync(join(SITE, 'portal.css'), `/* Cartões de produto: mesma linguagem
 .vxp-artigo .vxp-meta { margin: 0 0 1rem; color: #585858; font-size: .875rem; }
 .vxp-veja { padding-top: 1rem; border-top: 1px solid #ececec; }
 .vxp-veja a { text-decoration: underline; }
+.vxp-artigo p a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .18em; }
+@media (hover: hover) and (pointer: fine) { .vxp-artigo p a:hover { text-decoration-thickness: 2px; } }
+.vxp-tabela { margin: 1.25rem 0 0; }
+.vxp-tabela table { width: 100%; border-collapse: collapse; font-size: .9375rem; line-height: 1.4; }
+.vxp-tabela caption { text-align: left; font-weight: 600; padding-bottom: .6rem; }
+.vxp-tabela th, .vxp-tabela td { text-align: left; vertical-align: top; padding: .6rem .7rem; border-bottom: 1px solid #ececec; }
+.vxp-tabela thead th { font-size: .8125rem; color: #585858; border-bottom-color: #dcdcdc; }
+.vxp-tabela tbody th { font-weight: 600; }
+.vxp-artigo .vxp-tabela-fonte { margin-top: .6rem; font-size: .8125rem; color: #585858; }
+@media (max-width: 47.99rem) {
+  .vxp-tabela thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .vxp-tabela table, .vxp-tabela tbody, .vxp-tabela caption { display: block; }
+  .vxp-tabela tr { display: grid; grid-template-columns: repeat(var(--n, 2), minmax(0, 1fr)); gap: .5rem; padding: .75rem; margin-top: .5rem; border: 1px solid #ececec; border-radius: .75rem; background: #fff; }
+  .vxp-tabela tbody th { grid-column: 1 / -1; padding: 0; border: 0; }
+  .vxp-tabela td { padding: 0; border: 0; font-size: .875rem; overflow-wrap: anywhere; }
+  .vxp-tabela td::before { content: attr(data-rotulo); display: block; margin-bottom: .15rem; font-size: .75rem; font-weight: 600; color: #585858; }
+}
 .vxp-faq { max-width: 46rem; margin-inline: auto; }
 .vxp-faq details { border-bottom: 1px solid #dcdcdc; }
 .vxp-faq summary { display: flex; align-items: center; min-height: 48px; padding: .6rem 0; font-weight: 600; cursor: pointer; list-style: none; }
@@ -244,8 +263,9 @@ for (const [caminho, desc] of [['/contact/', null], ['/privacidade/', null], ['/
 }
 
 // ---------- sitemap, llms, robots, 404 ----------
-const urls = ['/', '/contact/', '/privacidade/', '/termos/', ...paginas.map((p) => p.caminho)];
-writeFileSync(join(SITE, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${URL}${u}</loc><lastmod>${HOJE}</lastmod></url>`).join('\n')}\n</urlset>\n`);
+// lastmod: a home leva HOJE; página de produto, a data do próprio artigo; as institucionais, a data-base (não mudam)
+const urls = [['/', HOJE], ...['/contact/', '/privacidade/', '/termos/'].map((u) => [u, DATA_BASE]), ...paginas.map((p) => [p.caminho, p.data])];
+writeFileSync(join(SITE, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(([u, d]) => `  <url><loc>${URL}${u}</loc><lastmod>${d}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 
 const linhaProduto = (p) => `- [${p.nome}](${p.grupo === 'dev' ? URL + '/' : URL + '/produtos/' + p.slug + '/'}) (${p.setor}): ${p.resumo}${OFERTAS[p.slug] ? ' Preço: ' + OFERTAS[p.slug].texto + '.' : ''}${p.grupo === 'dev' ? ' Em desenvolvimento.' : ''}`;
 writeFileSync(join(SITE, 'llms.txt'), `# VisionX — sistemas de gestão para cada setor
@@ -273,7 +293,7 @@ Atualizado em ${HOJE_EXTENSO}.
 `);
 writeFileSync(join(SITE, 'llms-full.txt'), `# VisionX — texto completo do site\n\nAtualizado em ${HOJE_EXTENSO}.\n\n` + paginas.map((pg) => {
   const art = pg.art;
-  return `## ${pg.nome}\nEndereço: ${URL}${pg.caminho}\n${art ? `\n${art.lede}\n\n${art.secoes.map((s) => `### ${s.h2}\n${s.paragrafos.join('\n\n')}`).join('\n\n')}\n\n### Perguntas frequentes\n${art.faq.map((f) => `**${f.p}**\n${f.r}`).join('\n\n')}\n` : ''}`;
+  return `## ${pg.nome}\nEndereço: ${URL}${pg.caminho}\n${art ? `\n${art.lede}\n\n${art.secoes.map((s) => `### ${s.h2}\n${s.paragrafos.join('\n\n')}${s.tabela ? `\n\n${s.tabela.legenda}\n\n| ${s.tabela.colunas.join(' | ')} |\n|${s.tabela.colunas.map(() => ' --- |').join('')}\n${s.tabela.linhas.map((l) => `| ${l.join(' | ')} |`).join('\n')}${s.tabela.fonte ? `\n\n${s.tabela.fonte}` : ''}` : ''}`).join('\n\n')}\n\n### Perguntas frequentes\n${art.faq.map((f) => `**${f.p}**\n${f.r}`).join('\n\n')}\n` : ''}`;
 }).join('\n---\n\n'));
 
 const robotsAI = ['Googlebot', 'Bingbot', 'GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'PerplexityBot', 'ClaudeBot', 'Claude-SearchBot', 'Google-Extended', 'Applebot', 'DuckDuckBot', 'YandexBot', 'CCBot'];

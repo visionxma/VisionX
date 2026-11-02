@@ -95,6 +95,15 @@ export const produtos = [
     pontos: ['Placar e quanto falta apurar', 'Quanto cada candidato precisa', 'Presidente e governador', 'Dados lidos direto do TSE']
   },
   {
+    // era o "Agendador" (em desenvolvimento); no ar como Tarrafa em tarrafa.app. Texto lido do site oficial em 02/11/2026.
+    // O ícone agendador.svg é o arquivo oficial (igual byte a byte ao app/icon.svg do repositório da Tarrafa).
+    slug: 'tarrafa', nome: 'Tarrafa', grupo: 'ferramentas', setor: 'Agendador de posts', estado: 'no-ar',
+    url: 'https://tarrafa.app', icone: 'agendador.svg', captura: null, cor: '#32512C',
+    resumo: 'Agendador de posts para Instagram, Facebook, TikTok e Bluesky.',
+    texto: 'Programa posts pela integração oficial de cada rede e mostra por que cada um sai naquele horário. Só marca como publicado depois de achar o link no ar, e o cliente aprova por link, sem criar conta.',
+    pontos: ['Instagram, Facebook, TikTok e Bluesky pela API oficial', 'Horário com o motivo de cada post', 'Publicado só com o link no ar', 'Aprovação do cliente por link']
+  },
+  {
     slug: 'xmusic', nome: 'XMusic', grupo: 'ferramentas', setor: 'Música', estado: 'app',
     url: null, icone: 'xmusic.png', captura: null, cor: '#9333ea',
     resumo: 'Aplicativo de música.', texto: 'Aplicativo de música da VisionX, para celular.', pontos: ['Aplicativo para celular']
@@ -111,8 +120,6 @@ export const produtos = [
     texto: 'API fiscal em módulos que se ativam por cliente: NFC-e, NF-e, MDF-e, NFS-e, substituição tributária, IPI e romaneio de entrega.',
     pontos: ['NFC-e e NF-e', 'MDF-e e NFS-e', 'Substituição tributária e IPI', 'Módulos ativados por cliente']
   },
-  { slug: 'agendador', nome: 'Agendador', grupo: 'dev', setor: 'Agendamento', estado: 'dev', url: null, icone: 'agendador.svg', captura: null, cor: '#475569',
-    resumo: 'Sistema de agendamento.', texto: 'Sistema de agendamento da VisionX, em desenvolvimento.', pontos: [] },
   { slug: 'achegar', nome: 'Achegar', grupo: 'dev', setor: 'Hospedagem', estado: 'dev', url: null, icone: 'achegar.svg', captura: null, cor: '#475569',
     resumo: 'Rede de reservas de hospedagem.', texto: 'Rede de reservas de hospedagem, produto separado do HotelGestão, em desenvolvimento.', pontos: [] },
   { slug: 'remessa', nome: 'Remessa', grupo: 'dev', setor: 'E-mail', estado: 'dev', url: null, icone: 'remessa.svg', captura: null, cor: '#475569',

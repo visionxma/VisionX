@@ -19,12 +19,12 @@
 - [PDF sem Cadastro](https://visionxma.com/produtos/pdf-sem-cadastro/) (Ferramenta): Comprima, junte, assine e converta PDF e imagem, grátis.
 - [BrasilVisto](https://visionxma.com/produtos/brasilvisto/) (Notícias e dados): Política, economia e dados, com a fonte à vista.
 - [Urnômetro](https://visionxma.com/produtos/urnometro/) (Apuração eleitoral): A apuração do 2º turno contada pelo que falta apurar.
+- [Tarrafa](https://visionxma.com/produtos/tarrafa/) (Agendador de posts): Agendador de posts para Instagram, Facebook, TikTok e Bluesky. Preço: Entrada por R$ 0 (1 marca, até 3 redes); Jangada R$ 29, Traineira R$ 99 e Porto R$ 249 por mês, por marca.
 - [XMusic](https://visionxma.com/produtos/xmusic/) (Música): Aplicativo de música.
 - [Bíblia Sagrada: Dia e Noite](https://visionxma.com/produtos/biblia/) (Leitura e rotina): Aplicativo de iPhone com rituais de manhã e de noite.
 - [API de Nota Fiscal](https://visionxma.com/produtos/api-nota-fiscal/) (Fiscal para desenvolvedores): API fiscal modular: NFC-e, NF-e, MDF-e, NFS-e e impostos.
 
 ## Em desenvolvimento
-- [Agendador](https://visionxma.com/) (Agendamento): Sistema de agendamento. Em desenvolvimento.
 - [Achegar](https://visionxma.com/) (Hospedagem): Rede de reservas de hospedagem. Em desenvolvimento.
 - [Remessa](https://visionxma.com/) (E-mail): API de e-mail transacional e campanhas. Em desenvolvimento.
 - [Elo](https://visionxma.com/) (Família): Aplicativo de localização para a família. Em desenvolvimento.
@@ -38,4 +38,4 @@
 - [Termos de serviço](https://visionxma.com/termos/)
 - [Texto completo do site](https://visionxma.com/llms-full.txt)
 
-Atualizado em 28 de outubro de 2026.
+Atualizado em 2 de novembro de 2026.

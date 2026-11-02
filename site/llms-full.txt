@@ -1,6 +1,6 @@
 # VisionX — texto completo do site
 
-Atualizado em 28 de outubro de 2026.
+Atualizado em 2 de novembro de 2026.
 
 ## FroX
 Endereço: https://visionxma.com/produtos/frox/
@@ -10,10 +10,10 @@ Quem opera caminhões sabe que o frete que parece bom nem sempre paga o veículo
 ### Por que planilha e caderno deixam a frota no escuro
 Abastecimento anotado no papel e esquecido depois, manutenção lembrada só depois do caminhão quebrar, motorista que liga para saber o que fazer na viagem. É o retrato de muita operação que ainda depende de planilha e caderno. O problema não é falta de esforço: a informação chega tarde e espalhada, e a decisão sai antes de o número existir. Com tudo no sistema e na hora, o histórico completo de cada placa fica sempre à mão para consulta.
 
-Também há o documento. CRLV, seguro e revisão têm data de vencimento, e documento vencido vira multa e caminhão parado na fiscalização. Sem aviso antecipado por placa, o controle fica na memória de quem está no escritório, e a memória falha justamente na semana mais corrida do mês. O mesmo vale para a CNH do motorista, que também carrega data de vencimento e precisa ser acompanhada.
+Também há o documento. CRLV, seguro e revisão têm data de vencimento, e documento vencido vira multa e caminhão parado na fiscalização. Sem aviso antecipado por placa, o controle fica na memória de quem está no escritório, e a memória falha justamente na semana mais corrida do mês. Para o licenciamento, o calendário de [licenciamento de caminhão 2026](https://site.froxbr.com/licenciamento-caminhao-2026/) mostra o prazo de cada um dos 27 estados pelo final da placa. O mesmo vale para a CNH do motorista, que também carrega data de vencimento e precisa ser acompanhada.
 
 ### Custo por quilômetro: o piso do seu frete
-O custo por quilômetro rodado (CPK) é o custo total do período dividido pelos quilômetros rodados no mesmo período. Segundo o material do FroX, o custo soma o que depende de rodar, como diesel, pedágio, pneu, manutenção e comissão, com o que se paga mesmo com o caminhão parado, como parcela, seguro, salário, contador e licenças. Para fazer a conta com os seus números, o site oferece calculadoras abertas, como a de custo por km e a de preço mínimo de frete.
+O custo por quilômetro rodado (CPK) é o custo total do período dividido pelos quilômetros rodados no mesmo período. Segundo o material do FroX, o custo soma o que depende de rodar, como diesel, pedágio, pneu, manutenção e comissão, com o que se paga mesmo com o caminhão parado, como parcela, seguro, salário, contador e licenças. Para fazer a conta com os seus números, o site oferece calculadoras abertas, como a de custo por km e a de preço mínimo de frete, e uma [planilha de controle de frota](https://site.froxbr.com/planilha-controle-de-frota/) grátis, em Excel.
 
 O exemplo publicado no site é direto: R$28.000 de custo total em um mês de 8.000 km resultam em R$3,50 por km. Frete que pague menos que isso por quilômetro rodado dá prejuízo, mesmo parecendo bom no valor cheio. A recomendação é usar um mês inteiro, porque semana é pouco e uma quebra distorce tudo. Isso mostra por que o valor cheio do frete, sozinho, engana quem não conhece o próprio custo.
 
@@ -24,7 +24,7 @@ Em transporte, o resultado do mês é a soma de decisões tomadas uma a uma, no 
 
 A volta vazia é onde o dinheiro mais some. Um frete de R$ 9.000 para 1.500 km de ida vira 3.000 km rodados quando não há carga de retorno, e o lucro aparente pode virar prejuízo. No FroX, carga complementar, retorno e frete fracionado entram como receitas separadas da mesma viagem, e o deslocamento vazio também é registrado. Registrar o vazio impede que o veículo pareça mais lucrativo do que realmente é.
 
-A viagem nasce no sistema com caminhão, motorista, origem, destino, tipo e descrição da carga e datas. Km inicial e final, abastecimentos, pedágio, chapa, diária e adiantamento entram pelo celular com foto do comprovante. O XML da nota importa direto, e a viagem fecha com o saldo em real e o que ainda falta receber ou pagar. Assim não há digitação dupla no fim do mês, e o escritório vê o que a estrada lançou.
+A viagem nasce no sistema com caminhão, motorista, origem, destino, tipo e descrição da carga e datas. Km inicial e final, abastecimentos, pedágio, chapa, diária e adiantamento entram pelo celular com foto do comprovante. O XML da nota importa direto, e a viagem fecha com o saldo em real e o que ainda falta receber ou pagar. Assim não há digitação dupla no fim do mês, e o escritório vê o que a estrada lançou. Se a carga ou a descarga passa de 5 horas, a calculadora de [estadia de caminhão](https://site.froxbr.com/calculadoras/estadia-caminhao/) mostra quanto cobrar pela regra de 2026, de R$ 2,50 por tonelada/hora.
 
 ### Abastecimento e diesel sob vigilância
 O diesel leva a maior fatia do frete e costuma ser a conta menos medida, porque o abastecimento acontece longe do escritório, à noite, com o motorista apressado. No FroX, o motorista registra litros, valor e a foto do cupom pelo celular, na hora, e também a forma de pagamento, carta frete ou diesel à vista, e o posto. Esse registro cai no painel do escritório na hora, sem cupom perdido no porta-luvas.
@@ -48,7 +48,7 @@ O simulador pertence ao Plano Frotas, junto com a tela Atenção e os alertas. N
 ### Do plano grátis ao Plano Frotas, com preço na mesa
 O FroX Grátis é permanente, com um caminhão e um motorista, viagens e lançamentos financeiros avulsos sem limite de quantidade, Relatório Geral completo em PDF, backup e exportação. O Plano Frotas libera app do motorista, fotos e anexos, recorrências e parcelas, fornecedores e postos, simulador, alertas e todos os relatórios, sem anúncios externos. As quantidades de caminhões, motoristas e usuários do Plano Frotas seguem a oferta contratada.
 
-O preço é publicado: R$75/mês no ciclo mensal com 2 caminhões inclusos, R$69/mês no semestral e R$63,75/mês no anual, com R$50/mês por caminhão adicional. O pagamento é pelo Asaas, com Pix, boleto ou cartão, sem taxa de implantação. O sistema roda no navegador, pode ser instalado como aplicativo e funciona sem rastreador. O mesmo preço vale em todo o Brasil, e há uma calculadora na página para ver o total da sua frota.
+O preço é publicado: R$75/mês no ciclo mensal com 2 caminhões inclusos, R$69/mês no semestral e R$63,75/mês no anual, com R$50/mês por caminhão adicional. O pagamento é pelo Asaas, com Pix, boleto ou cartão, sem taxa de implantação. O [sistema de gestão de frotas](https://site.froxbr.com/) roda no navegador, pode ser instalado como aplicativo e funciona sem rastreador. O mesmo preço vale em todo o Brasil, e há uma calculadora na página para ver o total da sua frota.
 
 ### Perguntas frequentes
 **O FroX Grátis expira?**
@@ -76,12 +76,12 @@ No fim do mês, quem toca obra quer saber o que entrou, o que saiu e quem deve. 
 ### O dinheiro sai antes de entrar quando ninguém vê o vencimento
 Na construção, o caixa aperta quando a parcela do cliente vence e a despesa de material chega no mesmo período, sem que ninguém tenha enxergado os dois lados. Quem controla tudo em planilha e caderno costuma ter uma aba por obra, vencimentos lançados à mão e notas guardadas em pastas ou em fotos no celular. Construtora, empreiteiro com várias obras e quem ainda junta tudo na planilha sentem o mesmo aperto, cada um por uma tela diferente.
 
-O resultado é um controle que depende de memória. A pergunta que se repete toda semana, qual parcela vence e de qual cliente, exige abrir arquivo por arquivo. E a seguinte, aquela despesa foi de qual obra e quando, fica sem resposta rápida justamente quando o fornecedor cobra. Quando as respostas ficam em lugares diferentes, o dono só percebe o problema quando o caixa já está pressionado.
+O resultado é um controle que depende de memória. A pergunta que se repete toda semana, qual parcela vence e de qual cliente, exige abrir arquivo por arquivo. E a seguinte, aquela despesa foi de qual obra e quando, fica sem resposta rápida justamente quando o fornecedor cobra. Quando as respostas ficam em lugares diferentes, o dono só percebe o problema quando o caixa já está pressionado. Um [sistema para construtora](https://construsoftbr.com/) junta essas respostas numa tela só.
 
 ### Lucro real de cada obra: orçado, gasto e recebido
 Empreiteiro com várias obras abertas precisa saber qual delas puxou o caixa para baixo. Para chegar ao lucro de cada uma é preciso somar gasto e recebido obra por obra, e quando o dinheiro de uma é usado para pagar o material de outra, o resultado individual se perde. O dinheiro de uma obra não deve sumir pagando o material de outra, e para isso cada obra precisa aparecer com o progresso, o orçado e o gasto.
 
-No ConstruSoft, cada obra tem uma aba de resumo que compara o valor de venda fechado com o cliente com as despesas lançadas e os recebimentos. O painel mostra gasto, recebido e saldo de todas as obras em tempo real, com fluxo de caixa dos últimos 12 meses. A aba financeira guarda lucro estimado, comissão e margem. Os relatórios filtram o período e saem em PDF e CSV.
+No ConstruSoft, cada obra tem uma aba de resumo que compara o valor de venda fechado com o cliente com as despesas lançadas e os recebimentos. O painel mostra gasto, recebido e saldo de todas as obras em tempo real, com fluxo de caixa dos últimos 12 meses. A aba financeira guarda lucro estimado, comissão e margem. Os relatórios filtram o período e saem em PDF e CSV. É a conta que um [software de gestão de obras](https://construsoftbr.com/) tem de fechar sem planilha paralela.
 
 ### Parcelas de clientes e recibo numerado
 Construtora que vende em parcelas lida com entrada, vencimentos e pagamentos parciais. No sistema, entrada e parcelas saem da negociação da obra, e a baixa aceita pagamento parcial, mantendo o saldo em aberto. O histórico financeiro de cada cliente, pessoa física ou jurídica, fica guardado, com busca automática de CNPJ. Cada cliente guarda o histórico financeiro, e as parcelas aparecem separadas por obra ou por cliente.
@@ -93,7 +93,7 @@ Cada despesa entra com data, obra, categoria, valor e situação: pendente, apro
 
 O estoque registra entradas e saídas de material com custo unitário e avisa quando um item fica abaixo do mínimo definido. Os fornecedores são vinculados às obras e as compras entram como despesas. Relatórios filtram por período e saem em PDF e CSV, e as permissões granulares definem o que cada pessoa vê e faz. Quem precisa de cotação ou pedido de compra com fornecedores deve saber que esses módulos não existem; as compras entram como despesas.
 
-Pedreiro, eletricista, mestre: cada pessoa é cadastrada com a função dela, e as permissões granulares definem, ação por ação, o que cada usuário pode ver, criar, editar ou excluir. Como os usuários são ilimitados, o time inteiro entra no sistema sem mudar o preço, e o dono controla o acesso em vez de limitar quantas pessoas o utilizam.
+Pedreiro, eletricista, mestre: cada pessoa é cadastrada com a função dela, e as permissões granulares definem, ação por ação, o que cada usuário pode ver, criar, editar ou excluir. Como os usuários são ilimitados, o time inteiro entra no sistema sem mudar o preço, e o dono controla o acesso em vez de limitar quantas pessoas o utilizam. Para formalizar o serviço da equipe, há um modelo de [contrato de empreitada de mão de obra](https://construsoftbr.com/modelo-de-contrato-de-mao-de-obra) para preencher.
 
 ### Como começar: três passos e 14 dias de teste
 O primeiro passo é criar a conta, com 14 dias grátis e o sistema completo, sem cartão de crédito. O segundo é lançar a obra e a negociação: cliente, valor acordado, entrada e parcelas. O terceiro é acompanhar o resumo da obra, com total recebido e lucro líquido lado a lado. As parcelas das contas a receber nascem da negociação da obra.
@@ -108,7 +108,7 @@ Os pacotes pré-pagos não renovam sozinhos. Em 6 meses são R$ 2.039,95 à vist
 Quem prefere o plano mensal paga por PIX ou boleto e cancela quando quiser, mantendo o acesso até o fim do período pago. Cada pagamento libera 30 dias de acesso por mês contratado, contados a partir do vencimento, e pagar adiantado soma os dias ao que ainda resta. Se a próxima cobrança não for paga, o sistema bloqueia o acesso e mostra a tela de assinatura. Os pacotes pagos à vista no PIX ou boleto saem 15% abaixo do parcelado no cartão.
 
 ### O que o ConstruSoft não faz, dito com clareza
-A página publica o que o sistema não cobre. Ele não emite nota fiscal nem se conecta à Sefaz: guarda o arquivo da nota como anexo da despesa. Também não tem orçamento com composições SINAPI ou SICRO, cronograma físico-financeiro, Gantt, medições por etapa nem diário de obra (RDO). Cada obra tem um valor orçado para comparar com o gasto real.
+A página publica o que o sistema não cobre. Ele não emite nota fiscal nem se conecta à Sefaz: guarda o arquivo da nota como anexo da despesa. Também não tem orçamento com composições SINAPI ou SICRO, cronograma físico-financeiro, Gantt, medições por etapa nem diário de obra (RDO). Cada obra tem um valor orçado para comparar com o gasto real. Para consulta, o site explica a [tabela Sinapi](https://construsoftbr.com/tabela-sinapi) e oferece grátis uma planilha de [cronograma de obra em Excel](https://construsoftbr.com/planilha-de-cronograma-de-obra).
 
 Tampouco tem módulos típicos de incorporadora, como espelho de vendas de unidades, portal do comprador, reajuste por índice e gestão de distrato, nem cotação ou pedido de compra. Em segurança, os dados ficam em servidor em São Paulo, cada empresa isolada das demais, com termos, privacidade, consentimento registrado e exclusão de conta. A página reúne um glossário de gestão de obras que indica, termo a termo, se o ConstruSoft tem ou não aquele recurso.
 
@@ -150,12 +150,12 @@ O lucro real, segundo a página, é vendas menos custo, taxas, imposto e contas.
 Na prática, o dono passa a saber se uma venda no cartão com taxa alta compensa, se o imposto está pesando e se as contas do mês cabem na margem. A página mostra um print real do sistema, numa loja de demonstração, com as vendas do período e o lucro que sobra depois dos descontos informados, e não promete resultado de faturamento a ninguém.
 
 ### Caixa, PDV e estoque que baixa sozinho
-O caixa funciona no celular e no computador, com leitor de código de barras e Pix no balcão. O fechamento sai conferido, com o total de cada forma de pagamento. O site cita, em depoimento de lojista, que uma venda se faz com apenas três cliques. Também há mesas e comandas para quem atende no salão.
+O caixa é um [PDV no celular](https://site.softpaybr.com/solucoes/sistema-pdv/) que também roda no computador, com leitor de código de barras e Pix no balcão. O fechamento sai conferido, com o total de cada forma de pagamento. O site cita, em depoimento de lojista, que uma venda se faz com apenas três cliques. Também há mesas e comandas para quem atende no salão.
 
 Cada venda baixa o estoque, e o sistema avisa o que está acabando. O estoque trabalha com variações e curva ABC, que ajuda a separar o que mais pesa nas vendas. Quem já tem produtos em outro sistema, planilha ou catálogo pode importá-los, e o plano anual inclui essa importação feita pela equipe do SoftPay. Isso evita o inventário surpresa, em que o saldo do sistema não bate com a prateleira.
 
 ### Fiado na ficha do cliente, com lembrete pelo WhatsApp
-O fiado deixa o caderno e vai para a ficha do cliente, onde fica registrado o que ele deve. O sistema envia lembrete pelo WhatsApp, o que evita o cliente que esquece de pagar e o lojista que esquece de cobrar. Há também cobrança por link Pix. O cliente passa a ter ficha própria, com o histórico do que comprou e do que deve.
+Com o [controle de fiado](https://site.softpaybr.com/solucoes/controle-de-fiado/) do SoftPay, a conta deixa o caderno e vai para a ficha do cliente, onde fica registrado o que ele deve. O sistema envia lembrete pelo WhatsApp, o que evita o cliente que esquece de pagar e o lojista que esquece de cobrar. Há também cobrança por link Pix. O cliente passa a ter ficha própria, com o histórico do que comprou e do que deve.
 
 O módulo de clientes se integra ao restante: o que foi vendido a prazo entra no financeiro e nas contas a receber. Para o lojista, isso significa saber quem deve, quanto e desde quando, sem folhear caderno, e cobrar na hora certa. Cupons e cartão fidelidade ajudam ainda a trazer o cliente de volta, usando o mesmo cadastro.
 
@@ -172,7 +172,7 @@ O Anual inclui sua loja configurada pela equipe, com produtos importados, loja o
 A contratação é feita pelo WhatsApp, onde se recebe o link de pagamento por Pix ou cartão, e o acesso é liberado no mesmo dia. Os termos de uso, a política de privacidade e a política de reembolso estão publicados no rodapé da página. A empresa responsável é a VisionX Inova Simples, com suporte pelo e-mail suporte@softpaybr.com.
 
 ### Para qual loja serve e como é o suporte
-O site indica loja que vende produto no balcão, no WhatsApp ou na internet: roupas, celulares, cosméticos, mercadinho, pet shop, autopeças e variedades. Não é preciso instalar nada: abre no navegador do celular e do computador, e pode ser instalado como aplicativo. Na dúvida, o site orienta chamar no WhatsApp para saber se serve.
+O site indica loja que vende produto no balcão, no WhatsApp ou na internet: roupas, celulares, cosméticos, mercadinho, pet shop, autopeças e variedades. Não é preciso instalar nada: abre no navegador do celular e do computador, e pode ser instalado como aplicativo. Quem tem mercearia encontra o detalhe na página do [sistema para mercadinho](https://site.softpaybr.com/segmentos/mercadinho/). Na dúvida, o site orienta chamar no WhatsApp para saber se serve.
 
 O SoftPay é feito pela VisionX Inova Simples, empresa brasileira, e quem responde no WhatsApp conhece o sistema por dentro. Quem não souber usar conta com o suporte humano no WhatsApp e com a aba Tutoriais, que tem vídeos curtos de cada parte do sistema. Esse atendimento humano é uma das promessas centrais do plano, e o acesso é liberado no mesmo dia.
 
@@ -204,10 +204,10 @@ Na recepção de um hotel ou pousada, reserva, hóspede, pagamento e quarto cost
 ### O que a hospedagem perde quando a operação vive em lugares separados
 Em muita pousada e em muito hotel, a reserva chega por WhatsApp, a ficha do hóspede fica em papel, o sinal é cobrado à mão e o café da manhã, a limpeza e o estoque têm cada um o seu caderno. Cada informação mora num lugar, e a recepção passa o turno procurando o dado certo em vez de receber o hóspede.
 
-O custo aparece nos detalhes: um comprovante que se perde, um quarto que ninguém sabe se já foi liberado, um caixa que não fecha na troca de turno e, no pior caso, dois hóspedes com a mesma reserva. Nenhum desses problemas nasce de falta de cuidado da equipe, e sim de uma operação espalhada, que obriga a anotar a mesma coisa duas vezes.
+O custo aparece nos detalhes: um comprovante que se perde, um quarto que ninguém sabe se já foi liberado, um caixa que não fecha na troca de turno e, no pior caso, dois hóspedes com a mesma reserva. Nenhum desses problemas nasce de falta de cuidado da equipe, e sim de uma operação espalhada, que obriga a anotar a mesma coisa duas vezes. Juntar essas pontas num [sistema para hotel](https://hotelgestao.com.br/) é o que o HotelGestão faz.
 
 ### Reserva dupla: um mapa único para balcão, WhatsApp, site e agências
-Overbooking é vender mais reservas do que o hotel tem de quartos. Pelo Código de Defesa do Consumidor, quem chega com a reserva confirmada pode exigir o cumprimento da oferta, aceitar hospedagem equivalente ou cancelar com devolução atualizada, e o hotel responde pelos danos independentemente de culpa. Por isso evitar a reserva dupla é questão de operação, não de sorte.
+[Overbooking em hotel](https://hotelgestao.com.br/overbooking-em-hotel) é vender mais reservas do que a casa tem de quartos. Pelo Código de Defesa do Consumidor, quem chega com a reserva confirmada pode exigir o cumprimento da oferta, aceitar hospedagem equivalente ou cancelar com devolução atualizada, e o hotel responde pelos danos independentemente de culpa. Por isso evitar a reserva dupla é questão de operação, não de sorte.
 
 O HotelGestão coloca todos os quartos e dias numa grade só, o mapa de reservas interativo. Dá para arrastar e soltar para mover uma reserva e criar grupos com vários quartos, com extrato e pagamento do grupo. Balcão, WhatsApp, site e agências alimentam o mesmo mapa, e a trava contra reserva dupla fica no banco de dados, não só na tela.
 
@@ -216,12 +216,12 @@ O calendário também conversa com os canais: a ligação com Booking, Airbnb e 
 ### Caixa por operador: quem abriu, quem fechou, o que foi estornado
 A troca de turno é onde o caixa costuma se perder. No HotelGestão, cada operador abre e fecha o próprio caixa, e dinheiro, cartão e Pix aparecem separados. Pagamento, estorno e alteração ficam no histórico com nome e hora, o que dá rastro de quem fez o quê e encurta a conferência no fim do dia.
 
-A cobrança sai da própria reserva. O sistema gera QR Code e copia e cola do Pix no valor do sinal ou do saldo, sem digitar o valor de novo, e o pagamento cai no caixa. Comprovante, extrato e cobrança seguem pelo WhatsApp, com mensagens editáveis e prévia ao vivo e, no plano Profissional, o resumo do dia enviado ao dono.
+A cobrança sai da própria reserva. O sistema gera QR Code e copia e cola do Pix no valor do sinal ou do saldo, sem digitar o valor de novo, e o pagamento cai no caixa. Comprovante, extrato e cobrança seguem pelo WhatsApp, com mensagens editáveis e prévia ao vivo e, no plano Profissional, o resumo do dia enviado ao dono. Para um comprovante avulso, o site tem um modelo de [recibo de hospedagem](https://hotelgestao.com.br/recibo-de-hospedagem) que sai com as diárias contadas.
 
 ### Ficha do hóspede: da FNRH de papel ao pré-check-in no celular
 A Ficha Nacional de Registro de Hóspedes (FNRH) é digital, na plataforma do Ministério do Turismo, e substitui a ficha de papel em hotéis, pousadas e demais meios de hospedagem; segundo o guia do próprio HotelGestão, é obrigatória desde 20 de abril de 2026, pela Portaria MTur nº 41/2025. Entre os dados pedidos estão identificação, contato, endereço, informações de viagem e dados da hospedagem.
 
-No HotelGestão, a FNRH digital com modelos prontos está em todos os planos. No Profissional, o hóspede preenche a ficha e assina pelo celular antes de chegar, e na recepção o check-in vira um clique. No Avançado, a ficha é enviada à plataforma do Ministério do Turismo com a chave do seu estabelecimento, evitando o retrabalho de lançar a mesma ficha duas vezes.
+No HotelGestão, a FNRH digital com modelos prontos está em todos os planos. No Profissional, o hóspede preenche a ficha e assina pelo celular antes de chegar, e na recepção o check-in vira um clique. No Avançado, a ficha é enviada à plataforma do Ministério do Turismo com a chave do seu estabelecimento, evitando o retrabalho de lançar a mesma ficha duas vezes. Para o dia em que a internet cai, há uma [ficha de hospedagem para imprimir](https://hotelgestao.com.br/ficha-de-hospedagem-para-imprimir), com os campos oficiais, para lançar depois na plataforma.
 
 ### Governança, estoque e a visão do dono
 Na saída do hóspede, o quarto vai para a limpeza e só volta à venda quando a vistoria o libera, de modo que a camareira saiba qual quarto liberar e a recepção não ofereça um quarto ainda sujo. No plano Profissional somam-se estoque, consumo por quarto e por hóspede, café da manhã e garagem, além do day use com venda avulsa e pagamento dividido.
@@ -229,7 +229,7 @@ Na saída do hóspede, o quarto vai para a limpeza e só volta à venda quando a
 Para o dono, há relatórios de ocupação, receita e conciliação por conta; no Avançado entram diária média, receita por quarto disponível, receita por canal e DRE mensal. O Monitor de Reputação varre a internet atrás de avaliações e menções, mostra cada comentário com fonte e data, classifica por risco Baixo, Moderado ou Alto e avisa no WhatsApp se algo mudar. As permissões por tela mostram a cada papel só o que ele precisa.
 
 ### Um sistema para cada tipo de hospedagem
-O mesmo sistema muda de vocabulário e de telas conforme a casa: quarto, suíte, cama, chalé, imóvel ou área de barraca. Há páginas dedicadas a pousada, hotel, chalés e cabanas, aluguel por temporada, hostel, motel e camping e glamping. No hostel, por exemplo, cada 4 camas contam como 1 quarto no limite do plano; no motel, o painel de suítes é ao vivo e o plano de entrada é o Essencial, a R$ 199 por mês.
+O mesmo sistema muda de vocabulário e de telas conforme a casa: quarto, suíte, cama, chalé, imóvel ou área de barraca. Há páginas dedicadas ao [sistema para pousada](https://hotelgestao.com.br/sistema-para-pousada), a hotel, chalés e cabanas, aluguel por temporada, hostel, motel e camping e glamping. No hostel, por exemplo, cada 4 camas contam como 1 quarto no limite do plano; no motel, o painel de suítes é ao vivo e o plano de entrada é o Essencial, a R$ 199 por mês.
 
 Nos demais casos, os planos são fixos pelo tamanho da casa: Início, R$ 99 por mês, até 12 quartos e 2 usuários (a página de pousada informa até 15 quartos); Profissional, R$ 209 por mês, até 40 quartos, com usuários ilimitados; Avançado, R$ 350 por mês, até 80 quartos; e Rede, R$ 649 por mês, com quartos ilimitados, duas propriedades na mesma conta e gerente de conta dedicado. No pagamento anual, os valores mensais são R$ 85, R$ 179 e R$ 300 para Início, Profissional e Avançado.
 
@@ -261,17 +261,17 @@ Caderno que molha, planilha que só uma pessoa entende e decisão no achismo: é
 ### Por que o caderno e a planilha deixam a fazenda no escuro
 Quem cuida de gado, leite, lavoura ou granja anota onde o trabalho acontece: no curral, na loja agropecuária, na estrada. O caderno molha e se perde, a planilha só uma pessoa sabe usar e, no fim do mês, ninguém afirma se a atividade deu lucro. A decisão de vender, comprar ou cortar gasto acaba sendo tomada no achismo.
 
-Gestão rural começa com o registro na hora e com a resposta a três perguntas: quanto entrou, quanto saiu e o que vence. Quando esses dados ficam espalhados, o produtor descobre o atraso da vacina ou o aperto de caixa tarde demais. O FINAGRO propõe concentrar tudo num app de celular, que também abre no computador.
+Gestão rural começa com o registro na hora e com a resposta a três perguntas: quanto entrou, quanto saiu e o que vence. Quando esses dados ficam espalhados, o produtor descobre o atraso da vacina ou o aperto de caixa tarde demais. O FINAGRO propõe concentrar tudo num [aplicativo de gestão rural](https://finagro.app/) de celular, que também abre no computador.
 
 ### Lançar no curral, mesmo sem sinal
 O app foi pensado para o celular, com botões grandes e lançamentos em segundos: despesa, venda ou leite do dia. Segundo a página oficial, sem sinal o gasto, a venda ou a vacina ficam salvos no aparelho e sobem sozinhos quando a internet volta, e o app avisa isso na hora. Para entrar pela primeira vez num aparelho e ver o que a equipe lançou em outro celular, é preciso sinal.
 
-Quem já tem a vida numa planilha não precisa redigitar: no Excel, basta salvar como CSV e enviar o arquivo, e o FINAGRO importa animais, despesas, receitas, fornecedores e itens de estoque. Os dados ficam guardados na nuvem com a sua conta, de modo que trocar de celular não faz perder nada, e as listas e os relatórios saem em PDF e planilha quando você quiser.
+Quem já tem a vida numa [planilha de controle de gado](https://finagro.app/planilha-de-controle-de-gado) não precisa redigitar: no Excel, basta salvar como CSV e enviar o arquivo, e o FINAGRO importa animais, despesas, receitas, fornecedores e itens de estoque. Os dados ficam guardados na nuvem com a sua conta, de modo que trocar de celular não faz perder nada, e as listas e os relatórios saem em PDF e planilha quando você quiser.
 
 ### Controle de rebanho: ficha, lote, vacina e pesagem
 Controle de rebanho é anotar, de cada animal ou lote, o que entra, o que sai e o que acontece: nascimento, compra, pesagem, vacina, cobertura, venda e morte. No FINAGRO, a ficha individual guarda brinco, raça, peso e foto, e serve para a vaca de leite, a matriz ou o reprodutor. A ficha de lote serve quando importa o grupo: bezerros da recria, boi na engorda, galpão, tanque ou apiário.
 
-O plano grátis aceita até 1.000 animais com ficha, e o lote não tem limite de cabeças: um galpão com 25 mil aves conta como um lote só. O app cuida de vacinas e sanidade, reprodução com parto previsto, pesagem e ganho médio diário (GMD), e avisa o que está atrasado, como bezerras na idade da vacina de brucelose ou animais sem pesagem há mais de 60 dias.
+O plano grátis aceita até 1.000 animais com ficha, e o lote não tem limite de cabeças: um galpão com 25 mil aves conta como um lote só. O app cuida de vacinas e sanidade, reprodução com parto previsto, pesagem e ganho médio diário (GMD), e avisa o que está atrasado, como bezerras na idade da vacina de brucelose ou animais sem pesagem há mais de 60 dias. Para comparar com outras opções, o guia do site explica como escolher um [aplicativo para controle de gado](https://finagro.app/aplicativo-para-controle-de-gado).
 
 ### GTA: o app registra e lembra, mas não emite
 A GTA (Guia de Trânsito Animal) é o documento obrigatório para transportar animais vivos, seja para venda, abate, leilão, exposição ou outra fazenda. É emitida pelo serviço de defesa agropecuária do estado, em geral pela internet, e depende do cadastro da propriedade e das vacinas obrigatórias em dia. Regras e prazos mudam de um estado para outro.
@@ -281,7 +281,7 @@ O FINAGRO não emite a guia. Ele cuida do que vem antes e do que vem depois: avi
 ### Dinheiro da fazenda: fluxo de caixa, contas e relatórios
 Fluxo de caixa rural é a lista, por data, do dinheiro que entra e sai: venda de animais, leite e grãos, compra de insumos, diárias, parcelas e impostos. No FINAGRO, toda conta lançada com vencimento entra em Contas a pagar e a receber e no saldo previsto, e quando é paga passa de prevista para realizada sem redigitar. A primeira tela mostra entrou, saiu e sobrou no mês.
 
-Cada lançamento leva a fazenda e, se você quiser, o centro de custo, como cria, engorda, leite ou lavoura. O relatório Resultado por propriedade mostra qual fazenda deu lucro e qual deu prejuízo no período. Os relatórios de receitas e despesas e de despesas por categoria saem em PDF e CSV, que é o que o contador costuma pedir no fechamento do ano.
+Cada lançamento leva a fazenda e, se você quiser, o centro de custo, como cria, engorda, leite ou lavoura. O relatório Resultado por propriedade mostra qual fazenda deu lucro e qual deu prejuízo no período. Os relatórios de receitas e despesas e de despesas por categoria saem em PDF e CSV, que é o que o contador costuma pedir no fechamento do ano. Na venda da produção, a calculadora de [Funrural 2026](https://finagro.app/funrural) mostra como funciona o desconto.
 
 ### LCDPR: o arquivo para o contador
 O LCDPR (Livro Caixa Digital do Produtor Rural) é o arquivo em que o produtor pessoa física registra receitas, despesas de custeio e investimentos da atividade rural para a Receita Federal. Segundo a página do FINAGRO, é obrigatório para quem teve receita bruta rural acima de R$ 4,8 milhões no ano e é entregue até o fim do prazo da declaração do Imposto de Renda.
@@ -289,7 +289,7 @@ O LCDPR (Livro Caixa Digital do Produtor Rural) é o arquivo em que o produtor p
 O app gera o arquivo TXT no leiaute da Receita, com a abertura, os imóveis (uma linha por fazenda cadastrada) e os lançamentos de receitas e despesas que você registrou. Os dados do contribuinte e das contas bancárias saem para o contador completar. O app não transmite o livro: a validação, a assinatura e a entrega são feitas no programa da Receita Federal, pelo produtor ou pelo contador.
 
 ### Lavoura, equipe, mercado e planos
-Para quem planta, o app tem safras, talhões, caderno de campo, custo por hectare, chuva do pluviômetro e colheita com o comprador, além de área por GPS, máquinas e manutenção, estoque de insumos e clima da fazenda. A equipe entra com papel e permissão: no plano Campo são 5 pessoas. No mercado, há a cotação do boi gordo pela CONAB, notícias do agro, marketplace de animais, simulador de crédito do Pronaf e o assistente FINAGRO AI.
+Para quem planta, o app tem safras, talhões, caderno de campo, custo por hectare, chuva do pluviômetro e colheita com o comprador, além de área por GPS, máquinas e manutenção, estoque de insumos e clima da fazenda. Para converter a área, o site responde [quantos metros tem um hectare](https://finagro.app/quantos-metros-tem-um-hectare) e calcula [alqueire em hectare](https://finagro.app/alqueire-em-hectare). A equipe entra com papel e permissão: no plano Campo são 5 pessoas. No mercado, há a cotação do boi gordo pela CONAB, notícias do agro, marketplace de animais, simulador de crédito do Pronaf e o assistente FINAGRO AI.
 
 O plano Campo é grátis para sempre: até 3 fazendas, 5 pessoas e 1.000 animais com ficha, com todas as funções. Essencial custa R$ 59,90 por mês ou R$ 599 por ano (6 fazendas, 10 pessoas, 5.000 animais); Profissional, R$ 149,90 ou R$ 1.499 (15 fazendas, 30 pessoas, 25.000 animais); Avançado, R$ 299,90 ou R$ 2.999 (50 fazendas, 100 pessoas, animais sem limite). O Empresarial parte de R$ 699 por mês. O aplicativo está na Google Play para Android; no iPhone, no tablet e no computador, funciona pelo navegador em app.finagro.app.
 
@@ -718,6 +718,91 @@ No mapa Brasil em pontos, 1 ponto equivale a 10 mil eleitores. Os pontos aparece
 
 **O Urnômetro é gratuito?**
 Sim. O site é gratuito e roda em qualquer navegador, segundo sua descrição. Foi criado pela VisionX, e a página informa que ele volta nas próximas eleições. Os números exibidos vêm do TSE, e o resultado oficial é sempre o divulgado por ele, conforme a própria página esclarece ao leitor.
+
+---
+
+## Tarrafa
+Endereço: https://visionxma.com/produtos/tarrafa/
+
+A Tarrafa é um agendador de posts brasileiro, feito pela VisionX, que publica no Instagram, no Facebook, no TikTok e no Bluesky pela integração oficial de cada rede. Cada post mostra por que sai naquele horário, e só conta como publicado depois que o link aparece no ar.
+
+### O que é a Tarrafa e para quem ela serve?
+A Tarrafa é um [agendador de posts](https://tarrafa.app/agendador-de-posts) que roda no navegador e publica sozinha no Instagram, no Facebook, no TikTok e no Bluesky. Você sobe a mídia, escreve a legenda, escolhe os canais e a hora, e a fila cuida do resto, sempre pela integração oficial de cada rede.
+
+Ela foi pensada para três rotinas. Quem cuida da própria marca encontra um [agendador de posts para pequena empresa](https://tarrafa.app/agendador-de-posts-para-pequena-empresa) com preço por marca. Quem atende vários clientes sozinho usa como [agendador de posts para social media](https://tarrafa.app/agendador-de-posts-para-social-media), e o time inteiro de uma agência trabalha junto, com papéis separados.
+
+A senha das redes nunca passa pela Tarrafa: você entra em cada rede pela tela de login dela e autoriza, e a chave de acesso fica guardada cifrada. A Tarrafa também não põe marca d'água nos posts.
+
+### Como a Tarrafa escolhe o horário de cada post?
+Cada canal tem uma grade de horários que começa com a pesquisa da casa sobre o uso de cada rede no Brasil, por dia da semana. Quando você agenda, a Tarrafa sugere o próximo horário bom daquele canal e mostra o motivo ao lado, para você decidir sabendo por que aquela hora foi escolhida.
+
+A grade não é fixa. Se o seu público aparece em outra hora, você ajusta na tela Horários, canal por canal, e as próximas sugestões passam a seguir o que você definiu. E, se quiser outra hora para um post só, você troca antes de agendar.
+
+### Como saber se o post foi mesmo publicado?
+Agendado e publicado são estados diferentes. Na Tarrafa, um post só passa a publicado depois que ela encontra o post no ar e guarda o link dele. Até lá, a fila mostra em que pé cada um está: na fila, pedindo ação, publicado ou não saiu, sem nada escondido.
+
+Se a rede recusa, a Tarrafa tenta de novo sozinha, até 5 vezes. O que depende de você vai para a fila Pedem você, no painel, com o motivo escrito, para resolver sem adivinhar o que aconteceu.
+
+### O que dá para agendar em cada rede?
+Cada rede aceita formatos diferentes pela integração oficial, e a Tarrafa segue o que cada uma permite. Para agendar posts no Instagram é preciso uma conta profissional; no Facebook a publicação sai na Página; no TikTok e no Bluesky, na conta conectada. A biblioteca de mídia aceita vídeo de até 4 GB e imagem de até 50 MB.
+
+No Instagram entram feed, carrossel de 2 a 10 itens, Reels e Stories, e o passo a passo está na página sobre como [agendar posts no Instagram](https://tarrafa.app/agendar-post-instagram). No Facebook, o guia para [programar publicação no Facebook](https://tarrafa.app/programar-publicacao-facebook) cobre texto, foto, vídeo, Reels e Stories na Página.
+
+Para [agendar post no TikTok](https://tarrafa.app/agendar-post-tiktok) há vídeo e foto, publicados direto ou enviados à caixa do app para você pôr o som do momento antes de soltar. No Bluesky saem texto, fotos e vídeo. YouTube, LinkedIn, Threads, Pinterest e X ainda não estão na lista.
+
+### Como funciona a aprovação de posts com o cliente?
+O cliente recebe um link, vê o post como vai sair e aprova ou pede ajuste pelo celular, sem criar conta. Esse fluxo de [aprovação de posts com cliente](https://tarrafa.app/aprovacao-de-posts-com-cliente) vale em todos os planos, inclusive o de uma pessoa só, e substitui o print no WhatsApp.
+
+Dentro do time, cada marca tem as suas redes e cada pessoa tem um papel: Dono, Administração, Edição, Colaboração, Aprovação ou Leitura. Para a agência que também precisa de CRM, financeiro e calendário editorial, a VisionX tem o [Mídiamente](/produtos/midiamente/), feito para essa gestão.
+
+### Quanto custa e existe agendador de posts grátis?
+O preço da Tarrafa é em real e por marca, com todas as redes da marca no mesmo valor. A Jangada custa R$ 29 por mês, para quem cuida de uma marca; a Traineira, R$ 99, com até 3 pessoas; o Porto, R$ 249, com pessoas sem limite. A cobrança desses planos ainda não abriu.
+
+Toda conta nova começa na entrada de R$ 0: 1 marca com até 3 redes, 1 pessoa e mídia guardada por 7 dias. A equipe confere cada cadastro antes de liberar a publicação.
+
+Fora da Tarrafa também existe [agendador de posts grátis](https://tarrafa.app/agendador-de-posts-gratis), cada um com um teto. Segundo o levantamento publicado pela Tarrafa em 30/10/2026, o Meta Business Suite programa posts e Stories no Instagram e no Facebook sem custo; o Buffer Free aceita 3 canais com 10 posts por canal; o Metricool Free, 1 marca e 20 posts por mês; e o Publer Free, 3 contas com 10 posts cada.
+
+### Tarrafa, mLabs ou Meta Business Suite: qual escolher?
+Depende do que a sua semana usa. Se o trabalho é agendar no Instagram, no Facebook e no TikTok, aprovar com o cliente e conferir se saiu, a Tarrafa cobre isso por marca. Se você vive de relatório, de anúncio ou do LinkedIn e do YouTube, o mLabs entrega o que a Tarrafa ainda não entrega.
+
+Quem busca uma [alternativa ao mLabs](https://tarrafa.app/alternativa-ao-mlabs) encontra lá a troca por data de corte, para nenhum post sair duas vezes. E quem posta só no Instagram e no Facebook, de uma marca e sem aprovação de cliente, resolve o básico de graça no Meta Business Suite. A tabela abaixo põe os três lado a lado.
+
+Tarrafa, mLabs e Meta Business Suite lado a lado
+
+| Ponto | Tarrafa | mLabs | Meta Business Suite |
+| --- | --- | --- | --- |
+| 1 marca, por mês | R$ 29 na Jangada (cobrança ainda não abriu) | R$ 49,90 no mensal; R$ 29,90 no anual | Grátis |
+| Redes | Instagram, Facebook, TikTok e Bluesky | Também LinkedIn, YouTube, Pinterest, Threads e Google Perfil da Empresa | Instagram e Facebook |
+| Relatórios e anúncios | Não tem relatório de desempenho nem mexe em anúncios | Relatório orgânico e de anúncios, com PDF | Não comparado aqui |
+| Pessoas | 1, 3 ou sem limite, conforme o plano | Usuários ilimitados | Quem tem função na Página |
+| Aprovação do cliente | Por link, sem o cliente criar conta | Por e-mail e WhatsApp | Não informado |
+| Prova de que saiu | Só publicado com o link do post conferido | Não informado na página de planos | Não informado |
+
+Fontes: mlabs.com.br/planos, lida em 01/10/2026 e 30/10/2026; Central de Ajuda da Meta, lida em 30/10/2026; tarrafa.app, lida em 02/11/2026.
+
+### O que a Tarrafa não é?
+A Tarrafa não é gerenciador de anúncios nem ferramenta de relatório: ela não lê contas de anúncio e ainda não mostra alcance ou engajamento dos posts. Também não tem caixa de mensagens para responder direct e comentários, e não publica no YouTube, no LinkedIn, no Threads, no Pinterest nem no X.
+
+Ela também não publica com robô clicando no app nem pede a sua senha: tudo passa pela integração oficial que cada rede abriu para aplicativos. O foco é um só, agendar bem e provar que saiu.
+
+### Perguntas frequentes
+**Em quais redes a Tarrafa publica?**
+No Instagram, no Facebook, no TikTok e no Bluesky, sempre pela integração oficial de cada rede. YouTube, LinkedIn, Threads, Pinterest e X ainda não estão disponíveis.
+
+**Preciso pagar para começar?**
+Não. A cobrança dos planos ainda não abriu. Toda conta nova começa na entrada de R$ 0, com 1 marca, até 3 redes e 1 pessoa, e a equipe confere cada cadastro antes de liberar a publicação.
+
+**Como sei que o post saiu?**
+A Tarrafa só marca como publicado depois de achar o post na rede e guardar o link. Se a rede recusa, ela tenta de novo sozinha, até 5 vezes, e o que depender de você aparece em Pedem você, com o motivo.
+
+**O cliente precisa criar conta para aprovar?**
+Não. Ele recebe um link, vê o post como vai sair e aprova ou pede ajuste pelo celular.
+
+**Serve para agência com vários clientes?**
+Serve. Um time reúne várias marcas, cada uma com as suas redes, e cada pessoa tem um papel: Dono, Administração, Edição, Colaboração, Aprovação ou Leitura.
+
+**A Tarrafa pede a senha das minhas redes?**
+Não. Você entra em cada rede pela tela de login dela e autoriza. A chave de acesso fica guardada cifrada.
 
 ---
 

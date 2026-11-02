@@ -16,6 +16,9 @@ const sitemap = readFileSync(join(SITE, 'sitemap.xml'), 'utf8');
 const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc><lastmod>([^<]+)<\/lastmod>/g)].map((m) => ({ url: m[1], lastmod: m[2] }));
 if (!locs.length) F('sitemap.xml', 'sem <loc> com <lastmod>');
 const titulos = new Set(), descs = new Set();
+// Produto com domínio próprio: o artigo do hub leva ≥3 links SEGUIDOS (sem nofollow) para o site do produto,
+// no corpo do texto e com a busca que queremos ganhar como âncora (pedido de 02/11/2026: 1º a 3º lugar no Google e no Bing).
+const SITE_PRODUTO = { frox: 'https://site.froxbr.com', construsoft: 'https://construsoftbr.com', softpay: 'https://site.softpaybr.com', hotelgestao: 'https://hotelgestao.com.br', finagro: 'https://finagro.app', tarrafa: 'https://tarrafa.app' };
 
 for (const { url, lastmod } of locs) {
   const caminho = url.replace(URL_BASE, '');
@@ -63,6 +66,12 @@ for (const { url, lastmod } of locs) {
       const miolo = (corpo.match(/<article class="vxp-artigo">([\s\S]*?)<\/article>/) || [])[1] || '';
       const n = palavras(semTag(miolo)); if (n < 800) A(pg, `artigo com ${n} palavras (meta 800 a 1.500)`);
       const links = (miolo.match(/<a href="\//g) || []).length; if (links < 3) F(pg, `artigo com ${links} links internos (mínimo 3)`);
+      const dom = SITE_PRODUTO[caminho.split('/')[2]];
+      if (dom) {
+        const noTexto = [...miolo.matchAll(/<p>([\s\S]*?)<\/p>/g)].map((m) => m[1]).join(' ');
+        const seguidos = [...noTexto.matchAll(/<a\b[^>]*>/g)].map((m) => m[0]).filter((a) => a.includes(`href="${dom}`) && !/nofollow/.test(a));
+        if (seguidos.length < 3) F(pg, `artigo com ${seguidos.length} links seguidos para ${dom} no texto (mínimo 3, âncora = a busca)`);
+      }
     } else A(pg, 'sem artigo');
     const faq = grafo.find((n) => n['@type'] === 'FAQPage');
     if (faq) for (const q of faq.mainEntity) if (!visivel.includes(q.name)) F(pg, `pergunta do FAQPage não está visível: ${q.name}`);

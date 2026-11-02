@@ -1,5 +1,6 @@
 {
  "slug": "construsoft",
+  "atualizado": "2026-11-02",
  "nome": "ConstruSoft",
  "titulo_artigo": "Gestão de obras: parcelas, despesas e lucro por obra",
  "resumo": "Sistema de gestão de obras para construtora e empreiteiro: parcelas com recibo em PDF, despesas, estoque e lucro por obra. Teste o ConstruSoft por 14 dias.",
@@ -9,14 +10,14 @@
    "h2": "O dinheiro sai antes de entrar quando ninguém vê o vencimento",
    "paragrafos": [
     "Na construção, o caixa aperta quando a parcela do cliente vence e a despesa de material chega no mesmo período, sem que ninguém tenha enxergado os dois lados. Quem controla tudo em planilha e caderno costuma ter uma aba por obra, vencimentos lançados à mão e notas guardadas em pastas ou em fotos no celular. Construtora, empreiteiro com várias obras e quem ainda junta tudo na planilha sentem o mesmo aperto, cada um por uma tela diferente.",
-    "O resultado é um controle que depende de memória. A pergunta que se repete toda semana, qual parcela vence e de qual cliente, exige abrir arquivo por arquivo. E a seguinte, aquela despesa foi de qual obra e quando, fica sem resposta rápida justamente quando o fornecedor cobra. Quando as respostas ficam em lugares diferentes, o dono só percebe o problema quando o caixa já está pressionado."
+    "O resultado é um controle que depende de memória. A pergunta que se repete toda semana, qual parcela vence e de qual cliente, exige abrir arquivo por arquivo. E a seguinte, aquela despesa foi de qual obra e quando, fica sem resposta rápida justamente quando o fornecedor cobra. Quando as respostas ficam em lugares diferentes, o dono só percebe o problema quando o caixa já está pressionado. Um [sistema para construtora](https://construsoftbr.com/) junta essas respostas numa tela só."
    ]
   },
   {
    "h2": "Lucro real de cada obra: orçado, gasto e recebido",
    "paragrafos": [
     "Empreiteiro com várias obras abertas precisa saber qual delas puxou o caixa para baixo. Para chegar ao lucro de cada uma é preciso somar gasto e recebido obra por obra, e quando o dinheiro de uma é usado para pagar o material de outra, o resultado individual se perde. O dinheiro de uma obra não deve sumir pagando o material de outra, e para isso cada obra precisa aparecer com o progresso, o orçado e o gasto.",
-    "No ConstruSoft, cada obra tem uma aba de resumo que compara o valor de venda fechado com o cliente com as despesas lançadas e os recebimentos. O painel mostra gasto, recebido e saldo de todas as obras em tempo real, com fluxo de caixa dos últimos 12 meses. A aba financeira guarda lucro estimado, comissão e margem. Os relatórios filtram o período e saem em PDF e CSV."
+    "No ConstruSoft, cada obra tem uma aba de resumo que compara o valor de venda fechado com o cliente com as despesas lançadas e os recebimentos. O painel mostra gasto, recebido e saldo de todas as obras em tempo real, com fluxo de caixa dos últimos 12 meses. A aba financeira guarda lucro estimado, comissão e margem. Os relatórios filtram o período e saem em PDF e CSV. É a conta que um [software de gestão de obras](https://construsoftbr.com/) tem de fechar sem planilha paralela."
    ]
   },
   {
@@ -31,7 +32,7 @@
    "paragrafos": [
     "Cada despesa entra com data, obra, categoria, valor e situação: pendente, aprovada ou paga. A nota fica anexada ao lançamento, e o vencimento gera a conta a pagar automaticamente. Equipe e fornecedores, de pedreiro a mestre de obras, são cadastrados com a função e vinculados a cada obra. Assim, a nota não fica de um lado e o valor de outro.",
     "O estoque registra entradas e saídas de material com custo unitário e avisa quando um item fica abaixo do mínimo definido. Os fornecedores são vinculados às obras e as compras entram como despesas. Relatórios filtram por período e saem em PDF e CSV, e as permissões granulares definem o que cada pessoa vê e faz. Quem precisa de cotação ou pedido de compra com fornecedores deve saber que esses módulos não existem; as compras entram como despesas.",
-    "Pedreiro, eletricista, mestre: cada pessoa é cadastrada com a função dela, e as permissões granulares definem, ação por ação, o que cada usuário pode ver, criar, editar ou excluir. Como os usuários são ilimitados, o time inteiro entra no sistema sem mudar o preço, e o dono controla o acesso em vez de limitar quantas pessoas o utilizam."
+    "Pedreiro, eletricista, mestre: cada pessoa é cadastrada com a função dela, e as permissões granulares definem, ação por ação, o que cada usuário pode ver, criar, editar ou excluir. Como os usuários são ilimitados, o time inteiro entra no sistema sem mudar o preço, e o dono controla o acesso em vez de limitar quantas pessoas o utilizam. Para formalizar o serviço da equipe, há um modelo de [contrato de empreitada de mão de obra](https://construsoftbr.com/modelo-de-contrato-de-mao-de-obra) para preencher."
    ]
   },
   {
@@ -52,7 +53,7 @@
   {
    "h2": "O que o ConstruSoft não faz, dito com clareza",
    "paragrafos": [
-    "A página publica o que o sistema não cobre. Ele não emite nota fiscal nem se conecta à Sefaz: guarda o arquivo da nota como anexo da despesa. Também não tem orçamento com composições SINAPI ou SICRO, cronograma físico-financeiro, Gantt, medições por etapa nem diário de obra (RDO). Cada obra tem um valor orçado para comparar com o gasto real.",
+    "A página publica o que o sistema não cobre. Ele não emite nota fiscal nem se conecta à Sefaz: guarda o arquivo da nota como anexo da despesa. Também não tem orçamento com composições SINAPI ou SICRO, cronograma físico-financeiro, Gantt, medições por etapa nem diário de obra (RDO). Cada obra tem um valor orçado para comparar com o gasto real. Para consulta, o site explica a [tabela Sinapi](https://construsoftbr.com/tabela-sinapi) e oferece grátis uma planilha de [cronograma de obra em Excel](https://construsoftbr.com/planilha-de-cronograma-de-obra).",
     "Tampouco tem módulos típicos de incorporadora, como espelho de vendas de unidades, portal do comprador, reajuste por índice e gestão de distrato, nem cotação ou pedido de compra. Em segurança, os dados ficam em servidor em São Paulo, cada empresa isolada das demais, com termos, privacidade, consentimento registrado e exclusão de conta. A página reúne um glossário de gestão de obras que indica, termo a termo, se o ConstruSoft tem ou não aquele recurso.",
     "O ConstruSoft é desenvolvido pela VisionX, com sede em Pedreiras, no Maranhão, e está no ar desde maio de 2026. A empresa não tem relação com a Construsoft europeia, de software BIM. Para quem precisa de orçamento SINAPI, cronograma ou diário de obra, o próprio FAQ indica que o ideal é avaliar sistemas especializados nesses módulos, o que mostra a delimitação honesta do que o produto cobre."
    ]

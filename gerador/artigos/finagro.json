@@ -1,5 +1,6 @@
 {
  "slug": "finagro",
+  "atualizado": "2026-11-02",
  "nome": "FINAGRO",
  "titulo_artigo": "Gestão rural no celular: rebanho, lavoura e caixa da fazenda",
  "resumo": "Conheça o FINAGRO, app de gestão rural para fazenda e sítio: rebanho, lavoura, fluxo de caixa, GTA e LCDPR, com lançamento até sem sinal. Plano Campo grátis.",
@@ -9,21 +10,21 @@
    "h2": "Por que o caderno e a planilha deixam a fazenda no escuro",
    "paragrafos": [
     "Quem cuida de gado, leite, lavoura ou granja anota onde o trabalho acontece: no curral, na loja agropecuária, na estrada. O caderno molha e se perde, a planilha só uma pessoa sabe usar e, no fim do mês, ninguém afirma se a atividade deu lucro. A decisão de vender, comprar ou cortar gasto acaba sendo tomada no achismo.",
-    "Gestão rural começa com o registro na hora e com a resposta a três perguntas: quanto entrou, quanto saiu e o que vence. Quando esses dados ficam espalhados, o produtor descobre o atraso da vacina ou o aperto de caixa tarde demais. O FINAGRO propõe concentrar tudo num app de celular, que também abre no computador."
+    "Gestão rural começa com o registro na hora e com a resposta a três perguntas: quanto entrou, quanto saiu e o que vence. Quando esses dados ficam espalhados, o produtor descobre o atraso da vacina ou o aperto de caixa tarde demais. O FINAGRO propõe concentrar tudo num [aplicativo de gestão rural](https://finagro.app/) de celular, que também abre no computador."
    ]
   },
   {
    "h2": "Lançar no curral, mesmo sem sinal",
    "paragrafos": [
     "O app foi pensado para o celular, com botões grandes e lançamentos em segundos: despesa, venda ou leite do dia. Segundo a página oficial, sem sinal o gasto, a venda ou a vacina ficam salvos no aparelho e sobem sozinhos quando a internet volta, e o app avisa isso na hora. Para entrar pela primeira vez num aparelho e ver o que a equipe lançou em outro celular, é preciso sinal.",
-    "Quem já tem a vida numa planilha não precisa redigitar: no Excel, basta salvar como CSV e enviar o arquivo, e o FINAGRO importa animais, despesas, receitas, fornecedores e itens de estoque. Os dados ficam guardados na nuvem com a sua conta, de modo que trocar de celular não faz perder nada, e as listas e os relatórios saem em PDF e planilha quando você quiser."
+    "Quem já tem a vida numa [planilha de controle de gado](https://finagro.app/planilha-de-controle-de-gado) não precisa redigitar: no Excel, basta salvar como CSV e enviar o arquivo, e o FINAGRO importa animais, despesas, receitas, fornecedores e itens de estoque. Os dados ficam guardados na nuvem com a sua conta, de modo que trocar de celular não faz perder nada, e as listas e os relatórios saem em PDF e planilha quando você quiser."
    ]
   },
   {
    "h2": "Controle de rebanho: ficha, lote, vacina e pesagem",
    "paragrafos": [
     "Controle de rebanho é anotar, de cada animal ou lote, o que entra, o que sai e o que acontece: nascimento, compra, pesagem, vacina, cobertura, venda e morte. No FINAGRO, a ficha individual guarda brinco, raça, peso e foto, e serve para a vaca de leite, a matriz ou o reprodutor. A ficha de lote serve quando importa o grupo: bezerros da recria, boi na engorda, galpão, tanque ou apiário.",
-    "O plano grátis aceita até 1.000 animais com ficha, e o lote não tem limite de cabeças: um galpão com 25 mil aves conta como um lote só. O app cuida de vacinas e sanidade, reprodução com parto previsto, pesagem e ganho médio diário (GMD), e avisa o que está atrasado, como bezerras na idade da vacina de brucelose ou animais sem pesagem há mais de 60 dias."
+    "O plano grátis aceita até 1.000 animais com ficha, e o lote não tem limite de cabeças: um galpão com 25 mil aves conta como um lote só. O app cuida de vacinas e sanidade, reprodução com parto previsto, pesagem e ganho médio diário (GMD), e avisa o que está atrasado, como bezerras na idade da vacina de brucelose ou animais sem pesagem há mais de 60 dias. Para comparar com outras opções, o guia do site explica como escolher um [aplicativo para controle de gado](https://finagro.app/aplicativo-para-controle-de-gado)."
    ]
   },
   {
@@ -37,7 +38,7 @@
    "h2": "Dinheiro da fazenda: fluxo de caixa, contas e relatórios",
    "paragrafos": [
     "Fluxo de caixa rural é a lista, por data, do dinheiro que entra e sai: venda de animais, leite e grãos, compra de insumos, diárias, parcelas e impostos. No FINAGRO, toda conta lançada com vencimento entra em Contas a pagar e a receber e no saldo previsto, e quando é paga passa de prevista para realizada sem redigitar. A primeira tela mostra entrou, saiu e sobrou no mês.",
-    "Cada lançamento leva a fazenda e, se você quiser, o centro de custo, como cria, engorda, leite ou lavoura. O relatório Resultado por propriedade mostra qual fazenda deu lucro e qual deu prejuízo no período. Os relatórios de receitas e despesas e de despesas por categoria saem em PDF e CSV, que é o que o contador costuma pedir no fechamento do ano."
+    "Cada lançamento leva a fazenda e, se você quiser, o centro de custo, como cria, engorda, leite ou lavoura. O relatório Resultado por propriedade mostra qual fazenda deu lucro e qual deu prejuízo no período. Os relatórios de receitas e despesas e de despesas por categoria saem em PDF e CSV, que é o que o contador costuma pedir no fechamento do ano. Na venda da produção, a calculadora de [Funrural 2026](https://finagro.app/funrural) mostra como funciona o desconto."
    ]
   },
   {
@@ -50,7 +51,7 @@
   {
    "h2": "Lavoura, equipe, mercado e planos",
    "paragrafos": [
-    "Para quem planta, o app tem safras, talhões, caderno de campo, custo por hectare, chuva do pluviômetro e colheita com o comprador, além de área por GPS, máquinas e manutenção, estoque de insumos e clima da fazenda. A equipe entra com papel e permissão: no plano Campo são 5 pessoas. No mercado, há a cotação do boi gordo pela CONAB, notícias do agro, marketplace de animais, simulador de crédito do Pronaf e o assistente FINAGRO AI.",
+    "Para quem planta, o app tem safras, talhões, caderno de campo, custo por hectare, chuva do pluviômetro e colheita com o comprador, além de área por GPS, máquinas e manutenção, estoque de insumos e clima da fazenda. Para converter a área, o site responde [quantos metros tem um hectare](https://finagro.app/quantos-metros-tem-um-hectare) e calcula [alqueire em hectare](https://finagro.app/alqueire-em-hectare). A equipe entra com papel e permissão: no plano Campo são 5 pessoas. No mercado, há a cotação do boi gordo pela CONAB, notícias do agro, marketplace de animais, simulador de crédito do Pronaf e o assistente FINAGRO AI.",
     "O plano Campo é grátis para sempre: até 3 fazendas, 5 pessoas e 1.000 animais com ficha, com todas as funções. Essencial custa R$ 59,90 por mês ou R$ 599 por ano (6 fazendas, 10 pessoas, 5.000 animais); Profissional, R$ 149,90 ou R$ 1.499 (15 fazendas, 30 pessoas, 25.000 animais); Avançado, R$ 299,90 ou R$ 2.999 (50 fazendas, 100 pessoas, animais sem limite). O Empresarial parte de R$ 699 por mês. O aplicativo está na Google Play para Android; no iPhone, no tablet e no computador, funciona pelo navegador em app.finagro.app."
    ]
   }

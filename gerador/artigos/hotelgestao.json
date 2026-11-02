@@ -1,5 +1,6 @@
 {
  "slug": "hotelgestao",
+  "atualizado": "2026-11-02",
  "nome": "HotelGestão",
  "titulo_artigo": "Sistema para hotel e pousada: reserva, caixa e hóspede",
  "resumo": "Conheça o HotelGestão, sistema em nuvem para hotel e pousada: mapa de reservas, caixa por operador, ficha digital do hóspede, Pix e WhatsApp.",
@@ -9,13 +10,13 @@
    "h2": "O que a hospedagem perde quando a operação vive em lugares separados",
    "paragrafos": [
     "Em muita pousada e em muito hotel, a reserva chega por WhatsApp, a ficha do hóspede fica em papel, o sinal é cobrado à mão e o café da manhã, a limpeza e o estoque têm cada um o seu caderno. Cada informação mora num lugar, e a recepção passa o turno procurando o dado certo em vez de receber o hóspede.",
-    "O custo aparece nos detalhes: um comprovante que se perde, um quarto que ninguém sabe se já foi liberado, um caixa que não fecha na troca de turno e, no pior caso, dois hóspedes com a mesma reserva. Nenhum desses problemas nasce de falta de cuidado da equipe, e sim de uma operação espalhada, que obriga a anotar a mesma coisa duas vezes."
+    "O custo aparece nos detalhes: um comprovante que se perde, um quarto que ninguém sabe se já foi liberado, um caixa que não fecha na troca de turno e, no pior caso, dois hóspedes com a mesma reserva. Nenhum desses problemas nasce de falta de cuidado da equipe, e sim de uma operação espalhada, que obriga a anotar a mesma coisa duas vezes. Juntar essas pontas num [sistema para hotel](https://hotelgestao.com.br/) é o que o HotelGestão faz."
    ]
   },
   {
    "h2": "Reserva dupla: um mapa único para balcão, WhatsApp, site e agências",
    "paragrafos": [
-    "Overbooking é vender mais reservas do que o hotel tem de quartos. Pelo Código de Defesa do Consumidor, quem chega com a reserva confirmada pode exigir o cumprimento da oferta, aceitar hospedagem equivalente ou cancelar com devolução atualizada, e o hotel responde pelos danos independentemente de culpa. Por isso evitar a reserva dupla é questão de operação, não de sorte.",
+    "[Overbooking em hotel](https://hotelgestao.com.br/overbooking-em-hotel) é vender mais reservas do que a casa tem de quartos. Pelo Código de Defesa do Consumidor, quem chega com a reserva confirmada pode exigir o cumprimento da oferta, aceitar hospedagem equivalente ou cancelar com devolução atualizada, e o hotel responde pelos danos independentemente de culpa. Por isso evitar a reserva dupla é questão de operação, não de sorte.",
     "O HotelGestão coloca todos os quartos e dias numa grade só, o mapa de reservas interativo. Dá para arrastar e soltar para mover uma reserva e criar grupos com vários quartos, com extrato e pagamento do grupo. Balcão, WhatsApp, site e agências alimentam o mesmo mapa, e a trava contra reserva dupla fica no banco de dados, não só na tela.",
     "O calendário também conversa com os canais: a ligação com Booking, Airbnb e Vrbo é feita por calendário iCal. No plano Avançado entram a interface de integração (API) e o conector Channex. A página oficial é direta num ponto: o HotelGestão não tem gestor de canais próprio, e quem precisa disso deve planejar a integração por essas vias."
    ]
@@ -24,14 +25,14 @@
    "h2": "Caixa por operador: quem abriu, quem fechou, o que foi estornado",
    "paragrafos": [
     "A troca de turno é onde o caixa costuma se perder. No HotelGestão, cada operador abre e fecha o próprio caixa, e dinheiro, cartão e Pix aparecem separados. Pagamento, estorno e alteração ficam no histórico com nome e hora, o que dá rastro de quem fez o quê e encurta a conferência no fim do dia.",
-    "A cobrança sai da própria reserva. O sistema gera QR Code e copia e cola do Pix no valor do sinal ou do saldo, sem digitar o valor de novo, e o pagamento cai no caixa. Comprovante, extrato e cobrança seguem pelo WhatsApp, com mensagens editáveis e prévia ao vivo e, no plano Profissional, o resumo do dia enviado ao dono."
+    "A cobrança sai da própria reserva. O sistema gera QR Code e copia e cola do Pix no valor do sinal ou do saldo, sem digitar o valor de novo, e o pagamento cai no caixa. Comprovante, extrato e cobrança seguem pelo WhatsApp, com mensagens editáveis e prévia ao vivo e, no plano Profissional, o resumo do dia enviado ao dono. Para um comprovante avulso, o site tem um modelo de [recibo de hospedagem](https://hotelgestao.com.br/recibo-de-hospedagem) que sai com as diárias contadas."
    ]
   },
   {
    "h2": "Ficha do hóspede: da FNRH de papel ao pré-check-in no celular",
    "paragrafos": [
     "A Ficha Nacional de Registro de Hóspedes (FNRH) é digital, na plataforma do Ministério do Turismo, e substitui a ficha de papel em hotéis, pousadas e demais meios de hospedagem; segundo o guia do próprio HotelGestão, é obrigatória desde 20 de abril de 2026, pela Portaria MTur nº 41/2025. Entre os dados pedidos estão identificação, contato, endereço, informações de viagem e dados da hospedagem.",
-    "No HotelGestão, a FNRH digital com modelos prontos está em todos os planos. No Profissional, o hóspede preenche a ficha e assina pelo celular antes de chegar, e na recepção o check-in vira um clique. No Avançado, a ficha é enviada à plataforma do Ministério do Turismo com a chave do seu estabelecimento, evitando o retrabalho de lançar a mesma ficha duas vezes."
+    "No HotelGestão, a FNRH digital com modelos prontos está em todos os planos. No Profissional, o hóspede preenche a ficha e assina pelo celular antes de chegar, e na recepção o check-in vira um clique. No Avançado, a ficha é enviada à plataforma do Ministério do Turismo com a chave do seu estabelecimento, evitando o retrabalho de lançar a mesma ficha duas vezes. Para o dia em que a internet cai, há uma [ficha de hospedagem para imprimir](https://hotelgestao.com.br/ficha-de-hospedagem-para-imprimir), com os campos oficiais, para lançar depois na plataforma."
    ]
   },
   {
@@ -44,7 +45,7 @@
   {
    "h2": "Um sistema para cada tipo de hospedagem",
    "paragrafos": [
-    "O mesmo sistema muda de vocabulário e de telas conforme a casa: quarto, suíte, cama, chalé, imóvel ou área de barraca. Há páginas dedicadas a pousada, hotel, chalés e cabanas, aluguel por temporada, hostel, motel e camping e glamping. No hostel, por exemplo, cada 4 camas contam como 1 quarto no limite do plano; no motel, o painel de suítes é ao vivo e o plano de entrada é o Essencial, a R$ 199 por mês.",
+    "O mesmo sistema muda de vocabulário e de telas conforme a casa: quarto, suíte, cama, chalé, imóvel ou área de barraca. Há páginas dedicadas ao [sistema para pousada](https://hotelgestao.com.br/sistema-para-pousada), a hotel, chalés e cabanas, aluguel por temporada, hostel, motel e camping e glamping. No hostel, por exemplo, cada 4 camas contam como 1 quarto no limite do plano; no motel, o painel de suítes é ao vivo e o plano de entrada é o Essencial, a R$ 199 por mês.",
     "Nos demais casos, os planos são fixos pelo tamanho da casa: Início, R$ 99 por mês, até 12 quartos e 2 usuários (a página de pousada informa até 15 quartos); Profissional, R$ 209 por mês, até 40 quartos, com usuários ilimitados; Avançado, R$ 350 por mês, até 80 quartos; e Rede, R$ 649 por mês, com quartos ilimitados, duas propriedades na mesma conta e gerente de conta dedicado. No pagamento anual, os valores mensais são R$ 85, R$ 179 e R$ 300 para Início, Profissional e Avançado.",
     "Todos os planos começam com 14 dias de teste do Avançado completo, sem cartão, sem fidelidade, sem taxa de implantação e sem comissão sobre as reservas. A migração dos dados é gratuita. O sistema roda no navegador do computador, do tablet e do celular, sem instalar nada: basta cadastrar os quartos e tarifas e começar a operar no mesmo dia."
    ]

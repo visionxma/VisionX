@@ -5,17 +5,34 @@ import { createHash } from 'node:crypto';
 import { existsSync, readFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-export const HOJE = '2026-10-28';
-export const HOJE_EXTENSO = '28 de outubro de 2026';
+// HOJE: data da home, do llms.txt e do sitemap da home. Página de produto usa a data do PRÓPRIO artigo
+// ("atualizado" no JSON) e cai em DATA_BASE se o artigo não mudou: assim o "Atualizado em" não mente nas outras.
+export const HOJE = '2026-11-02';
+const MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+export const extenso = (d) => { const [a, m, dia] = d.split('-').map(Number); return `${dia} de ${MESES[m - 1]} de ${a}`; };
+export const HOJE_EXTENSO = extenso(HOJE);
+export const DATA_BASE = '2026-10-28';
 const SITE_URL = 'https://visionxma.com';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const palavras = (t) => String(t).trim().split(/\s+/).filter(Boolean).length;
+// No texto do artigo, [âncora](https://site-do-produto/caminho) vira link de verdade, seguido (sem nofollow): é o link
+// com a palavra da busca que dá autoridade ao site do produto. Caminho interno (/produtos/x/) também vale.
+const LINK_MD = /\[([^\]]+)\]\((https:\/\/[^)\s]+|\/[^)\s]*)\)/g;
+export const semLinks = (t) => String(t).replace(LINK_MD, '$1');
+const comLinks = (t) => esc(t).replace(/\[([^\]]+)\]\((https:\/\/[^)\s]+|\/[^)\s]*)\)/g, (_, a, u) => `<a href="${u}">${a}</a>`);
+// Tabela comparativa do artigo (regra 30 do seo-regras.md): { legenda, colunas: [...], linhas: [[...]], fonte }.
+// No celular cada linha vira cartão, com o nome da coluna em cada valor (data-rotulo), nunca quadro com rolagem lateral.
+const tabelaHtml = (t) => `<div class="vxp-tabela" style="--n:${t.colunas.length - 1}"><table><caption>${esc(t.legenda)}</caption>
+<thead><tr>${t.colunas.map((c) => `<th scope="col">${esc(c)}</th>`).join('')}</tr></thead>
+<tbody>${t.linhas.map((l) => `<tr>${l.map((v, i) => i === 0 ? `<th scope="row">${esc(v)}</th>` : `<td data-rotulo="${esc(t.colunas[i])}">${esc(v)}</td>`).join('')}</tr>`).join('')}</tbody></table>${t.fonte ? `<p class="vxp-tabela-fonte">${esc(t.fonte)}</p>` : ''}</div>`;
 
 // preço só entra se estiver escrito na página oficial do produto (fonte: texto lido em 28/10/2026)
 export const OFERTAS = {
   frox: { texto: 'Plano Grátis para 1 caminhão; Plano Frotas a partir de R$ 63,75/mês', preco: '63.75', moeda: 'BRL' },
-  construsoft: { texto: 'R$ 479,99/mês ou a partir de R$ 305,99/mês, usuários ilimitados', preco: '305.99', moeda: 'BRL' }
+  construsoft: { texto: 'R$ 479,99/mês ou a partir de R$ 305,99/mês, usuários ilimitados', preco: '305.99', moeda: 'BRL' },
+  // tarrafa.app/#planos, lido em 02/11/2026: Entrada R$ 0; Jangada R$ 29, Traineira R$ 99 e Porto R$ 249 por mês, por marca
+  tarrafa: { texto: 'Entrada por R$ 0 (1 marca, até 3 redes); Jangada R$ 29, Traineira R$ 99 e Porto R$ 249 por mês, por marca', preco: '0', moeda: 'BRL' }
 };
 
 export function versao(siteDir, caminho) {
@@ -98,18 +115,19 @@ export function gerarPaginas({ topo, rodape, footerHtml, produtos, siteDir, gerD
     if (palavras(lede) < 40) lede = ledeBase;
     if (!art) avisos.push(`${p.slug}: sem artigo (gerador/artigos/${p.slug}.json); página sai só com resumo e pontos`);
     else if (palavras(lede) < 40 || palavras(lede) > 60) avisos.push(`${p.slug}: lede com ${palavras(lede)} palavras (bloco citável pede 40 a 60)`);
-    const corpoArtigo = secoes.flatMap((s) => s.paragrafos).join(' ');
+    const corpoArtigo = semLinks(secoes.flatMap((s) => s.paragrafos).join(' '));
     const nPal = palavras(corpoArtigo);
+    const data = art?.atualizado || DATA_BASE;
 
     const ld = { '@context': 'https://schema.org', '@graph': [
-      { '@type': 'WebPage', '@id': SITE_URL + caminho + '#pagina', url: SITE_URL + caminho, name: titulo, description: desc, inLanguage: 'pt-BR', isPartOf: { '@id': SITE_URL + '/#site' }, dateModified: HOJE },
+      { '@type': 'WebPage', '@id': SITE_URL + caminho + '#pagina', url: SITE_URL + caminho, name: titulo, description: desc, inLanguage: 'pt-BR', isPartOf: { '@id': SITE_URL + '/#site' }, dateModified: data },
       { '@type': 'BreadcrumbList', itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'VisionX', item: SITE_URL + '/' },
         { '@type': 'ListItem', position: 2, name: grupoNome, item: SITE_URL + (p.grupo === 'gestao' ? '/#sistemas' : '/#ferramentas') },
         { '@type': 'ListItem', position: 3, name: p.nome, item: SITE_URL + caminho } ] },
       { '@type': 'SoftwareApplication', name: p.nome, description: p.resumo, applicationCategory: 'BusinessApplication', operatingSystem: 'Web', url: p.url || SITE_URL + caminho, publisher: { '@id': ORG_ID },
         ...(oferta ? { offers: { '@type': 'Offer', price: oferta.preco, priceCurrency: oferta.moeda } } : {}) },
-      ...(art ? [{ '@type': 'Article', headline: art.titulo_artigo, description: desc, inLanguage: 'pt-BR', author: { '@id': ORG_ID }, publisher: { '@id': ORG_ID }, datePublished: HOJE, dateModified: HOJE, mainEntityOfPage: SITE_URL + caminho, image: ogDe(p) }] : []),
+      ...(art ? [{ '@type': 'Article', headline: art.titulo_artigo, description: desc, inLanguage: 'pt-BR', author: { '@id': ORG_ID }, publisher: { '@id': ORG_ID }, datePublished: art.publicado || DATA_BASE, dateModified: data, mainEntityOfPage: SITE_URL + caminho, image: ogDe(p) }] : []),
       ...(faq.length ? [{ '@type': 'FAQPage', mainEntity: faq.map((q) => ({ '@type': 'Question', name: q.p, acceptedAnswer: { '@type': 'Answer', text: q.r } })) }] : [])
     ] };
 
@@ -150,8 +168,8 @@ ${art ? `<section class="vxp-sec" id="artigo"><div class="padding-global"><div c
   <article class="vxp-artigo">
     <div class="tag"><div class="dot-square"></div><div>Artigo</div></div>
     <h2>${esc(art.titulo_artigo)}</h2>
-    <p class="vxp-meta">Por VisionX · Atualizado em <time datetime="${HOJE}">${HOJE_EXTENSO}</time></p>
-    ${secoes.map((s) => `<h3 id="${slugId(s.h2)}">${esc(s.h2)}</h3>${s.paragrafos.map((t) => `<p>${esc(t)}</p>`).join('')}`).join('')}
+    <p class="vxp-meta">Por VisionX · Atualizado em <time datetime="${data}">${extenso(data)}</time></p>
+    ${secoes.map((s) => `<h3 id="${slugId(s.h2)}">${esc(s.h2)}</h3>${s.paragrafos.map((t) => `<p>${comLinks(t)}</p>`).join('')}${s.tabela ? tabelaHtml(s.tabela) : ''}`).join('')}
     <p class="vxp-veja">Veja também: ${relLinks}. <a href="/">Página inicial da VisionX</a>.</p>
   </article>
 </div></div></div></section>` : ''}
@@ -195,7 +213,7 @@ ${outros.length ? `<section class="vxp-sec" id="outros"><div class="padding-glob
       if (!topoPagina.includes(de)) throw new Error('barra: não achei ' + de);
       topoPagina = topoPagina.replace(de, para);
     }
-    paginas.push({ caminho, slug: p.slug, html: topoPagina + main.replace(/<\/main>$/, footerHtml + '</main>') + rodape, titulo, desc, art, faq, nPal, recursos, nome: p.nome });
+    paginas.push({ caminho, slug: p.slug, html: topoPagina + main.replace(/<\/main>$/, footerHtml + '</main>') + rodape, titulo, desc, art, faq, nPal, recursos, nome: p.nome, data });
     if (art && (nPal < 800 || nPal > 1500)) avisos.push(`${p.slug}: artigo com ${nPal} palavras (meta 800 a 1.500)`);
   }
   return { paginas, avisos };
