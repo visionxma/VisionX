@@ -1,0 +1,43 @@
+{
+  "cores": {
+    "#000000": "texto",
+    "#ffffff": "fundo",
+    "#003d5c": "primaria",
+    "#212429": "texto",
+    "#f1f3f5": "superficie",
+    "#002233": "texto",
+    "#7befff": "superficie-2",
+    "#636e7c": "texto-suave",
+    "#005a87": "primaria-2",
+    "#9fca1d": "alta",
+    "#00d4ff": "destaque",
+    "#f8fafa": "fundo",
+    "#00ade2": "destaque",
+    "#97a1ac": "texto-fraco",
+    "#c3f628": "alta",
+    "#e1e4e8": "borda",
+    "#e6fc88": "baixa",
+    "#cfd3d8": "borda",
+    "#00bbff": "destaque",
+    "#b298e0": "destaque",
+    "#25ffc3": "superficie-2",
+    "#3a4149": "texto-suave",
+    "#acb4bd": "texto-fraco",
+    "#d1a5ff": "superficie-2",
+    "#d4f5d9": "superficie-2"
+  },
+  "regras": [
+    { "seletor": "highlight", "prop": "color", "cor": "#000000", "papel": "sobre-destaque" },
+    { "seletor": "highlight", "prop": "fill", "cor": "#000000", "papel": "sobre-destaque" },
+    { "seletor": ".bsc-button.primary", "prop": "color", "cor": "#ffffff", "papel": "sobre-primaria" },
+    { "seletor": ".bsc-button.primary", "prop": "fill", "cor": "#ffffff", "papel": "sobre-primaria" },
+    { "seletor": ".bsc-button.primary", "prop": "background*", "cor": "#002233", "papel": "primaria-2" },
+    { "seletor": ".bsc-button.secondary", "prop": "background*", "cor": "#002233", "papel": "primaria-2" },
+    { "seletor": ".bsc-button.inverse", "prop": "background*", "cor": "#002233", "papel": "primaria-2" },
+    { "seletor": ".bsc-button.inverse-secondary", "prop": "background*", "cor": "#002233", "papel": "primaria-2" },
+    { "seletor": ".bsc-button.secondary", "prop": "color", "cor": "#ffffff", "papel": "sobre-primaria" },
+    { "seletor": ".bsc-button.inverse", "prop": "color", "cor": "#ffffff", "papel": "sobre-primaria" },
+    { "seletor": ".bsc-button.highlight-secondary", "prop": "color", "cor": "#ffffff", "papel": "sobre-primaria" }
+  ],
+  "fontes": {}
+}

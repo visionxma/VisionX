@@ -1,0 +1,20 @@
+/* paleta e fontes da FONTE do molde, geradas por vestir-css.mjs: só para a prova contra a captura */
+.mx-rd-crm {
+  --m-fundo: #ffffff;
+  --m-superficie: #f1f3f5;
+  --m-superficie-2: #7befff;
+  --m-borda: #e1e4e8;
+  --m-texto: #000000;
+  --m-texto-suave: #636e7c;
+  --m-texto-fraco: #97a1ac;
+  --m-primaria: #003d5c;
+  --m-primaria-2: #005a87;
+  --m-sobre-primaria: #ffffff;
+  --m-destaque: #00d4ff;
+  --m-sobre-destaque: #000000;
+  --m-alta: #9fca1d;
+  --m-baixa: #e6fc88;
+  /* letras da referência (classes de fonte do Next que a purga não alcança) */
+  --dm-sans: "__DM_Sans_b91aa7", "__DM_Sans_Fallback_b91aa7";
+  --red-hat-display: "__redHatDisplay_bdb91e", "__redHatDisplay_Fallback_bdb91e";
+}

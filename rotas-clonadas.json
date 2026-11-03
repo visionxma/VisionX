@@ -1,0 +1,14 @@
+{
+  "dominio": "visionxma.com",
+  "nota": "Rotas de produto da VisionX que vestem um molde clonado pela captura renderizada de uma LP de referência diferente (regra rota-de-seo-e-clone-de-lp-diferente). Portão: node ~/.jarvis/design-engine/ferramentas/portao-rotas-clonadas.mjs rotas-clonadas.json --url <base>",
+  "exigir": [
+    "/produtos/frox/"
+  ],
+  "rotas": {
+    "/produtos/frox/": {
+      "molde": "rd-crm",
+      "referencia": "https://www.rdstation.com/produtos/crm/",
+      "pasta": "moldes/rd-crm"
+    }
+  }
+}

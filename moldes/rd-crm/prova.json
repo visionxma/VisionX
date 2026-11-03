@@ -1,0 +1,349 @@
+{
+  "referencia": "https://www.rdstation.com/produtos/crm/",
+  "molde": "rd-crm",
+  "captura": "/Users/victorgabryellferreiraqueiroz/.jarvis/visionx/clones/capturas/rdstation-crm",
+  "quando": "2026-11-03T00:36:48.007Z",
+  "limiar": 0.12,
+  "larguras": {
+    "390": {
+      "altura_molde_origem": 6570,
+      "rolagem_lateral": 0,
+      "secoes": [
+        {
+          "secao": 0,
+          "tipo": "hero",
+          "ref": {
+            "y": 0,
+            "altura": 794
+          },
+          "molde": {
+            "y": 0,
+            "altura": 670
+          },
+          "total": 0.0328,
+          "altura_dif": 0,
+          "passou": true,
+          "motivos": [],
+          "altura": 670
+        },
+        {
+          "secao": 3,
+          "tipo": "abas com mídia",
+          "ref": {
+            "y": 2390,
+            "altura": 730
+          },
+          "molde": {
+            "y": 670,
+            "altura": 720
+          },
+          "total": 0.0895,
+          "altura_dif": 0.0137,
+          "passou": true,
+          "motivos": [],
+          "altura": 730
+        },
+        {
+          "secao": 10,
+          "tipo": "lista de tópicos (título à esquerda)",
+          "ref": {
+            "y": 10662,
+            "altura": 1107
+          },
+          "molde": {
+            "y": 1390,
+            "altura": 1130
+          },
+          "total": 0.0227,
+          "altura_dif": 0.0208,
+          "passou": true,
+          "motivos": [],
+          "altura": 1107
+        },
+        {
+          "secao": 12,
+          "tipo": "cartões de recursos com filtro",
+          "ref": {
+            "y": 12561,
+            "altura": 735
+          },
+          "molde": {
+            "y": 2520,
+            "altura": 735
+          },
+          "total": 0.0323,
+          "altura_dif": 0,
+          "passou": true,
+          "motivos": [],
+          "altura": 735
+        },
+        {
+          "secao": 13,
+          "tipo": "faixa com chamada",
+          "ref": {
+            "y": 13297,
+            "altura": 228
+          },
+          "molde": {
+            "y": 3255,
+            "altura": 228
+          },
+          "total": 0.0324,
+          "altura_dif": 0,
+          "passou": true,
+          "motivos": [],
+          "altura": 228
+        },
+        {
+          "secao": 15,
+          "tipo": "lista de tópicos (centrada)",
+          "ref": {
+            "y": 14700,
+            "altura": 1443
+          },
+          "molde": {
+            "y": 3483,
+            "altura": 1466
+          },
+          "total": 0.0764,
+          "altura_dif": 0.0159,
+          "passou": true,
+          "motivos": [],
+          "altura": 1443
+        },
+        {
+          "secao": 16,
+          "tipo": "faixa de chamada final",
+          "ref": {
+            "y": 16143,
+            "altura": 494
+          },
+          "molde": {
+            "y": 4948,
+            "altura": 494
+          },
+          "total": 0,
+          "altura_dif": 0,
+          "passou": true,
+          "motivos": [],
+          "altura": 494
+        },
+        {
+          "secao": 17,
+          "tipo": "perguntas frequentes",
+          "ref": {
+            "y": 16637,
+            "altura": 1128
+          },
+          "molde": {
+            "y": 5442,
+            "altura": 1128
+          },
+          "total": 0,
+          "altura_dif": 0,
+          "passou": true,
+          "motivos": [],
+          "altura": 1128
+        }
+      ],
+      "total": 0.0388,
+      "pior": 0.0895,
+      "passou": true
+    },
+    "1440": {
+      "altura_molde_origem": 6717,
+      "rolagem_lateral": 0,
+      "secoes": [
+        {
+          "secao": 0,
+          "tipo": "hero",
+          "ref": {
+            "y": 0,
+            "altura": 763
+          },
+          "molde": {
+            "y": 0,
+            "altura": 631
+          },
+          "total": 0.0085,
+          "altura_dif": 0,
+          "passou": true,
+          "motivos": [],
+          "altura": 631
+        },
+        {
+          "secao": 3,
+          "tipo": "abas com mídia",
+          "ref": {
+            "y": 1875,
+            "altura": 1111
+          },
+          "molde": {
+            "y": 631,
+            "altura": 1079
+          },
+          "total": 0.0765,
+          "altura_dif": 0.0288,
+          "passou": true,
+          "motivos": [],
+          "altura": 1111
+        },
+        {
+          "secao": 10,
+          "tipo": "lista de tópicos (título à esquerda)",
+          "ref": {
+            "y": 6895,
+            "altura": 581
+          },
+          "molde": {
+            "y": 1709,
+            "altura": 581
+          },
+          "total": 0.0101,
+          "altura_dif": 0,
+          "passou": true,
+          "motivos": [],
+          "altura": 581
+        },
+        {
+          "secao": 12,
+          "tipo": "cartões de recursos com filtro",
+          "ref": {
+            "y": 7964,
+            "altura": 2310
+          },
+          "molde": {
+            "y": 2290,
+            "altura": 2310
+          },
+          "total": 0.0119,
+          "altura_dif": 0,
+          "passou": true,
+          "motivos": [],
+          "altura": 2310
+        },
+        {
+          "secao": 13,
+          "tipo": "faixa com chamada",
+          "ref": {
+            "y": 10274,
+            "altura": 199
+          },
+          "molde": {
+            "y": 4600,
+            "altura": 199
+          },
+          "total": 0,
+          "altura_dif": 0,
+          "passou": true,
+          "motivos": [],
+          "altura": 199
+        },
+        {
+          "secao": 15,
+          "tipo": "lista de tópicos (centrada)",
+          "ref": {
+            "y": 11103,
+            "altura": 649
+          },
+          "molde": {
+            "y": 4799,
+            "altura": 649
+          },
+          "total": 0.0003,
+          "altura_dif": 0,
+          "passou": true,
+          "motivos": [],
+          "altura": 649
+        },
+        {
+          "secao": 16,
+          "tipo": "faixa de chamada final",
+          "ref": {
+            "y": 11752,
+            "altura": 490
+          },
+          "molde": {
+            "y": 5448,
+            "altura": 490
+          },
+          "total": 0.0003,
+          "altura_dif": 0,
+          "passou": true,
+          "motivos": [],
+          "altura": 490
+        },
+        {
+          "secao": 17,
+          "tipo": "perguntas frequentes",
+          "ref": {
+            "y": 12242,
+            "altura": 779
+          },
+          "molde": {
+            "y": 5938,
+            "altura": 779
+          },
+          "total": 0,
+          "altura_dif": 0,
+          "passou": true,
+          "motivos": [],
+          "altura": 779
+        }
+      ],
+      "total": 0.0184,
+      "pior": 0.0765,
+      "passou": true
+    }
+  },
+  "omitidas": [
+    {
+      "secao": 1,
+      "tipo": "logos de clientes",
+      "motivo": "logos de empresas reais clientes da referência; nada de cliente inventado"
+    },
+    {
+      "secao": 2,
+      "tipo": "mídia + texto do módulo de IA da referência",
+      "motivo": "produto da referência (IA para Negociações) sem equivalente; nada se inventa"
+    },
+    {
+      "secao": 4,
+      "tipo": "acordeão do ciclo de produtos da referência",
+      "motivo": "fala de outros produtos da referência"
+    },
+    {
+      "secao": 5,
+      "tipo": "mídia + tópicos",
+      "motivo": "conteúdo da referência sem equivalente no produto"
+    },
+    {
+      "secao": 6,
+      "tipo": "preços",
+      "motivo": "preços da referência; o preço do produto está na oferta do topo"
+    },
+    {
+      "secao": 8,
+      "tipo": "depoimento",
+      "motivo": "depoimento de pessoa e empresa reais da referência"
+    },
+    {
+      "secao": 9,
+      "tipo": "mídia + tópicos com foto de pessoa",
+      "motivo": "foto de pessoa de banco de imagem da referência"
+    },
+    {
+      "secao": 11,
+      "tipo": "logos de integrações",
+      "motivo": "logos de marcas de terceiros"
+    },
+    {
+      "secao": 14,
+      "tipo": "mídia + tópicos com foto de pessoa",
+      "motivo": "foto de pessoa de banco de imagem da referência"
+    }
+  ],
+  "faltando": [],
+  "passou": true,
+  "falhas": []
+}

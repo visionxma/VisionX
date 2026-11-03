@@ -1,0 +1,305 @@
+/* Acabamento VisionX do molde rd-crm (02/11/2026). Só vale na página VESTIDA (.mx-vestido), nunca na prova:
+   a composição, o tamanho e o espaço são os da referência (molde.css); aqui entram a paleta e a letra da VisionX,
+   a hero de tela inteira, os vãos dentro do teto (120 px no computador, 72 no celular), as grades do celular
+   (lado a lado, sem rolagem lateral) e as peças que a referência não tem (trilha, oferta, palco de prints, artigo). */
+
+/* ---------- paleta e letra ---------- */
+.mx-rd-crm.mx-vestido {
+  --m-fundo: #ffffff;
+  --m-superficie: #f2f5f7;
+  --m-superficie-2: #c9f4ff;
+  --m-borda: #e3e7ea;
+  --m-texto: #0a0a0a;
+  --m-texto-suave: #4f5459;
+  --m-texto-fraco: #6b7177;
+  --m-primaria: #0a0a0a;
+  --m-primaria-2: #262626;
+  --m-sobre-primaria: #ffffff;
+  --m-destaque: #00b8e0;
+  --m-sobre-destaque: #ffffff;
+  --m-alta: #00739a;
+  --m-baixa: #005f80;
+  --m-luz: #00d4ff;
+  --dm-sans: "Plus Jakarta Sans";
+  --red-hat-display: "Plus Jakarta Sans";
+  --mx-nav: 66px;
+  overflow-wrap: anywhere;
+  background: var(--m-fundo);
+}
+@media (max-width: 991px) { .mx-rd-crm.mx-vestido { --mx-nav: 60px; } }
+
+/* o chassi do portal pinta tag nua (a { letter-spacing: .12em }, h1-h6 com a letra dele): dentro do molde essas
+   regras voltam ao padrão com o mesmo peso (0,0,1), e qualquer regra da referência (sempre com classe) vence */
+:where(.mx-vestido) :is(a, p, h1, h2, h3, h4, h5, h6, span, strong, em, small, button, ul, ol, li, img, nav, section,
+  article, aside, details, summary, figure, table, caption, th, td, time, label, input) { all: revert; }
+.mx-vestido :is(h1, h2, h3, h4) { text-wrap: balance; }
+.mx-vestido p { text-wrap: pretty; }
+.mx-vestido img { max-width: 100%; height: auto; }
+.mx-vestido .mx-ico, .mx-vestido .mx-ico * { fill: none !important; }
+.mx-vestido .mx-ico { stroke: currentColor; }
+
+/* ---------- vãos entre seções: teto de 120 px (60 + 60) e 72 no celular (36 + 36) ---------- */
+/* (0,3,0) para vencer as regras de seção da referência (0,2,0), que trazem 80 a 120 px por lado */
+.mx-rd-crm.mx-vestido > section:not(.mx-hero) { padding-block: 56px; margin-block: 0; }
+.mx-rd-crm.mx-vestido > .bsl-banner-cta { padding-bottom: 80px; }
+.mx-rd-crm.mx-vestido .bsl-banner-cta .banner { padding: 56px 48px; }
+.mx-rd-crm.mx-vestido .bsl-cards-collection-filter-large .cards { margin-bottom: 0; padding-bottom: 0; }
+@media (max-width: 47.99rem) {
+  .mx-rd-crm.mx-vestido > section:not(.mx-hero) { padding-block: 32px; }
+  .mx-rd-crm.mx-vestido > .bsl-banner-cta { padding-bottom: 48px; }
+  .mx-rd-crm.mx-vestido .bsl-banner-cta .banner { padding: 40px 20px; }
+}
+
+/* ---------- hero: cobre a tela (a hero sozinha mede 100svh; o cabeçalho do chassi não é fixo) ---------- */
+.mx-vestido .mx-hero {
+  min-height: 100svh;
+  display: flex; align-items: center;
+  padding-block: 24px;
+  /* a luz da referência (ciano e lilás espalhados) refeita na cor da VisionX, como fundo da própria caixa */
+  background-image:
+    radial-gradient(60% 70% at 78% 40%, rgba(0, 212, 255, .20), transparent 70%),
+    radial-gradient(40% 50% at 95% 90%, rgba(0, 212, 255, .10), transparent 70%),
+    radial-gradient(45% 60% at 10% 100%, rgba(0, 184, 224, .08), transparent 70%);
+}
+.mx-rd-crm.mx-vestido .mx-hero > .hero-container { width: 100%; padding-block: 0; }
+.mx-vestido .mx-hero .hero-content { text-align: left; }
+.mx-vestido .mx-hero .hero-content .button-content { margin: 0; justify-content: flex-start; column-gap: 32px; }
+.mx-vestido .mx-antes { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.mx-vestido .mx-trilha { font: 500 14px/1.4 var(--font-base); color: var(--m-texto-fraco); display: flex; flex-wrap: wrap; gap: 6px; }
+.mx-vestido .mx-trilha a { color: var(--m-texto-suave); text-decoration: none; padding-block: 12px; margin-block: -12px; }
+.mx-vestido .mx-trilha a:hover { color: var(--m-texto); text-decoration: underline; }
+.mx-vestido .mx-logo { width: 56px; height: 56px; border-radius: 14px; box-shadow: 0 8px 24px rgba(10, 10, 10, .14); object-fit: cover; }
+.mx-vestido .mx-oferta {
+  display: inline-flex; align-items: center; gap: 8px; margin: 20px 0 0; padding: 8px 14px;
+  font: 600 15px/1.3 var(--font-base); color: var(--m-texto);
+  background: rgba(255, 255, 255, .72); border: 1px solid var(--m-borda); border-radius: 999px;
+}
+.mx-vestido .mx-oferta::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--m-luz); box-shadow: 0 0 0 4px rgba(0, 212, 255, .18); }
+.mx-vestido .mx-hero .bsc-button.highlight { min-height: 48px; }
+
+/* palco: o painel do FroX e o custo por km flutuando por cima (prints reais) */
+.mx-vestido .mx-palco { position: relative; width: 100%; padding: 0 0 12% 6%; }
+.mx-vestido .mx-palco .mx-print {
+  display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top left;
+  border-radius: 14px; border: 1px solid var(--m-borda); background: #fff;
+  box-shadow: 0 30px 60px -20px rgba(10, 10, 10, .28), 0 0 0 6px rgba(255, 255, 255, .6);
+}
+.mx-vestido .mx-palco .mx-flutua {
+  position: absolute; left: 0; bottom: 0; width: 52%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top left;
+  border-radius: 12px; border: 1px solid var(--m-borda); background: #fff;
+  box-shadow: 0 24px 48px -16px rgba(10, 10, 10, .32);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .mx-vestido .mx-palco .mx-flutua { animation: mx-flutuar 6s ease-in-out infinite; }
+  @keyframes mx-flutuar { 50% { transform: translateY(-10px); } }
+}
+@media (max-width: 47.99rem) {
+  .mx-vestido .mx-hero { min-height: 100svh; }
+  .mx-vestido .mx-hero .hero-content { text-align: center; }
+  .mx-vestido .mx-antes { align-items: center; }
+  .mx-vestido .mx-trilha { justify-content: center; }
+  .mx-vestido .mx-hero .hero-content .button-content { justify-content: center; column-gap: 20px; flex-direction: row; }
+  .mx-vestido .mx-palco { padding: 0 0 14% 8%; }
+}
+
+/* ---------- telas (abas): no celular, grade 3 × 3, nunca trilho ---------- */
+.mx-vestido .bsl-slider-tabs .splide__slide[hidden] { display: none; }
+.mx-vestido .bsl-slider-tabs .splide__list { transform: none !important; }
+.mx-vestido .bsl-slider-tabs .splide__slide { margin: 0 !important; width: 100%; }
+.mx-vestido .bsl-slider-tabs .media-item img {
+  display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top left;
+  border-radius: 14px; border: 1px solid var(--m-borda); box-shadow: 0 24px 48px -20px rgba(10, 10, 10, .25); background: #fff;
+}
+.mx-vestido .bsl-slider-tabs .tab { min-height: 44px; cursor: pointer; }
+.mx-vestido .bsl-slider-tabs .tab .icon { color: var(--m-texto); }
+.mx-vestido .bsl-slider-tabs .tab.active .icon { color: #fff; }
+@media (prefers-reduced-motion: no-preference) {
+  .mx-vestido .bsl-slider-tabs .splide__slide.is-active { animation: mx-entrar .4s cubic-bezier(.22, 1, .36, 1); }
+}
+@media (max-width: 47.99rem) {
+  .mx-vestido .bsl-slider-tabs .tabs-wrapper { overflow: visible; width: auto; max-width: 100%; margin-inline: 0; }
+  .mx-vestido .bsl-slider-tabs .tabs-wrapper ul { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px 4px; width: 100%; min-width: 0 !important; padding-inline: 0 !important; transform: none !important; }
+  .mx-vestido .bsl-slider-tabs .tabs-wrapper li { min-width: 0; }
+  .mx-vestido .bsl-slider-tabs .tab { width: 100%; white-space: normal; font-size: 13px; line-height: 1.2; }
+}
+
+/* ---------- recursos: 3 colunas para 9 cartões (sem linha órfã); 2 no celular, o último fecha a faixa ---------- */
+.mx-vestido #recursos .cards-wrapper { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; overflow: visible; }
+.mx-vestido #recursos .cards-wrapper > * { min-width: 0; width: auto; }
+.mx-vestido #recursos .bsc-card { height: 100%; }
+.mx-vestido #recursos .bsc-card .card-container { height: 100%; }
+.mx-vestido .bsc-card .icon { color: var(--m-alta); }
+.mx-vestido .bsc-card h3.title { margin: 0; }
+@media (max-width: 63.99rem) { .mx-vestido #recursos .cards-wrapper { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } }
+@media (max-width: 47.99rem) {
+  .mx-vestido #recursos .cards-wrapper > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .mx-vestido .bsc-card .card-container { padding: 16px; }
+  .mx-vestido .bsc-card .description { font-size: 15px; }
+}
+
+/* ---------- motivos (5) e outros produtos (4): lado a lado ---------- */
+.mx-vestido .bsl-topics-list .topics-wrapper { display: grid; gap: 20px; }
+.mx-vestido .mx-cinco .topics-wrapper { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.mx-vestido .mx-outros .topics-wrapper { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.mx-vestido .bsl-topics-list .topics-wrapper > * { grid-column: auto !important; min-width: 0; }
+.mx-vestido .bsl-topics-list .bsc-card, .mx-vestido .bsl-topics-list .card-container { height: 100%; }
+.mx-vestido .mx-outros .icon img { width: 48px; height: 48px; border-radius: 12px; object-fit: cover; display: block; }
+.mx-vestido .mx-letra { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 12px; background: var(--m-texto); color: #fff; font: 700 22px/1 var(--font-highlight); }
+.mx-vestido .mx-outros h3 a { color: inherit; text-decoration: none; }
+.mx-vestido .mx-outros .mx-ir { margin-top: auto; padding-block: 10px; }
+.mx-vestido .mx-outros .content { display: flex; flex-direction: column; height: 100%; }
+@media (max-width: 63.99rem) {
+  .mx-vestido .mx-cinco .topics-wrapper { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .mx-vestido .mx-outros .topics-wrapper { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 47.99rem) {
+  .mx-vestido .bsl-topics-list .topics-wrapper { gap: 12px; }
+  .mx-vestido .mx-cinco .topics-wrapper { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mx-vestido .mx-cinco .topics-wrapper > :last-child { grid-column: 1 / -1 !important; }
+  .mx-vestido .bsl-topics-list .card-container { padding: 16px; }
+}
+
+/* ---------- artigo: na composição do FAQ da referência (índice à esquerda, texto à direita) ---------- */
+.mx-vestido .mx-artigo { background: var(--m-fundo); }
+.mx-vestido .mx-toc { position: sticky; top: 24px; display: grid; gap: 12px; }
+.mx-vestido .mx-toc strong { font: 700 13px/1.3 var(--font-base); letter-spacing: .06em; text-transform: uppercase; color: var(--m-texto-fraco); }
+.mx-vestido .mx-toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; border-left: 2px solid var(--m-borda); }
+.mx-vestido .mx-toc a { display: block; padding: 8px 0 8px 14px; margin-left: -2px; border-left: 2px solid transparent; font: 500 15px/1.35 var(--font-base); color: var(--m-texto-suave); text-decoration: none; }
+.mx-vestido .mx-toc a:hover, .mx-vestido .mx-toc a.mx-aceso { color: var(--m-texto); border-left-color: var(--m-luz); }
+.mx-vestido .vxp-artigo { font: 400 17px/1.7 var(--font-base); color: var(--m-texto); max-width: 70ch; }
+.mx-vestido .vxp-artigo .mx-olho { display: block; margin-bottom: 12px; color: var(--m-alta); }
+.mx-vestido .vxp-artigo h2 { margin: 0 0 8px; }
+.mx-vestido .vxp-artigo .vxp-meta { margin: 0 0 32px; font-size: 15px; color: var(--m-texto-fraco); }
+.mx-vestido .vxp-artigo h3 { margin: 40px 0 12px; font: 700 24px/1.25 var(--font-highlight); scroll-margin-top: 24px; }
+.mx-vestido .vxp-artigo p { margin: 0 0 16px; }
+.mx-vestido .vxp-artigo p a { color: var(--m-alta); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.mx-vestido .vxp-artigo p a:hover { color: var(--m-texto); }
+.mx-vestido .vxp-artigo .vxp-veja { margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--m-borda); font-size: 15px; color: var(--m-texto-suave); }
+.mx-vestido .vxp-tabela { margin: 20px 0 8px; border: 1px solid var(--m-borda); border-radius: 12px; overflow: clip; }
+.mx-vestido .vxp-tabela table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.45; }
+.mx-vestido .vxp-tabela caption { caption-side: top; text-align: left; padding: 14px 16px; font-weight: 700; background: var(--m-superficie); }
+.mx-vestido .vxp-tabela th, .mx-vestido .vxp-tabela td { padding: 12px 16px; text-align: left; vertical-align: top; border-top: 1px solid var(--m-borda); }
+.mx-vestido .vxp-tabela th { font-weight: 700; background: var(--m-superficie); }
+.mx-vestido .vxp-tabela-fonte { font-size: 14px !important; color: var(--m-texto-fraco); }
+@media (max-width: 47.99rem) {
+  .mx-vestido .mx-artigo .category-grid { grid-template-columns: minmax(0, 1fr) !important; }
+  .mx-vestido .mx-toc { position: static; }
+  .mx-vestido .mx-toc ol { grid-template-columns: repeat(2, minmax(0, 1fr)); border-left: 0; gap: 4px 12px; }
+  .mx-vestido .mx-toc a { margin-left: 0; padding: 10px 0; border-left: 0; font-size: 14px; }
+  .mx-vestido .vxp-artigo { font-size: 16px; }
+  .mx-vestido .vxp-artigo h3 { font-size: 21px; margin-top: 32px; }
+  /* tabela vira cartão por linha, com o nome da coluna em cada valor (nunca quadro rolável) */
+  .mx-vestido .vxp-tabela table, .mx-vestido .vxp-tabela tbody { display: block; }
+  .mx-vestido .vxp-tabela thead { display: none; }
+  .mx-vestido .vxp-tabela tr { display: grid; grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); gap: 4px 10px; padding: 12px 14px; border-top: 1px solid var(--m-borda); }
+  .mx-vestido .vxp-tabela th, .mx-vestido .vxp-tabela td { display: block; padding: 0; border: 0; background: none; }
+  .mx-vestido .vxp-tabela tr > :first-child { grid-column: 1 / -1; font-weight: 700; }
+  .mx-vestido .vxp-tabela td::before { content: attr(data-rotulo); display: block; font-size: 13px; color: var(--m-texto-fraco); }
+}
+
+/* ---------- FAQ: 5 à vista, o resto atrás de "Ver mais perguntas (+N)"; abrir um fecha o outro ---------- */
+.mx-vestido .bsl-faq .mx-faq-extra { display: none; }
+.mx-vestido .bsl-faq.mx-faq-aberto .mx-faq-extra { display: block; }
+.mx-vestido .bsl-faq .question { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; cursor: pointer; list-style: none; }
+.mx-vestido .bsl-faq .question::-webkit-details-marker { display: none; }
+.mx-vestido .bsl-faq .question-title { margin: 0; }
+.mx-vestido .mx-faq-seta { flex: none; width: 24px; height: 24px; color: var(--m-texto); transition: transform .3s cubic-bezier(.22, 1, .36, 1); }
+.mx-vestido .bsl-faq details[open] .mx-faq-seta { transform: rotate(180deg); }
+.mx-vestido .bsl-faq .answer p { margin: 0; }
+.mx-vestido .mx-faq-mais { display: flex; margin: 24px auto 0; min-height: 44px; }
+
+/* ---------- pergunte a uma IA: os três botões lado a lado, também no celular ---------- */
+.mx-vestido .mx-ia { text-align: center; background: var(--m-superficie); }
+.mx-vestido .mx-ia .mx-ia-texto { margin: 8px 0 0; color: var(--m-texto-suave); }
+.mx-vestido .mx-ia .mx-ia-botoes { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 24px; }
+.mx-vestido .mx-ia .mx-ia-botoes .bsc-button { min-height: 44px; margin: 0; }
+@media (max-width: 47.99rem) {
+  .mx-vestido .mx-ia .mx-ia-botoes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .mx-vestido .mx-ia .mx-ia-botoes .bsc-button { padding-inline: 8px; justify-content: center; font-size: 14px; }
+  .mx-vestido .mx-ia .mx-ia-botoes .right-icon { display: none; }
+}
+
+/* ---------- chamada final: a faixa da referência, com a luz ciano por baixo ---------- */
+.mx-vestido .bsl-banner-cta .banner {
+  background-color: var(--m-superficie);
+  background-image: radial-gradient(55% 90% at 50% 120%, rgba(0, 212, 255, .45), rgba(0, 212, 255, .12) 55%, transparent 80%);
+}
+.mx-vestido .bsl-banner-cta .mx-cta-texto { margin: 12px auto 0; max-width: 56ch; color: var(--m-texto-suave); }
+.mx-vestido .bsl-banner-cta .ctas-wrapper { flex-wrap: wrap; }
+.mx-vestido .bsl-banner-cta .bsc-button { min-height: 44px; }
+
+/* ---------- toque e movimento ---------- */
+.mx-vestido .bsc-button, .mx-vestido .bsc-link { min-height: 44px; display: inline-flex; align-items: center; }
+.mx-vestido .bsc-button { transition: transform .16s ease, background-color .2s ease, box-shadow .2s ease; }
+.mx-vestido .bsc-button:active { transform: scale(.98); }
+@media (hover: hover) and (pointer: fine) {
+  .mx-vestido .bsc-button:hover { box-shadow: 0 10px 24px -10px rgba(10, 10, 10, .45); }
+  .mx-vestido .bsc-card { transition: transform .25s cubic-bezier(.22, 1, .36, 1), box-shadow .25s ease; }
+  .mx-vestido .bsc-card:hover { transform: translateY(-3px); box-shadow: 0 18px 36px -18px rgba(10, 10, 10, .28); }
+}
+.mx-vestido :focus-visible { outline: 2px solid var(--m-alta); outline-offset: 3px; border-radius: 6px; }
+@keyframes mx-entrar { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+/* revelar ao entrar (o script só esconde depois de rodar: sem JS, tudo aparece) */
+.mx-vestido.mx-js .mx-revelar { opacity: 0; transform: translateY(16px); }
+.mx-vestido.mx-js .mx-revelar.mx-visto { opacity: 1; transform: none; transition: opacity .4s cubic-bezier(.22, 1, .36, 1), transform .4s cubic-bezier(.22, 1, .36, 1); transition-delay: calc(var(--i, 0) * 60ms); }
+@media (prefers-reduced-motion: reduce) {
+  .mx-vestido.mx-js .mx-revelar { transform: none; }
+  .mx-vestido.mx-js .mx-revelar.mx-visto { transition: opacity .2s linear; transition-delay: 0s; }
+}
+
+/* ---------- ajustes medidos depois da 1ª foto (02/11/2026) ---------- */
+/* a seta da referência é 15×10; o nosso chevron é quadrado: 20×20, sem achatar */
+.mx-rd-crm.mx-vestido .bsl-faq .question-wrapper .question svg.mx-faq-seta { width: 20px !important; height: 20px !important; margin-left: 16px; }
+.mx-rd-crm.mx-vestido .bsl-topics-list .topic-list-title { margin-bottom: 40px; }
+.mx-rd-crm.mx-vestido .rdl-banner-crm .mx-ia-botoes { margin-top: 24px; }
+@media (max-width: 47.99rem) {
+  .mx-rd-crm.mx-vestido .bsl-topics-list .topic-list-title { margin-bottom: 24px; }
+  /* o recuo de 32 + 32 px da referência come um terço da linha em 390 */
+  .mx-rd-crm.mx-vestido .bsl-faq .category-wrapper .category-grid .questions-wrapper { padding-left: 0; }
+  .mx-rd-crm.mx-vestido .bsl-faq .category-wrapper .category-grid .questions-wrapper .question-wrapper { padding: 16px 0; }
+}
+
+/* hero inteira dentro da 1ª tela no tablet e no celular (portão: altura da hero ≤ janela − cabeçalho) */
+@media (max-width: 63.99rem) {
+  .mx-vestido .mx-antes { flex-direction: row; align-items: center; gap: 12px; }
+  .mx-vestido .mx-logo { width: 40px; height: 40px; border-radius: 10px; order: -1; }
+  .mx-vestido .mx-palco { max-width: 520px; margin-inline: auto; }
+  .mx-rd-crm.mx-vestido .mx-hero .hero-wrapper { row-gap: 28px; }
+  .mx-rd-crm.mx-vestido .mx-hero .hero-content { row-gap: 20px; }
+}
+@media (max-width: 47.99rem) {
+  .mx-vestido .mx-antes { justify-content: center; }
+  .mx-vestido .mx-trilha { font-size: 13px; }
+  .mx-rd-crm.mx-vestido .mx-hero { padding-block: 12px; }
+  .mx-rd-crm.mx-vestido .mx-hero .hero-wrapper { row-gap: 20px; }
+  .mx-rd-crm.mx-vestido .mx-hero .hero-content { row-gap: 14px; }
+  .mx-rd-crm.mx-vestido .mx-hero .hero-content p.bsc-text { line-height: 1.38; }
+  .mx-vestido .mx-oferta { margin-top: 12px; font-size: 14px; padding: 6px 12px; }
+  .mx-vestido .mx-palco { max-width: 84%; }
+}
+/* a referência só põe a hero em duas colunas a partir de 1280; entre 1024 e 1279 ela empilhava (1245 px numa janela de 768) */
+@media (min-width: 64rem) and (max-width: 79.99rem) {
+  .mx-rd-crm.mx-vestido .mx-hero .hero-wrapper > .bsc-grid-item { grid-column: span 6; }
+  .mx-rd-crm.mx-vestido .mx-hero .hero-wrapper { align-items: center; }
+  .mx-rd-crm.mx-vestido .mx-hero { padding-block: 12px; }
+}
+@media (max-width: 23.99rem) {
+  .mx-vestido .mx-palco { max-width: 78%; }
+  .mx-rd-crm.mx-vestido .mx-hero .hero-content { row-gap: 12px; }
+}
+/* sem overflow escondido: a referência corta o trilho do Splide e o texto do link; aqui não há trilho nem estouro */
+.mx-rd-crm.mx-vestido .bsl-slider-tabs, .mx-rd-crm.mx-vestido .splide__track, .mx-rd-crm.mx-vestido .bsc-link { overflow: visible; }
+.mx-rd-crm.mx-vestido .bsl-slider-tabs .splide__slide { margin-right: 0 !important; }
+/* a grade em SVG da faixa da RD é absolute sem `left`: com o texto centralizado ela caía meia tela para a direita
+   e o page-wrapper do chassi recortava 1,5x a largura (medido: sw 585 em 390). Presa na borda esquerda da faixa. */
+.mx-rd-crm.mx-vestido .rdl-banner-crm { position: relative; }
+.mx-rd-crm.mx-vestido .rdl-banner-crm::before { left: 0; right: 0; pointer-events: none; }
+/* alvo de toque e piso de letra medidos pelo de audit em 360/390: o nome do produto em "outros" tinha 21px de
+   altura tocável e o rótulo das abas ficava nos 11px da RD (a regra de 13px perdia na especificidade) */
+.mx-rd-crm.mx-vestido .mx-outros .card-container h3 > a { display: inline-flex; align-items: center; min-height: 44px; }
+.mx-rd-crm.mx-vestido .bsl-slider-tabs .tabs-wrapper .tab { font-size: 13px; }
+/* no celular o rótulo longo ("Detalhe da viagem", "Nota fiscal por XML") quebra em duas linhas dentro da coluna de 1/3;
+   com o nowrap da RD ele passava 8 a 10px da célula e aparecia cortado ao lado da vizinha */
+@media (max-width: 47.99rem) {
+  .mx-rd-crm.mx-vestido .bsl-slider-tabs .tabs-wrapper .tab { white-space: normal; text-align: center; text-wrap: balance; }
+}
