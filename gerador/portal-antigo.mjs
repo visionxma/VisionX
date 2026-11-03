@@ -243,7 +243,7 @@ writeFileSync(join(SITE, 'index.html'), h);
 const iMain = h.indexOf('<main class="main-wrapper">'), fMain = h.indexOf('</main>') + 7;
 const footerHtml = h.slice(h.indexOf('<footer'), h.indexOf('</footer>') + 9);
 if (existsSync(join(SITE, 'produtos'))) rmSync(join(SITE, 'produtos'), { recursive: true });
-const { paginas, avisos } = gerarPaginas({ topo: h.slice(0, iMain), rodape: h.slice(fMain), footerHtml, produtos, siteDir: SITE, gerDir: join(RAIZ, 'gerador'), ic, ORG_ID });
+const { paginas, avisos } = await gerarPaginas({ topo: h.slice(0, iMain), rodape: h.slice(fMain), footerHtml, produtos, siteDir: SITE, gerDir: join(RAIZ, 'gerador'), ic, ORG_ID });
 for (const pg of paginas) { mkdirSync(join(SITE, pg.caminho), { recursive: true }); writeFileSync(join(SITE, pg.caminho, 'index.html'), pg.html); }
 
 

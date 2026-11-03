@@ -4,6 +4,7 @@
 import { createHash } from 'node:crypto';
 import { existsSync, readFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { moldeDoProduto, publicarAtivos, corpoComMolde } from './moldes.mjs';
 
 // HOJE: data da home, do llms.txt e do sitemap da home. Página de produto usa a data do PRÓPRIO artigo
 // ("atualizado" no JSON) e cai em DATA_BASE se o artigo não mudou: assim o "Atualizado em" não mente nas outras.
@@ -58,7 +59,7 @@ function trocaMeta(topo, { titulo, desc, caminho, imagem, ld }) {
   return topo;
 }
 
-export function gerarPaginas({ topo, rodape, footerHtml, produtos, siteDir, gerDir, ic, ORG_ID }) {
+export async function gerarPaginas({ topo, rodape, footerHtml, produtos, siteDir, gerDir, ic, ORG_ID }) {
   const avisos = [];
   const naoDev = produtos.filter((p) => p.grupo !== 'dev');
   const arquivoCartao = (p) => ({ meuescritorio: 'advocacia' }[p.slug] || p.slug);
@@ -207,13 +208,32 @@ ${outros.length ? `<section class="vxp-sec" id="outros"><div class="padding-glob
 </div><div class="overlay"></div></div></div></section>
 </main>`;
 
+    // ---- molde por rota: o mesmo conteúdo, vestido no corpo clonado de uma LP de referência (gerador/moldes.mjs) ----
+    const molde = await moldeDoProduto(p.slug);
+    let corpo = main;
+    let ativosMolde = null;
+    if (molde) {
+      ativosMolde = publicarAtivos(molde, siteDir);
+      const ctx = {
+        p, esc, comLinks, tabelaHtml, slugId, ic, siteDir, versao: (c) => versao(siteDir, c),
+        h1, lede, titulo, grupoNome, grupoHref: p.grupo === 'gestao' ? '/#sistemas' : '/#ferramentas',
+        oferta, imagem: imagem ? versao(siteDir, imagem) : null, imagemAlt: `Tela e recursos do ${p.nome}, ${p.setor.toLowerCase()}`,
+        logo: p.icone ? ic(p.icone) : null,
+        acao: p.url ? { href: p.url, rotulo: `Acessar ${p.nome}`, externo: true } : { href: '/#contato', rotulo: p.estado === 'app' ? 'Falar sobre o aplicativo' : 'Falar com a VisionX', externo: false },
+        recursos, secoes, faq, motivos, art, data, dataExtenso: extenso(data),
+        relLinks, pergunta, q, outros: outros.map((o) => ({ ...o, iconeSrc: o.icone ? ic(o.icone) : null })),
+      };
+      corpo = corpoComMolde(molde, ctx) + '</main>';
+    }
+
     const V = ' w-variant-b70328b2-1dfd-ba7a-c1d1-5c2a5b388d0d';
     let topoPagina = trocaMeta(topo, { titulo, desc, caminho, imagem: ogDe(p), ld });
+    if (ativosMolde) topoPagina = topoPagina.replace('</head>', `${ativosMolde.css ? `<link rel="stylesheet" href="${ativosMolde.css}">\n` : ''}${ativosMolde.js ? `<script src="${ativosMolde.js}" defer></script>\n` : ''}</head>`);
     for (const [de, para] of [['class="navbar"', `class="navbar${V}"`], ['class="padding-global is-navbar"', `class="padding-global is-navbar${V}"`], ['class="navbar_logo-link w-inline-block"', `class="navbar_logo-link w-inline-block${V}"`], ['class="navbar_logo"', `class="navbar_logo${V}"`], ['class="nav_mobile"', `class="nav_mobile${V}"`], ['class="navbar_list"', `class="navbar_list${V}"`]]) {
       if (!topoPagina.includes(de)) throw new Error('barra: não achei ' + de);
       topoPagina = topoPagina.replace(de, para);
     }
-    paginas.push({ caminho, slug: p.slug, html: topoPagina + main.replace(/<\/main>$/, footerHtml + '</main>') + rodape, titulo, desc, art, faq, nPal, recursos, nome: p.nome, data });
+    paginas.push({ caminho, slug: p.slug, molde: molde?.id || null, html: topoPagina + corpo.replace(/<\/main>$/, footerHtml + '</main>') + rodape, titulo, desc, art, faq, nPal, recursos, nome: p.nome, data });
     if (art && (nPal < 800 || nPal > 1500)) avisos.push(`${p.slug}: artigo com ${nPal} palavras (meta 800 a 1.500)`);
   }
   return { paginas, avisos };
