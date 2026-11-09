@@ -39,6 +39,27 @@ ${IAS.map(([n, u]) => `<li><a rel="noopener nofollow" target="_blank" href="${u}
 </div></section>`;
 }
 
+// Apps na App Store (conta VisionX CO; conferido na API pública da Apple em 09/11/2026): botão "Baixar para iPhone" na página do produto,
+// junto da chamada principal. Produto sem app publicado não entra aqui (HotelGestão, ConstruSoft, AdvoGestão, Seu Plantão...).
+const IOS = {
+  frox: 'https://apps.apple.com/br/app/frox-motorista/id6823243616',
+  finagro: 'https://apps.apple.com/br/app/finagro/id6827268381',
+  softpay: 'https://apps.apple.com/br/app/softpay-pdv/id6829463542',
+  biblia: 'https://apps.apple.com/br/app/b%C3%ADblia-sagrada-dia-e-noite/id6826437031',
+  xmusic: 'https://apps.apple.com/br/app/xmusic/id6825472943',
+};
+const FONE = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="7" y="2.5" width="10" height="19" rx="2.4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10.5 18.5h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+// Põe o botão logo depois do 1º botão "Acessar <produto>" da página (serve ao corpo padrão e ao vestido num molde).
+export function comBotaoIos(html, p) {
+  const href = IOS[p.slug];
+  if (!href) return html;
+  const i = [`>Acessar ${esc(p.nome)}<`, '>Falar sobre o aplicativo<'].map((m) => html.indexOf(m)).find((k) => k >= 0) ?? -1;
+  if (i < 0) throw new Error(`botão iPhone: não achei o botão principal de ${p.slug}`);
+  const j = html.indexOf('</a>', i) + 4;
+  const ios = `<a class="vxp-ios" href="${href}" target="_blank" rel="noopener" aria-label="Baixar o ${esc(p.nome)} para iPhone na App Store (abre em nova aba)">${FONE}<span>Baixar para iPhone</span></a>`;
+  return html.slice(0, j) + ios + html.slice(j);
+}
+
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const palavras = (t) => String(t).trim().split(/\s+/).filter(Boolean).length;
 // No texto do artigo, [âncora](https://site-do-produto/caminho) vira link de verdade, seguido (sem nofollow): é o link
@@ -249,7 +270,7 @@ ${outros.length ? `<section class="vxp-sec" id="outros"><div class="padding-glob
       if (!topoPagina.includes(de)) throw new Error('barra: não achei ' + de);
       topoPagina = topoPagina.replace(de, para);
     }
-    paginas.push({ caminho, slug: p.slug, molde: molde?.id || null, html: topoPagina + corpo.replace(/<\/main>$/, footerHtml + '</main>') + rodape, titulo, desc, art, faq, nPal, recursos, nome: p.nome, data });
+    paginas.push({ caminho, slug: p.slug, molde: molde?.id || null, html: comBotaoIos(topoPagina + corpo.replace(/<\/main>$/, footerHtml + '</main>') + rodape, p), titulo, desc, art, faq, nPal, recursos, nome: p.nome, data });
     if (art && (nPal < 800 || nPal > 1500)) avisos.push(`${p.slug}: artigo com ${nPal} palavras (meta 800 a 1.500)`);
   }
   return { paginas, avisos };
