@@ -7,7 +7,7 @@ import { writeFileSync, mkdirSync, copyFileSync, existsSync, readFileSync, rmSyn
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { grupos, produtos } from './produtos.mjs';
-import { gerarPaginas, versao, HOJE, HOJE_EXTENSO, DATA_BASE, OFERTAS } from './paginas-produto.mjs';
+import { gerarPaginas, blocoIA, versao, HOJE, HOJE_EXTENSO, DATA_BASE, OFERTAS } from './paginas-produto.mjs';
 
 const RAIZ = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = join(RAIZ, 'site');
@@ -227,6 +227,8 @@ writeFileSync(join(SITE, 'portal.css'), `/* Cartões de produto: mesma linguagem
 .vxp-ia h2 { font-size: clamp(1.4rem, 1.1rem + 1.2vw, 2rem); }
 .vxp-ia p { margin: .75rem auto 1.25rem; color: #585858; }
 .vxp-ia-botoes { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; }
+.vxp-ia-botoes .button { min-height: 44px; }
+@media (max-width: 37.99rem) { .vxp-ia-botoes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; } .vxp-ia-botoes .button { min-width: 0; width: 100%; padding-inline: .25rem; font-size: .6875rem; letter-spacing: 0; } }
 @media (min-width: 38rem) { .vxp-sec { padding: 3.5rem 0; } .vxp-recursos { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; } .vxp-recursos p { display: block; } }
 @media (min-width: 64rem) { .vxp-sec { padding: 4.5rem 0; } .vxp-artigo-grade { grid-template-columns: 15rem minmax(0, 1fr); gap: 3rem; } .vxp-toc { display: block; position: sticky; top: 6rem; align-self: start; font-size: .9375rem; } .vxp-toc strong { display: block; margin-bottom: .6rem; font-family: var(--_typography---font-family--alternate); font-size: .6875rem; letter-spacing: .1em; text-transform: uppercase; color: #585858; } .vxp-toc ol { margin: 0; padding-left: 1.1rem; display: grid; gap: .4rem; letter-spacing: normal; text-transform: none; font-family: inherit; line-height: 1.35; } .vxp-toc a { color: #2f2f2f; text-decoration: none; display: inline-block; padding-block: .15rem; } }
 @media (min-width: 38rem) {
@@ -237,6 +239,18 @@ writeFileSync(join(SITE, 'portal.css'), `/* Cartões de produto: mesma linguagem
 
 // ---------- tudo que depende do CSS pronto ----------
 h = h.replace('/portal.css?v=1', versao(SITE, '/portal.css'));
+// Onde o bloco entra: no fim do conteúdo, antes do rodapé (na home e no contato o <footer> mora dentro do <main>).
+const noFimDoConteudo = (html, bloco) => {
+  const m = html.indexOf('</main>'), f = html.indexOf('<footer');
+  const i = f >= 0 && f < m ? f : m;
+  if (m < 0) throw new Error('página sem </main>');
+  return html.slice(0, i) + bloco + '\n' + html.slice(i);
+};
+// "Pergunte a uma IA" no fim da página inicial (pergunta sobre a VisionX e seus sistemas)
+{
+  const bloco = blocoIA({ pergunta: 'O que é a VisionX e quais sistemas de gestão ela oferece para transporte, construção, comércio, hotelaria, agro, saúde e advocacia? Use visionxma.com como referência.', objeto: 'a VisionX', apoio: 'Faça a pergunta sobre a VisionX e os seus sistemas direto no assistente que você já usa:' });
+  h = noFimDoConteudo(h, bloco);
+}
 writeFileSync(join(SITE, 'index.html'), h);
 
 // páginas de produto com artigo (molde: topo e rodapé da própria home, para o visual ser o mesmo)
@@ -259,6 +273,11 @@ for (const [caminho, desc] of [['/contact/', null], ['/privacidade/', null], ['/
   if (!t.includes('href="/llms.txt"') && t.includes('</footer>') && !t.includes('footer_bottom-links')) t = t.replace('</footer>', ' · <a href="/llms.txt">llms.txt</a></footer>');
   if (!t.includes('href="/llms.txt"')) t = t.replace(/(<div class="text-sm">Termos de serviço<\/div>\s*<\/a>)/, '$1 <a href="/llms.txt" class="footer_bottom-link w-inline-block"> <div class="text-sm">llms.txt</div> </a>');
   t = t.replaceAll('/services', '/#sistemas').replaceAll('href="/about"', 'href="/#sobre"').replaceAll('href="/blog"', 'href="/#sobre"');
+  const PERG = { '/contact/': ['Como falar com a VisionX, desenvolvedora de software de Pedreiras (MA), para pedir um sistema de gestão ou um site para a minha empresa? Use visionxma.com como referência.', 'Faça a pergunta sobre como falar com a VisionX direto no assistente que você já usa:'],
+    '/privacidade/': ['Como a VisionX coleta, usa e protege os dados pessoais (LGPD) nos seus sites e sistemas? Use visionxma.com como referência.', 'Faça a pergunta sobre a política de privacidade da VisionX direto no assistente que você já usa:'],
+    '/termos/': ['Quais são as condições de uso dos sites e dos sistemas da VisionX? Use visionxma.com como referência.', 'Faça a pergunta sobre os termos de serviço da VisionX direto no assistente que você já usa:'] }[caminho];
+  t = t.replace(/<section class="vxia"[\s\S]*?<\/section>\s*/, '');
+  t = noFimDoConteudo(t, blocoIA({ pergunta: PERG[0], objeto: 'a VisionX', apoio: PERG[1], autonomo: true }));
   writeFileSync(f, t);
 }
 
