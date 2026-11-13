@@ -87,18 +87,19 @@
 .pia-t{margin:0;color:var(--pia-texto);font-size:16px;line-height:1.4;font-weight:600;text-wrap:balance;text-align:inherit}
 h2.pia-t{font-size:clamp(1.4rem,1.1rem + 1.2vw,2rem);line-height:1.2;letter-spacing:-.02em;font-weight:700}
 .pia-ap{margin:0;color:var(--pia-apoio);font-size:16px;line-height:1.5;text-wrap:balance;text-align:inherit}
-.pia-l{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(8px,1.4vw,14px);width:100%}
+.pia .pia-l{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(8px,1.4vw,14px);width:100%}
 .pia-l li{margin:0;padding:0;min-width:0}
 .pia-l li::before,.pia-l li::marker{content:none}
-.pia-b{display:block;padding:1px;border-radius:var(--pia-raio);background:conic-gradient(from var(--pia-a),transparent 0 58%,rgba(var(--c),.95) 72%,rgba(var(--c),1) 77%,rgba(var(--c),.95) 82%,transparent 94%),rgba(var(--c),.4);box-shadow:var(--pia-sombra,0 16px 30px -18px rgba(0,0,0,.9));color:var(--pia-texto);text-decoration:none;-webkit-tap-highlight-color:transparent;animation:pia-gira 4.2s linear var(--d,0s) infinite;transition:transform .2s cubic-bezier(.22,1,.36,1),box-shadow .2s cubic-bezier(.22,1,.36,1)}
+.pia .pia-b{display:block;width:auto;min-width:0;min-height:0;padding:1px;border-radius:var(--pia-raio);background:conic-gradient(from var(--pia-a),transparent 0 58%,rgba(var(--c),.95) 72%,rgba(var(--c),1) 77%,rgba(var(--c),.95) 82%,transparent 94%),rgba(var(--c),.4);box-shadow:var(--pia-sombra,0 16px 30px -18px rgba(0,0,0,.9));color:var(--pia-texto);text-decoration:none;-webkit-tap-highlight-color:transparent;animation:pia-gira 4.2s linear var(--d,0s) infinite;transition:transform .2s cubic-bezier(.22,1,.36,1),box-shadow .2s cubic-bezier(.22,1,.36,1)}
 @keyframes pia-gira{to{--pia-a:360deg}}
-.pia-in{position:relative;display:flex;align-items:center;justify-content:center;gap:10px;min-height:60px;padding:0 14px;border-radius:max(0px,calc(var(--pia-raio) - 1px));background:radial-gradient(120% 150% at 50% -40%,rgba(var(--c),.26),transparent 62%),radial-gradient(70% 90% at 50% 140%,rgba(var(--c),.14),transparent 70%),var(--pia-fundo);color:var(--pia-texto);font-size:16px;font-weight:600;line-height:1.2;letter-spacing:-.01em;white-space:nowrap}
-.pia-logo{flex:none;width:22px;height:22px;fill:currentColor;color:var(--l,#fff)}
-.pia-sai{flex:none;width:15px;height:15px;opacity:.6;transition:transform .2s cubic-bezier(.22,1,.36,1),opacity .2s}
+.pia .pia-in{width:auto;position:relative;display:flex;align-items:center;justify-content:center;gap:10px;min-height:60px;padding:0 14px;border-radius:max(0px,calc(var(--pia-raio) - 1px));background:radial-gradient(120% 150% at 50% -40%,rgba(var(--c),.26),transparent 62%),radial-gradient(70% 90% at 50% 140%,rgba(var(--c),.14),transparent 70%),var(--pia-fundo);color:var(--pia-texto);font-size:16px;font-weight:600;line-height:1.2;letter-spacing:-.01em;white-space:nowrap}
+.pia .pia-logo{flex:none;width:22px;height:22px;fill:currentColor;color:var(--l,#fff)}
+.pia .pia-sai{flex:none;width:15px;height:15px;opacity:.6;transition:transform .2s cubic-bezier(.22,1,.36,1),opacity .2s}
 .pia-b:active{transform:scale(.98)}
 .pia-b:focus-visible{outline:2px solid var(--pia-texto);outline-offset:3px}
 @media (hover:hover) and (pointer:fine){.pia-b:hover{transform:translateY(-2px)}.pia-b:hover .pia-sai{opacity:1;transform:translate(2px,-2px)}}
-@media (max-width:599px){.pia-in{flex-direction:column;gap:7px;min-height:76px;padding:10px 6px;font-size:14px}.pia-logo{width:24px;height:24px}.pia-sai{position:absolute;top:8px;right:8px;width:12px;height:12px}}
+@media (max-width:599px){.pia .pia-in{flex-direction:column;gap:7px;min-height:76px;padding:10px 6px;font-size:14px}.pia .pia-logo{width:24px;height:24px}.pia .pia-sai{position:absolute;top:8px;right:8px;width:12px;height:12px}}
+.pia.pia--col .pia-in{flex-direction:column;gap:7px;min-height:76px;padding:10px 6px;font-size:14px}.pia.pia--col .pia-logo{width:24px;height:24px}.pia.pia--col .pia-sai{position:absolute;top:8px;right:8px;width:12px;height:12px}
 @media (prefers-reduced-motion:reduce){.pia-b{animation:none;background:rgba(var(--c),.5);transition:none}}
 .vxp-ia { text-align: center; }
 .vxp-ios { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 44px; margin: .5rem 0 0 .6rem; padding: .5rem 1.1rem; border-radius: 999px; border: 1.5px solid currentColor; color: inherit; font-weight: 600; font-size: .9375rem; line-height: 1; text-decoration: none; white-space: nowrap; vertical-align: middle; }
