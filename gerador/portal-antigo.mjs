@@ -7,6 +7,7 @@ import { writeFileSync, mkdirSync, copyFileSync, existsSync, readFileSync, rmSyn
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { grupos, produtos } from './produtos.mjs';
+import { piaCss } from './pia-marca.mjs';
 import { gerarPaginas, blocoIA, versao, HOJE, HOJE_EXTENSO, DATA_BASE, OFERTAS } from './paginas-produto.mjs';
 
 const RAIZ = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -223,16 +224,12 @@ writeFileSync(join(SITE, 'portal.css'), `/* Cartões de produto: mesma linguagem
 .vxp-faq summary::after { content: "+"; margin-left: auto; padding-left: 1rem; font-size: 1.4rem; transition: transform .2s; }
 .vxp-faq details[open] summary::after { transform: rotate(45deg); }
 .vxp-faq details p { margin: 0; padding-bottom: 1rem; color: #585858; line-height: 1.6; }
+${piaCss('claro')}
 .vxp-ia { text-align: center; }
-.vxp-ia h2 { font-size: clamp(1.4rem, 1.1rem + 1.2vw, 2rem); }
-.vxp-ia p { margin: .75rem auto 1.25rem; color: #585858; }
-.vxp-ia-botoes { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; }
-.vxp-ia-botoes .button { min-height: 44px; }
 .vxp-ios { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 44px; margin: .5rem 0 0 .6rem; padding: .5rem 1.1rem; border-radius: 999px; border: 1.5px solid currentColor; color: inherit; font-weight: 600; font-size: .9375rem; line-height: 1; text-decoration: none; white-space: nowrap; vertical-align: middle; }
 .vxp-ios:active { transform: scale(.98); }
 .vxp-ios:focus-visible { outline: 2px solid #00d4ff; outline-offset: 3px; }
 @media (max-width: 37.99rem) { .vxp-ios { margin-left: 0; } }
-@media (max-width: 37.99rem) { .vxp-ia-botoes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; } .vxp-ia-botoes .button { min-width: 0; width: 100%; padding-inline: .25rem; font-size: .6875rem; letter-spacing: 0; } }
 @media (min-width: 38rem) { .vxp-sec { padding: 3.5rem 0; } .vxp-recursos { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; } .vxp-recursos p { display: block; } }
 @media (min-width: 64rem) { .vxp-sec { padding: 4.5rem 0; } .vxp-artigo-grade { grid-template-columns: 15rem minmax(0, 1fr); gap: 3rem; } .vxp-toc { display: block; position: sticky; top: 6rem; align-self: start; font-size: .9375rem; } .vxp-toc strong { display: block; margin-bottom: .6rem; font-family: var(--_typography---font-family--alternate); font-size: .6875rem; letter-spacing: .1em; text-transform: uppercase; color: #585858; } .vxp-toc ol { margin: 0; padding-left: 1.1rem; display: grid; gap: .4rem; letter-spacing: normal; text-transform: none; font-family: inherit; line-height: 1.35; } .vxp-toc a { color: #2f2f2f; text-decoration: none; display: inline-block; padding-block: .15rem; } }
 @media (min-width: 38rem) {
