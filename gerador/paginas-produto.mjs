@@ -4,6 +4,7 @@
 import { createHash } from 'node:crypto';
 import { existsSync, readFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { piaBloco, piaCss } from './pia-marca.mjs';
 import { moldeDoProduto, publicarAtivos, corpoComMolde } from './moldes.mjs';
 
 // HOJE: data da home, do llms.txt e do sitemap da home. Página de produto usa a data do PRÓPRIO artigo
@@ -18,25 +19,16 @@ const SITE_URL = 'https://visionxma.com';
 // Bloco "Pergunte a uma IA" (regra 32 do seo-regras.md): título fixo, 3 botões em nova aba com a pergunta DA PÁGINA em q (nunca vazio),
 // rel="noopener nofollow" e aria-label "Perguntar ao <IA> sobre <objeto> (abre em nova aba)". Uma fonte só: produto, home, contato e legais.
 // `autonomo` = para página sem o portal.css nem as classes do Webflow (contato e legais): leva o próprio CSS.
-const IAS = [['ChatGPT', 'https://chatgpt.com/?q='], ['Google IA', 'https://www.google.com/search?udm=50&amp;q='], ['Perplexity', 'https://www.perplexity.ai/search?q=']];
 export function blocoIA({ pergunta, objeto, apoio, autonomo = false }) {
   if (!pergunta.trim()) throw new Error('blocoIA: pergunta vazia');
-  const q = encodeURIComponent(pergunta);
-  const lbl = (n) => `Perguntar ao ${n} sobre ${objeto} (abre em nova aba)`;
+  // identidade de cada IA (ícone oficial + cor da marca): gerador/pia-marca.mjs, molde do site.froxbr.com (regra de 13/11/2026)
+  const bloco = piaBloco({ pergunta, objeto, apoio, tag: 'h2', classe: 'pia--solo' });
   if (!autonomo) return `<section class="vxp-sec vxp-sec--claro vxp-ia"><div class="padding-global"><div class="container-large">
-  <h2>Quer uma segunda opinião? Pergunte a uma IA.</h2>
-  <p>${apoio}</p>
-  <div class="vxp-ia-botoes">
-${IAS.map(([n, u]) => `    <a class="button" rel="noopener nofollow" target="_blank" href="${u}${q}" aria-label="${lbl(n)}"><div class="text-button-wrap"><div>${n}</div></div></a>`).join('\n')}
-  </div>
+  ${bloco}
 </div></div></section>`;
-  return `<section class="vxia" aria-label="Pergunte a uma IA"><style>.vxia{box-sizing:border-box;background:#f2f2f2;color:#131313;text-align:center;padding:2.5rem 1rem;font-family:"Plus Jakarta Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif}.vxia *{box-sizing:border-box}.vxia-in{max-width:46rem;margin:0 auto}.vxia h2{margin:0;font-size:clamp(1.4rem,1.1rem + 1.2vw,2rem);line-height:1.2;letter-spacing:-.02em;font-weight:700;color:#131313}.vxia p{margin:.75rem auto 1.25rem;color:#585858;font-size:1rem;line-height:1.5}.vxia-b{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;margin:0;padding:0;list-style:none}.vxia-b li{display:contents}.vxia-b a{display:flex;align-items:center;justify-content:center;min-height:48px;min-width:0;padding:.5rem .75rem;border-radius:999px;background:#00d4ff;color:#04202a;font-weight:700;font-size:.9375rem;line-height:1.1;text-decoration:none;text-transform:uppercase;letter-spacing:.04em;transition:transform .2s cubic-bezier(.22,1,.36,1),box-shadow .2s}.vxia-b a:active{transform:scale(.98)}.vxia-b a:focus-visible{outline:2px solid #04202a;outline-offset:3px}@media (hover:hover) and (pointer:fine){.vxia-b a:hover{transform:translateY(-2px);box-shadow:0 10px 20px -12px rgba(0,60,80,.6)}}@media (max-width:599px){.vxia{padding:2rem 1rem}.vxia-b{gap:.5rem}.vxia-b a{padding:.5rem .25rem;font-size:.6875rem;letter-spacing:0}}</style><div class="vxia-in">
-<h2>Quer uma segunda opinião? Pergunte a uma IA.</h2>
-<p>${apoio}</p>
-<ul class="vxia-b">
-${IAS.map(([n, u]) => `<li><a rel="noopener nofollow" target="_blank" href="${u}${q}" aria-label="${lbl(n)}">${n}</a></li>`).join('\n')}
-</ul>
-</div></section>`;
+  return `<section class="vxia" aria-label="Pergunte a uma IA"><style>.vxia{box-sizing:border-box;background:#f2f2f2;color:#131313;padding:2.5rem 1rem;font-family:"Plus Jakarta Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif}.vxia .pia{--pia-fonte:"Plus Jakarta Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif}@media (max-width:599px){.vxia{padding:2rem 1rem}}${piaCss('claro')}</style>
+${bloco}
+</section>`;
 }
 
 // Apps na App Store (conta VisionX CO; conferido na API pública da Apple em 09/11/2026): botão "Baixar para iPhone" na página do produto,
