@@ -473,3 +473,9 @@ img.title-icon.vx-pop { animation: vx-bulb-pop .55s ease; }
 @media (prefers-reduced-motion: reduce) {
   .faq_sinal::before, .faq_sinal::after { transition: none; }
 }
+
+/* Botão de vidro da dobra no celular (17/11/2026): no celular o brilho da foto fica atrás do "Ver os produtos"
+   e o preto a 25% deixava o branco em 4,20:1 (portao-paleta.mjs). Mesmo vidro, mais denso: 40%. */
+@media (max-width: 47.99rem) {
+  .button:where(.w-variant-3876fb3c-f589-169e-8f41-073b5a3f3902) { background-color: rgba(18, 40, 53, .4); }
+}
