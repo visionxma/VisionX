@@ -199,8 +199,9 @@ body {
 .sec_team .arrows_wrap.is-team { display: none !important; }
 
 /* Topo de ponta a ponta (20/11/2026, pedido do Victor): o section_hero tinha 12 px de margem e raio de 24 px, uma caixa
-   com o branco em volta (no celular, 94% da largura). O fundo do topo agora cobre a largura toda. */
-.section_hero { margin: 0 !important; border-radius: 0 !important; }
+   com o branco em volta (no celular, 94% da largura). O fundo do topo agora cobre a largura toda. A altura mínima do
+   molde era calc(100svh - 1.5rem), os 12 px de margem em cima e embaixo; sem a margem, o topo cobre a tela: 100svh. */
+.section_hero { margin: 0 !important; border-radius: 0 !important; min-height: 100svh !important; }
 
 /* Legibilidade do texto do hero com qualquer imagem de fundo (troca pelo painel) */
 .section_hero h1,
