@@ -150,6 +150,14 @@ body {
    automática). Vale na inicial e nas páginas de produto. Portão: portao-secao-sem-caixa.mjs. */
 .section_cta .padding-global.is-cta { padding: 0 !important; }
 .cta-wrap, .cta_wrap { border-radius: 0 !important; }
+/* Rodapé de ponta a ponta (21/11/2026, pedido do Victor: seção de LP é faixa de ponta a ponta, nunca caixa recuada). O
+   footer_wrap era um cartão escuro com raio, recuado 52 px (padding-global) com o branco da página em volta. O fundo escuro
+   passa para o próprio <footer>, que vai de borda a borda; o recuo lateral e o respiro de dentro ficam iguais (o conteúdo
+   não se mexe) e, em tela larga, o container-full limita a largura do conteúdo. */
+.footer { background-color: var(--bg-color--bg-dark); }
+.footer .padding-global.is-footer { padding-bottom: 0 !important; }
+.footer .container-full { max-width: 90rem !important; }
+.footer_wrap { border-radius: 0 !important; background-color: transparent !important; }
 /* texto branco só dentro do CTA (não afeta os botões ciano) */
 .call-to_card :where(h1,h2,h3,h4,h5,p),
 .call-to_card .text-color-on-primary,
